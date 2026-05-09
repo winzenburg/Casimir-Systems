@@ -27,9 +27,9 @@ export const metadata: Metadata = {
   description:
     'Casimir Systems builds AI-powered decision support platforms for U.S. Space Force and DoD — transforming fragmented S&T data into defensible co-investment decisions.',
   keywords: [
-    'defense AI', 'SBIR', 'Space Force', 'co-investment', 'S&T ecosystem',
-    'DoD technology', 'Casimir Intelligence', 'SF254-D1201', 'SpaceWERX',
-    'Task Force Futures', 'ecosystem mapping', 'FOCI', 'TRL', 'RDT&E',
+    'defense AI', 'Space Force', 'co-investment', 'S&T ecosystem',
+    'DoD technology', 'Casimir Intelligence', 'Casimir Systems',
+    'ecosystem mapping', 'FOCI', 'TRL', 'RDT&E', 'dual-use technology',
   ],
   openGraph: {
     title: 'Casimir Systems — Building the Software that Secures the Future',

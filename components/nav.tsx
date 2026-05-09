@@ -9,7 +9,7 @@ import { Menu, X, ArrowRight } from 'lucide-react';
 const NAV_LINKS = [
   { href: '/platform',  label: 'Casimir Intelligence' },
   { href: '/solutions', label: 'Solutions' },
-  { href: '/sbir',      label: 'SBIR / Gov' },
+  { href: '/sbir',      label: 'Defense' },
   { href: '/about',     label: 'Company' },
   { href: '/resources', label: 'Resources' },
 ];

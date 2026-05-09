@@ -337,7 +337,7 @@ export default function HomePage() {
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link href="/sbir" className="btn-ghost" style={{ padding: '14px 28px', fontSize: 15 }}>
-                SBIR / Government Focus
+                Defense &amp; Compliance
               </Link>
             </div>
           </ScrollReveal>

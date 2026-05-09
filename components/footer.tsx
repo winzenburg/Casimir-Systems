@@ -26,10 +26,10 @@ const COLS = [
     ],
   },
   {
-    title: 'Government',
+    title: 'Defense',
     links: [
-      { label: 'SBIR / D2P2',       href: '/sbir' },
-      { label: 'Space Force Focus',  href: '/sbir#spaceforce' },
+      { label: 'Defense Focus',      href: '/sbir' },
+      { label: 'Space Force',        href: '/sbir#spaceforce' },
       { label: 'Compliance Posture', href: '/sbir#compliance' },
       { label: 'Request Briefing',   href: '/contact' },
     ],
