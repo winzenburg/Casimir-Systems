@@ -22,7 +22,7 @@ const EXPERIENCE = [
   { org: 'Pitney Bowes', sub: 'Design Systems', detail: 'Standardized design architecture across 300+ products' },
   { org: 'CenturyLink / Level3', sub: 'Enterprise B2B', detail: 'Telecom platform design for enterprise customers' },
   { org: 'MapQuest / AOL', sub: 'Information Architecture', detail: 'Early-scale consumer platform UX' },
-  { org: 'Comcast Business', sub: 'Senior UX Design Leader', detail: 'Current role — enterprise platform design' },
+  { org: 'Winzinvest', sub: 'Founder', detail: 'Current role — automated trading platform with 13-layer risk gate analysis' },
 ];
 
 export default function AboutPage() {
@@ -105,8 +105,8 @@ export default function AboutPage() {
                 <div className="w-full text-left">
                   <div className="text-[12px] font-semibold text-[#0B132B] mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>Current Role</div>
                   <div className="text-[11px] text-[#64748B] leading-relaxed" style={{ fontFamily: 'IBM Plex Sans, sans-serif' }}>
-                    Senior UX Design Leader<br />
-                    <span>Comcast Business</span>
+                    Founder<br />
+                    <span>Winzinvest</span>
                   </div>
                 </div>
               </div>
