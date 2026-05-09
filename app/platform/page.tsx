@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ScrollReveal, StaggerReveal } from '@/components/scroll-reveal';
-import { NetworkGraph } from '@/components/network-graph';
 import { PlatformMockup } from '@/components/platform-mockup';
+import { EcosystemPanel, RiskPanel, InvestmentPanel } from '@/components/platform-visuals';
 
 export const metadata: Metadata = {
   title: 'Casimir Intelligence Platform',
@@ -112,7 +112,7 @@ export default function PlatformPage() {
         <div className="max-w-7xl mx-auto">
           {FEATURES.map((f, i) => (
             <ScrollReveal key={i} delay={100}>
-              <div className={`grid lg:grid-cols-2 gap-20 items-center mb-24 last:mb-0 ${i % 2 === 1 ? 'lg:[direction:rtl]' : ''}`}>
+              <div className={`grid lg:grid-cols-2 gap-16 items-center mb-28 last:mb-0 ${i % 2 === 1 ? 'lg:[direction:rtl]' : ''}`}>
                 <div className="[direction:ltr]">
                   <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>{f.eyebrow}</div>
                   <h2 className="font-bold text-[#0B132B] mb-4" style={{ fontSize: 32, fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em', lineHeight: 1.25 }}>{f.title}</h2>
@@ -126,8 +126,10 @@ export default function PlatformPage() {
                     </div>
                   ))}
                 </div>
-                <div className="[direction:ltr] rounded-2xl p-10 flex items-center justify-center min-h-[300px]" style={{ background: '#0B132B', border: '1px solid rgba(255,255,255,0.08)' }}>
-                  <NetworkGraph />
+                <div className="[direction:ltr]">
+                  {i === 0 && <EcosystemPanel />}
+                  {i === 1 && <RiskPanel />}
+                  {i === 2 && <InvestmentPanel />}
                 </div>
               </div>
             </ScrollReveal>

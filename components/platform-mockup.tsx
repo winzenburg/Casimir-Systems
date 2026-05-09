@@ -31,33 +31,40 @@ export function PlatformMockup() {
     <div
       className="w-full rounded-xl overflow-hidden"
       style={{
-        boxShadow: '0 32px 80px rgba(0,0,0,0.35), 0 8px 32px rgba(0,0,0,0.2)',
-        border: '1px solid rgba(255,255,255,0.08)',
+        boxShadow: '0 32px 80px rgba(0,0,0,0.5), 0 8px 32px rgba(0,0,0,0.3)',
+        border: '1px solid rgba(255,255,255,0.07)',
         background: '#0f172a',
       }}
     >
-      {/* Browser chrome */}
+      {/* Status bar — no browser chrome */}
       <div
-        className="flex items-center gap-2 px-4 py-2.5"
-        style={{ background: '#1e293b', borderBottom: '1px solid rgba(255,255,255,0.06)' }}
+        className="flex items-center justify-between px-5 py-2.5"
+        style={{ background: '#0B132B', borderBottom: '1px solid rgba(255,255,255,0.07)' }}
       >
-        <div className="flex gap-1.5">
-          {['#EF4444', '#F59E0B', '#10B981'].map((c, i) => (
-            <div key={i} className="w-2.5 h-2.5 rounded-full" style={{ background: c, opacity: 0.8 }} />
-          ))}
+        <div className="flex items-center gap-2">
+          <span
+            className="w-1.5 h-1.5 rounded-full"
+            style={{ background: '#10B981', boxShadow: '0 0 6px #10B981' }}
+          />
+          <span
+            className="text-[10px] uppercase tracking-widest"
+            style={{ color: '#10B981', fontFamily: 'IBM Plex Mono, monospace' }}
+          >
+            Live Synthesis
+          </span>
         </div>
         <div
-          className="flex-1 rounded text-center text-[11px] mx-2"
-          style={{
-            background: 'rgba(255,255,255,0.05)',
-            color: 'rgba(255,255,255,0.4)',
-            padding: '3px 12px',
-            fontFamily: 'IBM Plex Mono, monospace',
-          }}
+          className="text-[10px]"
+          style={{ color: 'rgba(255,255,255,0.3)', fontFamily: 'IBM Plex Mono, monospace', letterSpacing: '0.06em' }}
         >
           intelligence.casimir.systems · Directed Energy S&T Ecosystem
         </div>
-        <div className="w-14" />
+        <div
+          className="text-[9px] px-2 py-0.5 rounded"
+          style={{ background: 'rgba(37,99,235,0.15)', border: '1px solid rgba(37,99,235,0.3)', color: '#60a5fa', fontFamily: 'IBM Plex Mono, monospace' }}
+        >
+          CUI // FOUO
+        </div>
       </div>
 
       {/* App layout */}
@@ -65,13 +72,13 @@ export function PlatformMockup() {
         {/* Sidebar */}
         <div
           className="flex flex-col"
-          style={{ width: 200, background: '#0B132B', borderRight: '1px solid rgba(255,255,255,0.06)' }}
+          style={{ width: 196, background: '#0B132B', borderRight: '1px solid rgba(255,255,255,0.06)' }}
         >
-          <div className="px-4 py-3" style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+          <div className="px-4 py-3.5" style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
             <div className="text-[11px] font-bold text-[#2563EB] tracking-widest" style={{ fontFamily: 'Inter, sans-serif' }}>
               CASIMIR
             </div>
-            <div className="text-[9px] mt-0.5" style={{ color: 'rgba(255,255,255,0.35)', fontFamily: 'IBM Plex Sans, sans-serif', letterSpacing: '0.08em' }}>
+            <div className="text-[9px] mt-0.5" style={{ color: 'rgba(255,255,255,0.3)', fontFamily: 'IBM Plex Mono, monospace', letterSpacing: '0.08em' }}>
               INTELLIGENCE PLATFORM
             </div>
           </div>
@@ -81,22 +88,22 @@ export function PlatformMockup() {
                 key={i}
                 className="flex items-center gap-2.5 px-4 py-2 text-[12px]"
                 style={{
-                  background: item.active ? 'rgba(37,99,235,0.15)' : 'transparent',
+                  background: item.active ? 'rgba(37,99,235,0.12)' : 'transparent',
                   borderLeft: item.active ? '2px solid #2563EB' : '2px solid transparent',
-                  color: item.active ? '#fff' : 'rgba(255,255,255,0.45)',
+                  color: item.active ? '#fff' : 'rgba(255,255,255,0.38)',
                   fontFamily: 'IBM Plex Sans, sans-serif',
                 }}
               >
-                <span className="text-sm opacity-80">{item.icon}</span>
+                <span className="text-sm" style={{ opacity: item.active ? 1 : 0.6 }}>{item.icon}</span>
                 {item.label}
               </div>
             ))}
           </div>
-          <div className="px-4 py-3" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
-            <div className="text-[10px]" style={{ color: 'rgba(255,255,255,0.3)', fontFamily: 'IBM Plex Sans, sans-serif' }}>
+          <div className="px-4 py-3" style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}>
+            <div className="text-[9px]" style={{ color: 'rgba(255,255,255,0.25)', fontFamily: 'IBM Plex Mono, monospace', letterSpacing: '0.06em' }}>
               CUI // FOUO
             </div>
-            <div className="text-[10px] mt-0.5" style={{ color: 'rgba(255,255,255,0.2)', fontFamily: 'IBM Plex Sans, sans-serif' }}>
+            <div className="text-[9px] mt-0.5" style={{ color: 'rgba(255,255,255,0.15)', fontFamily: 'IBM Plex Mono, monospace' }}>
               TF-F Analyst Session
             </div>
           </div>
@@ -132,7 +139,7 @@ export function PlatformMockup() {
               <div key={i} className="flex-1 bg-white px-3.5 py-2.5">
                 <div
                   className="text-[9px] uppercase tracking-widest mb-1"
-                  style={{ color: '#64748B', fontFamily: 'IBM Plex Sans, sans-serif', letterSpacing: '0.06em' }}
+                  style={{ color: '#94a3b8', fontFamily: 'IBM Plex Mono, monospace', letterSpacing: '0.07em' }}
                 >
                   {m.label}
                 </div>
@@ -144,7 +151,7 @@ export function PlatformMockup() {
                 </div>
                 <div
                   className="text-[9px] mt-0.5"
-                  style={{ color: m.alert ? '#F59E0B' : '#64748B', fontFamily: 'IBM Plex Sans, sans-serif' }}
+                  style={{ color: m.alert ? '#F59E0B' : '#94a3b8', fontFamily: 'IBM Plex Mono, monospace' }}
                 >
                   {m.delta}
                 </div>
@@ -157,7 +164,7 @@ export function PlatformMockup() {
             {/* Graph */}
             <div
               className="flex-1 relative overflow-hidden"
-              style={{ background: 'linear-gradient(135deg, #0B132B 0%, #1E2D4E 100%)' }}
+              style={{ background: 'linear-gradient(135deg, #0B132B 0%, #1a2744 100%)' }}
             >
               <div className="scan-line" />
               <div className="absolute inset-0 flex items-center justify-center p-4">
@@ -166,7 +173,7 @@ export function PlatformMockup() {
               {/* Legend */}
               <div className="absolute bottom-2.5 left-3 flex gap-3">
                 {LEGEND.map(({ color, label }) => (
-                  <div key={label} className="flex items-center gap-1" style={{ fontSize: 9, color: 'rgba(255,255,255,0.5)', fontFamily: 'IBM Plex Sans, sans-serif' }}>
+                  <div key={label} className="flex items-center gap-1" style={{ fontSize: 9, color: 'rgba(255,255,255,0.4)', fontFamily: 'IBM Plex Mono, monospace' }}>
                     <div className="rounded-full" style={{ width: 6, height: 6, background: color }} />
                     {label}
                   </div>
@@ -175,18 +182,18 @@ export function PlatformMockup() {
             </div>
 
             {/* Risk panel */}
-            <div className="flex flex-col" style={{ width: 220, background: '#fff', borderLeft: '1px solid #e2e8f0' }}>
+            <div className="flex flex-col" style={{ width: 215, background: '#fff', borderLeft: '1px solid #e2e8f0' }}>
               <div
                 className="px-3.5 py-2.5 text-[11px] font-semibold text-[#0B132B]"
                 style={{ fontFamily: 'Inter, sans-serif', borderBottom: '1px solid #e2e8f0' }}
               >
                 Risk Assessment
               </div>
-              <div className="flex-1 overflow-y-auto py-2">
+              <div className="flex-1 overflow-y-auto py-1">
                 {RISKS.map((r, i) => (
-                  <div key={i} className="px-3.5 py-2" style={{ borderBottom: '1px solid #f1f5f9' }}>
+                  <div key={i} className="px-3.5 py-2.5" style={{ borderBottom: '1px solid #f1f5f9' }}>
                     <div className="flex items-center justify-between mb-1">
-                      <div className="text-[11px] font-semibold text-[#0B132B] truncate max-w-[110px]" style={{ fontFamily: 'Inter, sans-serif' }}>
+                      <div className="text-[11px] font-semibold text-[#0B132B] truncate max-w-[108px]" style={{ fontFamily: 'Inter, sans-serif' }}>
                         {r.name}
                       </div>
                       <RiskBadge
@@ -194,7 +201,7 @@ export function PlatformMockup() {
                         label={r.flag ?? (r.risk === 'low' ? 'Clear' : r.risk === 'medium' ? 'Pending' : 'Flag')}
                       />
                     </div>
-                    <div className="text-[9px]" style={{ color: '#64748B', fontFamily: 'IBM Plex Sans, sans-serif' }}>
+                    <div className="text-[9px]" style={{ color: '#94a3b8', fontFamily: 'IBM Plex Mono, monospace' }}>
                       {r.sector} · TRL {r.trl}
                     </div>
                   </div>
@@ -203,7 +210,7 @@ export function PlatformMockup() {
               <div className="px-3.5 py-2.5" style={{ borderTop: '1px solid #e2e8f0' }}>
                 <div
                   className="text-[10px] font-medium text-center text-white rounded py-1.5 cursor-pointer"
-                  style={{ background: '#2563EB', fontFamily: 'IBM Plex Sans, sans-serif' }}
+                  style={{ background: '#2563EB', fontFamily: 'IBM Plex Mono, monospace' }}
                 >
                   Generate Risk Report →
                 </div>
