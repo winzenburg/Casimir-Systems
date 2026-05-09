@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Shield, Zap, Eye, BarChart3 } from 'lucide-react';
 import { ScrollReveal, StaggerReveal } from '@/components/scroll-reveal';
-import { PlatformMockup } from '@/components/platform-mockup';
+import { HeroDisplay } from '@/components/hero-display';
 import { RiskBadge } from '@/components/risk-badge';
 
 export const metadata: Metadata = {
@@ -78,27 +78,33 @@ export default function HomePage() {
     <div>
       {/* ── Hero ─────────────────────────────────────────────────── */}
       <section
-        className="relative min-h-screen flex items-center overflow-hidden"
+        className="relative min-h-screen overflow-hidden flex"
         style={{ background: '#0B132B', paddingTop: 60 }}
       >
-        <div className="grid-bg absolute inset-0 opacity-50 pointer-events-none" />
-        {/* Glow */}
-        <div
-          className="absolute pointer-events-none"
-          style={{
-            top: '15%', left: '55%', transform: 'translateX(-50%)',
-            width: 900, height: 700, borderRadius: '50%',
-            background: 'radial-gradient(ellipse, rgba(37,99,235,0.1) 0%, transparent 65%)',
-          }}
-        />
+        <div className="grid-bg absolute inset-0 opacity-30 pointer-events-none" />
 
-        <div className="relative w-full max-w-7xl mx-auto px-6 lg:px-10 py-24 grid lg:grid-cols-[1fr_auto] gap-16 items-center">
-          {/* Left — copy */}
-          <div className="max-w-xl">
+        {/* Left — copy */}
+        <div className="flex items-center w-full lg:w-[50%] xl:w-[46%] shrink-0 z-10 px-6 md:px-10 lg:pl-16 xl:pl-24 py-32">
+          <div className="max-w-lg w-full">
+
+            {/* Status indicator */}
+            <div className="flex items-center gap-2.5 mb-8">
+              <span
+                className="w-1.5 h-1.5 rounded-full bg-[#10B981]"
+                style={{ boxShadow: '0 0 8px #10B981' }}
+              />
+              <span
+                className="text-[10px] uppercase tracking-widest"
+                style={{ color: '#10B981', fontFamily: 'IBM Plex Mono, monospace' }}
+              >
+                Intelligence Platform · Active
+              </span>
+            </div>
+
             <h1
               className="text-white font-extrabold mb-6 leading-[1.06]"
               style={{
-                fontSize: 'clamp(38px, 4.8vw, 64px)',
+                fontSize: 'clamp(36px, 4.5vw, 60px)',
                 fontFamily: 'Inter, sans-serif',
                 letterSpacing: '-0.035em',
               }}
@@ -108,20 +114,20 @@ export default function HomePage() {
             </h1>
 
             <p
-              className="mb-10 leading-relaxed"
+              className="mb-10"
               style={{
                 fontSize: 17,
                 color: 'rgba(255,255,255,0.5)',
                 fontFamily: 'IBM Plex Sans, sans-serif',
                 lineHeight: 1.75,
-                maxWidth: 460,
+                maxWidth: 440,
               }}
             >
               Casimir Systems builds AI-driven decision support and data synthesis for U.S. Space Force and DoD — designed for immediate operational impact, not multi-year deployments.
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-wrap gap-3 mb-14">
+            <div className="flex flex-wrap gap-3 mb-10">
               <Link href="/contact" className="btn-primary">
                 Request Platform Access
                 <ArrowRight className="w-4 h-4" />
@@ -132,22 +138,21 @@ export default function HomePage() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 gap-x-8 gap-y-6 max-w-sm">
+            <div
+              className="grid grid-cols-2 gap-x-8 gap-y-5 max-w-sm pt-8"
+              style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}
+            >
               {STATS.map((s) => (
                 <div key={s.label}>
                   <div
                     className="tabular text-white font-bold mb-1"
-                    style={{
-                      fontSize: 26,
-                      fontFamily: 'Inter, sans-serif',
-                      letterSpacing: '-0.025em',
-                    }}
+                    style={{ fontSize: 26, fontFamily: 'Inter, sans-serif', letterSpacing: '-0.025em' }}
                   >
                     {s.value}
                   </div>
                   <div
-                    className="text-[12px] leading-tight"
-                    style={{ color: 'rgba(255,255,255,0.35)', fontFamily: 'IBM Plex Sans, sans-serif' }}
+                    className="text-[10px] uppercase tracking-wider"
+                    style={{ color: 'rgba(255,255,255,0.28)', fontFamily: 'IBM Plex Mono, monospace' }}
                   >
                     {s.label}
                   </div>
@@ -155,11 +160,11 @@ export default function HomePage() {
               ))}
             </div>
           </div>
+        </div>
 
-          {/* Right — mockup */}
-          <div className="hidden lg:block w-[540px] shrink-0">
-            <PlatformMockup />
-          </div>
+        {/* Right — orbital intelligence display, bleeds to viewport edge */}
+        <div className="hidden lg:block flex-1 self-stretch">
+          <HeroDisplay />
         </div>
       </section>
 
