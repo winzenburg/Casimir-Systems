@@ -1,0 +1,110 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* Fonts — literal names (no self-referencing vars) */
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  /* Casimir brand colors */
+  --color-navy:       oklch(0.142 0.046 264);   /* #0B132B */
+  --color-navy-mid:   oklch(0.192 0.021 264);   /* #111827 */
+  --color-navy-light: oklch(0.248 0.058 264);   /* #1E2D4E */
+  --color-signal:     oklch(0.528 0.243 264);   /* #2563EB */
+  --color-titanium:   oklch(0.983 0.003 264);   /* #F8FAFC */
+  --color-slate-cs:   oklch(0.529 0.034 252);   /* #64748B */
+  --color-alert-red:  oklch(0.628 0.219 27);    /* #EF4444 */
+  --color-verified:   oklch(0.694 0.168 162);   /* #10B981 */
+  --color-amber-cs:   oklch(0.769 0.163 80);    /* #F59E0B */
+
+  /* shadcn tokens mapped to Casimir */
+  --color-background: oklch(0.142 0.046 264);
+  --color-foreground: oklch(0.983 0.003 264);
+  --color-card: oklch(0.192 0.021 264);
+  --color-card-foreground: oklch(0.983 0.003 264);
+  --color-popover: oklch(0.192 0.021 264);
+  --color-popover-foreground: oklch(0.983 0.003 264);
+  --color-primary: oklch(0.528 0.243 264);
+  --color-primary-foreground: oklch(0.983 0.003 264);
+  --color-secondary: oklch(0.248 0.058 264);
+  --color-secondary-foreground: oklch(0.983 0.003 264);
+  --color-muted: oklch(0.192 0.021 264);
+  --color-muted-foreground: oklch(0.529 0.034 252);
+  --color-accent: oklch(0.248 0.058 264);
+  --color-accent-foreground: oklch(0.983 0.003 264);
+  --color-destructive: oklch(0.628 0.219 27);
+  --color-border: oklch(1 0 0 / 8%);
+  --color-input: oklch(1 0 0 / 10%);
+  --color-ring: oklch(0.528 0.243 264);
+  --radius: 0.5rem;
+}
+
+:root {
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ── Grid dot background ──────────────────────────────────────── */
+.grid-bg {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* ── Scan line animation ──────────────────────────────────────── */
+.scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(37,99,235,0.4), transparent);
+  animation: scanLine 4s linear infinite;
+  pointer-events: none;
+}
+
+/* ── Keyframes ────────────────────────────────────────────────── */
+@keyframes nodePulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.08; }
+}
+@keyframes nodeFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-3px); }
+}
+@keyframes edgeFade {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.35; }
+}
+@keyframes scanLine {
+  0% { top: 0%; opacity: 0.6; }
+  100% { top: 100%; opacity: 0; }
+}
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(300%); }
+}
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Tabular numbers for data ─────────────────────────────────── */
+.tabular { font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; }
