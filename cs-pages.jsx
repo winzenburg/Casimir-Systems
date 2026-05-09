@@ -960,9 +960,29 @@ function ResourcesPage({ onNavigate }) {
 function ContactPage() {
   const [form, setForm] = React.useState({ name:'', org:'', role:'', email:'', message:'' });
   const [submitted, setSubmitted] = React.useState(false);
+  const [submitting, setSubmitting] = React.useState(false);
+  const [submitError, setSubmitError] = React.useState(null);
   const roles = ['S&T Analyst', 'Contracting Officer', 'Innovation Leader / Program Manager', 'Researcher / Academic', 'Investor / VC', 'Other'];
 
-  const handleSubmit = e => { e.preventDefault(); setSubmitted(true); };
+  const handleSubmit = async e => {
+    e.preventDefault();
+    setSubmitting(true);
+    setSubmitError(null);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error || 'Submission failed.');
+      setSubmitted(true);
+    } catch (err) {
+      setSubmitError(err.message || 'Something went wrong. Please try again.');
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <div>
@@ -1051,9 +1071,17 @@ function ContactPage() {
                     onFocus={e => e.target.style.borderColor = '#2563EB'}
                     onBlur={e => e.target.style.borderColor = '#CBD5E1'} />
                 </div>
-                <button type="submit" className="btn-primary"
-                  style={{ width: '100%', justifyContent: 'center', padding: '14px', fontSize: 15 }}>
-                  Request Access to Casimir Intelligence
+                {submitError && (
+                  <div style={{ marginBottom: 16, padding: '12px 16px', background: '#FEF2F2',
+                    border: '1px solid #FECACA', borderRadius: 6, fontSize: 13,
+                    color: '#DC2626', fontFamily: 'IBM Plex Sans, sans-serif' }}>
+                    {submitError}
+                  </div>
+                )}
+                <button type="submit" disabled={submitting} className="btn-primary"
+                  style={{ width: '100%', justifyContent: 'center', padding: '14px', fontSize: 15,
+                    opacity: submitting ? 0.7 : 1, cursor: submitting ? 'not-allowed' : 'pointer' }}>
+                  {submitting ? 'Submitting…' : 'Request Access to Casimir Intelligence'}
                 </button>
               </div>
             </form>
