@@ -95,23 +95,6 @@ export default function HomePage() {
         <div className="relative w-full max-w-7xl mx-auto px-6 lg:px-10 py-24 grid lg:grid-cols-[1fr_auto] gap-16 items-center">
           {/* Left — copy */}
           <div className="max-w-xl">
-            {/* Badge */}
-            <div
-              className="inline-flex items-center gap-2 mb-8 rounded-full px-3.5 py-1.5"
-              style={{
-                background: 'rgba(37,99,235,0.1)',
-                border: '1px solid rgba(37,99,235,0.22)',
-              }}
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
-              <span
-                className="text-[11px] font-semibold text-[#60a5fa] uppercase tracking-widest"
-                style={{ fontFamily: 'Inter, sans-serif' }}
-              >
-                SBIR D2P2 · SF254-D1201
-              </span>
-            </div>
-
             <h1
               className="text-white font-extrabold mb-6 leading-[1.06]"
               style={{
