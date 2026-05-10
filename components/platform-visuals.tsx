@@ -363,3 +363,131 @@ export function InvestmentPanel() {
     </div>
   );
 }
+
+// ── 4. Institutional Knowledge Panel ─────────────────────────────────────────
+
+interface EngagementRow {
+  entity: string;
+  type: string;
+  topic: string;
+  officer: string;
+  status: 'active' | 'follow-up' | 'closed';
+}
+
+const ENGAGEMENTS: EngagementRow[] = [
+  { entity: 'True Anomaly',   type: 'Company',  topic: 'Orbital Maneuver — TRL 6 Review',      officer: 'Maj. Chen',    status: 'follow-up' },
+  { entity: 'Shield Capital', type: 'Investor', topic: 'Co-inv. alignment: Directed Energy',    officer: 'Lt. Col. Ray', status: 'active'    },
+  { entity: 'Umbra Space',    type: 'Company',  topic: 'SAR Imaging — Acquisition Path',        officer: 'Maj. Chen',    status: 'closed'    },
+  { entity: 'Anduril Ind.',   type: 'Company',  topic: 'AI Autonomy — FOCI Review Required',    officer: 'Capt. Morris', status: 'follow-up' },
+  { entity: 'a16z Defense',   type: 'Investor', topic: 'Portfolio Briefing — Space ISR',        officer: 'Lt. Col. Ray', status: 'closed'    },
+  { entity: 'Rocket Lab',     type: 'Company',  topic: 'Launch Cadence — Phase III Transition', officer: 'Capt. Morris', status: 'active'    },
+];
+
+const STATUS_STYLE: Record<string, { bg: string; color: string; label: string }> = {
+  'active':    { bg: 'rgba(37,99,235,0.15)',   color: '#60a5fa',                  label: 'Active'    },
+  'follow-up': { bg: 'rgba(245,158,11,0.15)',  color: '#FCD34D',                  label: 'Follow-Up' },
+  'closed':    { bg: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.35)',    label: 'Closed'    },
+};
+
+export function KnowledgePanel() {
+  return (
+    <div
+      className="w-full rounded-2xl overflow-hidden"
+      style={{ background: '#0B132B', border: '1px solid rgba(255,255,255,0.07)' }}
+    >
+      <PanelHeader dot dotColor="#8B5CF6" title="ENGAGEMENT KNOWLEDGE BASE" meta="CONTINUITY SCORE: 94%" />
+
+      {/* Stats bar */}
+      <div className="flex" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', background: 'rgba(255,255,255,0.02)' }}>
+        {[
+          { label: 'ENGAGEMENTS', value: '847' },
+          { label: 'ENTITIES',    value: '312' },
+          { label: 'PERSONNEL',   value: '14'  },
+          { label: 'DUPES SAVED', value: '63'  },
+        ].map((s, i) => (
+          <div
+            key={i}
+            className="flex-1 px-4 py-3"
+            style={{ borderRight: i < 3 ? '1px solid rgba(255,255,255,0.06)' : 'none' }}
+          >
+            <div style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 8, color: 'rgba(255,255,255,0.25)', letterSpacing: '0.08em', marginBottom: 3 }}>
+              {s.label}
+            </div>
+            <div style={{ fontFamily: 'Inter, sans-serif', fontSize: 17, fontWeight: 700, color: '#fff' }}>
+              {s.value}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Column headers */}
+      <div
+        className="grid px-5 py-2"
+        style={{
+          gridTemplateColumns: '1fr 0.7fr 1.6fr 0.9fr 80px',
+          borderBottom: '1px solid rgba(255,255,255,0.05)',
+          fontFamily: 'IBM Plex Mono, monospace',
+          fontSize: 8,
+          color: 'rgba(255,255,255,0.22)',
+          letterSpacing: '0.08em',
+        }}
+      >
+        <span>ENTITY</span>
+        <span>TYPE</span>
+        <span>ENGAGEMENT TOPIC</span>
+        <span>OFFICER</span>
+        <span>STATUS</span>
+      </div>
+
+      {/* Engagement rows */}
+      {ENGAGEMENTS.map((e, i) => {
+        const s = STATUS_STYLE[e.status];
+        return (
+          <div
+            key={i}
+            className="grid items-center px-5 py-2.5"
+            style={{
+              gridTemplateColumns: '1fr 0.7fr 1.6fr 0.9fr 80px',
+              borderBottom: '1px solid rgba(255,255,255,0.04)',
+            }}
+          >
+            <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 11, fontWeight: 600, color: 'rgba(255,255,255,0.75)' }}>
+              {e.entity}
+            </span>
+            <span style={{ fontFamily: 'IBM Plex Sans, sans-serif', fontSize: 10, color: 'rgba(255,255,255,0.3)' }}>
+              {e.type}
+            </span>
+            <span style={{ fontFamily: 'IBM Plex Sans, sans-serif', fontSize: 10, color: 'rgba(255,255,255,0.45)' }}>
+              {e.topic}
+            </span>
+            <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 10, color: 'rgba(255,255,255,0.4)' }}>
+              {e.officer}
+            </span>
+            <span
+              className="text-[8px] rounded px-2 py-0.5 text-center"
+              style={{ background: s.bg, color: s.color, fontFamily: 'IBM Plex Mono, monospace' }}
+            >
+              {s.label}
+            </span>
+          </div>
+        );
+      })}
+
+      {/* Footer */}
+      <div className="px-5 py-3 flex items-center justify-between" style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}>
+        <div className="flex items-center gap-2">
+          <div className="w-1.5 h-1.5 rounded-full" style={{ background: '#8B5CF6', boxShadow: '0 0 6px #8B5CF6' }} />
+          <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 9, color: 'rgba(255,255,255,0.3)' }}>
+            KNOWLEDGE RETAINED ACROSS 3 PERSONNEL ROTATIONS
+          </span>
+        </div>
+        <div
+          className="rounded px-3 py-1 text-[9px]"
+          style={{ background: '#8B5CF6', color: '#fff', fontFamily: 'IBM Plex Mono, monospace', cursor: 'pointer' }}
+        >
+          EXPORT BRIEFING →
+        </div>
+      </div>
+    </div>
+  );
+}

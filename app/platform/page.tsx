@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ScrollReveal, StaggerReveal } from '@/components/scroll-reveal';
 import { PlatformMockup } from '@/components/platform-mockup';
-import { EcosystemPanel, RiskPanel, InvestmentPanel } from '@/components/platform-visuals';
+import { EcosystemPanel, RiskPanel, InvestmentPanel, KnowledgePanel } from '@/components/platform-visuals';
 
 export const metadata: Metadata = {
   title: 'Casimir Intelligence Platform',
@@ -41,6 +41,17 @@ const FEATURES = [
       'SBIR/STTR pipeline integration',
       'Dual-use technology identification',
       'One-click investment memo generation',
+    ],
+  },
+  {
+    eyebrow: 'Core Capability 04',
+    title: 'Institutional Knowledge Management',
+    desc: 'Prevent the organizational memory loss that undermines continuity across personnel rotations. Casimir Intelligence captures, structures, and surfaces every engagement — so nothing gets lost when people move.',
+    points: [
+      'Structured engagement logs for every company, investor, and technology interaction',
+      'Personnel-agnostic knowledge continuity across TF-F rotations',
+      'Searchable interaction history — who met whom, what was discussed, what was decided',
+      'Automated deduplication of outreach and relationship tracking',
     ],
   },
 ];
@@ -130,6 +141,7 @@ export default function PlatformPage() {
                   {i === 0 && <EcosystemPanel />}
                   {i === 1 && <RiskPanel />}
                   {i === 2 && <InvestmentPanel />}
+                  {i === 3 && <KnowledgePanel />}
                 </div>
               </div>
             </ScrollReveal>
