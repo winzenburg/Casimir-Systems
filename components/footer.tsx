@@ -1,5 +1,11 @@
 import Link from 'next/link';
 
+const LEGAL_LINKS = [
+  { label: 'Privacy Policy',   href: '/privacy' },
+  { label: 'Terms of Service', href: '/terms' },
+  { label: 'Security',         href: '/security' },
+];
+
 const CasimirLogo = () => (
   <svg width="22" height="22" viewBox="0 0 16 16" fill="none" aria-hidden="true">
     <path d="M8 2L14 5.5V10.5L8 14L2 10.5V5.5L8 2Z" stroke="white" strokeWidth="1.5" fill="none" />
@@ -145,10 +151,10 @@ export function Footer() {
             © 2026 Casimir Systems, Inc. All rights reserved.
           </div>
           <div className="flex gap-6">
-            {['Privacy Policy', 'Terms of Service', 'Security'].map((t) => (
-              <span key={t} className="text-[12px] cursor-pointer hover:text-white/60 transition-colors" style={{ color: 'rgba(255,255,255,0.25)', fontFamily: 'IBM Plex Sans, sans-serif' }}>
-                {t}
-              </span>
+            {LEGAL_LINKS.map((l) => (
+              <Link key={l.href} href={l.href} className="text-[12px] hover:text-white/60 transition-colors" style={{ color: 'rgba(255,255,255,0.25)', fontFamily: 'IBM Plex Sans, sans-serif' }}>
+                {l.label}
+              </Link>
             ))}
           </div>
         </div>
