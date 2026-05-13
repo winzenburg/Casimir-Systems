@@ -1,7 +1,7 @@
 import { Resend } from 'resend';
 import { NextRequest, NextResponse } from 'next/server';
 
-const NOTIFY_EMAIL = 'ryan@casimirsystems.com';
+const NOTIFY_EMAIL = 'ryanwinzenburg@gmail.com';
 const FROM_EMAIL = 'Casimir Systems <noreply@casimirsystems.com>';
 
 interface ContactBody {
