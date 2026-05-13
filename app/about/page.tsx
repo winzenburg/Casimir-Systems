@@ -5,15 +5,25 @@ import { ArrowRight } from 'lucide-react';
 import { ScrollReveal, StaggerReveal } from '@/components/scroll-reveal';
 
 export const metadata: Metadata = {
-  title: 'About Casimir Systems',
-  description: 'Casimir Systems is an agile defense technology firm building AI-driven decision support for the U.S. Department of Defense. Meet the founder and learn about our mission.',
+  title: 'About Casimir Systems — Agile Defense Technology Firm',
+  description: 'Casimir Systems is an agile defense technology firm building AI-powered intelligence infrastructure for the U.S. Department of Defense and Space Force. Founded in Denver, CO — near Peterson and Schriever Space Force Bases.',
+  alternates: { canonical: 'https://casimirsystems.com/about' },
 };
 
 const VALUES = [
-  { title: 'Authoritative & Trusted', desc: 'We understand the stakes of national security and the rigorous compliance it demands. NIST 800-171, ITAR, FedRAMP — we speak the language of institutional trust from day one.' },
-  { title: 'Agile & Builder-Focused', desc: 'We are a team of builders, not consultants. We ship working software fast. Our applications are designed for immediate operational impact, not multi-year deployments.' },
-  { title: 'Strategic & Visionary', desc: 'We see the broader geopolitical landscape and build tools to navigate it. Every product we ship is grounded in a clear, well-scoped DoD mission requirement.' },
-  { title: 'Modular by Design', desc: 'Our applications are zero-code, open-architecture, and built to integrate. We bridge commercial innovation speed with institutional compliance requirements.' },
+  { title: 'Authoritative & Trusted', desc: 'We understand the stakes of national security and the rigorous compliance it demands. NIST 800-171, CMMC, CUI — we speak the language of institutional trust from day one, not as an afterthought.' },
+  { title: 'Agile & Builder-Focused', desc: 'We are builders, not consultants. We ship working software in 4–6 week cycles using AI-augmented development. Our applications are designed for immediate operational impact, not multi-year deployments.' },
+  { title: 'Strategic & Precise', desc: 'We scope before we build. Every product we ship begins with a specific, validated DoD mission requirement — not a market hypothesis or a solution in search of a problem.' },
+  { title: 'Modular by Design', desc: 'Our applications are zero-code, open-architecture, and built to integrate with existing DoD data environments. Modules deploy independently or as a complete platform stack.' },
+];
+
+const DOMAINS = [
+  { label: 'Space Force / SpaceWERX', sub: 'S&T ecosystem intelligence, co-investment decision support', active: true },
+  { label: 'AFWERX / Air Force S&T', sub: 'Technology scouting, dual-use identification, program analysis', active: false },
+  { label: 'DARPA / ARPA-H', sub: 'Research pipeline synthesis, advanced concept tracking', active: false },
+  { label: 'Army Futures Command', sub: 'Industrial base mapping, supplier intelligence, co-investment alignment', active: false },
+  { label: 'SOCOM / Special Operations', sub: 'Vendor intelligence, acquisition decision support, threat synthesis', active: false },
+  { label: 'Naval Innovation (NavalX)', sub: 'Maritime S&T ecosystem mapping, dual-use technology identification', active: false },
 ];
 
 const EXPERIENCE = [
@@ -22,7 +32,7 @@ const EXPERIENCE = [
   { org: 'Pitney Bowes', sub: 'Design Systems', detail: 'Standardized design architecture across 300+ products' },
   { org: 'CenturyLink / Level3', sub: 'Enterprise B2B', detail: 'Telecom platform design for enterprise customers' },
   { org: 'MapQuest / AOL', sub: 'Information Architecture', detail: 'Early-scale consumer platform UX' },
-  { org: 'Winzinvest', sub: 'Founder', detail: 'Current role — automated trading platform with 13-layer risk gate analysis' },
+  { org: 'Comcast Business', sub: 'Senior UX Design Leader', detail: 'Current role — enterprise platform design' },
 ];
 
 export default function AboutPage() {
@@ -75,8 +85,37 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Founder */}
+      {/* DoD Domains */}
       <section className="py-24 px-6 lg:px-10" style={{ background: '#fff', borderTop: '1px solid #E2E8F0' }}>
+        <div className="max-w-7xl mx-auto">
+          <ScrollReveal>
+            <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>Defense Domains</div>
+            <h2 className="font-bold text-[#0B132B] mb-4" style={{ fontSize: 'clamp(28px,3vw,40px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>Built for DoD. Built for any branch.</h2>
+            <p className="text-[17px] text-[#64748B] max-w-2xl mb-12" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7 }}>
+              Casimir Systems is not a single-contract company. Our methodology applies wherever DoD stakeholders need faster, more defensible decision support — regardless of service branch or program office.
+            </p>
+          </ScrollReveal>
+          <StaggerReveal className="grid md:grid-cols-2 lg:grid-cols-3 gap-4" staggerMs={80}>
+            {DOMAINS.map((d) => (
+              <div key={d.label} className="rounded-xl p-6 flex gap-4" style={{ background: d.active ? '#0B132B' : '#F8FAFC', border: d.active ? '1px solid rgba(37,99,235,0.35)' : '1px solid #E2E8F0' }}>
+                <div className="shrink-0 mt-1">
+                  <div className="w-2 h-2 rounded-full mt-1.5" style={{ background: d.active ? '#10B981' : '#CBD5E1' }} />
+                </div>
+                <div>
+                  <div className="font-semibold mb-1 text-[14px]" style={{ fontFamily: 'Inter, sans-serif', color: d.active ? '#fff' : '#0B132B' }}>{d.label}</div>
+                  <div className="text-[12px] leading-relaxed" style={{ fontFamily: 'IBM Plex Sans, sans-serif', color: d.active ? 'rgba(255,255,255,0.5)' : '#64748B' }}>{d.sub}</div>
+                  {d.active && (
+                    <div className="mt-2 text-[10px] font-bold tracking-widest uppercase" style={{ color: '#10B981', fontFamily: 'Inter, sans-serif' }}>Active · Phase IIa</div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </StaggerReveal>
+        </div>
+      </section>
+
+      {/* Founder */}
+      <section className="py-24 px-6 lg:px-10" style={{ background: '#F8FAFC', borderTop: '1px solid #E2E8F0' }}>
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-10 text-center" style={{ fontFamily: 'Inter, sans-serif' }}>Founder &amp; Principal Investigator</div>
@@ -105,8 +144,8 @@ export default function AboutPage() {
                 <div className="w-full text-left">
                   <div className="text-[12px] font-semibold text-[#0B132B] mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>Current Role</div>
                   <div className="text-[11px] text-[#64748B] leading-relaxed" style={{ fontFamily: 'IBM Plex Sans, sans-serif' }}>
-                    Founder<br />
-                    <span>Winzinvest</span>
+                    Senior UX Design Leader<br />
+                    <span>Comcast Business</span>
                   </div>
                 </div>
               </div>

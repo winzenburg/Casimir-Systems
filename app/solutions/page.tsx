@@ -8,12 +8,12 @@ import { ScrollReveal } from '@/components/scroll-reveal';
 const PERSONAS = [
   {
     title: 'S&T Analysts',
-    subtitle: 'Task Force Futures · AFWERX · SPACEWERX',
-    challenge: 'You are responsible for identifying and tracking commercial technologies that align with the Objective Force Design. Your current workflow requires manual web searches, spreadsheets, and weeks of synthesis work before a single briefing can be prepared.',
+    subtitle: 'Task Force Futures · AFWERX · DARPA · Army Futures Command',
+    challenge: 'You are responsible for identifying and tracking commercial technologies across your mission domain. Your current workflow requires manual web searches, spreadsheets, and weeks of synthesis work before a single briefing can be prepared — regardless of which service branch or program office you sit in.',
     jobs: [
-      'Map the full competitive landscape for a given S&T domain in hours, not weeks',
-      'Automatically track funding rounds and government contracts as they happen',
-      'Generate ecosystem briefing packages with a single export',
+      'Map the full commercial innovation landscape for a given S&T domain in hours, not weeks',
+      'Automatically track funding rounds and government contracts as they publish',
+      'Generate ecosystem briefing packages with a single export — no engineering support needed',
       'Identify emerging dual-use technologies before competitors do',
     ],
     icon: '◈',
@@ -21,26 +21,26 @@ const PERSONAS = [
   },
   {
     title: 'Contracting Officers',
-    subtitle: 'DoD Acquisition Workforce · DCMA · AFMC',
-    challenge: 'Every co-investment recommendation that lands on your desk requires a defensible risk assessment. Determining FOCI exposure, CMMC readiness, and supply chain risk currently takes weeks of manual investigation with no standardized audit trail.',
+    subtitle: 'DoD Acquisition Workforce · DCMA · AFMC · PEO Offices',
+    challenge: 'Every co-investment recommendation or award decision requires a defensible risk assessment. Determining FOCI exposure, CMMC readiness, and supply chain risk currently takes weeks of manual investigation — with no standardized audit trail and no platform that handles all three simultaneously.',
     jobs: [
-      'Run FOCI screening against verified government databases in minutes',
-      'Generate audit-ready risk assessments with full source documentation',
+      'Run FOCI screening and entity classification in minutes, not weeks',
+      'Generate audit-ready risk assessments with full primary source documentation',
       'Score CMMC readiness levels using automated compliance checks',
-      'Produce investment memos that meet DAFARS requirements',
+      'Produce investment memos and decision packages that meet acquisition standards',
     ],
     icon: '⚑',
     color: '#F59E0B',
   },
   {
     title: 'Innovation Leaders',
-    subtitle: 'COMSO · SpaceWERX · DIU · AFWERX',
-    challenge: 'Your mission is to align the U.S. defense industrial base with private capital. You need to demonstrate to senior leadership that co-investment decisions are strategic, evidenced, and defensible — but the data is scattered across hundreds of disconnected sources.',
+    subtitle: 'COMSO · SpaceWERX · DIU · AFWERX · Naval X · Army AI Task Force',
+    challenge: 'Your mission is to align the U.S. defense industrial base with private capital and mission priorities. You need to demonstrate to senior leadership that investment and co-investment decisions are strategic, evidenced, and defensible — but the data is scattered across hundreds of disconnected sources, and your team lacks the bandwidth to synthesize it at scale.',
     jobs: [
-      'Align RDT&E budget priorities with real-time VC flow data',
-      'Identify co-investment opportunities that match Objective Force Design',
-      'Track portfolio company TRL progression over time',
-      'Brief leadership with one-click executive summary generation',
+      'Align RDT&E budget priorities with real-time venture capital flow data',
+      'Identify co-investment opportunities that match current force design priorities',
+      'Track portfolio company TRL progression and signal velocity over time',
+      'Brief senior leadership with one-click executive summary generation',
     ],
     icon: '⟳',
     color: '#10B981',
@@ -58,12 +58,12 @@ export default function SolutionsPage() {
         <div className="grid-bg absolute inset-0 opacity-40 pointer-events-none" />
         <div className="relative max-w-5xl mx-auto text-center">
           <ScrollReveal>
-            <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-4" style={{ fontFamily: 'Inter, sans-serif' }}>Casimir Intelligence · Solutions</div>
+            <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-4" style={{ fontFamily: 'Inter, sans-serif' }}>Casimir Systems · Who We Serve</div>
             <h1 className="font-extrabold text-white mb-5" style={{ fontSize: 'clamp(36px,4.5vw,60px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.03em', lineHeight: 1.1 }}>
               Precision tools for the people<br />making the decisions.
             </h1>
             <p className="text-lg max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.5)', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7 }}>
-              Casimir Intelligence is designed around the specific Jobs To Be Done of the U.S. Space Force acquisition workforce.
+              Casimir Systems builds decision support applications for the DoD acquisition workforce — across services, program offices, and innovation organizations. Every application is designed around the specific Jobs To Be Done of its users.
             </p>
           </ScrollReveal>
         </div>
@@ -127,7 +127,7 @@ export default function SolutionsPage() {
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>Who We Serve</div>
-            <h2 className="font-bold text-[#0B132B] mb-12" style={{ fontSize: 'clamp(24px,2.5vw,36px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>The full acquisition workforce.</h2>
+            <h2 className="font-bold text-[#0B132B] mb-12" style={{ fontSize: 'clamp(24px,2.5vw,36px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>Across services, branches, and program offices.</h2>
           </ScrollReveal>
           <div className="grid md:grid-cols-3 gap-6">
             {PERSONAS.map((p, i) => (

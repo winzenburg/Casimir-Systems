@@ -22,28 +22,85 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://casimirsystems.com'),
   title: {
     template: '%s | Casimir Systems',
-    default: 'Casimir Systems — Building the Software that Secures the Future',
+    default: 'Casimir Systems — AI Defense Intelligence for U.S. Space Force',
   },
   description:
-    'Casimir Systems builds AI-powered decision support platforms for U.S. Space Force and DoD — transforming fragmented S&T data into defensible co-investment decisions.',
+    'Casimir Systems builds AI-powered S&T intelligence and co-investment decision support for U.S. Space Force and DoD. Purpose-built for SBIR SF254-D1201, Task Force Futures. Zero-code, fully auditable.',
   keywords: [
-    'defense AI', 'Space Force', 'co-investment', 'S&T ecosystem',
-    'DoD technology', 'Casimir Intelligence', 'Casimir Systems',
-    'ecosystem mapping', 'FOCI', 'TRL', 'RDT&E', 'dual-use technology',
+    'defense AI platform',
+    'DoD co-investment decision support',
+    'Space Force S&T intelligence',
+    'SBIR SF254-D1201',
+    'SpaceWERX',
+    'Task Force Futures',
+    'S&T ecosystem mapping',
+    'Casimir Intelligence',
+    'RDT&E alignment',
+    'dual-use technology identification',
+    'FOCI screening',
+    'CMMC Level 2 readiness',
+    'TRL scoring',
+    'defense technology scouting',
+    'AI knowledge synthesis defense',
+    'CUI compliant defense software',
+    'Direct-to-Phase II SBIR D2P2',
+    'venture capital defense ecosystem',
+    'SpaceWERX SBIR',
+    'Peterson Space Force Base',
   ],
   openGraph: {
-    title: 'Casimir Systems — Building the Software that Secures the Future',
+    title: 'Casimir Systems — AI Defense Intelligence for U.S. Space Force',
     description:
-      'AI-powered S&T ecosystem and co-investment decision support for U.S. Space Force and DoD.',
+      'AI-powered S&T ecosystem mapping, co-investment decision support, and knowledge synthesis for U.S. Space Force and DoD. Purpose-built for Task Force Futures.',
     url: 'https://casimirsystems.com',
     siteName: 'Casimir Systems',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Casimir Systems',
-    description: 'AI-powered defense intelligence infrastructure.',
+    title: 'Casimir Systems — AI Defense Intelligence',
+    description:
+      'AI-powered S&T intelligence and co-investment decision support for U.S. Space Force. SBIR SF254-D1201.',
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
+};
+
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Casimir Systems',
+  url: 'https://casimirsystems.com',
+  description:
+    'Agile defense technology firm building AI-powered S&T intelligence and co-investment decision support for U.S. Space Force and DoD.',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Denver',
+    addressRegion: 'CO',
+    addressCountry: 'US',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'sales',
+    email: 'ryan@casimirsystems.com',
+    url: 'https://casimirsystems.com/contact',
+  },
+  sameAs: [],
+  knowsAbout: [
+    'Defense Technology',
+    'S&T Ecosystem Mapping',
+    'Co-Investment Decision Support',
+    'SBIR',
+    'SpaceWERX',
+    'U.S. Space Force',
+    'AI Knowledge Synthesis',
+    'RDT&E',
+    'CMMC',
+    'FOCI',
+  ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -54,6 +111,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       style={{ fontFamily: 'var(--font-ibm-plex), IBM Plex Sans, sans-serif' }}
     >
       <body className="antialiased min-h-screen bg-[#0B132B] text-white">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         <Nav />
         <main>{children}</main>
         <Footer />

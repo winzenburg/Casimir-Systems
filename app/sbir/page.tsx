@@ -5,46 +5,35 @@ import { ScrollReveal, StaggerReveal } from '@/components/scroll-reveal';
 import { TrlBadge, ComplianceBadge } from '@/components/risk-badge';
 
 export const metadata: Metadata = {
-  title: 'Defense Focus — SF254-D1201 | Casimir Systems',
-  description: 'Casimir Intelligence was purpose-built to address SF254-D1201 from U.S. Space Force Task Force Futures — a Direct-to-Phase II platform covering all six solicitation objectives.',
+  title: 'SBIR SF254-D1201 — Direct-to-Phase II for Task Force Futures',
+  description: 'Casimir Intelligence is a functioning platform — not a proposal — purpose-built for SBIR solicitation SF254-D1201 issued by U.S. Space Force Task Force Futures. Direct-to-Phase II (D2P2) compliant at time of proposal.',
+  alternates: { canonical: 'https://casimirsystems.com/sbir' },
 };
 
-const PHASE_II_OBJECTIVES = [
+const SOLICITATION_REQS = [
   {
-    num: '01',
-    obj: 'Assess Technology Trajectories',
-    solicit: 'Identify and track R&D activities across industry and academia, capability development timelines, and TRL in areas of Space Force interest. Visualize technology maturation paths.',
-    casimir: 'S&T Ecosystem Mapping synthesizes patent filings, VC filings, government contracts, and academic research from 40+ sources into a dynamic, queryable network graph. TRL scoring uses DoD 1–9 methodology with exportable snapshots for TF-F briefings.',
+    req: 'ASOT Data Synthesis',
+    detail: 'Real-time fusion from 40+ authoritative sources: government contracts, VC filings, patent databases, and academic research — unified into a single queryable intelligence layer.',
   },
   {
-    num: '02',
-    obj: 'Analyze Capital Flow & Investment Trends',
-    solicit: 'Provide insight into private and strategic investor activities. Assess convergence or misalignment between private capital and government priorities.',
-    casimir: 'Real-time investment monitoring across 200+ defense-relevant funds, mapped against RDT&E priorities. Dual-use opportunity identification and convergence analysis between private capital and Objective Force Design themes.',
+    req: 'VC Flow Tracking',
+    detail: 'Live investment monitoring across 200+ defense-relevant funds, mapped against RDT&E priorities and Objective Force Design capability themes.',
   },
   {
-    num: '03',
-    obj: 'Capture & Retain Institutional Knowledge',
-    solicit: 'Develop structured knowledge management frameworks to document past and ongoing engagements. Enable continuity across personnel changes and reduce duplicated outreach efforts.',
-    casimir: 'Structured engagement logs capture every company, investor, and technology interaction by officer and date. Personnel-agnostic knowledge continuity prevents information loss across TF-F rotations. Automated deduplication eliminates redundant outreach.',
+    req: 'Multi-Layer Risk Gating',
+    detail: 'FOCI screening, CMMC Level 2 readiness, TRL scoring (DoD 1–9 scale), and supply chain exposure — each with full auditable evidence chains for contracting officers.',
   },
   {
-    num: '04',
-    obj: 'Facilitate Co-Investment Planning',
-    solicit: 'Support planning and coordination of joint investment strategies between government and private sector. Provide automation for early-stage scouting, portfolio analysis, and strategic transition planning.',
-    casimir: 'One-click investment memo generation aligned to Objective Force Design priorities. Automated co-investment opportunity scoring surfaces misalignments between RDT&E budget and private capital flows. SBIR/STTR pipeline integration for Phase III transition planning.',
+    req: 'Zero-Code Interface',
+    detail: 'No engineering support required. S&T analysts and contracting officers query, filter, and export briefing packages in minutes — not weeks.',
   },
   {
-    num: '05',
-    obj: 'Enable Situational Awareness & Data Exploration',
-    solicit: 'Present relevant, high-quality insights via an intuitive, user-friendly interface. Support data-driven prioritization, trend identification, and exploratory analysis for non-technical users.',
-    casimir: 'Zero-code operational interface designed for S&T analysts and contracting officers — no engineering support required. Query, filter, and generate briefing packages in minutes. Interactive ecosystem visualization and trend dashboards.',
+    req: 'Modular, Open Architecture',
+    detail: 'REST API-first design enables integration with existing DoD data environments. Modules deploy independently or as a complete platform stack.',
   },
   {
-    num: '06',
-    obj: 'Ensure Data Governance & Accountability',
-    solicit: 'Implement robust controls for data access, version control, and leadership oversight. Ensure auditability and integrity of all outputs produced within the solution.',
-    casimir: 'Full audit trail for every recommendation, flag, and export — traceable to primary sources. Role-based access controls and version-controlled data layers. CUI/FOUO certified with NIST 800-171 compliance and CMMC Level 2 readiness.',
+    req: 'Phase I-Equivalent Feasibility',
+    detail: 'Casimir Intelligence is a functioning platform — not a prototype or concept — satisfying the D2P2 feasibility requirement at time of proposal submission.',
   },
 ];
 
@@ -162,57 +151,29 @@ export default function SbirPage() {
         </div>
       </section>
 
-      {/* Phase II objective mapping */}
+      {/* Solicitation compliance matrix */}
       <section className="py-24 px-6 lg:px-10" style={{ background: '#fff', borderTop: '1px solid #E2E8F0' }}>
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <ScrollReveal>
-            <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>Phase II Objective Mapping</div>
-            <h2 className="font-bold text-[#0B132B] mb-3" style={{ fontSize: 'clamp(24px,2.5vw,36px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>All six solicitation objectives addressed.</h2>
-            <p className="text-[17px] text-[#64748B] mb-12" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7, maxWidth: 640 }}>
-              SF254-D1201 defines six core Phase II objectives. Casimir Intelligence was architected to address each one at time of proposal — not as a roadmap.
+            <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>Compliance Matrix</div>
+            <h2 className="font-bold text-[#0B132B] mb-3" style={{ fontSize: 'clamp(24px,2.5vw,36px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>Every solicitation requirement addressed.</h2>
+            <p className="text-[17px] text-[#64748B] mb-10" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7 }}>
+              SF254-D1201 defines specific technical requirements. Here is how Casimir Intelligence maps to each one.
             </p>
           </ScrollReveal>
-          <StaggerReveal className="flex flex-col gap-0" staggerMs={60}>
-            {PHASE_II_OBJECTIVES.map((obj, i) => (
-              <div
-                key={obj.num}
-                className="grid gap-8 p-7"
-                style={{
-                  gridTemplateColumns: '48px 1fr 1fr',
-                  borderTop: '1px solid #E2E8F0',
-                  background: i % 2 === 0 ? '#fff' : '#F8FAFC',
-                }}
-              >
-                {/* Objective number */}
-                <div
-                  className="font-bold"
-                  style={{ fontSize: 28, color: 'rgba(37,99,235,0.2)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.04em', lineHeight: 1 }}
-                >
-                  {obj.num}
-                </div>
-
-                {/* Solicitation requirement */}
-                <div>
-                  <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>
-                    Solicitation Requirement
+          <ScrollReveal delay={100}>
+            <div className="rounded-xl overflow-hidden" style={{ border: '1px solid #E2E8F0' }}>
+              {SOLICITATION_REQS.map((item, i) => (
+                <div key={item.req} className="p-6 flex gap-4 items-start" style={{ borderBottom: i < SOLICITATION_REQS.length - 1 ? '1px solid #E2E8F0' : 'none', background: i % 2 === 0 ? '#fff' : '#F8FAFC' }}>
+                  <CheckCircle className="w-5 h-5 text-[#10B981] shrink-0 mt-0.5" />
+                  <div>
+                    <div className="text-[14px] font-semibold text-[#0B132B] mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>{item.req}</div>
+                    <div className="text-[13px] text-[#64748B]" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.65 }}>{item.detail}</div>
                   </div>
-                  <div className="text-[14px] font-semibold text-[#0B132B] mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>{obj.obj}</div>
-                  <div className="text-[13px] text-[#64748B]" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7 }}>{obj.solicit}</div>
                 </div>
-
-                {/* Casimir response */}
-                <div className="rounded-xl p-5" style={{ background: 'rgba(37,99,235,0.04)', border: '1px solid rgba(37,99,235,0.1)' }}>
-                  <div className="flex items-center gap-2 mb-2">
-                    <CheckCircle className="w-4 h-4 text-[#10B981] shrink-0" />
-                    <div className="text-[11px] font-semibold tracking-widest uppercase text-[#10B981]" style={{ fontFamily: 'Inter, sans-serif' }}>
-                      Casimir Response
-                    </div>
-                  </div>
-                  <div className="text-[13px] text-[#334155]" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7 }}>{obj.casimir}</div>
-                </div>
-              </div>
-            ))}
-          </StaggerReveal>
+              ))}
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 

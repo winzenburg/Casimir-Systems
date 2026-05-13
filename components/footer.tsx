@@ -1,46 +1,47 @@
 import Link from 'next/link';
 
-const Logo = () => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-    <path d="M10 2L17 6V14L10 18L3 14V6L10 2Z" stroke="white" strokeWidth="1.5" strokeLinejoin="round" fill="none" />
-    <circle cx="10" cy="10" r="2.5" fill="white" />
+const CasimirLogo = () => (
+  <svg width="22" height="22" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+    <path d="M8 2L14 5.5V10.5L8 14L2 10.5V5.5L8 2Z" stroke="white" strokeWidth="1.5" fill="none" />
+    <circle cx="8" cy="8" r="2" fill="white" />
   </svg>
 );
 
 const COLS = [
   {
-    title: 'Platform',
+    title: 'Product',
     links: [
       { label: 'Casimir Intelligence', href: '/platform' },
-      { label: 'Ecosystem Mapping',    href: '/platform#ecosystem' },
-      { label: 'Risk Assessment',      href: '/platform#risk' },
-      { label: 'Data Architecture',    href: '/platform#architecture' },
+      { label: 'Ecosystem Mapping', href: '/platform#ecosystem' },
+      { label: 'AI Knowledge Synthesis', href: '/platform#synthesis' },
+      { label: 'Security & Compliance', href: '/platform#security' },
     ],
   },
   {
     title: 'Solutions',
     links: [
-      { label: 'S&T Analysts',        href: '/solutions' },
+      { label: 'S&T Analysts', href: '/solutions' },
       { label: 'Contracting Officers', href: '/solutions' },
-      { label: 'Innovation Leaders',   href: '/solutions' },
+      { label: 'Innovation Leaders', href: '/solutions' },
+      { label: 'All Use Cases', href: '/solutions' },
     ],
   },
   {
-    title: 'Defense',
+    title: 'Government',
     links: [
-      { label: 'Defense Focus',      href: '/sbir' },
-      { label: 'Space Force',        href: '/sbir#spaceforce' },
+      { label: 'SBIR / D2P2', href: '/sbir' },
+      { label: 'Space Force / SpaceWERX', href: '/sbir' },
       { label: 'Compliance Posture', href: '/sbir#compliance' },
-      { label: 'Request Briefing',   href: '/contact' },
+      { label: 'Work With Us', href: '/contact' },
     ],
   },
   {
     title: 'Company',
     links: [
-      { label: 'About',     href: '/about' },
-      { label: 'Resources', href: '/resources' },
-      { label: 'Glossary',  href: '/resources#glossary' },
-      { label: 'Contact',   href: '/contact' },
+      { label: 'About Casimir Systems', href: '/about' },
+      { label: 'Defense Domains', href: '/about#domains' },
+      { label: 'Resources & Insights', href: '/resources' },
+      { label: 'S&T Glossary', href: '/resources#glossary' },
     ],
   },
 ];
@@ -50,73 +51,58 @@ export function Footer() {
     <footer
       className="border-t"
       style={{
-        background: '#070f22',
-        borderColor: 'rgba(255,255,255,0.07)',
+        background: '#0B132B',
+        borderColor: 'rgba(255,255,255,0.08)',
+        padding: '64px 40px 32px',
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-16 pb-8">
-        {/* Top grid */}
-        <div className="grid gap-12 mb-14" style={{ gridTemplateColumns: '2fr 1fr 1fr 1fr 1fr' }}>
-          {/* Brand */}
+      <div className="max-w-7xl mx-auto">
+        <div className="grid gap-12 mb-12" style={{ gridTemplateColumns: '2fr 1fr 1fr 1fr 1fr' }}>
+          {/* Brand column */}
           <div>
-            <div className="flex items-center gap-2.5 mb-5">
-              <div className="w-[30px] h-[30px] rounded-lg bg-[#2563EB] flex items-center justify-center">
-                <Logo />
+            <div className="flex items-center gap-2.5 mb-4">
+              <div className="w-7 h-7 rounded-md bg-[#2563EB] flex items-center justify-center">
+                <CasimirLogo />
               </div>
-              <span
-                className="text-[14px] font-semibold text-white leading-none"
-                style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '-0.025em' }}
-              >
+              <span className="text-[15px] font-bold text-white" style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>
                 Casimir Systems
               </span>
             </div>
-
-            <p
-              className="text-[13px] leading-relaxed mb-6 max-w-[240px]"
-              style={{ color: 'rgba(255,255,255,0.35)', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7 }}
-            >
-              AI-native intelligence infrastructure for defense and national security organizations.
+            <p className="text-[13px] leading-relaxed mb-5 max-w-[260px]" style={{ color: 'rgba(255,255,255,0.4)', fontFamily: 'IBM Plex Sans, sans-serif' }}>
+              Agile defense technology firm building AI-powered decision support applications for DoD — across services, branches, and program offices.
             </p>
 
             {/* Product chip */}
             <div
-              className="inline-flex items-center gap-2 rounded-full mb-5"
+              className="inline-flex items-center gap-2 rounded-full mb-4"
               style={{
-                background: 'rgba(37,99,235,0.1)',
-                border: '1px solid rgba(37,99,235,0.2)',
+                background: 'rgba(37,99,235,0.12)',
+                border: '1px solid rgba(37,99,235,0.25)',
                 padding: '4px 12px',
               }}
             >
-              <span
-                className="text-[9px] font-bold tracking-widest text-[#60a5fa] uppercase"
-                style={{ fontFamily: 'Inter, sans-serif' }}
-              >
+              <span className="text-[9px] font-bold tracking-widest text-[#2563EB] uppercase" style={{ fontFamily: 'Inter, sans-serif' }}>
                 Product
               </span>
-              <span style={{ width: 1, height: 9, background: 'rgba(255,255,255,0.1)', display: 'block' }} />
-              <span
-                className="text-[11px] font-medium"
-                style={{ color: 'rgba(255,255,255,0.5)', fontFamily: 'Inter, sans-serif' }}
-              >
+              <span style={{ width: 1, height: 10, background: 'rgba(255,255,255,0.1)', display: 'block' }} />
+              <span className="text-[11px] font-semibold" style={{ color: 'rgba(255,255,255,0.6)', fontFamily: 'Inter, sans-serif' }}>
                 Casimir Intelligence
               </span>
             </div>
 
-            <div
-              className="block text-[10px] font-medium tracking-widest uppercase mb-5"
-              style={{ color: 'rgba(255,255,255,0.18)', fontFamily: 'IBM Plex Mono, monospace', letterSpacing: '0.1em' }}
-            >
+            <div className="block mt-2 text-[11px] tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.2)', fontFamily: 'IBM Plex Sans, sans-serif', letterSpacing: '0.06em' }}>
               CUI // FOUO Compliant
             </div>
 
+            {/* LinkedIn */}
             <a
               href="https://linkedin.com/company/casimir-systems"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-[12px] transition-colors duration-150 hover:text-white/70"
-              style={{ color: 'rgba(255,255,255,0.3)', fontFamily: 'IBM Plex Sans, sans-serif' }}
+              className="inline-flex items-center gap-2 mt-5 text-[12px] transition-colors hover:text-white"
+              style={{ color: 'rgba(255,255,255,0.35)', fontFamily: 'IBM Plex Sans, sans-serif' }}
             >
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
                 <circle cx="4" cy="4" r="2" />
               </svg>
@@ -128,18 +114,18 @@ export function Footer() {
           {COLS.map((col) => (
             <div key={col.title}>
               <div
-                className="text-[10px] font-semibold tracking-widest uppercase mb-5"
-                style={{ color: 'rgba(255,255,255,0.28)', fontFamily: 'Inter, sans-serif', letterSpacing: '0.12em' }}
+                className="text-[11px] font-semibold tracking-widest uppercase mb-4"
+                style={{ color: 'rgba(255,255,255,0.35)', fontFamily: 'Inter, sans-serif', letterSpacing: '0.1em' }}
               >
                 {col.title}
               </div>
-              <ul className="space-y-3">
+              <ul className="space-y-2.5">
                 {col.links.map((link) => (
-                  <li key={link.label}>
+                  <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-[13px] transition-colors duration-150 hover:text-white/75"
-                      style={{ color: 'rgba(255,255,255,0.4)', fontFamily: 'IBM Plex Sans, sans-serif' }}
+                      className="text-[13px] transition-colors duration-150 hover:text-white"
+                      style={{ color: 'rgba(255,255,255,0.45)', fontFamily: 'IBM Plex Sans, sans-serif' }}
                     >
                       {link.label}
                     </Link>
@@ -153,21 +139,14 @@ export function Footer() {
         {/* Bottom bar */}
         <div
           className="flex flex-col md:flex-row justify-between items-center gap-4 pt-6"
-          style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}
+          style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}
         >
-          <div
-            className="text-[12px]"
-            style={{ color: 'rgba(255,255,255,0.22)', fontFamily: 'IBM Plex Sans, sans-serif' }}
-          >
+          <div className="text-[12px]" style={{ color: 'rgba(255,255,255,0.25)', fontFamily: 'IBM Plex Sans, sans-serif' }}>
             © 2026 Casimir Systems, Inc. All rights reserved.
           </div>
           <div className="flex gap-6">
             {['Privacy Policy', 'Terms of Service', 'Security'].map((t) => (
-              <span
-                key={t}
-                className="text-[12px] cursor-pointer transition-colors duration-150 hover:text-white/40"
-                style={{ color: 'rgba(255,255,255,0.22)', fontFamily: 'IBM Plex Sans, sans-serif' }}
-              >
+              <span key={t} className="text-[12px] cursor-pointer hover:text-white/60 transition-colors" style={{ color: 'rgba(255,255,255,0.25)', fontFamily: 'IBM Plex Sans, sans-serif' }}>
                 {t}
               </span>
             ))}

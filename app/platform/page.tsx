@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ScrollReveal, StaggerReveal } from '@/components/scroll-reveal';
+import { NetworkGraph } from '@/components/network-graph';
 import { PlatformMockup } from '@/components/platform-mockup';
-import { EcosystemPanel, RiskPanel, InvestmentPanel, KnowledgePanel } from '@/components/platform-visuals';
 
 export const metadata: Metadata = {
-  title: 'Casimir Intelligence Platform',
-  description: 'A zero-code, fully auditable platform that maps S&T ecosystems and tracks venture capital flows in real-time — purpose-built for U.S. Space Force co-investment decision support.',
+  title: 'Casimir Intelligence — Defense S&T Co-Investment Platform',
+  description: 'Casimir Intelligence maps S&T ecosystems, tracks VC flows, synthesizes AI-powered intelligence briefs, and surfaces co-investment opportunities — zero-code and fully auditable. Purpose-built for U.S. Space Force Task Force Futures.',
+  alternates: { canonical: 'https://casimirsystems.com/platform' },
 };
 
 const FEATURES = [
@@ -17,41 +18,41 @@ const FEATURES = [
     points: [
       'Real-time data synthesis from 40+ authoritative sources',
       'Company-investor-technology relationship mapping',
-      'TRL scoring with DoD-standard methodology',
+      'TRL scoring with DoD-standard methodology (TRL 1–9)',
       'Exportable ecosystem snapshots for briefings',
     ],
   },
   {
     eyebrow: 'Core Capability 02',
-    title: 'Institutional Risk Assessment',
-    desc: 'Every co-investment recommendation is backed by a multi-layer risk gate architecture designed for the DoD acquisition environment. No black boxes — every flag is traceable to a primary source.',
+    title: 'Co-Investment Decision Support',
+    desc: 'Align RDT&E budget priorities with private venture capital flows. Casimir Intelligence surfaces co-investment opportunities mapped directly against Objective Force Design capability themes.',
     points: [
-      'FOCI screening against DCSA databases',
-      'CMMC Level 2 readiness scoring',
-      'Supply chain exposure analysis',
-      'Full audit trail for contracting officers',
+      'VC flow tracking across 200+ defense-relevant funds',
+      'SBIR/STTR pipeline integration and signal scoring',
+      'Dual-use technology identification and prioritization',
+      'Defensible, evidence-backed investment recommendations',
     ],
   },
   {
     eyebrow: 'Core Capability 03',
-    title: 'Co-Investment Decision Support',
-    desc: 'Align RDT&E budget priorities with private venture capital flows. Casimir Intelligence surfaces co-investment opportunities that match Objective Force Design priorities.',
+    title: 'AI Knowledge Synthesis',
+    desc: 'Claude-powered synthesis engine converts raw entity and signal data into structured intelligence briefs — automatically theme-tagged, source-attributed, and ready to brief to leadership.',
     points: [
-      'VC flow tracking across 200+ defense-relevant funds',
-      'SBIR/STTR pipeline integration',
-      'Dual-use technology identification',
-      'One-click investment memo generation',
+      'Anthropic Claude Sonnet AI synthesis engine',
+      'Automatic theme tagging across 15 capability domains',
+      'Analyst engagement tracking and CRM-style activity logging',
+      'Human-in-the-loop review workflow before dissemination',
     ],
   },
   {
     eyebrow: 'Core Capability 04',
-    title: 'Institutional Knowledge Management',
-    desc: 'Prevent the organizational memory loss that undermines continuity across personnel rotations. Casimir Intelligence captures, structures, and surfaces every engagement — so nothing gets lost when people move.',
+    title: 'Institutional Risk & Governance',
+    desc: 'Every co-investment recommendation is backed by a multi-layer risk gate architecture designed for the DoD acquisition environment. No black boxes — every flag is traceable to a primary source.',
     points: [
-      'Structured engagement logs for every company, investor, and technology interaction',
-      'Personnel-agnostic knowledge continuity across TF-F rotations',
-      'Searchable interaction history — who met whom, what was discussed, what was decided',
-      'Automated deduplication of outreach and relationship tracking',
+      'FOCI exposure screening and classification tracking',
+      'CMMC Level 2 readiness scoring per entity',
+      'CUI/FOUO-compliant data handling architecture',
+      'Full audit trail for contracting officers',
     ],
   },
 ];
@@ -65,15 +66,16 @@ const SECURITY_BADGES = [
   { label: 'DISA STIG', sub: 'Hardened' },
 ];
 
-const PLATFORM_CAPABILITIES = [
-  { cap: 'ASOT Synthesis', detail: 'Fuses data from 40+ verified sources — contracts, VC filings, patent databases, and academic research — into a single, queryable intelligence layer.' },
-  { cap: 'Real-Time VC Flow Tracking', detail: 'Investment monitoring across 200+ defense-relevant funds, mapped against RDT&E priorities and Objective Force Design themes.' },
-  { cap: 'Multi-Layer Risk Gates', detail: 'FOCI screening, CMMC Level 2 readiness, TRL scoring (DoD 1–9 scale), and supply chain exposure — each with a full, auditable evidence chain.' },
-  { cap: 'Zero-Code Operational Interface', detail: 'No engineering support required. Analysts query, filter, and export in minutes — not weeks.' },
-  { cap: 'Modular, Open Architecture', detail: 'REST API-first design enables integration with existing data environments. Modules deploy independently or as a full stack.' },
+const SBIR_REQS = [
+  { req: 'ASOT Data Synthesis', cap: 'Fuses data from 40+ verified sources — government contracts, VC filings, patent databases, and academic research — into a single, queryable intelligence layer.' },
+  { req: 'Real-Time VC Flow Tracking', cap: 'Investment monitoring across 200+ defense-relevant funds, mapped against RDT&E priorities and Objective Force Design themes.' },
+  { req: 'AI Knowledge Synthesis', cap: 'Anthropic Claude Sonnet generates structured intelligence briefs per entity — theme-tagged across 15 capability domains, with human-in-the-loop review workflow.' },
+  { req: 'Multi-Layer Risk & Governance', cap: 'FOCI screening, CMMC Level 2 readiness, TRL scoring (DoD 1–9 scale), and CUI/FOUO-compliant data handling — each with a full, auditable evidence chain.' },
+  { req: 'Zero-Code Operational Interface', cap: 'No engineering support required. S&T analysts and contracting officers query, filter, and export briefing packages in minutes — not weeks.' },
+  { req: 'Modular, Open Architecture', cap: 'REST API-first design enables integration with existing DoD data environments. Modules deploy independently or as a complete platform stack.' },
 ];
 
-const TAGS = ['S&T Ecosystem Synthesis', 'Co-Investment Decision Support', 'Zero-Code Interface', 'ASOT Data Fusion', 'Dual-Use Technology ID', 'FOCI Risk Screening', 'CMMC Readiness Scoring', 'CUI/FOUO Compliant', 'Open Architecture', 'Modular Design'];
+const TAGS = ['S&T Ecosystem Synthesis', 'Co-Investment Decision Support', 'AI Knowledge Synthesis', 'Claude Sonnet AI Engine', 'ASOT Data Fusion', 'Dual-Use Technology ID', 'FOCI Risk Screening', 'CMMC Readiness Scoring', 'CUI/FOUO Compliant', 'Open Architecture', 'Modular Design'];
 const TAG_STYLES = [
   { bg: 'rgba(37,99,235,0.07)', color: '#1D4ED8', border: 'rgba(37,99,235,0.15)' },
   { bg: 'rgba(16,185,129,0.07)', color: '#065F46', border: 'rgba(16,185,129,0.15)' },
@@ -99,7 +101,7 @@ export default function PlatformPage() {
               Aligning Private Capital<br /><span style={{ color: '#2563EB' }}>with National Security.</span>
             </h1>
             <p className="text-lg mb-12 max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.5)', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7 }}>
-              A zero-code, fully auditable platform that maps S&T ecosystems and tracks venture capital flows in real-time — purpose-built for U.S. Space Force co-investment decision support.
+              A zero-code, fully auditable platform that maps S&T ecosystems, tracks VC flows, and synthesizes AI-powered intelligence briefs — purpose-built for U.S. Space Force Task Force Futures and SBIR SF254-D1201.
             </p>
             <div className="flex gap-3 justify-center">
               <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md font-medium text-white transition-all duration-200 hover:-translate-y-px" style={{ background: '#2563EB', fontFamily: 'IBM Plex Sans, sans-serif', fontSize: 15 }}>
@@ -123,7 +125,7 @@ export default function PlatformPage() {
         <div className="max-w-7xl mx-auto">
           {FEATURES.map((f, i) => (
             <ScrollReveal key={i} delay={100}>
-              <div className={`grid lg:grid-cols-2 gap-16 items-center mb-28 last:mb-0 ${i % 2 === 1 ? 'lg:[direction:rtl]' : ''}`}>
+              <div className={`grid lg:grid-cols-2 gap-20 items-center mb-24 last:mb-0 ${i % 2 === 1 ? 'lg:[direction:rtl]' : ''}`}>
                 <div className="[direction:ltr]">
                   <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>{f.eyebrow}</div>
                   <h2 className="font-bold text-[#0B132B] mb-4" style={{ fontSize: 32, fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em', lineHeight: 1.25 }}>{f.title}</h2>
@@ -137,11 +139,8 @@ export default function PlatformPage() {
                     </div>
                   ))}
                 </div>
-                <div className="[direction:ltr]">
-                  {i === 0 && <EcosystemPanel />}
-                  {i === 1 && <RiskPanel />}
-                  {i === 2 && <InvestmentPanel />}
-                  {i === 3 && <KnowledgePanel />}
+                <div className="[direction:ltr] rounded-2xl p-10 flex items-center justify-center min-h-[300px]" style={{ background: '#0B132B', border: '1px solid rgba(255,255,255,0.08)' }}>
+                  <NetworkGraph />
                 </div>
               </div>
             </ScrollReveal>
@@ -149,19 +148,23 @@ export default function PlatformPage() {
         </div>
       </section>
 
-      {/* Platform capabilities breakdown */}
+      {/* SBIR / D2P2 context */}
       <section className="py-24 px-6 lg:px-10" style={{ background: '#fff', borderTop: '1px solid #E2E8F0' }}>
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <div className="grid lg:grid-cols-2 gap-20 items-start">
               <div>
-                <div className="eyebrow mb-5">What We Deliver</div>
-                <h2 className="font-bold text-[#0B132B] mb-5" style={{ fontSize: 32, fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em', lineHeight: 1.25 }}>A fully operational platform — not a roadmap.</h2>
+                <div className="inline-flex items-center gap-2 rounded-full px-3 py-1 mb-5" style={{ background: 'rgba(37,99,235,0.06)', border: '1px solid rgba(37,99,235,0.2)' }}>
+                  <span className="text-[10px] font-bold tracking-widest uppercase text-[#2563EB]" style={{ fontFamily: 'Inter, sans-serif' }}>SBIR D2P2</span>
+                  <span className="w-px h-2.5 bg-[rgba(37,99,235,0.2)]" />
+                  <span className="text-[11px] text-[#64748B]" style={{ fontFamily: 'IBM Plex Sans, sans-serif' }}>Topic SF254-D1201</span>
+                </div>
+                <h2 className="font-bold text-[#0B132B] mb-5" style={{ fontSize: 32, fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em', lineHeight: 1.25 }}>Purpose-built for a specific mission requirement.</h2>
                 <p className="text-[15px] text-[#64748B] mb-5" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.75 }}>
-                  Casimir Intelligence is a functioning system at time of engagement. We synthesize data from 40+ authoritative sources into a single, auditable intelligence layer that defense analysts can query on day one.
+                  Casimir Intelligence was architected in direct response to SBIR solicitation topic <strong className="text-[#0B132B]">SF254-D1201</strong>, issued by U.S. Space Force Task Force Futures. The solicitation calls for a Direct-to-Phase II (D2P2) contract, requiring demonstrated Phase I-equivalent feasibility at time of proposal.
                 </p>
                 <p className="text-[15px] text-[#64748B] mb-8" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.75 }}>
-                  No black boxes. No engineering onboarding. Every recommendation is traceable to a primary source, exportable for briefings, and defensible under acquisition scrutiny.
+                  The D2P2 mechanism is the DoD&apos;s fast-track innovation pathway, bypassing Phase I to accelerate deployment of technologies with proven commercial viability. TF-F needs this capability now — not in three years.
                 </p>
                 <div className="flex gap-2 flex-wrap">
                   {TAGS.map((tag, i) => {
@@ -174,24 +177,24 @@ export default function PlatformPage() {
               </div>
 
               <div>
-                <div className="text-[11px] font-semibold tracking-widest uppercase text-[#64748B] mb-5" style={{ fontFamily: 'Inter, sans-serif' }}>Core Platform Capabilities</div>
-                {PLATFORM_CAPABILITIES.map((item, i) => (
-                  <div key={i} className="flex gap-4 py-4" style={{ borderBottom: i < PLATFORM_CAPABILITIES.length - 1 ? '1px solid #E2E8F0' : 'none' }}>
+                <div className="text-[11px] font-semibold tracking-widest uppercase text-[#64748B] mb-5" style={{ fontFamily: 'Inter, sans-serif' }}>Solicitation Requirements → Platform Capabilities</div>
+                {SBIR_REQS.map((item, i) => (
+                  <div key={i} className="flex gap-4 py-4" style={{ borderBottom: i < SBIR_REQS.length - 1 ? '1px solid #E2E8F0' : 'none' }}>
                     <div className="shrink-0 mt-0.5">
                       <div className="w-5 h-5 rounded-full flex items-center justify-center" style={{ background: '#F0FDF4', border: '1px solid rgba(16,185,129,0.3)' }}>
                         <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#10B981" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                       </div>
                     </div>
                     <div>
-                      <div className="text-[13px] font-semibold text-[#0B132B] mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>{item.cap}</div>
-                      <div className="text-[13px] text-[#64748B]" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.65 }}>{item.detail}</div>
+                      <div className="text-[13px] font-semibold text-[#0B132B] mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>{item.req}</div>
+                      <div className="text-[13px] text-[#64748B]" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.65 }}>{item.cap}</div>
                     </div>
                   </div>
                 ))}
                 <div className="mt-6 rounded-xl p-5" style={{ background: '#0B132B' }}>
-                  <div className="text-[11px] font-semibold tracking-widest uppercase mb-2" style={{ color: 'rgba(255,255,255,0.4)', fontFamily: 'Inter, sans-serif' }}>Operational Today</div>
+                  <div className="text-[11px] font-semibold tracking-widest uppercase mb-2" style={{ color: 'rgba(255,255,255,0.4)', fontFamily: 'Inter, sans-serif' }}>D2P2 Feasibility Standard</div>
                   <p className="text-[13px] m-0" style={{ color: 'rgba(255,255,255,0.65)', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7 }}>
-                    Casimir Intelligence is a functioning platform — not a prototype or concept. Qualified organizations can request a scoped demonstration and begin operationalizing the platform within days.
+                    The D2P2 mechanism requires proof of Phase I-equivalent feasibility at proposal submission. Casimir Intelligence is a functioning platform — not a prototype or concept — satisfying this requirement at time of solicitation.
                   </p>
                 </div>
               </div>

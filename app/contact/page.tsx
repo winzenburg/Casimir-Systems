@@ -111,7 +111,7 @@ export default function ContactPage() {
                 {([
                   { id: 'name' as keyof FormState, label: 'Full Name', type: 'text', placeholder: 'Dr. Jane Smith', required: true },
                   { id: 'org' as keyof FormState, label: 'Organization', type: 'text', placeholder: 'U.S. Space Force, Task Force Futures', required: true },
-                  { id: 'email' as keyof FormState, label: 'Work Email', type: 'email', placeholder: 'you@organization.com', required: true },
+                  { id: 'email' as keyof FormState, label: 'Government or Institutional Email', type: 'email', placeholder: 'jane.smith@spaceforce.mil', required: true },
                 ]).map((field) => (
                   <div key={field.id} className="mb-5">
                     <label className="block text-[13px] font-medium text-[#334155] mb-1.5" style={{ fontFamily: 'IBM Plex Sans, sans-serif' }}>
