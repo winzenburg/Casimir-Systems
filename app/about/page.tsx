@@ -127,11 +127,11 @@ export default function AboutPage() {
               <div className="flex flex-col items-center text-center">
                 <div className="w-[120px] h-[120px] rounded-full overflow-hidden mb-5" style={{ border: '3px solid rgba(37,99,235,0.25)' }}>
                   <Image
-                    src="/uploads/aragonai-e26bbfb1-6987-449b-b444-4ba0f028fcd6.jpeg"
+                    src="/uploads/ryan-winzenburg.png"
                     alt="Ryan Winzenburg, Founder & Principal Investigator of Casimir Systems"
                     width={120}
                     height={120}
-                    className="object-cover object-top w-full h-full"
+                    className="object-cover object-center w-full h-full"
                   />
                 </div>
                 <div className="text-[20px] font-bold text-[#0B132B] mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>Ryan Winzenburg</div>
