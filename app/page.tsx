@@ -94,10 +94,10 @@ const COMPETITORS = [
 ];
 
 const STATS = [
-  { value: '2,847+', label: 'Entities Tracked' },
-  { value: '$4.2B',  label: 'Capital Flows Mapped' },
-  { value: '40+',    label: 'Authoritative Sources' },
-  { value: '<4 hrs', label: 'Time to First Insight' },
+  { value: '4–6 wks', label: 'From Award to First Delivery' },
+  { value: 'CMMC L2', label: 'Compliance Architecture' },
+  { value: 'Phase II', label: 'Active SBIR Award' },
+  { value: 'Zero Code', label: 'Operator Interface' },
 ];
 
 export default function HomePage() {
