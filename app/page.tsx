@@ -214,11 +214,13 @@ export default function HomePage() {
               </p>
             </div>
           </ScrollReveal>
-          <StaggerReveal className="grid md:grid-cols-3 gap-5" staggerMs={100}>
+          <StaggerReveal className="grid md:grid-cols-3 gap-5 items-stretch" staggerMs={100}>
             {PROBLEMS.map((p) => (
-              <div key={p.label} className="card-light card-light-hover p-8">
-                <div className="text-2xl mb-5" style={{ color: '#2563EB' }}>{p.icon}</div>
-                <h3 className="font-semibold text-[#0B132B] mb-3" style={{ fontSize: 17, fontFamily: 'Inter, sans-serif', letterSpacing: '-0.01em' }}>{p.label}</h3>
+              <div key={p.label} className="card-light card-light-hover p-8 flex flex-col h-full">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-2xl leading-none shrink-0" style={{ color: '#2563EB' }}>{p.icon}</span>
+                  <h3 className="font-semibold text-[#0B132B]" style={{ fontSize: 17, fontFamily: 'Inter, sans-serif', letterSpacing: '-0.01em' }}>{p.label}</h3>
+                </div>
                 <p className="text-[#64748B] leading-relaxed" style={{ fontSize: 14, fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7 }}>{p.desc}</p>
               </div>
             ))}
