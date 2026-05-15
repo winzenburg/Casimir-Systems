@@ -150,8 +150,10 @@ export default function SolutionsPage() {
                   className="text-left p-8 rounded-xl w-full transition-all duration-200 hover:-translate-y-0.5 cursor-pointer"
                   style={{ background: '#F8FAFC', border: '1px solid #E2E8F0' }}
                 >
-                  <div className="text-3xl mb-4" style={{ color: p.color }}>{p.icon}</div>
-                  <h3 className="font-semibold text-[#0B132B] mb-2 text-lg" style={{ fontFamily: 'Inter, sans-serif' }}>{p.title}</h3>
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-2xl leading-none shrink-0" style={{ color: p.color }}>{p.icon}</span>
+                    <h3 className="font-semibold text-[#0B132B] text-lg" style={{ fontFamily: 'Inter, sans-serif' }}>{p.title}</h3>
+                  </div>
                   <p className="text-[13px] text-[#64748B]" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.6 }}>{p.subtitle}</p>
                 </button>
               </ScrollReveal>

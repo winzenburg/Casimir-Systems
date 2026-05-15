@@ -253,13 +253,15 @@ export default function HomePage() {
                 className="group p-8 rounded-xl transition-all duration-200 hover:-translate-y-px"
                 style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}
               >
-                <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center mb-6"
-                  style={{ background: `${accent}18`, border: `1px solid ${accent}28` }}
-                >
-                  <Icon className="w-5 h-5" style={{ color: accent }} />
+                <div className="flex items-center gap-3 mb-4">
+                  <div
+                    className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
+                    style={{ background: `${accent}18`, border: `1px solid ${accent}28` }}
+                  >
+                    <Icon className="w-5 h-5" style={{ color: accent }} />
+                  </div>
+                  <h3 className="font-semibold text-white" style={{ fontSize: 16, fontFamily: 'Inter, sans-serif', letterSpacing: '-0.01em' }}>{title}</h3>
                 </div>
-                <h3 className="font-semibold text-white mb-3" style={{ fontSize: 16, fontFamily: 'Inter, sans-serif', letterSpacing: '-0.01em' }}>{title}</h3>
                 <p className="leading-relaxed" style={{ fontSize: 14, color: 'rgba(255,255,255,0.45)', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7 }}>{desc}</p>
               </div>
             ))}

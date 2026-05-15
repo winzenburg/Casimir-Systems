@@ -106,10 +106,12 @@ export default function SecurityPage() {
           <div className="grid md:grid-cols-2 gap-6">
             {CONTROLS.map(({ icon: Icon, title, items }) => (
               <div key={title} className="p-8 rounded-xl" style={{ background: '#fff', border: '1px solid #E2E8F0' }}>
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-5" style={{ background: 'rgba(37,99,235,0.08)', border: '1px solid rgba(37,99,235,0.15)' }}>
-                  <Icon className="w-5 h-5 text-[#2563EB]" />
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style={{ background: 'rgba(37,99,235,0.08)', border: '1px solid rgba(37,99,235,0.15)' }}>
+                    <Icon className="w-5 h-5 text-[#2563EB]" />
+                  </div>
+                  <h3 className="font-semibold text-[#0B132B]" style={{ fontSize: 16, fontFamily: 'Inter, sans-serif' }}>{title}</h3>
                 </div>
-                <h3 className="font-semibold text-[#0B132B] mb-4" style={{ fontSize: 16, fontFamily: 'Inter, sans-serif' }}>{title}</h3>
                 <ul className="space-y-2.5">
                   {items.map((item) => (
                     <li key={item} className="flex gap-2.5 text-[#64748B]" style={{ fontSize: 13, fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.6 }}>
