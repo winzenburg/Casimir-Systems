@@ -5,8 +5,8 @@ import { ScrollReveal, StaggerReveal } from '@/components/scroll-reveal';
 import { TrlBadge, ComplianceBadge } from '@/components/risk-badge';
 
 export const metadata: Metadata = {
-  title: 'SBIR SF254-D1201 — Direct-to-Phase II for Task Force Futures',
-  description: 'Casimir Intelligence is a functioning platform — not a proposal — purpose-built for SBIR solicitation SF254-D1201 issued by U.S. Space Force Task Force Futures. Direct-to-Phase II (D2P2) compliant at time of proposal.',
+  title: 'SBIR — Active Phase II Award · U.S. Space Force',
+  description: 'Casimir Intelligence is a functioning platform — not a proposal — purpose-built for U.S. Space Force Task Force Futures under a Direct-to-Phase II SBIR award.',
   alternates: { canonical: 'https://casimirsystems.com/sbir' },
 };
 
@@ -70,13 +70,13 @@ export default function SbirPage() {
           <div>
             <div className="inline-flex items-center gap-2 rounded-md px-3 py-1.5 mb-6" style={{ background: 'rgba(37,99,235,0.1)', border: '1px solid rgba(37,99,235,0.3)' }}>
               <Shield className="w-3.5 h-3.5 text-[#2563EB]" />
-              <span className="text-[11px] font-bold tracking-widest uppercase text-[#2563EB]" style={{ fontFamily: 'Inter, sans-serif' }}>SBIR D2P2 · SF254-D1201</span>
+              <span className="text-[11px] font-bold tracking-widest uppercase text-[#2563EB]" style={{ fontFamily: 'Inter, sans-serif' }}>Active Phase II · Space Force</span>
             </div>
             <h1 className="font-extrabold text-white mb-5" style={{ fontSize: 'clamp(36px,4.5vw,60px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.03em', lineHeight: 1.1 }}>
               Purpose-built for<br /><span style={{ color: '#2563EB' }}>Task Force Futures.</span>
             </h1>
             <p className="text-lg mb-8 max-w-lg" style={{ color: 'rgba(255,255,255,0.55)', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.75 }}>
-              Casimir Intelligence was architected in direct response to SBIR solicitation <strong className="text-white font-semibold">SF254-D1201</strong>. We are not proposing to build this capability — we have already built it.
+              Casimir Intelligence was purpose-built for U.S. Space Force Task Force Futures under a Direct-to-Phase II SBIR award. We are not proposing to build this capability — we have already built it.
             </p>
             <div className="flex gap-3 flex-wrap mb-10">
               <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-md font-medium text-white transition-all duration-200 hover:-translate-y-px" style={{ background: '#2563EB', fontFamily: 'IBM Plex Sans, sans-serif', fontSize: 14 }}>
@@ -102,11 +102,10 @@ export default function SbirPage() {
 
           {/* Context card */}
           <div className="rounded-2xl p-8" style={{ background: '#111827', border: '1px solid rgba(255,255,255,0.08)' }}>
-            <div className="text-[11px] font-semibold tracking-widest uppercase mb-5" style={{ color: 'rgba(255,255,255,0.4)', fontFamily: 'Inter, sans-serif' }}>Solicitation Context</div>
+            <div className="text-[11px] font-semibold tracking-widest uppercase mb-5" style={{ color: 'rgba(255,255,255,0.4)', fontFamily: 'Inter, sans-serif' }}>Award Context</div>
             {[
               { label: 'Program Office', value: 'U.S. Space Force · Task Force Futures (TF-F)' },
-              { label: 'Solicitation Topic', value: 'SF254-D1201' },
-              { label: 'Mechanism', value: 'Direct-to-Phase II (D2P2)' },
+              { label: 'Mechanism', value: 'Direct-to-Phase II SBIR' },
               { label: 'Vehicle', value: 'SpaceWERX / SBIR' },
               { label: 'Requirement', value: 'S&T Ecosystem & Co-Investment Decision Support' },
               { label: 'Feasibility Standard', value: 'Working platform required at proposal time' },
@@ -156,9 +155,9 @@ export default function SbirPage() {
         <div className="max-w-4xl mx-auto">
           <ScrollReveal>
             <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>Compliance Matrix</div>
-            <h2 className="font-bold text-[#0B132B] mb-3" style={{ fontSize: 'clamp(24px,2.5vw,36px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>Every solicitation requirement addressed.</h2>
+            <h2 className="font-bold text-[#0B132B] mb-3" style={{ fontSize: 'clamp(24px,2.5vw,36px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>Every technical requirement addressed.</h2>
             <p className="text-[17px] text-[#64748B] mb-10" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7 }}>
-              SF254-D1201 defines specific technical requirements. Here is how Casimir Intelligence maps to each one.
+              The Space Force requirement defines specific technical capabilities. Here is how Casimir Intelligence maps to each one.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={100}>

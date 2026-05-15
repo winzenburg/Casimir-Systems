@@ -101,7 +101,7 @@ export default function PlatformPage() {
               Aligning Private Capital<br /><span style={{ color: '#2563EB' }}>with National Security.</span>
             </h1>
             <p className="text-lg mb-12 max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.5)', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7 }}>
-              A zero-code, fully auditable platform that maps S&T ecosystems, tracks VC flows, and synthesizes AI-powered intelligence briefs — purpose-built for U.S. Space Force Task Force Futures and SBIR SF254-D1201.
+              A zero-code, fully auditable platform that maps S&T ecosystems, tracks VC flows, and synthesizes AI-powered intelligence briefs — purpose-built for U.S. Space Force Task Force Futures.
             </p>
             <div className="flex gap-3 justify-center">
               <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md font-medium text-white transition-all duration-200 hover:-translate-y-px" style={{ background: '#2563EB', fontFamily: 'IBM Plex Sans, sans-serif', fontSize: 15 }}>
@@ -155,16 +155,16 @@ export default function PlatformPage() {
             <div className="grid lg:grid-cols-2 gap-20 items-start">
               <div>
                 <div className="inline-flex items-center gap-2 rounded-full px-3 py-1 mb-5" style={{ background: 'rgba(37,99,235,0.06)', border: '1px solid rgba(37,99,235,0.2)' }}>
-                  <span className="text-[10px] font-bold tracking-widest uppercase text-[#2563EB]" style={{ fontFamily: 'Inter, sans-serif' }}>SBIR D2P2</span>
+                  <span className="text-[10px] font-bold tracking-widest uppercase text-[#2563EB]" style={{ fontFamily: 'Inter, sans-serif' }}>Active Phase II Award</span>
                   <span className="w-px h-2.5 bg-[rgba(37,99,235,0.2)]" />
-                  <span className="text-[11px] text-[#64748B]" style={{ fontFamily: 'IBM Plex Sans, sans-serif' }}>Topic SF254-D1201</span>
+                  <span className="text-[11px] text-[#64748B]" style={{ fontFamily: 'IBM Plex Sans, sans-serif' }}>U.S. Space Force · SpaceWERX</span>
                 </div>
                 <h2 className="font-bold text-[#0B132B] mb-5" style={{ fontSize: 32, fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em', lineHeight: 1.25 }}>Purpose-built for a specific mission requirement.</h2>
                 <p className="text-[15px] text-[#64748B] mb-5" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.75 }}>
-                  Casimir Intelligence was architected in direct response to SBIR solicitation topic <strong className="text-[#0B132B]">SF254-D1201</strong>, issued by U.S. Space Force Task Force Futures. The solicitation calls for a Direct-to-Phase II (D2P2) contract, requiring demonstrated Phase I-equivalent feasibility at time of proposal.
+                  Casimir Intelligence was purpose-built for U.S. Space Force Task Force Futures under a Direct-to-Phase II SBIR award — the DoD's fast-track mechanism for companies demonstrating working capability at the time of proposal.
                 </p>
                 <p className="text-[15px] text-[#64748B] mb-8" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.75 }}>
-                  The D2P2 mechanism is the DoD&apos;s fast-track innovation pathway, bypassing Phase I to accelerate deployment of technologies with proven commercial viability. TF-F needs this capability now — not in three years.
+                  We are not proposing to build this. The platform is functioning. TF-F needs this capability now — not in three years.
                 </p>
                 <div className="flex gap-2 flex-wrap">
                   {TAGS.map((tag, i) => {
@@ -192,9 +192,9 @@ export default function PlatformPage() {
                   </div>
                 ))}
                 <div className="mt-6 rounded-xl p-5" style={{ background: '#0B132B' }}>
-                  <div className="text-[11px] font-semibold tracking-widest uppercase mb-2" style={{ color: 'rgba(255,255,255,0.4)', fontFamily: 'Inter, sans-serif' }}>D2P2 Feasibility Standard</div>
+                  <div className="text-[11px] font-semibold tracking-widest uppercase mb-2" style={{ color: 'rgba(255,255,255,0.4)', fontFamily: 'Inter, sans-serif' }}>Phase II Feasibility Standard</div>
                   <p className="text-[13px] m-0" style={{ color: 'rgba(255,255,255,0.65)', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7 }}>
-                    The D2P2 mechanism requires proof of Phase I-equivalent feasibility at proposal submission. Casimir Intelligence is a functioning platform — not a prototype or concept — satisfying this requirement at time of solicitation.
+                    Direct-to-Phase II requires a functioning platform — not a prototype — at time of proposal. Casimir Intelligence satisfies this standard.
                   </p>
                 </div>
               </div>

@@ -13,7 +13,7 @@ const FRAMEWORKS = [
   { label: 'DFARS 252.204-7012', desc: 'Safeguarding Covered Defense Information and Cyber Incident Reporting' },
   { label: 'CUI / FOUO',     desc: 'Controlled Unclassified Information and For Official Use Only handling' },
   { label: 'OMB M-26-04',    desc: 'Responsible AI use in federal agency decision-making' },
-  { label: 'SBIR Data Rights', desc: 'IP protection per DFARS 252.227-7018 and contract SF254-D1201' },
+  { label: 'SBIR Data Rights', desc: 'IP protection per DFARS 252.227-7018 and applicable SBIR clauses' },
 ];
 
 const CONTROLS = [

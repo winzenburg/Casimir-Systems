@@ -25,12 +25,11 @@ export const metadata: Metadata = {
     default: 'Casimir Systems — AI Defense Intelligence for U.S. Space Force',
   },
   description:
-    'Casimir Systems builds AI-powered S&T intelligence and co-investment decision support for U.S. Space Force and DoD. Purpose-built for SBIR SF254-D1201, Task Force Futures. Zero-code, fully auditable.',
+    'Casimir Systems builds AI-powered S&T intelligence and co-investment decision support for U.S. Space Force and DoD. Zero-code, fully auditable, compliance-first architecture.',
   keywords: [
     'defense AI platform',
     'DoD co-investment decision support',
     'Space Force S&T intelligence',
-    'SBIR SF254-D1201',
     'SpaceWERX',
     'Task Force Futures',
     'S&T ecosystem mapping',
@@ -43,7 +42,6 @@ export const metadata: Metadata = {
     'defense technology scouting',
     'AI knowledge synthesis defense',
     'CUI compliant defense software',
-    'Direct-to-Phase II SBIR D2P2',
     'venture capital defense ecosystem',
     'SpaceWERX SBIR',
     'Peterson Space Force Base',
@@ -60,7 +58,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Casimir Systems — AI Defense Intelligence',
     description:
-      'AI-powered S&T intelligence and co-investment decision support for U.S. Space Force. SBIR SF254-D1201.',
+      'AI-powered S&T intelligence and co-investment decision support for U.S. Space Force and DoD.',
   },
   robots: {
     index: true,

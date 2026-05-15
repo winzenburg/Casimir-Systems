@@ -296,7 +296,7 @@ export default function HomePage() {
                   AI-powered S&T ecosystem mapping and co-investment decision support for U.S. Space Force. Maps the full commercial innovation landscape — companies, capital, technologies — and synthesizes actionable intelligence briefs for Task Force Futures analysts and contracting officers.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {['S&T Ecosystem Mapping', 'AI Knowledge Synthesis', 'Co-Investment Analysis', 'FOCI Screening', 'SBIR SF254-D1201'].map((tag) => (
+                  {['S&T Ecosystem Mapping', 'AI Knowledge Synthesis', 'Co-Investment Analysis', 'FOCI Screening', 'Active Phase II Award'].map((tag) => (
                     <span key={tag} className="text-[10px] font-medium rounded-full px-2.5 py-1" style={{ background: 'rgba(37,99,235,0.12)', color: '#93C5FD', border: '1px solid rgba(37,99,235,0.2)', fontFamily: 'IBM Plex Sans, sans-serif' }}>{tag}</span>
                   ))}
                 </div>
