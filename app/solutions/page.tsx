@@ -8,13 +8,13 @@ import { ScrollReveal } from '@/components/scroll-reveal';
 const PERSONAS = [
   {
     title: 'S&T Analysts',
-    subtitle: 'Task Force Futures · AFWERX · DARPA · Army Futures Command',
-    challenge: 'You are responsible for identifying and tracking commercial technologies across your mission domain. Your current workflow requires manual web searches, spreadsheets, and weeks of synthesis work before a single briefing can be prepared — regardless of which service branch or program office you sit in.',
+    subtitle: 'Task Force Futures · AFWERX · DARPA · Army Futures Command · NRO · Space Domain Awareness',
+    challenge: 'You are responsible for identifying and tracking commercial technologies across your mission domain — whether that is S&T investment, commercial satellite data, or multi-domain sensor synthesis. Your current workflow requires manual web searches, spreadsheets, and weeks of synthesis work before a single briefing can be prepared.',
     jobs: [
-      'Map the full commercial innovation landscape for a given S&T domain in hours, not weeks',
-      'Automatically track funding rounds and government contracts as they publish',
+      'Map the full commercial innovation landscape for a given S&T or geospatial domain in hours, not weeks',
+      'Automatically track funding rounds, government contracts, and sensor data feeds as they publish',
       'Generate ecosystem briefing packages with a single export — no engineering support needed',
-      'Identify emerging dual-use technologies before competitors do',
+      'Identify emerging dual-use technologies and multi-domain signals before competitors do',
     ],
     icon: '◈',
     color: '#2563EB',
@@ -31,6 +31,19 @@ const PERSONAS = [
     ],
     icon: '⚑',
     color: '#F59E0B',
+  },
+  {
+    title: 'Mission Operators',
+    subtitle: 'USAF Pilots · Mission Commanders · Human-Machine Teaming Programs · CHORD',
+    challenge: 'After a mission, AI systems have generated recommendations, flagged anomalies, and made autonomous decisions. You need to understand what the AI did, why it did it, and whether those decisions were sound — before you can brief leadership, file an after-action report, or trust the system on the next sortie.',
+    jobs: [
+      'Review AI decision logs in plain language — no engineering support required',
+      'Flag AI outputs for human review before they propagate downstream',
+      'Generate post-mission AI debrief packages ready to brief to leadership',
+      'Maintain a full, auditable trail of AI actions and human approval decisions',
+    ],
+    icon: '◉',
+    color: '#EF4444',
   },
   {
     title: 'Innovation Leaders',
@@ -129,7 +142,7 @@ export default function SolutionsPage() {
             <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>Who We Serve</div>
             <h2 className="font-bold text-[#0B132B] mb-12" style={{ fontSize: 'clamp(24px,2.5vw,36px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>Across services, branches, and program offices.</h2>
           </ScrollReveal>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {PERSONAS.map((p, i) => (
               <ScrollReveal key={i} delay={i * 80}>
                 <button

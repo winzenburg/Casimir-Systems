@@ -41,7 +41,7 @@ const PROBLEMS = [
   {
     icon: '◈',
     label: 'Decisions Without Synthesis',
-    desc: 'DoD acquisition stakeholders make high-stakes investment decisions from siloed, unstructured data. No platform synthesizes the full picture — companies, capital, technologies, and risk — into a single, defensible intelligence layer.',
+    desc: 'DoD decision-makers — from S&T analysts to mission commanders — face the same problem: the data exists, but it is fragmented across disconnected sources. No platform synthesizes the full picture into a single, defensible intelligence layer.',
   },
   {
     icon: '⚑',
@@ -50,8 +50,8 @@ const PROBLEMS = [
   },
   {
     icon: '⟳',
-    label: 'Black Box Analytics',
-    desc: 'General-purpose analytics platforms generate outputs that cannot be audited or defended in a contracting environment. Every recommendation needs a traceable evidence chain — and most platforms don\'t provide it.',
+    label: 'AI Without Legibility',
+    desc: 'AI systems that cannot explain their reasoning create liability — whether in an acquisition decision room or a post-mission debrief. Every AI-generated recommendation needs a human-readable, auditable evidence chain before an operator can act on it.',
   },
 ];
 
@@ -315,10 +315,10 @@ export default function HomePage() {
                 <div className="rounded-full px-2.5 py-1 text-[10px] font-bold" style={{ background: 'rgba(245,158,11,0.1)', border: '1px solid rgba(245,158,11,0.25)', color: '#D97706', fontFamily: 'Inter, sans-serif' }}>In Development</div>
               </div>
               <p className="text-[14px] mb-6 flex-1 text-[#64748B]" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.75 }}>
-                The Casimir Systems methodology — mission scoping, AI synthesis, zero-code delivery, compliance-first architecture — applies across any DoD decision support domain. We are actively pursuing requirements in supply chain intelligence, program analysis, and multi-domain threat synthesis.
+                The Casimir Systems platform architecture — RBAC, AI output approval workflows, audit logging, zero-code interfaces — is domain-portable. Active pipeline targets include post-mission AI decision legibility for human-machine teaming (DAF CHORD) and multi-domain commercial satellite and sensor data synthesis (DAF TacSRT).
               </p>
               <div className="flex flex-wrap gap-2 mb-6">
-                {['AFWERX', 'DARPA', 'NRO', 'Army SBIR', 'SOCOM', 'Navy SBIR'].map((tag) => (
+                {['CHORD · DAF26BZ01-DV007', 'TacSRT · DAF26BZ01-NV501', 'AFWERX', 'DARPA', 'Army SBIR', 'NRO'].map((tag) => (
                   <span key={tag} className="text-[10px] font-medium rounded-full px-2.5 py-1" style={{ background: 'rgba(245,158,11,0.07)', color: '#92400E', border: '1px solid rgba(245,158,11,0.15)', fontFamily: 'IBM Plex Sans, sans-serif' }}>{tag}</span>
                 ))}
               </div>
