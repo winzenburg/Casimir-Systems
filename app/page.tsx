@@ -282,51 +282,30 @@ export default function HomePage() {
               </p>
             </div>
           </ScrollReveal>
-          <StaggerReveal className="grid md:grid-cols-2 gap-6" staggerMs={120}>
-            {/* Flagship */}
-            <div className="rounded-2xl p-8 h-full flex flex-col" style={{ background: '#0B132B', border: '1px solid rgba(37,99,235,0.35)' }}>
-              <div className="flex items-start justify-between mb-6">
-                <div>
-                  <div className="text-[10px] font-bold tracking-widest uppercase text-[#2563EB] mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>Flagship Product · Active</div>
-                  <div className="text-[22px] font-bold text-white" style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>Casimir Intelligence</div>
+          <ScrollReveal delay={120}>
+            <div className="rounded-2xl p-10 flex flex-col md:flex-row md:items-center gap-8" style={{ background: '#0B132B', border: '1px solid rgba(37,99,235,0.35)' }}>
+              <div className="flex-1">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="text-[10px] font-bold tracking-widest uppercase text-[#2563EB]" style={{ fontFamily: 'Inter, sans-serif' }}>Flagship Product · Active</div>
+                  <div className="rounded-full px-2.5 py-1 text-[10px] font-bold" style={{ background: 'rgba(16,185,129,0.15)', border: '1px solid rgba(16,185,129,0.3)', color: '#10B981', fontFamily: 'Inter, sans-serif' }}>Phase IIa</div>
                 </div>
-                <div className="rounded-full px-2.5 py-1 text-[10px] font-bold" style={{ background: 'rgba(16,185,129,0.15)', border: '1px solid rgba(16,185,129,0.3)', color: '#10B981', fontFamily: 'Inter, sans-serif' }}>Phase IIa</div>
-              </div>
-              <p className="text-[14px] mb-6 flex-1" style={{ color: 'rgba(255,255,255,0.55)', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.75 }}>
-                AI-powered S&T ecosystem mapping and co-investment decision support for U.S. Space Force. Maps the full commercial innovation landscape — companies, capital, technologies — and synthesizes actionable intelligence briefs for Task Force Futures analysts and contracting officers.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-6">
-                {['S&T Ecosystem Mapping', 'AI Knowledge Synthesis', 'Co-Investment Analysis', 'FOCI Screening', 'SBIR SF254-D1201'].map((tag) => (
-                  <span key={tag} className="text-[10px] font-medium rounded-full px-2.5 py-1" style={{ background: 'rgba(37,99,235,0.12)', color: '#93C5FD', border: '1px solid rgba(37,99,235,0.2)', fontFamily: 'IBM Plex Sans, sans-serif' }}>{tag}</span>
-                ))}
-              </div>
-              <Link href="/platform" className="inline-flex items-center gap-2 text-[13px] font-semibold text-[#2563EB] hover:text-white transition-colors" style={{ fontFamily: 'IBM Plex Sans, sans-serif' }}>
-                Explore the Platform <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-
-            {/* Pipeline teaser */}
-            <div className="rounded-2xl p-8 h-full flex flex-col" style={{ background: '#F8FAFC', border: '1px solid #E2E8F0' }}>
-              <div className="flex items-start justify-between mb-6">
-                <div>
-                  <div className="text-[10px] font-bold tracking-widest uppercase text-[#64748B] mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>Future Applications</div>
-                  <div className="text-[22px] font-bold text-[#0B132B]" style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>Additional Domains</div>
+                <div className="text-[26px] font-bold text-white mb-4" style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>Casimir Intelligence</div>
+                <p className="text-[14px] mb-6" style={{ color: 'rgba(255,255,255,0.55)', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.75, maxWidth: 560 }}>
+                  AI-powered S&T ecosystem mapping and co-investment decision support for U.S. Space Force. Maps the full commercial innovation landscape — companies, capital, technologies — and synthesizes actionable intelligence briefs for Task Force Futures analysts and contracting officers.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {['S&T Ecosystem Mapping', 'AI Knowledge Synthesis', 'Co-Investment Analysis', 'FOCI Screening', 'SBIR SF254-D1201'].map((tag) => (
+                    <span key={tag} className="text-[10px] font-medium rounded-full px-2.5 py-1" style={{ background: 'rgba(37,99,235,0.12)', color: '#93C5FD', border: '1px solid rgba(37,99,235,0.2)', fontFamily: 'IBM Plex Sans, sans-serif' }}>{tag}</span>
+                  ))}
                 </div>
-                <div className="rounded-full px-2.5 py-1 text-[10px] font-bold" style={{ background: 'rgba(245,158,11,0.1)', border: '1px solid rgba(245,158,11,0.25)', color: '#D97706', fontFamily: 'Inter, sans-serif' }}>In Development</div>
               </div>
-              <p className="text-[14px] mb-6 flex-1 text-[#64748B]" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.75 }}>
-                The Casimir Systems platform architecture — RBAC, AI output approval workflows, audit logging, zero-code interfaces — is domain-portable. Active pipeline targets include post-mission AI decision legibility for human-machine teaming (DAF CHORD) and multi-domain commercial satellite and sensor data synthesis (DAF TacSRT).
-              </p>
-              <div className="flex flex-wrap gap-2 mb-6">
-                {['CHORD · DAF26BZ01-DV007', 'TacSRT · DAF26BZ01-NV501', 'AFWERX', 'DARPA', 'Army SBIR', 'NRO'].map((tag) => (
-                  <span key={tag} className="text-[10px] font-medium rounded-full px-2.5 py-1" style={{ background: 'rgba(245,158,11,0.07)', color: '#92400E', border: '1px solid rgba(245,158,11,0.15)', fontFamily: 'IBM Plex Sans, sans-serif' }}>{tag}</span>
-                ))}
+              <div className="shrink-0">
+                <Link href="/platform" className="inline-flex items-center gap-2 px-6 py-3 rounded-md font-medium text-white transition-all duration-200 hover:-translate-y-px" style={{ background: '#2563EB', fontFamily: 'IBM Plex Sans, sans-serif', fontSize: 14 }}>
+                  Explore the Platform <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
-              <Link href="/contact" className="inline-flex items-center gap-2 text-[13px] font-semibold text-[#2563EB] hover:text-[#1D4ED8] transition-colors" style={{ fontFamily: 'IBM Plex Sans, sans-serif' }}>
-                Discuss a Requirement <ArrowRight className="w-4 h-4" />
-              </Link>
             </div>
-          </StaggerReveal>
+          </ScrollReveal>
         </div>
       </section>
 
