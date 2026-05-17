@@ -7,7 +7,7 @@ import { PlatformMockup } from '@/components/platform-mockup';
 export const metadata: Metadata = {
   title: 'Casimir Intelligence — Defense S&T Co-Investment Platform',
   description: 'Casimir Intelligence maps S&T ecosystems, tracks VC flows, synthesizes AI-powered intelligence briefs, and surfaces co-investment opportunities — zero-code and fully auditable. Purpose-built for U.S. Space Force Task Force Futures.',
-  alternates: { canonical: 'https://casimirsystems.com/platform' },
+  alternates: { canonical: 'https://www.casimirsystems.com/platform' },
 };
 
 const FEATURES = [

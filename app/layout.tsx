@@ -19,7 +19,7 @@ const ibmPlexSans = IBM_Plex_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://casimirsystems.com'),
+  metadataBase: new URL('https://www.casimirsystems.com'),
   title: {
     template: '%s | Casimir Systems',
     default: 'Casimir Systems — AI Defense Intelligence for U.S. Space Force',
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: 'Casimir Systems — AI Defense Intelligence for U.S. Space Force',
     description:
       'AI-powered S&T ecosystem mapping, co-investment decision support, and knowledge synthesis for U.S. Space Force and DoD. Purpose-built for Task Force Futures.',
-    url: 'https://casimirsystems.com',
+    url: 'https://www.casimirsystems.com',
     siteName: 'Casimir Systems',
     type: 'website',
   },
@@ -71,7 +71,7 @@ const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Casimir Systems',
-  url: 'https://casimirsystems.com',
+  url: 'https://www.casimirsystems.com',
   description:
     'Agile defense technology firm building AI-powered S&T intelligence and co-investment decision support for U.S. Space Force and DoD.',
   address: {
@@ -84,7 +84,7 @@ const organizationJsonLd = {
     '@type': 'ContactPoint',
     contactType: 'sales',
     email: 'ryan@casimirsystems.com',
-    url: 'https://casimirsystems.com/contact',
+    url: 'https://www.casimirsystems.com/contact',
   },
   sameAs: [],
   knowsAbout: [

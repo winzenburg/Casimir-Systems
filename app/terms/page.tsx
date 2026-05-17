@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Terms of Service — Casimir Systems',
   description: 'Terms of service for Casimir Systems and the Casimir Intelligence platform.',
-  alternates: { canonical: 'https://casimirsystems.com/terms' },
+  alternates: { canonical: 'https://www.casimirsystems.com/terms' },
 };
 
 const SECTIONS = [

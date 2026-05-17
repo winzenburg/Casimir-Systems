@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/'],
     },
-    sitemap: 'https://casimirsystems.com/sitemap.xml',
+    sitemap: 'https://www.casimirsystems.com/sitemap.xml',
   };
 }

@@ -7,7 +7,7 @@ import { TrlBadge, ComplianceBadge } from '@/components/risk-badge';
 export const metadata: Metadata = {
   title: 'SBIR — Active Phase II Award · U.S. Space Force',
   description: 'Casimir Intelligence is a functioning platform — not a proposal — purpose-built for U.S. Space Force Task Force Futures under a Direct-to-Phase II SBIR award.',
-  alternates: { canonical: 'https://casimirsystems.com/sbir' },
+  alternates: { canonical: 'https://www.casimirsystems.com/sbir' },
 };
 
 const SOLICITATION_REQS = [

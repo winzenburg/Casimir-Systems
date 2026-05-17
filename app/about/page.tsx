@@ -7,7 +7,7 @@ import { ScrollReveal, StaggerReveal } from '@/components/scroll-reveal';
 export const metadata: Metadata = {
   title: 'About Casimir Systems — Agile Defense Technology Firm',
   description: 'Casimir Systems is an agile defense technology firm building AI-powered intelligence infrastructure for the U.S. Department of Defense and Space Force. Founded in Denver, CO — near Peterson and Schriever Space Force Bases.',
-  alternates: { canonical: 'https://casimirsystems.com/about' },
+  alternates: { canonical: 'https://www.casimirsystems.com/about' },
 };
 
 const VALUES = [

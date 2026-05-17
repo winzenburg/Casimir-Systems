@@ -4,7 +4,7 @@ import { Shield, Lock, Eye, FileCheck } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Security Posture — Casimir Systems',
   description: 'Security architecture, compliance posture, and data handling practices for Casimir Systems and the Casimir Intelligence platform.',
-  alternates: { canonical: 'https://casimirsystems.com/security' },
+  alternates: { canonical: 'https://www.casimirsystems.com/security' },
 };
 
 const FRAMEWORKS = [

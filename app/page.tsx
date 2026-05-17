@@ -8,14 +8,14 @@ import { RiskBadge } from '@/components/risk-badge';
 export const metadata: Metadata = {
   title: 'Casimir Systems — AI Decision Support for U.S. Defense',
   description: 'Casimir Systems is an agile defense technology firm that builds AI-powered decision support applications for DoD — at commercial software speed, with the compliance architecture government requires.',
-  alternates: { canonical: 'https://casimirsystems.com' },
+  alternates: { canonical: 'https://www.casimirsystems.com' },
 };
 
 const homepageJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Casimir Systems',
-  url: 'https://casimirsystems.com',
+  url: 'https://www.casimirsystems.com',
   description: 'Agile defense technology firm building AI-powered decision support applications for the U.S. Department of Defense.',
   address: {
     '@type': 'PostalAddress',

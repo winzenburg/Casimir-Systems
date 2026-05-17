@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = 'https://casimirsystems.com';
+  const base = 'https://www.casimirsystems.com';
 
   // prettier-ignore
   return [
