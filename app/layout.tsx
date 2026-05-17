@@ -20,6 +20,9 @@ const ibmPlexSans = IBM_Plex_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.casimirsystems.com'),
+  verification: {
+    google: 'Jmf0657bGRR7V_3zglCy7vw0V69Oe9DG9KF588Y97GM',
+  },
   title: {
     template: '%s | Casimir Systems',
     default: 'Casimir Systems — AI Defense Intelligence for U.S. Space Force',
