@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import { ARTICLES } from '@/lib/articles';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://www.casimirsystems.com';
@@ -65,5 +66,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.5,
     },
+    ...ARTICLES.map((a) => ({
+      url: `${base}/resources/${a.slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
   ];
 }

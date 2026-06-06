@@ -1,34 +1,12 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { ScrollReveal, StaggerReveal } from '@/components/scroll-reveal';
+import { ARTICLES } from '@/lib/articles';
 
 export const metadata: Metadata = {
   title: 'Intelligence Hub & Resources',
   description: 'Analysis, whitepapers, and S&T intelligence briefings from the Casimir Systems team. Includes the DoD co-investment glossary.',
 };
-
-const ARTICLES = [
-  {
-    tag: 'Intelligence Insight',
-    title: "The FOCI Problem: Why Foreign Influence is the DoD's Biggest Co-Investment Blind Spot",
-    date: 'Apr 14, 2026',
-    readTime: '8 min read',
-    color: '#2563EB',
-  },
-  {
-    tag: 'Analysis',
-    title: 'Directed Energy in 2026: Mapping the Commercial S&T Landscape for USSF Priorities',
-    date: 'Mar 28, 2026',
-    readTime: '12 min read',
-    color: '#10B981',
-  },
-  {
-    tag: 'Perspective',
-    title: "Zero-Code Intelligence: Why the Future of DoD Acquisition Belongs to the Analyst, Not the Engineer",
-    date: 'Mar 10, 2026',
-    readTime: '6 min read',
-    color: '#F59E0B',
-  },
-];
 
 const GLOSSARY: [string, string][] = [
   ['ASOT', 'Authoritative Source of Truth — a recognized, verified, and trusted data source used as the primary reference for decision-making.'],
@@ -71,7 +49,12 @@ export default function ResourcesPage() {
           </ScrollReveal>
           <StaggerReveal className="grid md:grid-cols-3 gap-6" staggerMs={100}>
             {ARTICLES.map((a, i) => (
-              <div key={i} className="rounded-xl overflow-hidden transition-all duration-200 hover:-translate-y-1 cursor-pointer" style={{ background: '#fff', border: '1px solid #E2E8F0', boxShadow: '0 1px 3px rgba(0,0,0,0.05)' }}>
+              <Link
+                key={i}
+                href={`/resources/${a.slug}`}
+                className="rounded-xl overflow-hidden transition-all duration-200 hover:-translate-y-1 block"
+                style={{ background: '#fff', border: '1px solid #E2E8F0', boxShadow: '0 1px 3px rgba(0,0,0,0.05)' }}
+              >
                 <div className="h-1" style={{ background: a.color }} />
                 <div className="p-7">
                   <div className="inline-block rounded px-2.5 py-0.5 text-[11px] font-medium mb-4" style={{ background: `${a.color}14`, color: a.color, fontFamily: 'IBM Plex Sans, sans-serif' }}>
@@ -83,7 +66,7 @@ export default function ResourcesPage() {
                     <span>{a.readTime}</span>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </StaggerReveal>
           <ScrollReveal delay={200}>
