@@ -18,10 +18,10 @@ const NAV_ITEMS = [
 ];
 
 const RISKS: { name: string; sector: string; risk: 'low' | 'medium' | 'high'; trl: number; flag: string | null }[] = [
-  { name: 'Company A', sector: 'Launch Systems',   risk: 'low',    trl: 7, flag: null },
-  { name: 'Company B', sector: 'AI/ML Platform',   risk: 'high',   trl: 4, flag: 'FOCI' },
-  { name: 'Company C', sector: 'SatCom',           risk: 'medium', trl: 6, flag: 'Review' },
-  { name: 'Company D', sector: 'Directed Energy',  risk: 'low',    trl: 8, flag: null },
+  { name: 'Helion Optics',    sector: 'HEL Beam Control',    risk: 'low',    trl: 7, flag: null },
+  { name: 'Entity FOCI-3',    sector: 'RF Microelectronics', risk: 'high',   trl: 4, flag: 'FOCI' },
+  { name: 'Latitude Photonics', sector: 'Adaptive Optics',   risk: 'medium', trl: 6, flag: 'Review' },
+  { name: 'Aegis DE Systems', sector: 'Counter-UAS HPM',     risk: 'low',    trl: 8, flag: null },
 ];
 
 const METRICS = [

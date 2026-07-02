@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ScrollReveal, StaggerReveal } from '@/components/scroll-reveal';
-import { NetworkGraph } from '@/components/network-graph';
 import { PlatformMockup } from '@/components/platform-mockup';
+import { EcosystemPanel, InvestmentPanel, SynthesisPanel, RiskPanel } from '@/components/platform-visuals';
 
 export const metadata: Metadata = {
   title: 'Casimir Intelligence — Defense S&T Co-Investment Platform',
@@ -123,28 +123,31 @@ export default function PlatformPage() {
       {/* Features — alternating light sections */}
       <section className="py-24 px-6 lg:px-10" style={{ background: '#F8FAFC' }}>
         <div className="max-w-7xl mx-auto">
-          {FEATURES.map((f, i) => (
-            <ScrollReveal key={i} delay={100}>
-              <div className={`grid lg:grid-cols-2 gap-20 items-center mb-24 last:mb-0 ${i % 2 === 1 ? 'lg:[direction:rtl]' : ''}`}>
-                <div className="[direction:ltr]">
-                  <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>{f.eyebrow}</div>
-                  <h2 className="font-bold text-[#0B132B] mb-4" style={{ fontSize: 32, fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em', lineHeight: 1.25 }}>{f.title}</h2>
-                  <p className="text-[16px] text-[#64748B] mb-7" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.75 }}>{f.desc}</p>
-                  {f.points.map((pt, j) => (
-                    <div key={j} className="flex items-start gap-2.5 mb-2.5">
-                      <div className="w-[18px] h-[18px] rounded-full bg-[#10B981] flex items-center justify-center shrink-0 mt-0.5">
-                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+          {FEATURES.map((f, i) => {
+            const Panel = [EcosystemPanel, InvestmentPanel, SynthesisPanel, RiskPanel][i];
+            return (
+              <ScrollReveal key={i} delay={100}>
+                <div className={`grid lg:grid-cols-2 gap-20 items-center mb-24 last:mb-0 ${i % 2 === 1 ? 'lg:[direction:rtl]' : ''}`}>
+                  <div className="[direction:ltr]">
+                    <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>{f.eyebrow}</div>
+                    <h2 className="font-bold text-[#0B132B] mb-4" style={{ fontSize: 32, fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em', lineHeight: 1.25 }}>{f.title}</h2>
+                    <p className="text-[16px] text-[#64748B] mb-7" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.75 }}>{f.desc}</p>
+                    {f.points.map((pt, j) => (
+                      <div key={j} className="flex items-start gap-2.5 mb-2.5">
+                        <div className="w-[18px] h-[18px] rounded-full bg-[#10B981] flex items-center justify-center shrink-0 mt-0.5">
+                          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                        </div>
+                        <span className="text-[14px] text-[#334155]" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.6 }}>{pt}</span>
                       </div>
-                      <span className="text-[14px] text-[#334155]" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.6 }}>{pt}</span>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
+                  <div className="[direction:ltr]" style={{ boxShadow: '0 24px 64px rgba(11,19,43,0.18)', borderRadius: 16 }}>
+                    <Panel />
+                  </div>
                 </div>
-                <div className="[direction:ltr] rounded-2xl p-10 flex items-center justify-center min-h-[300px]" style={{ background: '#0B132B', border: '1px solid rgba(255,255,255,0.08)' }}>
-                  <NetworkGraph />
-                </div>
-              </div>
-            </ScrollReveal>
-          ))}
+              </ScrollReveal>
+            );
+          })}
         </div>
       </section>
 

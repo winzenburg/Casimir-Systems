@@ -364,6 +364,119 @@ export function InvestmentPanel() {
   );
 }
 
+// ── AI Synthesis Panel — intelligence brief with human-in-the-loop review ─────
+
+const BRIEF_THEMES = ['SPACE ISR', 'ORBITAL LOGISTICS', 'DUAL-USE'];
+
+const BRIEF_SOURCES = [
+  { src: 'SAM.gov',    n: 14 },
+  { src: 'SEC EDGAR',  n: 6  },
+  { src: 'USPTO',      n: 9  },
+  { src: 'arXiv',      n: 4  },
+];
+
+const BRIEF_LINES: { text: string; cite?: string }[] = [
+  { text: 'True Anomaly closed a $260M Series C (Mar 2026) led by defense-focused funds; total raised $360M.', cite: '1' },
+  { text: 'Active USSF contract history: 2 SBIR Phase II awards, 1 STRATFI — orbital pursuit and rendezvous ops.', cite: '2' },
+  { text: 'Patent velocity up 3.2× YoY across autonomous proximity operations (9 filings, Q1–Q2 2026).', cite: '3' },
+  { text: 'No FOCI exposure identified across cap table. CMMC L2 self-attestation on file.', cite: '4' },
+];
+
+export function SynthesisPanel() {
+  return (
+    <div
+      className="w-full rounded-2xl overflow-hidden"
+      style={{ background: '#0B132B', border: '1px solid rgba(255,255,255,0.07)' }}
+    >
+      <PanelHeader dot dotColor="#2563EB" title="AI SYNTHESIS // INTELLIGENCE BRIEF" meta="CLAUDE SONNET · SOURCE-ATTRIBUTED" />
+
+      {/* Brief document */}
+      <div className="px-5 pt-4 pb-3">
+        <div className="flex items-center justify-between mb-3 flex-wrap gap-2">
+          <div>
+            <div style={{ fontFamily: 'Inter, sans-serif', fontSize: 14, fontWeight: 700, color: '#fff' }}>
+              True Anomaly, Inc.
+            </div>
+            <div style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 9, color: 'rgba(255,255,255,0.35)', letterSpacing: '0.05em', marginTop: 2 }}>
+              ENTITY BRIEF · GENERATED 06:42 MT · 33 SOURCES FUSED
+            </div>
+          </div>
+          <div className="flex gap-1.5">
+            {BRIEF_THEMES.map((t) => (
+              <span
+                key={t}
+                className="text-[8px] rounded px-1.5 py-0.5"
+                style={{ background: 'rgba(37,99,235,0.14)', border: '1px solid rgba(37,99,235,0.25)', color: '#93C5FD', fontFamily: 'IBM Plex Mono, monospace', letterSpacing: '0.05em' }}
+              >
+                {t}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {BRIEF_LINES.map((line, i) => (
+          <div key={i} className="flex gap-2.5 mb-2.5 items-start">
+            <div className="w-1 rounded-sm shrink-0 self-stretch" style={{ background: 'rgba(37,99,235,0.35)' }} />
+            <p className="m-0" style={{ fontFamily: 'IBM Plex Sans, sans-serif', fontSize: 11.5, color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>
+              {line.text}
+              {line.cite && (
+                <sup style={{ color: '#60a5fa', fontFamily: 'IBM Plex Mono, monospace', fontSize: 8, marginLeft: 3 }}>[{line.cite}]</sup>
+              )}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      {/* Source attribution strip */}
+      <div className="flex items-center gap-4 px-5 py-2.5 flex-wrap" style={{ borderTop: '1px solid rgba(255,255,255,0.06)', background: 'rgba(255,255,255,0.02)' }}>
+        <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 8, color: 'rgba(255,255,255,0.25)', letterSpacing: '0.08em' }}>
+          EVIDENCE CHAIN
+        </span>
+        {BRIEF_SOURCES.map(({ src, n }) => (
+          <div key={src} className="flex items-center gap-1.5">
+            <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 9, color: 'rgba(255,255,255,0.45)' }}>{src}</span>
+            <span
+              className="rounded px-1 text-[8px]"
+              style={{ background: 'rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.35)', fontFamily: 'IBM Plex Mono, monospace' }}
+            >
+              {n}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      {/* Human-in-the-loop review bar */}
+      <div className="flex items-center justify-between px-5 py-3 flex-wrap gap-3" style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}>
+        <div className="flex items-center gap-2.5">
+          <div
+            className="w-7 h-7 rounded-full flex items-center justify-center shrink-0"
+            style={{ background: 'rgba(245,158,11,0.15)', border: '1px solid rgba(245,158,11,0.35)' }}
+          >
+            <span style={{ fontFamily: 'Inter, sans-serif', fontSize: 9, fontWeight: 700, color: '#F59E0B' }}>MC</span>
+          </div>
+          <div>
+            <div style={{ fontFamily: 'IBM Plex Sans, sans-serif', fontSize: 10, color: 'rgba(255,255,255,0.65)' }}>
+              Maj. Chen · S&T Analyst
+            </div>
+            <div className="flex items-center gap-1.5 mt-0.5">
+              <StatusDot color="#10B981" pulse />
+              <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 8, color: '#10B981', letterSpacing: '0.07em' }}>
+                HUMAN VALIDATED · 4 OF 4 CLAIMS VERIFIED
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          className="rounded px-3 py-1 text-[9px]"
+          style={{ background: '#2563EB', color: '#fff', fontFamily: 'IBM Plex Mono, monospace', cursor: 'pointer' }}
+        >
+          APPROVE &amp; DISSEMINATE →
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ── 4. Institutional Knowledge Panel ─────────────────────────────────────────
 
 interface EngagementRow {
