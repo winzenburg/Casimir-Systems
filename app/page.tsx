@@ -122,9 +122,9 @@ const COMPETITORS = [
 ];
 
 const STATS = [
-  { value: '4–6 wks', label: 'From Award to First Delivery' },
+  { value: '4–6 wks', label: 'Concept to First Delivery' },
   { value: 'CMMC L2', label: 'Compliance Architecture' },
-  { value: 'Phase II', label: 'Active SBIR Award' },
+  { value: 'D2P2', label: 'SBIR Proposal Submitted' },
   { value: 'Zero Code', label: 'Operator Interface' },
 ];
 
@@ -361,15 +361,15 @@ export default function HomePage() {
             <div className="rounded-2xl p-10 flex flex-col md:flex-row md:items-center gap-8" style={{ background: '#0B132B', border: '1px solid rgba(37,99,235,0.35)' }}>
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="text-[10px] font-bold tracking-widest uppercase text-[#2563EB]" style={{ fontFamily: 'Inter, sans-serif' }}>Flagship Product · Active</div>
-                  <div className="rounded-full px-2.5 py-1 text-[10px] font-bold" style={{ background: 'rgba(16,185,129,0.15)', border: '1px solid rgba(16,185,129,0.3)', color: '#10B981', fontFamily: 'Inter, sans-serif' }}>Phase IIa</div>
+                  <div className="text-[10px] font-bold tracking-widest uppercase text-[#2563EB]" style={{ fontFamily: 'Inter, sans-serif' }}>Flagship Product · Operational</div>
+                  <div className="rounded-full px-2.5 py-1 text-[10px] font-bold" style={{ background: 'rgba(37,99,235,0.15)', border: '1px solid rgba(37,99,235,0.3)', color: '#93C5FD', fontFamily: 'Inter, sans-serif' }}>D2P2 Submitted</div>
                 </div>
                 <div className="text-[26px] font-bold text-white mb-4" style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>Casimir Intelligence</div>
                 <p className="text-[14px] mb-6" style={{ color: 'rgba(255,255,255,0.55)', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.75, maxWidth: 560 }}>
                   AI-powered S&T ecosystem mapping and co-investment decision support for U.S. Space Force. Maps the full commercial innovation landscape — companies, capital, technologies — and synthesizes actionable intelligence briefs for Task Force Futures analysts and contracting officers.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {['S&T Ecosystem Mapping', 'AI Knowledge Synthesis', 'Co-Investment Analysis', 'FOCI Screening', 'Active Phase II Award'].map((tag) => (
+                  {['S&T Ecosystem Mapping', 'AI Knowledge Synthesis', 'Co-Investment Analysis', 'FOCI Screening', 'Working Platform · Not a Prototype'].map((tag) => (
                     <span key={tag} className="text-[10px] font-medium rounded-full px-2.5 py-1" style={{ background: 'rgba(37,99,235,0.12)', color: '#93C5FD', border: '1px solid rgba(37,99,235,0.2)', fontFamily: 'IBM Plex Sans, sans-serif' }}>{tag}</span>
                   ))}
                 </div>

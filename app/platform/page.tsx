@@ -155,13 +155,13 @@ export default function PlatformPage() {
             <div className="grid lg:grid-cols-2 gap-20 items-start">
               <div>
                 <div className="inline-flex items-center gap-2 rounded-full px-3 py-1 mb-5" style={{ background: 'rgba(37,99,235,0.06)', border: '1px solid rgba(37,99,235,0.2)' }}>
-                  <span className="text-[10px] font-bold tracking-widest uppercase text-[#2563EB]" style={{ fontFamily: 'Inter, sans-serif' }}>Active Phase II Award</span>
+                  <span className="text-[10px] font-bold tracking-widest uppercase text-[#2563EB]" style={{ fontFamily: 'Inter, sans-serif' }}>Direct-to-Phase II Submission</span>
                   <span className="w-px h-2.5 bg-[rgba(37,99,235,0.2)]" />
                   <span className="text-[11px] text-[#64748B]" style={{ fontFamily: 'IBM Plex Sans, sans-serif' }}>U.S. Space Force · SpaceWERX</span>
                 </div>
                 <h2 className="font-bold text-[#0B132B] mb-5" style={{ fontSize: 32, fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em', lineHeight: 1.25 }}>Purpose-built for a specific mission requirement.</h2>
                 <p className="text-[15px] text-[#64748B] mb-5" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.75 }}>
-                  Casimir Intelligence was purpose-built for U.S. Space Force Task Force Futures under a Direct-to-Phase II SBIR award — the DoD's fast-track mechanism for companies demonstrating working capability at the time of proposal.
+                  Casimir Intelligence was purpose-built for U.S. Space Force Task Force Futures in response to a Direct-to-Phase II SBIR solicitation — the DoD's fast-track mechanism for companies demonstrating working capability at the time of proposal. Our proposal is submitted; the award decision is pending.
                 </p>
                 <p className="text-[15px] text-[#64748B] mb-8" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.75 }}>
                   We are not proposing to build this. The platform is functioning. TF-F needs this capability now — not in three years.

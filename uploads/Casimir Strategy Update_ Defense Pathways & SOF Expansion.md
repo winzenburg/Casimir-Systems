@@ -8,7 +8,7 @@
 
 ## Executive Summary
 
-The existing Casimir strategy is a single-beachhead play: Casimir Intelligence for USSF Task Force Futures under a D2P2 SBIR. That anchor stays. This update adds a **second beachhead (SOF/SOCOM via SOFWERX)**, a **relationship-capital pipeline (NRO/DARPA network via Dave and Logan)**, and a set of **validated capability themes** that extend Casimir's core competency — auditable, human-in-the-loop AI decision support — into new mission domains without diluting the brand.
+The existing Casimir strategy is a single-beachhead play: Casimir Intelligence for USSF Task Force Futures via a D2P2 SBIR proposal (submitted; award decision pending). That anchor pursuit stays. This update adds a **second beachhead (SOF/SOCOM via SOFWERX)**, a **relationship-capital pipeline (NRO/DARPA network via Dave and Logan)**, and a set of **validated capability themes** that extend Casimir's core competency — auditable, human-in-the-loop AI decision support — into new mission domains without diluting the brand.
 
 The strategic through-line: everything Dave identified as a real gap (intelligence synthesis speed, analysis paralysis, unmanned-platform data overload, AI trust failures) is a **decision-support software problem**. That is exactly what Casimir Systems already claims to be. No pivot required — only aperture expansion and pathway diversification.
 
@@ -89,7 +89,7 @@ Principle from Dave: *"Nobody's going to go out on a limb for somebody they don'
 
 **Pathways, in priority order:**
 
-1. **SpaceWERX / TF-F (active):** Casimir Intelligence, D2P2. The anchor. Nothing changes.
+1. **SpaceWERX / TF-F (anchor pursuit):** Casimir Intelligence, D2P2 proposal submitted — award decision pending. Nothing changes strategically; site messaging must say "submitted," not "awarded."
 2. **SOFWERX / SOCOM (build now):** Intelligence synthesis + decision-support visualization for SOF. Entry via SOFWERX submissions, capability briefs, and Dave's requirements translation. Target: first submission within 2 quarters.
 3. **AFWERX (opportunistic):** Already on radar; submit when topics align with the synthesis/visualization competency.
 4. **NRO (relationship-led):** Ride the small-business outreach wave via Logan/Dave network. Timeline: post-relationship maturity.

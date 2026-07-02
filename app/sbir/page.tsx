@@ -5,8 +5,8 @@ import { ScrollReveal, StaggerReveal } from '@/components/scroll-reveal';
 import { TrlBadge, ComplianceBadge, StatusBadge } from '@/components/risk-badge';
 
 export const metadata: Metadata = {
-  title: 'SBIR — Active Phase II Award · U.S. Space Force',
-  description: 'Casimir Intelligence is a functioning platform — not a proposal — purpose-built for U.S. Space Force Task Force Futures under a Direct-to-Phase II SBIR award.',
+  title: 'SBIR — Direct-to-Phase II Pursuit · U.S. Space Force',
+  description: 'Casimir Intelligence is a functioning platform — not a concept — built for U.S. Space Force Task Force Futures in response to a Direct-to-Phase II SBIR solicitation. Proposal submitted; award decision pending.',
   alternates: { canonical: 'https://www.casimirsystems.com/sbir' },
 };
 
@@ -48,7 +48,7 @@ const COMPLIANCE_ITEMS: { standard: string; status: 'aligned' | 'pending' | 'na'
 
 const TIMELINE = [
   { phase: 'Phase I-Equiv.', desc: 'Feasibility demonstrated via working platform (complete at proposal)', trl: 4, color: '#10B981' },
-  { phase: 'D2P2 Award', desc: 'SBIR Direct-to-Phase II award (target Q3 2026)', trl: 5, color: '#2563EB' },
+  { phase: 'D2P2 Decision', desc: 'Proposal submitted — award decision pending (target Q3 2026)', trl: 5, color: '#2563EB' },
   { phase: 'Phase II', desc: 'Full platform development with SpaceWERX / TF-F integration', trl: 7, color: '#8B5CF6' },
   { phase: 'Transition', desc: 'Phase III transition and operational deployment', trl: 9, color: '#F59E0B' },
 ];
@@ -57,8 +57,8 @@ const PATHWAYS: { org: string; status: 'active' | 'targeted' | 'monitoring'; sta
   {
     org: 'SpaceWERX · U.S. Space Force',
     status: 'active',
-    statusLabel: 'Active · Phase II',
-    desc: 'Casimir Intelligence, purpose-built for Task Force Futures under a Direct-to-Phase II SBIR award. Our anchor program and the proving ground for our compliance-first delivery model.',
+    statusLabel: 'D2P2 Submitted',
+    desc: 'Casimir Intelligence, purpose-built for Task Force Futures in response to a Direct-to-Phase II SBIR solicitation. Proposal submitted with a working platform — our anchor pursuit and the proving ground for our compliance-first delivery model.',
   },
   {
     org: 'SOFWERX · U.S. Special Operations Command',
@@ -97,13 +97,13 @@ export default function SbirPage() {
           <div>
             <div className="inline-flex items-center gap-2 rounded-md px-3 py-1.5 mb-6" style={{ background: 'rgba(37,99,235,0.1)', border: '1px solid rgba(37,99,235,0.3)' }}>
               <Shield className="w-3.5 h-3.5 text-[#2563EB]" />
-              <span className="text-[11px] font-bold tracking-widest uppercase text-[#2563EB]" style={{ fontFamily: 'Inter, sans-serif' }}>Active Phase II · Space Force</span>
+              <span className="text-[11px] font-bold tracking-widest uppercase text-[#2563EB]" style={{ fontFamily: 'Inter, sans-serif' }}>D2P2 Submitted · Space Force</span>
             </div>
             <h1 className="font-extrabold text-white mb-5" style={{ fontSize: 'clamp(36px,4.5vw,60px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.03em', lineHeight: 1.1 }}>
               Purpose-built for<br /><span style={{ color: '#2563EB' }}>Task Force Futures.</span>
             </h1>
             <p className="text-lg mb-8 max-w-lg" style={{ color: 'rgba(255,255,255,0.55)', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.75 }}>
-              Casimir Intelligence was purpose-built for U.S. Space Force Task Force Futures under a Direct-to-Phase II SBIR award. We are not proposing to build this capability — we have already built it.
+              Casimir Intelligence was purpose-built for U.S. Space Force Task Force Futures in response to a Direct-to-Phase II SBIR solicitation. Our proposal is submitted and the award decision is pending — but the platform is not a promise. We have already built it.
             </p>
             <div className="flex gap-3 flex-wrap mb-10">
               <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-md font-medium text-white transition-all duration-200 hover:-translate-y-px" style={{ background: '#2563EB', fontFamily: 'IBM Plex Sans, sans-serif', fontSize: 14 }}>
@@ -129,13 +129,14 @@ export default function SbirPage() {
 
           {/* Context card */}
           <div className="rounded-2xl p-8" style={{ background: '#111827', border: '1px solid rgba(255,255,255,0.08)' }}>
-            <div className="text-[11px] font-semibold tracking-widest uppercase mb-5" style={{ color: 'rgba(255,255,255,0.4)', fontFamily: 'Inter, sans-serif' }}>Award Context</div>
+            <div className="text-[11px] font-semibold tracking-widest uppercase mb-5" style={{ color: 'rgba(255,255,255,0.4)', fontFamily: 'Inter, sans-serif' }}>Solicitation Context</div>
             {[
               { label: 'Program Office', value: 'U.S. Space Force · Task Force Futures (TF-F)' },
               { label: 'Mechanism', value: 'Direct-to-Phase II SBIR' },
               { label: 'Vehicle', value: 'SpaceWERX / SBIR' },
               { label: 'Requirement', value: 'S&T Ecosystem & Co-Investment Decision Support' },
               { label: 'Feasibility Standard', value: 'Working platform required at proposal time' },
+              { label: 'Status', value: 'Proposal submitted · award decision pending' },
             ].map((row, i, arr) => (
               <div key={row.label} className="flex justify-between gap-4 py-3" style={{ borderBottom: i < arr.length - 1 ? '1px solid rgba(255,255,255,0.06)' : 'none' }}>
                 <span className="text-[12px] shrink-0" style={{ color: 'rgba(255,255,255,0.4)', fontFamily: 'IBM Plex Sans, sans-serif' }}>{row.label}</span>

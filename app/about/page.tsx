@@ -112,7 +112,7 @@ export default function AboutPage() {
                     <div className="text-[12px] leading-relaxed" style={{ fontFamily: 'IBM Plex Sans, sans-serif', color: isActive ? 'rgba(255,255,255,0.5)' : '#64748B' }}>{d.sub}</div>
                     {(isActive || isTargeted) && (
                       <div className="mt-2.5">
-                        <StatusBadge status={d.status} label={isActive ? 'Active · Phase IIa' : 'Targeted · Next Domain'} />
+                        <StatusBadge status={d.status} label={isActive ? 'D2P2 Proposal Submitted' : 'Targeted · Next Domain'} />
                       </div>
                     )}
                   </div>
