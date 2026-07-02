@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, Shield, Zap, Eye, BarChart3, BookOpen, Cpu } from 'lucide-react';
+import { ArrowRight, Shield, Zap, Eye, BarChart3, Cpu, Brain, Radar, TrendingUp } from 'lucide-react';
 import { ScrollReveal, StaggerReveal } from '@/components/scroll-reveal';
 import { HeroDisplay } from '@/components/hero-display';
 import { RiskBadge } from '@/components/risk-badge';
@@ -40,8 +40,8 @@ const homepageJsonLd = {
 const PROBLEMS = [
   {
     icon: '◈',
-    label: 'Decisions Without Synthesis',
-    desc: 'DoD decision-makers — from S&T analysts to mission commanders — face the same problem: the data exists, but it is fragmented across disconnected sources. No platform synthesizes the full picture into a single, defensible intelligence layer.',
+    label: 'Analysis Paralysis at Scale',
+    desc: 'The data exists — sensor feeds, contracts, open sources — but it is fragmented across disconnected systems. Target analyses that consume dozens of analysts for weeks should resolve in near-real-time. Collection is not the gap. Distillation is.',
   },
   {
     icon: '⚑',
@@ -50,8 +50,8 @@ const PROBLEMS = [
   },
   {
     icon: '⟳',
-    label: 'AI Without Legibility',
-    desc: 'AI systems that cannot explain their reasoning create liability — whether in an acquisition decision room or a post-mission debrief. Every AI-generated recommendation needs a human-readable, auditable evidence chain before an operator can act on it.',
+    label: 'AI Without a Human in the Loop',
+    desc: 'AI that cannot explain its reasoning creates operational liability — in an acquisition decision room or a post-mission debrief. Every AI-generated recommendation needs a human-readable, auditable evidence chain, validated by an operator before anyone acts on it.',
   },
 ];
 
@@ -64,8 +64,8 @@ const APPROACH = [
   },
   {
     Icon: Cpu,
-    title: 'AI-Augmented Velocity',
-    desc: 'Using Claude-powered synthesis and AI-augmented workflows, we compress 18-month development cycles into 4–6 weeks — without sacrificing architectural rigor or compliance posture.',
+    title: 'Human-in-the-Loop AI',
+    desc: 'AI accelerates the analysis; a human validates the call. Every synthesis our platforms produce carries a traceable evidence chain, so operators and analysts confirm the reasoning — not just the recommendation — before acting.',
     accent: '#10B981',
   },
   {
@@ -82,7 +82,31 @@ const APPROACH = [
   },
 ];
 
+const FOCUS_AREAS = [
+  {
+    Icon: Brain,
+    title: 'Intelligence Synthesis',
+    desc: 'Collapse target analysis cycles that consume dozens of analysts for weeks into near-real-time, AI-synthesized briefs — with human-in-the-loop validation on every output.',
+  },
+  {
+    Icon: BarChart3,
+    title: 'Decision Visualization & Human Factors',
+    desc: 'Sensor and platform data overload creates analysis paralysis. We distill it into displays a commander can act on — the discipline our founder has practiced for 25 years.',
+  },
+  {
+    Icon: Radar,
+    title: 'Unified Operating Picture',
+    desc: 'Unmanned platforms — aerial, surface, and ground — generate more data than any staff can absorb. We build the data-fusion layer that turns disparate feeds into one coherent picture.',
+  },
+  {
+    Icon: TrendingUp,
+    title: 'Co-Investment & Ecosystem Intelligence',
+    desc: 'Mapping commercial innovation — companies, capital, technologies — against national security priorities. The active mission of Casimir Intelligence for U.S. Space Force.',
+  },
+];
+
 const COMPETITORS = [
+  { name: 'Palantir',          type: 'Enterprise Integrator', note: 'Deeply capable, deeply entrenched. Sells enterprise transformation — forward-deployed engineers, long integrations, enterprise cost.' },
   { name: 'Govini',            type: 'Defense Analytics', note: 'Broad data platform. Complex, costly, requires dedicated analyst teams.' },
   { name: 'Strider',           type: 'Entity Risk',        note: 'Deep foreign influence detection. Not built for co-investment workflows.' },
   { name: 'Primer AI',         type: 'NLP / Document AI',  note: 'Strong document synthesis. Narrow scope, no ecosystem mapping.' },
@@ -263,6 +287,42 @@ export default function HomePage() {
                   <h3 className="font-semibold text-white" style={{ fontSize: 16, fontFamily: 'Inter, sans-serif', letterSpacing: '-0.01em' }}>{title}</h3>
                 </div>
                 <p className="leading-relaxed" style={{ fontSize: 14, color: 'rgba(255,255,255,0.45)', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7 }}>{desc}</p>
+              </div>
+            ))}
+          </StaggerReveal>
+        </div>
+      </section>
+
+      {/* ── Mission Focus Areas ──────────────────────────────────── */}
+      <section className="py-28 px-6 lg:px-10" style={{ background: '#F8FAFC' }}>
+        <div className="max-w-7xl mx-auto">
+          <ScrollReveal>
+            <div className="max-w-2xl mb-16">
+              <span className="eyebrow">Mission Focus Areas</span>
+              <h2
+                className="font-bold text-[#0B132B] mb-4"
+                style={{ fontSize: 'clamp(28px,2.8vw,40px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.025em', lineHeight: 1.2 }}
+              >
+                One competency. Four mission domains.
+              </h2>
+              <p style={{ fontSize: 17, color: '#64748B', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.75 }}>
+                Casimir Systems builds the decision layer — not the platform, not the sensor. Wherever DoD operators are drowning in data and starving for distilled, defensible answers, our methodology applies.
+              </p>
+            </div>
+          </ScrollReveal>
+          <StaggerReveal className="grid md:grid-cols-2 gap-5 items-stretch" staggerMs={90}>
+            {FOCUS_AREAS.map(({ Icon, title, desc }) => (
+              <div key={title} className="card-light card-light-hover p-8 flex flex-col h-full">
+                <div className="flex items-center gap-3 mb-4">
+                  <div
+                    className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
+                    style={{ background: 'rgba(37,99,235,0.08)', border: '1px solid rgba(37,99,235,0.18)' }}
+                  >
+                    <Icon className="w-5 h-5" style={{ color: '#2563EB' }} />
+                  </div>
+                  <h3 className="font-semibold text-[#0B132B]" style={{ fontSize: 17, fontFamily: 'Inter, sans-serif', letterSpacing: '-0.01em' }}>{title}</h3>
+                </div>
+                <p className="text-[#64748B] leading-relaxed" style={{ fontSize: 14, fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7 }}>{desc}</p>
               </div>
             ))}
           </StaggerReveal>

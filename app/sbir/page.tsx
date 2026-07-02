@@ -53,6 +53,33 @@ const TIMELINE = [
   { phase: 'Transition', desc: 'Phase III transition and operational deployment', trl: 9, color: '#F59E0B' },
 ];
 
+const PATHWAYS: { org: string; status: 'active' | 'targeted' | 'monitoring'; statusLabel: string; desc: string }[] = [
+  {
+    org: 'SpaceWERX · U.S. Space Force',
+    status: 'active',
+    statusLabel: 'Active · Phase II',
+    desc: 'Casimir Intelligence, purpose-built for Task Force Futures under a Direct-to-Phase II SBIR award. Our anchor program and the proving ground for our compliance-first delivery model.',
+  },
+  {
+    org: 'SOFWERX · U.S. Special Operations Command',
+    status: 'targeted',
+    statusLabel: 'Targeted · Next Pathway',
+    desc: 'SOCOM holds dedicated acquisition authority for unconventional, fast-moving problems — and the shortest chain between operator need and fielded capability. Our intelligence synthesis and unified operating picture work is built for this pathway.',
+  },
+  {
+    org: 'AFWERX · U.S. Air Force',
+    status: 'monitoring',
+    statusLabel: 'Monitoring Topics',
+    desc: 'We track AFWERX open topics and submit where solicitations align with our decision-support and data-synthesis competency.',
+  },
+  {
+    org: 'NRO · Commercial Engagement',
+    status: 'monitoring',
+    statusLabel: 'Monitoring Topics',
+    desc: 'The National Reconnaissance Office is actively expanding participation by non-traditional small businesses. Our auditable AI synthesis architecture maps directly to its data-at-scale mission.',
+  },
+];
+
 const TAGS = [
   'S&T Ecosystem Synthesis', 'Co-Investment Decision Support', 'Zero-Code Interface',
   'ASOT Data Fusion', 'Dual-Use Technology ID', 'FOCI Risk Screening',
@@ -188,6 +215,35 @@ export default function SbirPage() {
               <div key={c.standard} className="rounded-xl p-5 flex items-center justify-between" style={{ background: '#fff', border: '1px solid #E2E8F0' }}>
                 <div className="text-[14px] font-semibold text-[#0B132B]" style={{ fontFamily: 'Inter, sans-serif' }}>{c.standard}</div>
                 <ComplianceBadge standard={c.standard} status={c.status} />
+              </div>
+            ))}
+          </StaggerReveal>
+        </div>
+      </section>
+
+      {/* Innovation pathways */}
+      <section className="py-24 px-6 lg:px-10" style={{ background: '#fff', borderTop: '1px solid #E2E8F0' }}>
+        <div className="max-w-7xl mx-auto">
+          <ScrollReveal>
+            <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>Innovation Pathways</div>
+            <h2 className="font-bold text-[#0B132B] mb-3" style={{ fontSize: 'clamp(24px,2.5vw,36px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>The shortest path from operator need to fielded capability.</h2>
+            <p className="text-[17px] text-[#64748B] max-w-2xl mb-10" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7 }}>
+              Requirements too often lose their meaning between the operator who has the problem and the RFP that describes it. We engage the DoD innovation ecosystem where the chain of translation is shortest — and we show up repeatedly, so program offices know exactly who we are and what we build.
+            </p>
+          </ScrollReveal>
+          <StaggerReveal className="grid md:grid-cols-2 gap-4" staggerMs={80}>
+            {PATHWAYS.map((p) => (
+              <div key={p.org} className="rounded-xl p-7" style={{ background: p.status === 'active' ? '#0B132B' : '#F8FAFC', border: p.status === 'active' ? '1px solid rgba(37,99,235,0.35)' : p.status === 'targeted' ? '1px solid rgba(37,99,235,0.4)' : '1px solid #E2E8F0' }}>
+                <div className="flex items-center justify-between gap-4 mb-3 flex-wrap">
+                  <div className="text-[15px] font-bold" style={{ fontFamily: 'Inter, sans-serif', color: p.status === 'active' ? '#fff' : '#0B132B' }}>{p.org}</div>
+                  <span className="text-[10px] font-bold tracking-widest uppercase rounded-full px-2.5 py-1" style={{
+                    fontFamily: 'Inter, sans-serif',
+                    color: p.status === 'active' ? '#10B981' : p.status === 'targeted' ? '#2563EB' : '#64748B',
+                    background: p.status === 'active' ? 'rgba(16,185,129,0.12)' : p.status === 'targeted' ? 'rgba(37,99,235,0.08)' : 'rgba(100,116,139,0.08)',
+                    border: `1px solid ${p.status === 'active' ? 'rgba(16,185,129,0.3)' : p.status === 'targeted' ? 'rgba(37,99,235,0.25)' : 'rgba(100,116,139,0.2)'}`,
+                  }}>{p.statusLabel}</span>
+                </div>
+                <p className="text-[13px] m-0" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7, color: p.status === 'active' ? 'rgba(255,255,255,0.6)' : '#64748B' }}>{p.desc}</p>
               </div>
             ))}
           </StaggerReveal>

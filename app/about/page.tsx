@@ -17,13 +17,15 @@ const VALUES = [
   { title: 'Modular by Design', desc: 'Our applications are zero-code, open-architecture, and built to integrate with existing DoD data environments. Modules deploy independently or as a complete platform stack.' },
 ];
 
-const DOMAINS = [
-  { label: 'Space Force / SpaceWERX', sub: 'S&T ecosystem intelligence, co-investment decision support', active: true },
-  { label: 'AFWERX / Air Force S&T', sub: 'Technology scouting, dual-use identification, program analysis', active: false },
-  { label: 'DARPA / ARPA-H', sub: 'Research pipeline synthesis, advanced concept tracking', active: false },
-  { label: 'Army Futures Command', sub: 'Industrial base mapping, supplier intelligence, co-investment alignment', active: false },
-  { label: 'SOCOM / Special Operations', sub: 'Vendor intelligence, acquisition decision support, threat synthesis', active: false },
-  { label: 'Naval Innovation (NavalX)', sub: 'Maritime S&T ecosystem mapping, dual-use technology identification', active: false },
+type DomainStatus = 'active' | 'targeted' | 'future';
+
+const DOMAINS: { label: string; sub: string; status: DomainStatus }[] = [
+  { label: 'Space Force / SpaceWERX', sub: 'S&T ecosystem intelligence, co-investment decision support', status: 'active' },
+  { label: 'SOCOM / SOFWERX', sub: 'Near-real-time intelligence synthesis, unified operating picture across unmanned platforms, decision-support visualization for special operations', status: 'targeted' },
+  { label: 'AFWERX / Air Force S&T', sub: 'Technology scouting, dual-use identification, program analysis', status: 'future' },
+  { label: 'NRO / National Reconnaissance', sub: 'Commercial small-business integration, S&T ecosystem intelligence, data synthesis at scale', status: 'future' },
+  { label: 'DARPA / ARPA-H', sub: 'Research pipeline synthesis, advanced concept tracking', status: 'future' },
+  { label: 'Army Futures Command', sub: 'Industrial base mapping, supplier intelligence, co-investment alignment', status: 'future' },
 ];
 
 const EXPERIENCE = [
@@ -92,24 +94,31 @@ export default function AboutPage() {
             <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>Defense Domains</div>
             <h2 className="font-bold text-[#0B132B] mb-4" style={{ fontSize: 'clamp(28px,3vw,40px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>Built for DoD. Built for any branch.</h2>
             <p className="text-[17px] text-[#64748B] max-w-2xl mb-12" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7 }}>
-              Casimir Systems is not a single-contract company. Our methodology applies wherever DoD stakeholders need faster, more defensible decision support — regardless of service branch or program office.
+              Casimir Systems is not a single-contract company. Our methodology — auditable, human-in-the-loop AI that collapses analysis cycles from weeks to near-real-time — applies wherever DoD stakeholders need faster, more defensible decision support. We prioritize innovation pathways with the shortest chain between operator need and fielded capability.
             </p>
           </ScrollReveal>
           <StaggerReveal className="grid md:grid-cols-2 lg:grid-cols-3 gap-4" staggerMs={80}>
-            {DOMAINS.map((d) => (
-              <div key={d.label} className="rounded-xl p-6 flex gap-4" style={{ background: d.active ? '#0B132B' : '#F8FAFC', border: d.active ? '1px solid rgba(37,99,235,0.35)' : '1px solid #E2E8F0' }}>
-                <div className="shrink-0 mt-1">
-                  <div className="w-2 h-2 rounded-full mt-1.5" style={{ background: d.active ? '#10B981' : '#CBD5E1' }} />
+            {DOMAINS.map((d) => {
+              const isActive = d.status === 'active';
+              const isTargeted = d.status === 'targeted';
+              return (
+                <div key={d.label} className="rounded-xl p-6 flex gap-4" style={{ background: isActive ? '#0B132B' : '#F8FAFC', border: isActive ? '1px solid rgba(37,99,235,0.35)' : isTargeted ? '1px solid rgba(37,99,235,0.4)' : '1px solid #E2E8F0' }}>
+                  <div className="shrink-0 mt-1">
+                    <div className="w-2 h-2 rounded-full mt-1.5" style={{ background: isActive ? '#10B981' : isTargeted ? '#2563EB' : '#CBD5E1' }} />
+                  </div>
+                  <div>
+                    <div className="font-semibold mb-1 text-[14px]" style={{ fontFamily: 'Inter, sans-serif', color: isActive ? '#fff' : '#0B132B' }}>{d.label}</div>
+                    <div className="text-[12px] leading-relaxed" style={{ fontFamily: 'IBM Plex Sans, sans-serif', color: isActive ? 'rgba(255,255,255,0.5)' : '#64748B' }}>{d.sub}</div>
+                    {isActive && (
+                      <div className="mt-2 text-[10px] font-bold tracking-widest uppercase" style={{ color: '#10B981', fontFamily: 'Inter, sans-serif' }}>Active · Phase IIa</div>
+                    )}
+                    {isTargeted && (
+                      <div className="mt-2 text-[10px] font-bold tracking-widest uppercase" style={{ color: '#2563EB', fontFamily: 'Inter, sans-serif' }}>Targeted · Next Domain</div>
+                    )}
+                  </div>
                 </div>
-                <div>
-                  <div className="font-semibold mb-1 text-[14px]" style={{ fontFamily: 'Inter, sans-serif', color: d.active ? '#fff' : '#0B132B' }}>{d.label}</div>
-                  <div className="text-[12px] leading-relaxed" style={{ fontFamily: 'IBM Plex Sans, sans-serif', color: d.active ? 'rgba(255,255,255,0.5)' : '#64748B' }}>{d.sub}</div>
-                  {d.active && (
-                    <div className="mt-2 text-[10px] font-bold tracking-widest uppercase" style={{ color: '#10B981', fontFamily: 'Inter, sans-serif' }}>Active · Phase IIa</div>
-                  )}
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </StaggerReveal>
         </div>
       </section>
