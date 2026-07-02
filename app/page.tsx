@@ -87,21 +87,25 @@ const FOCUS_AREAS = [
     Icon: Brain,
     title: 'Intelligence Synthesis',
     desc: 'Collapse target analysis cycles that consume dozens of analysts for weeks into near-real-time, AI-synthesized briefs — with human-in-the-loop validation on every output.',
+    accent: '#2563EB',
   },
   {
     Icon: BarChart3,
     title: 'Decision Visualization & Human Factors',
     desc: 'Sensor and platform data overload creates analysis paralysis. We distill it into displays a commander can act on — the discipline our founder has practiced for 25 years.',
+    accent: '#8B5CF6',
   },
   {
     Icon: Radar,
     title: 'Unified Operating Picture',
     desc: 'Unmanned platforms — aerial, surface, and ground — generate more data than any staff can absorb. We build the data-fusion layer that turns disparate feeds into one coherent picture.',
+    accent: '#10B981',
   },
   {
     Icon: TrendingUp,
     title: 'Co-Investment & Ecosystem Intelligence',
     desc: 'Mapping commercial innovation — companies, capital, technologies — against national security priorities. The active mission of Casimir Intelligence for U.S. Space Force.',
+    accent: '#F59E0B',
   },
 ];
 
@@ -152,7 +156,7 @@ export default function HomePage() {
                 className="text-[10px] uppercase tracking-widest"
                 style={{ color: '#10B981', fontFamily: 'IBM Plex Mono, monospace' }}
               >
-                Intelligence Platform · Active
+                Multi-Domain Decision Support · Active
               </span>
             </div>
 
@@ -311,14 +315,14 @@ export default function HomePage() {
             </div>
           </ScrollReveal>
           <StaggerReveal className="grid md:grid-cols-2 gap-5 items-stretch" staggerMs={90}>
-            {FOCUS_AREAS.map(({ Icon, title, desc }) => (
+            {FOCUS_AREAS.map(({ Icon, title, desc, accent }) => (
               <div key={title} className="card-light card-light-hover p-8 flex flex-col h-full">
                 <div className="flex items-center gap-3 mb-4">
                   <div
                     className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
-                    style={{ background: 'rgba(37,99,235,0.08)', border: '1px solid rgba(37,99,235,0.18)' }}
+                    style={{ background: `${accent}14`, border: `1px solid ${accent}26` }}
                   >
-                    <Icon className="w-5 h-5" style={{ color: '#2563EB' }} />
+                    <Icon className="w-5 h-5" style={{ color: accent }} />
                   </div>
                   <h3 className="font-semibold text-[#0B132B]" style={{ fontSize: 17, fontFamily: 'Inter, sans-serif', letterSpacing: '-0.01em' }}>{title}</h3>
                 </div>
@@ -326,6 +330,13 @@ export default function HomePage() {
               </div>
             ))}
           </StaggerReveal>
+          <ScrollReveal delay={150}>
+            <div className="mt-8 flex justify-center">
+              <Link href="/sbir" className="inline-flex items-center gap-2 text-[14px] font-medium text-[#2563EB] hover:gap-3 transition-all duration-200" style={{ fontFamily: 'IBM Plex Sans, sans-serif' }}>
+                See where we&apos;re deploying this — our innovation pathways <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 

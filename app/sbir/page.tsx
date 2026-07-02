@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Shield, CheckCircle } from 'lucide-react';
 import { ScrollReveal, StaggerReveal } from '@/components/scroll-reveal';
-import { TrlBadge, ComplianceBadge } from '@/components/risk-badge';
+import { TrlBadge, ComplianceBadge, StatusBadge } from '@/components/risk-badge';
 
 export const metadata: Metadata = {
   title: 'SBIR — Active Phase II Award · U.S. Space Force',
@@ -236,12 +236,7 @@ export default function SbirPage() {
               <div key={p.org} className="rounded-xl p-7" style={{ background: p.status === 'active' ? '#0B132B' : '#F8FAFC', border: p.status === 'active' ? '1px solid rgba(37,99,235,0.35)' : p.status === 'targeted' ? '1px solid rgba(37,99,235,0.4)' : '1px solid #E2E8F0' }}>
                 <div className="flex items-center justify-between gap-4 mb-3 flex-wrap">
                   <div className="text-[15px] font-bold" style={{ fontFamily: 'Inter, sans-serif', color: p.status === 'active' ? '#fff' : '#0B132B' }}>{p.org}</div>
-                  <span className="text-[10px] font-bold tracking-widest uppercase rounded-full px-2.5 py-1" style={{
-                    fontFamily: 'Inter, sans-serif',
-                    color: p.status === 'active' ? '#10B981' : p.status === 'targeted' ? '#2563EB' : '#64748B',
-                    background: p.status === 'active' ? 'rgba(16,185,129,0.12)' : p.status === 'targeted' ? 'rgba(37,99,235,0.08)' : 'rgba(100,116,139,0.08)',
-                    border: `1px solid ${p.status === 'active' ? 'rgba(16,185,129,0.3)' : p.status === 'targeted' ? 'rgba(37,99,235,0.25)' : 'rgba(100,116,139,0.2)'}`,
-                  }}>{p.statusLabel}</span>
+                  <StatusBadge status={p.status} label={p.statusLabel} />
                 </div>
                 <p className="text-[13px] m-0" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7, color: p.status === 'active' ? 'rgba(255,255,255,0.6)' : '#64748B' }}>{p.desc}</p>
               </div>

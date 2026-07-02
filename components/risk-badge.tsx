@@ -50,6 +50,40 @@ export function TrlBadge({ trl, label }: TrlBadgeProps) {
   );
 }
 
+export type EngagementStatus = 'active' | 'targeted' | 'monitoring' | 'future';
+
+interface StatusBadgeProps {
+  status: EngagementStatus;
+  label?: string;
+}
+
+const STATUS_CONFIG: Record<EngagementStatus, { color: string; bg: string; border: string; defaultLabel: string }> = {
+  active:     { color: '#10B981', bg: 'rgba(16,185,129,0.12)',  border: 'rgba(16,185,129,0.3)',  defaultLabel: 'Active' },
+  targeted:   { color: '#2563EB', bg: 'rgba(37,99,235,0.08)',   border: 'rgba(37,99,235,0.25)',  defaultLabel: 'Targeted' },
+  monitoring: { color: '#64748B', bg: 'rgba(100,116,139,0.08)', border: 'rgba(100,116,139,0.2)', defaultLabel: 'Monitoring' },
+  future:     { color: '#94A3B8', bg: 'rgba(148,163,184,0.08)', border: 'rgba(148,163,184,0.2)', defaultLabel: 'Future' },
+};
+
+/** Engagement-tier pill used for defense domains and innovation pathways. Works on light and dark surfaces. */
+export function StatusBadge({ status, label }: StatusBadgeProps) {
+  const c = STATUS_CONFIG[status];
+  return (
+    <span
+      className="inline-flex items-center gap-1.5 rounded-full text-[10px] font-bold tracking-widest uppercase whitespace-nowrap"
+      style={{
+        color: c.color,
+        background: c.bg,
+        border: `1px solid ${c.border}`,
+        padding: '4px 10px',
+        fontFamily: 'Inter, sans-serif',
+      }}
+    >
+      <span className="rounded-full shrink-0" style={{ width: 5, height: 5, background: c.color }} />
+      {label ?? c.defaultLabel}
+    </span>
+  );
+}
+
 interface ComplianceBadgeProps {
   standard: string;
   status?: 'aligned' | 'pending' | 'na';

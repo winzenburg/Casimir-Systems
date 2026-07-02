@@ -3,7 +3,7 @@
 const CX = 300;
 const CY = 390;
 
-type NodeType = 'company' | 'investor' | 'cleared' | 'risk';
+type NodeType = 'feed' | 'human' | 'validated' | 'risk';
 
 interface OrbNode {
   angle: number;
@@ -13,33 +13,33 @@ interface OrbNode {
 }
 
 const COLORS: Record<NodeType, string> = {
-  company:  '#2563EB',
-  investor: '#F59E0B',
-  cleared:  '#10B981',
-  risk:     '#EF4444',
+  feed:      '#2563EB',
+  human:     '#F59E0B',
+  validated: '#10B981',
+  risk:      '#EF4444',
 };
 
 const NODES: OrbNode[] = [
-  // Inner ring — cleared entities
-  { angle: 38,  type: 'cleared',  label: 'USSF-01',      r: 120 },
-  { angle: 112, type: 'cleared',  label: 'USSF-02',      r: 120 },
-  { angle: 212, type: 'cleared',  label: 'USSF-03',      r: 120 },
-  { angle: 298, type: 'cleared',  label: 'USSF-04',      r: 120 },
-  // Mid ring — active ecosystem
-  { angle: 20,  type: 'company',  label: 'TRUE ANOMALY',  r: 200 },
-  { angle: 72,  type: 'investor', label: 'SHIELD CAP.',   r: 200 },
-  { angle: 130, type: 'company',  label: 'ANDURIL',       r: 200 },
-  { angle: 178, type: 'risk',     label: 'FOCI FLAG',     r: 200 },
-  { angle: 228, type: 'company',  label: 'ROCKET LAB',    r: 200 },
-  { angle: 282, type: 'investor', label: 'A16Z DEFENSE',  r: 200 },
-  { angle: 336, type: 'company',  label: 'UMBRA SPACE',   r: 200 },
-  // Outer ring
-  { angle: 50,  type: 'company',  label: 'SPACEFORGE',    r: 278 },
-  { angle: 100, type: 'risk',     label: 'FLAG-09',       r: 278 },
-  { angle: 155, type: 'investor', label: 'LOCKHEED V.',   r: 278 },
-  { angle: 208, type: 'company',  label: 'STARFISH',      r: 278 },
-  { angle: 262, type: 'company',  label: 'PALADIN CAP.',  r: 278 },
-  { angle: 316, type: 'risk',     label: 'FOCI-07',       r: 278 },
+  // Inner ring — validated intelligence + the human in the loop
+  { angle: 38,  type: 'validated', label: 'BRIEF-01',      r: 120 },
+  { angle: 112, type: 'human',     label: 'ANALYST // HITL', r: 120 },
+  { angle: 212, type: 'validated', label: 'BRIEF-02',      r: 120 },
+  { angle: 298, type: 'validated', label: 'BRIEF-03',      r: 120 },
+  // Mid ring — multi-domain platform & sensor feeds
+  { angle: 20,  type: 'feed',      label: 'SAT · USSF',    r: 200 },
+  { angle: 72,  type: 'feed',      label: 'UAS SWARM',     r: 200 },
+  { angle: 130, type: 'feed',      label: 'UGV RECON',     r: 200 },
+  { angle: 178, type: 'risk',      label: 'FOCI FLAG',     r: 200 },
+  { angle: 228, type: 'feed',      label: 'USV PACIFIC',   r: 200 },
+  { angle: 282, type: 'feed',      label: 'SIGINT',        r: 200 },
+  { angle: 336, type: 'feed',      label: 'ISR FULL-MO',   r: 200 },
+  // Outer ring — data sources
+  { angle: 50,  type: 'feed',      label: 'OSINT',         r: 278 },
+  { angle: 100, type: 'risk',      label: 'FLAG-09',       r: 278 },
+  { angle: 155, type: 'feed',      label: 'VC FLOWS',      r: 278 },
+  { angle: 208, type: 'feed',      label: 'CONTRACTS',     r: 278 },
+  { angle: 262, type: 'feed',      label: 'PATENTS',       r: 278 },
+  { angle: 316, type: 'risk',      label: 'FOCI-07',       r: 278 },
 ];
 
 const EDGES: [number, number][] = [
@@ -73,7 +73,7 @@ export function HeroDisplay() {
         style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 10, lineHeight: 1.7 }}
       >
         <div style={{ color: '#10B981', letterSpacing: '0.09em' }}>● SYNTHESIS ACTIVE</div>
-        <div style={{ color: 'rgba(255,255,255,0.28)', letterSpacing: '0.06em' }}>CASIMIR INTELLIGENCE v4.2</div>
+        <div style={{ color: 'rgba(255,255,255,0.28)', letterSpacing: '0.06em' }}>CASIMIR DECISION LAYER v4.2</div>
         <div style={{ color: 'rgba(255,255,255,0.18)', letterSpacing: '0.06em' }}>UNCLASSIFIED // FOUO</div>
       </div>
 
@@ -82,8 +82,8 @@ export function HeroDisplay() {
         className="absolute top-8 right-8 text-right z-20"
         style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 10, lineHeight: 1.7 }}
       >
-        <div style={{ color: 'rgba(255,255,255,0.32)', letterSpacing: '0.06em' }}>ENTITIES: 2,847</div>
-        <div style={{ color: 'rgba(255,255,255,0.32)', letterSpacing: '0.06em' }}>INVESTMENT: $4.2B</div>
+        <div style={{ color: 'rgba(255,255,255,0.32)', letterSpacing: '0.06em' }}>FEEDS: 2,847</div>
+        <div style={{ color: 'rgba(255,255,255,0.32)', letterSpacing: '0.06em' }}>DOMAINS: SPACE·AIR·GND·MAR</div>
         <div style={{ color: '#F59E0B', letterSpacing: '0.06em' }}>FLAGS: 12 ACTIVE</div>
       </div>
 
@@ -101,14 +101,14 @@ export function HeroDisplay() {
         className="absolute bottom-8 right-8 text-right z-20"
         style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 9, color: 'rgba(255,255,255,0.18)', letterSpacing: '0.06em', lineHeight: 1.7 }}
       >
-        <div>ACCURACY: 99.7%</div>
-        <div>TRL AVG 4.7 // 200+ FUNDS</div>
+        <div>HITL VALIDATION: ENGAGED</div>
+        <div>ANALYSIS CYCLE: WKS → MIN</div>
       </div>
 
       {/* Legend */}
       <div className="absolute bottom-8 z-20" style={{ left: '50%', transform: 'translateX(-50%)' }}>
         <div className="flex items-center gap-5" style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 9, color: 'rgba(255,255,255,0.28)', letterSpacing: '0.07em' }}>
-          {([['#10B981', 'CLEARED'], ['#2563EB', 'COMPANY'], ['#F59E0B', 'INVESTOR'], ['#EF4444', 'FOCI FLAG']] as [string, string][]).map(([color, label]) => (
+          {([['#10B981', 'VALIDATED'], ['#2563EB', 'FEED'], ['#F59E0B', 'HUMAN LOOP'], ['#EF4444', 'RISK FLAG']] as [string, string][]).map(([color, label]) => (
             <div key={label} className="flex items-center gap-1.5">
               <div className="w-1.5 h-1.5 rounded-full" style={{ background: color }} />
               {label}
@@ -123,7 +123,7 @@ export function HeroDisplay() {
         width="100%"
         height="100%"
         preserveAspectRatio="xMidYMid meet"
-        aria-label="Casimir Intelligence orbital S&T ecosystem display"
+        aria-label="Casimir multi-domain decision layer display — platform feeds, human-in-the-loop validation, and risk flags"
         style={{ position: 'absolute', inset: 0 }}
       >
         <defs>
@@ -269,11 +269,11 @@ export function HeroDisplay() {
               key={i}
               style={{ animation: `nodeFloat ${3.2 + (i % 5) * 0.38}s ease-in-out ${(i * 0.24) % 2.5}s infinite` }}
             >
-              {n.type === 'risk' && (
+              {(n.type === 'risk' || n.type === 'human') && (
                 <circle
                   cx={x} cy={y} r={nodeR * 3}
                   fill={color} opacity={0}
-                  style={{ animation: `nodePulse 2.5s ease-out ${i * 0.35}s infinite` }}
+                  style={{ animation: `nodePulse ${n.type === 'human' ? 3.5 : 2.5}s ease-out ${i * 0.35}s infinite` }}
                 />
               )}
               <circle cx={x} cy={y} r={nodeR + 3.5} fill="none" stroke={color} strokeWidth="0.4" opacity={0.22} />
@@ -284,7 +284,7 @@ export function HeroDisplay() {
                   x={lx} y={labelP.y + 3.5}
                   textAnchor={anchor}
                   fontSize="6.8"
-                  fill={n.type === 'risk' ? '#EF4444' : 'rgba(255,255,255,0.35)'}
+                  fill={n.type === 'risk' ? '#EF4444' : n.type === 'human' ? '#F59E0B' : 'rgba(255,255,255,0.35)'}
                   style={{ fontFamily: 'IBM Plex Mono, monospace', letterSpacing: '0.05em' }}
                 >
                   {n.label}
@@ -315,7 +315,7 @@ export function HeroDisplay() {
           fill="rgba(255,255,255,0.25)"
           style={{ fontFamily: 'IBM Plex Mono, monospace', letterSpacing: '0.14em' }}
         >
-          CASIMIR // S&T HUB
+          CASIMIR // DECISION LAYER
         </text>
       </svg>
     </div>

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import { ScrollReveal, StaggerReveal } from '@/components/scroll-reveal';
+import { StatusBadge } from '@/components/risk-badge';
 
 export const metadata: Metadata = {
   title: 'About Casimir Systems — Agile Defense Technology Firm',
@@ -109,11 +110,10 @@ export default function AboutPage() {
                   <div>
                     <div className="font-semibold mb-1 text-[14px]" style={{ fontFamily: 'Inter, sans-serif', color: isActive ? '#fff' : '#0B132B' }}>{d.label}</div>
                     <div className="text-[12px] leading-relaxed" style={{ fontFamily: 'IBM Plex Sans, sans-serif', color: isActive ? 'rgba(255,255,255,0.5)' : '#64748B' }}>{d.sub}</div>
-                    {isActive && (
-                      <div className="mt-2 text-[10px] font-bold tracking-widest uppercase" style={{ color: '#10B981', fontFamily: 'Inter, sans-serif' }}>Active · Phase IIa</div>
-                    )}
-                    {isTargeted && (
-                      <div className="mt-2 text-[10px] font-bold tracking-widest uppercase" style={{ color: '#2563EB', fontFamily: 'Inter, sans-serif' }}>Targeted · Next Domain</div>
+                    {(isActive || isTargeted) && (
+                      <div className="mt-2.5">
+                        <StatusBadge status={d.status} label={isActive ? 'Active · Phase IIa' : 'Targeted · Next Domain'} />
+                      </div>
                     )}
                   </div>
                 </div>
