@@ -9,6 +9,15 @@
 # (Settings > Secrets and variables > Actions) to include the SAM.gov
 # broad sweep and NRO-filtered queries. The scan still runs without it and
 # reports those sources as SKIPPED.
+#
+# Optional direct email: the briefing is also emailed to Ryan if Gmail SMTP
+# secrets are configured (GitHub has no built-in outbound mail). Create a
+# Gmail App Password (Google Account > Security > 2-Step Verification >
+# App passwords) and add two repository secrets:
+#   GMAIL_USERNAME     — ryanwinzenburg@gmail.com
+#   GMAIL_APP_PASSWORD — the 16-character app password
+# Without these secrets the email step is skipped and the GitHub issue
+# notification remains the delivery channel.
 
 name: Weekly opportunity scan
 
@@ -28,6 +37,10 @@ concurrency:
 jobs:
   scan:
     runs-on: ubuntu-latest
+    env:
+      # secrets aren't available in step-level `if` expressions, so surface
+      # the email credential through job env to gate the email step
+      GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
     defaults:
       run:
         working-directory: opportunity-scanner
@@ -79,6 +92,20 @@ jobs:
             --repo "$GITHUB_REPOSITORY" \
             --title "Opportunity scan ${{ steps.summary.outputs.date }} — ${{ steps.summary.outputs.new }} new, ${{ steps.summary.outputs.core }} core match(es)" \
             --body-file "${{ steps.summary.outputs.report }}"
+
+      - name: Email briefing
+        if: ${{ env.GMAIL_APP_PASSWORD != '' }}
+        uses: dawidd6/action-send-mail@v17
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.GMAIL_USERNAME }}
+          password: ${{ secrets.GMAIL_APP_PASSWORD }}
+          to: ryanwinzenburg@gmail.com
+          from: Casimir Opportunity Scanner <${{ secrets.GMAIL_USERNAME }}>
+          subject: "Opportunity scan ${{ steps.summary.outputs.date }} — ${{ steps.summary.outputs.new }} new, ${{ steps.summary.outputs.core }} core match(es)"
+          html_body: file://opportunity-scanner/${{ steps.summary.outputs.report }}
+          convert_markdown: true
 
       - name: Job summary
         run: cat "${{ steps.summary.outputs.report }}" >> "$GITHUB_STEP_SUMMARY"

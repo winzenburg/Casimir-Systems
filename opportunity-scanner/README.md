@@ -77,6 +77,15 @@ To include the SAM.gov + NRO queries in scheduled runs, add
 variables → Actions). You can also trigger a run manually from the Actions
 tab (workflow_dispatch).
 
+**Optional: direct email delivery.** The workflow can also email the
+briefing straight to ryanwinzenburg@gmail.com. GitHub has no built-in
+outbound mail, so it sends through Gmail SMTP — create a Gmail App Password
+(Google Account → Security → 2-Step Verification → App passwords) and add
+two more repository secrets: `GMAIL_USERNAME` (ryanwinzenburg@gmail.com)
+and `GMAIL_APP_PASSWORD` (the 16-character app password). Without them the
+email step is skipped and the GitHub issue notification remains the
+delivery channel.
+
 For a local dry run that doesn't consume the "new" markers:
 ```bash
 python scripts/scan_opportunities.py --no-update-seen
