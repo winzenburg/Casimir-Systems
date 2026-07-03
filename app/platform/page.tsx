@@ -12,7 +12,8 @@ export const metadata: Metadata = {
 
 const FEATURES = [
   {
-    eyebrow: 'Core Capability 01',
+    eyebrow: 'Module 01 · Ecosystem',
+    question: '“Who is building what — and who is funding them?”',
     title: 'S&T Ecosystem Mapping',
     desc: 'Query the full commercial innovation landscape. Casimir Intelligence synthesizes patent filings, funding rounds, government contracts, and academic research into a dynamic, queryable network graph.',
     points: [
@@ -23,7 +24,8 @@ const FEATURES = [
     ],
   },
   {
-    eyebrow: 'Core Capability 02',
+    eyebrow: 'Module 02 · Capital',
+    question: '“Where should the next RDT&E dollar go?”',
     title: 'Co-Investment Decision Support',
     desc: 'Align RDT&E budget priorities with private venture capital flows. Casimir Intelligence surfaces co-investment opportunities mapped directly against Objective Force Design capability themes.',
     points: [
@@ -34,7 +36,8 @@ const FEATURES = [
     ],
   },
   {
-    eyebrow: 'Core Capability 03',
+    eyebrow: 'Module 03 · Knowledge',
+    question: '“What does leadership need to know before Monday’s brief?”',
     title: 'AI Knowledge Synthesis',
     desc: 'Claude-powered synthesis engine converts raw entity and signal data into structured intelligence briefs — automatically theme-tagged, source-attributed, and ready to brief to leadership.',
     points: [
@@ -45,7 +48,8 @@ const FEATURES = [
     ],
   },
   {
-    eyebrow: 'Core Capability 04',
+    eyebrow: 'Module 04 · Governance',
+    question: '“Will every recommendation survive an audit?”',
     title: 'Institutional Risk & Governance',
     desc: 'Every co-investment recommendation is backed by a multi-layer risk gate architecture designed for the DoD acquisition environment. No black boxes — every flag is traceable to a primary source.',
     points: [
@@ -86,24 +90,29 @@ export default function PlatformPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative pt-32 pb-20 px-6 lg:px-10 text-center" style={{ background: '#0B132B' }}>
+      <section className="relative pt-36 pb-24 px-6 lg:px-10 text-center overflow-hidden" style={{ background: '#0B132B' }}>
         <div className="grid-bg absolute inset-0 opacity-40 pointer-events-none" />
-        <div className="relative max-w-5xl mx-auto">
+        {/* Soft signal-blue glow behind the mockup */}
+        <div
+          className="absolute left-1/2 -translate-x-1/2 pointer-events-none"
+          style={{ bottom: -200, width: 900, height: 500, background: 'radial-gradient(ellipse at center, rgba(37,99,235,0.18) 0%, transparent 65%)' }}
+        />
+        <div className="relative max-w-6xl mx-auto">
           <ScrollReveal>
-            <div className="inline-flex items-center gap-2.5 mb-6">
+            <div className="inline-flex items-center gap-2.5 mb-8">
               <div className="flex items-center gap-1.5 rounded-full px-3.5 py-1" style={{ background: 'rgba(37,99,235,0.15)', border: '1px solid rgba(37,99,235,0.3)' }}>
-                <span className="text-[10px] font-bold tracking-widest uppercase text-[#2563EB]" style={{ fontFamily: 'Inter, sans-serif' }}>Product</span>
+                <span className="text-[10px] font-bold tracking-widest uppercase text-[#60A5FA]" style={{ fontFamily: 'Inter, sans-serif' }}>Product</span>
               </div>
               <span className="text-[12px]" style={{ color: 'rgba(255,255,255,0.3)', fontFamily: 'IBM Plex Sans, sans-serif' }}>by</span>
               <span className="text-[12px] font-semibold" style={{ color: 'rgba(255,255,255,0.55)', fontFamily: 'Inter, sans-serif' }}>Casimir Systems</span>
             </div>
-            <h1 className="font-extrabold text-white mb-5" style={{ fontSize: 'clamp(40px,5vw,72px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.03em', lineHeight: 1.1 }}>
+            <h1 className="font-extrabold text-white mb-6 mx-auto" style={{ fontSize: 'clamp(40px,5vw,72px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.03em', lineHeight: 1.08, maxWidth: 900 }}>
               Aligning Private Capital<br /><span style={{ color: '#2563EB' }}>with National Security.</span>
             </h1>
-            <p className="text-lg mb-12 max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.5)', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7 }}>
+            <p className="text-lg mb-12 max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.55)', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.75 }}>
               A zero-code, fully auditable platform that maps S&T ecosystems, tracks VC flows, and synthesizes AI-powered intelligence briefs — purpose-built for U.S. Space Force Task Force Futures.
             </p>
-            <div className="flex gap-3 justify-center">
+            <div className="flex gap-3 justify-center flex-wrap">
               <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md font-medium text-white transition-all duration-200 hover:-translate-y-px" style={{ background: '#2563EB', fontFamily: 'IBM Plex Sans, sans-serif', fontSize: 15 }}>
                 Request Access
               </Link>
@@ -113,46 +122,86 @@ export default function PlatformPage() {
             </div>
           </ScrollReveal>
           <ScrollReveal delay={250}>
-            <div className="mt-16 max-w-4xl mx-auto">
+            <div className="mt-20 max-w-5xl mx-auto">
               <PlatformMockup />
+              <p className="mt-5 text-[12px]" style={{ color: 'rgba(255,255,255,0.35)', fontFamily: 'IBM Plex Mono, monospace', letterSpacing: '0.05em' }}>
+                LIVE PLATFORM · ECOSYSTEM MODULE · DEMONSTRATION DATA
+              </p>
             </div>
           </ScrollReveal>
         </div>
       </section>
 
       {/* Features — alternating light sections */}
-      <section className="py-24 px-6 lg:px-10" style={{ background: '#F8FAFC' }}>
+      <section className="py-28 lg:py-32 px-6 lg:px-10" style={{ background: '#F8FAFC' }}>
         <div className="max-w-7xl mx-auto">
-          {FEATURES.map((f, i) => {
-            const Panel = [EcosystemPanel, InvestmentPanel, SynthesisPanel, RiskPanel][i];
-            return (
-              <ScrollReveal key={i} delay={100}>
-                <div className={`grid lg:grid-cols-2 gap-20 items-center mb-24 last:mb-0 ${i % 2 === 1 ? 'lg:[direction:rtl]' : ''}`}>
-                  <div className="[direction:ltr]">
-                    <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>{f.eyebrow}</div>
-                    <h2 className="font-bold text-[#0B132B] mb-4" style={{ fontSize: 32, fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em', lineHeight: 1.25 }}>{f.title}</h2>
-                    <p className="text-[16px] text-[#64748B] mb-7" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.75 }}>{f.desc}</p>
-                    {f.points.map((pt, j) => (
-                      <div key={j} className="flex items-start gap-2.5 mb-2.5">
-                        <div className="w-[18px] h-[18px] rounded-full bg-[#10B981] flex items-center justify-center shrink-0 mt-0.5">
-                          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                        </div>
-                        <span className="text-[14px] text-[#334155]" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.6 }}>{pt}</span>
+          {/* Section intro */}
+          <ScrollReveal>
+            <div className="max-w-3xl mb-24 lg:mb-28">
+              <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-4" style={{ fontFamily: 'Inter, sans-serif' }}>Inside the Platform</div>
+              <h2 className="font-bold text-[#0B132B] mb-5" style={{ fontSize: 'clamp(30px,3.4vw,42px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em', lineHeight: 1.15 }}>
+                Four modules. One decision layer.<br />Designed around the analyst.
+              </h2>
+              <p className="text-[17px] text-[#64748B] m-0" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.8, maxWidth: 640 }}>
+                Every screen starts with a question a real analyst asks under real time pressure — then removes
+                everything that stands between that question and a defensible answer. No query languages,
+                no engineering tickets, no black boxes.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="flex flex-col gap-28 lg:gap-36">
+            {FEATURES.map((f, i) => {
+              const Panel = [EcosystemPanel, InvestmentPanel, SynthesisPanel, RiskPanel][i];
+              return (
+                <ScrollReveal key={i} delay={100}>
+                  <div className={`grid lg:grid-cols-12 gap-12 lg:gap-16 items-center ${i % 2 === 1 ? 'lg:[direction:rtl]' : ''}`}>
+                    <div className="[direction:ltr] lg:col-span-5">
+                      <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-4" style={{ fontFamily: 'Inter, sans-serif' }}>{f.eyebrow}</div>
+                      <p className="text-[17px] italic mb-4" style={{ color: '#94A3B8', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.6 }}>{f.question}</p>
+                      <h3 className="font-bold text-[#0B132B] mb-5" style={{ fontSize: 30, fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em', lineHeight: 1.25 }}>{f.title}</h3>
+                      <p className="text-[16px] text-[#64748B] mb-8" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.8 }}>{f.desc}</p>
+                      <div className="flex flex-col gap-3.5">
+                        {f.points.map((pt, j) => (
+                          <div key={j} className="flex items-start gap-3">
+                            <div className="w-[18px] h-[18px] rounded-full bg-[#10B981] flex items-center justify-center shrink-0 mt-0.5">
+                              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                            </div>
+                            <span className="text-[14.5px] text-[#334155]" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.65 }}>{pt}</span>
+                          </div>
+                        ))}
                       </div>
-                    ))}
+                    </div>
+                    <div className="[direction:ltr] lg:col-span-7" style={{ boxShadow: '0 32px 80px rgba(11,19,43,0.16), 0 8px 24px rgba(11,19,43,0.08)', borderRadius: 16 }}>
+                      <Panel />
+                    </div>
                   </div>
-                  <div className="[direction:ltr]" style={{ boxShadow: '0 24px 64px rgba(11,19,43,0.18)', borderRadius: 16 }}>
-                    <Panel />
-                  </div>
-                </div>
-              </ScrollReveal>
-            );
-          })}
+                </ScrollReveal>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Design credo band */}
+      <section className="py-24 lg:py-28 px-6 lg:px-10" style={{ background: '#0B132B' }}>
+        <div className="max-w-4xl mx-auto text-center">
+          <ScrollReveal>
+            <div className="text-[11px] font-semibold tracking-widest uppercase mb-8" style={{ color: '#60A5FA', fontFamily: 'Inter, sans-serif' }}>Design Principle</div>
+            <p className="font-bold text-white m-0" style={{ fontSize: 'clamp(24px,3vw,36px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em', lineHeight: 1.35 }}>
+              Software for high-stakes decisions should <span style={{ color: '#60A5FA' }}>reduce cognitive load</span> — never add to it.
+            </p>
+            <p className="text-[16px] mt-8 max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.5)', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.8 }}>
+              Casimir Intelligence is built by a design-led team with two decades of enterprise UX practice.
+              Precision, clarity, and trust are engineered into every screen — because an analyst&rsquo;s attention
+              is the scarcest resource in the building.
+            </p>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* SBIR / D2P2 context */}
-      <section className="py-24 px-6 lg:px-10" style={{ background: '#fff', borderTop: '1px solid #E2E8F0' }}>
+      <section className="py-28 lg:py-32 px-6 lg:px-10" style={{ background: '#fff' }}>
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <div className="grid lg:grid-cols-2 gap-20 items-start">
@@ -182,15 +231,15 @@ export default function PlatformPage() {
               <div>
                 <div className="text-[11px] font-semibold tracking-widest uppercase text-[#64748B] mb-5" style={{ fontFamily: 'Inter, sans-serif' }}>Solicitation Requirements → Platform Capabilities</div>
                 {SBIR_REQS.map((item, i) => (
-                  <div key={i} className="flex gap-4 py-4" style={{ borderBottom: i < SBIR_REQS.length - 1 ? '1px solid #E2E8F0' : 'none' }}>
+                  <div key={i} className="flex gap-4 py-5" style={{ borderBottom: i < SBIR_REQS.length - 1 ? '1px solid #E2E8F0' : 'none' }}>
                     <div className="shrink-0 mt-0.5">
                       <div className="w-5 h-5 rounded-full flex items-center justify-center" style={{ background: '#F0FDF4', border: '1px solid rgba(16,185,129,0.3)' }}>
                         <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#10B981" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                       </div>
                     </div>
                     <div>
-                      <div className="text-[13px] font-semibold text-[#0B132B] mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>{item.req}</div>
-                      <div className="text-[13px] text-[#64748B]" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.65 }}>{item.cap}</div>
+                      <div className="text-[14px] font-semibold text-[#0B132B] mb-1.5" style={{ fontFamily: 'Inter, sans-serif' }}>{item.req}</div>
+                      <div className="text-[13.5px] text-[#64748B]" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7 }}>{item.cap}</div>
                     </div>
                   </div>
                 ))}
@@ -207,25 +256,25 @@ export default function PlatformPage() {
       </section>
 
       {/* Security */}
-      <section className="py-20 px-6 lg:px-10 text-center" style={{ background: '#0B132B' }}>
+      <section className="py-28 lg:py-32 px-6 lg:px-10 text-center" style={{ background: '#0B132B', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
         <div className="max-w-5xl mx-auto">
           <ScrollReveal>
-            <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>Security &amp; Compliance</div>
-            <h2 className="font-bold text-white mb-4" style={{ fontSize: 'clamp(28px,3vw,40px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>Built to operate in the DoD environment.</h2>
-            <p className="text-[17px] max-w-xl mx-auto mb-12" style={{ color: 'rgba(255,255,255,0.5)', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7 }}>
+            <div className="text-[11px] font-semibold tracking-widest uppercase mb-4" style={{ color: '#60A5FA', fontFamily: 'Inter, sans-serif' }}>Security &amp; Compliance</div>
+            <h2 className="font-bold text-white mb-5" style={{ fontSize: 'clamp(28px,3vw,40px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>Built to operate in the DoD environment.</h2>
+            <p className="text-[17px] max-w-xl mx-auto mb-14" style={{ color: 'rgba(255,255,255,0.5)', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.75 }}>
               Casimir Intelligence meets or exceeds all compliance requirements for handling Controlled Unclassified Information in defense acquisition contexts.
             </p>
           </ScrollReveal>
           <StaggerReveal className="flex gap-4 justify-center flex-wrap" staggerMs={80}>
             {SECURITY_BADGES.map((b) => (
-              <div key={b.label} className="rounded-xl py-4 px-6 text-center min-w-[130px]" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.12)' }}>
-                <div className="text-[14px] font-semibold text-white mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>{b.label}</div>
-                <div className="text-[11px]" style={{ color: 'rgba(255,255,255,0.4)', fontFamily: 'IBM Plex Sans, sans-serif' }}>{b.sub}</div>
+              <div key={b.label} className="rounded-xl py-5 px-7 text-center min-w-[140px]" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.12)' }}>
+                <div className="text-[15px] font-semibold text-white mb-1.5" style={{ fontFamily: 'Inter, sans-serif' }}>{b.label}</div>
+                <div className="text-[12px]" style={{ color: 'rgba(255,255,255,0.4)', fontFamily: 'IBM Plex Sans, sans-serif' }}>{b.sub}</div>
               </div>
             ))}
           </StaggerReveal>
           <ScrollReveal delay={300}>
-            <div className="mt-12">
+            <div className="mt-14">
               <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-md font-medium text-white transition-all duration-200 hover:-translate-y-px" style={{ background: '#2563EB', fontFamily: 'IBM Plex Sans, sans-serif', fontSize: 15 }}>
                 Request Security Documentation
               </Link>

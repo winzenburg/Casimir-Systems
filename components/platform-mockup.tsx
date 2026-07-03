@@ -90,28 +90,28 @@ export function PlatformMockup() {
       </div>
 
       {/* App layout */}
-      <div className="flex" style={{ height: 480 }}>
+      <div className="flex" style={{ height: 520 }}>
         {/* Sidebar — navy, matches product */}
         <div
           className="hidden sm:flex flex-col shrink-0"
-          style={{ width: 168, background: '#0B132B', borderRight: '1px solid rgba(75,172,255,0.15)' }}
+          style={{ width: 184, background: '#0B132B', borderRight: '1px solid rgba(75,172,255,0.15)' }}
         >
-          <div className="px-4 py-3" style={{ borderBottom: '1px solid rgba(75,172,255,0.15)' }}>
-            <div className="text-[12px] font-bold tracking-widest" style={{ color: '#60a5fa', fontFamily: 'IBM Plex Mono, monospace' }}>
+          <div className="px-4 py-3.5" style={{ borderBottom: '1px solid rgba(75,172,255,0.15)' }}>
+            <div className="text-[13px] font-bold tracking-widest" style={{ color: '#60a5fa', fontFamily: 'IBM Plex Mono, monospace' }}>
               CASIMIR
             </div>
-            <div className="text-[10px] mt-0.5 tracking-widest text-white" style={{ fontFamily: 'IBM Plex Mono, monospace' }}>
+            <div className="text-[11px] mt-0.5 tracking-widest text-white" style={{ fontFamily: 'IBM Plex Mono, monospace' }}>
               INTELLIGENCE
             </div>
           </div>
-          <div className="flex-1 py-2.5 px-2">
-            <div className="text-[9px] font-semibold px-2 mb-1.5" style={{ color: 'rgba(255,255,255,0.45)', letterSpacing: '0.12em', fontFamily: 'Inter, sans-serif' }}>
+          <div className="flex-1 py-3 px-2">
+            <div className="text-[9.5px] font-semibold px-2 mb-2" style={{ color: 'rgba(255,255,255,0.45)', letterSpacing: '0.12em', fontFamily: 'Inter, sans-serif' }}>
               MODULES
             </div>
             {NAV_ITEMS.map((item, i) => (
               <div
                 key={i}
-                className="flex items-center gap-2.5 px-2 py-[7px] text-[12px] rounded-[3px]"
+                className="flex items-center gap-2.5 px-2 py-2 text-[12.5px] rounded-[3px]"
                 style={{
                   background: item.active ? 'rgba(77,172,255,0.12)' : 'transparent',
                   borderLeft: item.active ? '2px solid #4dacff' : '2px solid transparent',
@@ -119,14 +119,14 @@ export function PlatformMockup() {
                   fontFamily: 'IBM Plex Sans, sans-serif',
                 }}
               >
-                <item.icon size={13} style={{ color: item.active ? '#60a5fa' : 'rgba(255,255,255,0.4)' }} />
+                <item.icon size={14} style={{ color: item.active ? '#60a5fa' : 'rgba(255,255,255,0.4)' }} />
                 {item.label}
               </div>
             ))}
           </div>
-          <div className="px-2 py-2.5" style={{ borderTop: '1px solid rgba(75,172,255,0.15)' }}>
-            <div className="flex items-center gap-2.5 px-2 py-1.5 text-[12px]" style={{ color: 'rgba(255,255,255,0.55)', fontFamily: 'IBM Plex Sans, sans-serif' }}>
-              <Settings size={13} style={{ color: 'rgba(255,255,255,0.4)' }} />
+          <div className="px-2 py-3" style={{ borderTop: '1px solid rgba(75,172,255,0.15)' }}>
+            <div className="flex items-center gap-2.5 px-2 py-1.5 text-[12.5px]" style={{ color: 'rgba(255,255,255,0.55)', fontFamily: 'IBM Plex Sans, sans-serif' }}>
+              <Settings size={14} style={{ color: 'rgba(255,255,255,0.4)' }} />
               Settings
             </div>
           </div>
@@ -137,40 +137,40 @@ export function PlatformMockup() {
           {/* Top bar — navy, matches product */}
           <div
             className="flex items-center justify-between px-5"
-            style={{ background: '#0B132B', borderBottom: '1px solid rgba(75,172,255,0.15)', height: 44 }}
+            style={{ background: '#0B132B', borderBottom: '1px solid rgba(75,172,255,0.15)', height: 48 }}
           >
             <div className="flex items-center gap-2.5 min-w-0">
-              <span className="text-[13px] font-semibold text-white truncate" style={{ fontFamily: 'Inter, sans-serif' }}>S&amp;T Ecosystem</span>
+              <span className="text-[13.5px] font-semibold text-white truncate" style={{ fontFamily: 'Inter, sans-serif' }}>S&amp;T Ecosystem</span>
               <span style={{ color: 'rgba(255,255,255,0.35)' }}>/</span>
-              <span className="text-[11px] truncate" style={{ color: 'rgba(255,255,255,0.65)', fontFamily: 'IBM Plex Sans, sans-serif' }}>Entity Directory &amp; Relationship Map</span>
+              <span className="text-[11.5px] truncate" style={{ color: 'rgba(255,255,255,0.65)', fontFamily: 'IBM Plex Sans, sans-serif' }}>Entity Directory &amp; Relationship Map</span>
             </div>
             <div className="flex items-center gap-3.5">
               <div className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#10B981', boxShadow: '0 0 6px #10B981' }} />
-                <span className="text-[10px]" style={{ color: 'rgba(255,255,255,0.65)', fontFamily: 'IBM Plex Mono, monospace' }}>LIVE</span>
+                <span className="w-2 h-2 rounded-full" style={{ background: '#10B981', boxShadow: '0 0 6px #10B981' }} />
+                <span className="text-[10.5px]" style={{ color: 'rgba(255,255,255,0.65)', fontFamily: 'IBM Plex Mono, monospace' }}>LIVE</span>
               </div>
-              <span className="hidden md:block text-[10px]" style={{ color: 'rgba(255,255,255,0.65)', fontFamily: 'IBM Plex Mono, monospace' }}>
+              <span className="hidden md:block text-[10.5px]" style={{ color: 'rgba(255,255,255,0.65)', fontFamily: 'IBM Plex Mono, monospace' }}>
                 Jul 02, 2026, 01:42 PM MDT
               </span>
-              <RefreshCw size={12} style={{ color: 'rgba(255,255,255,0.5)' }} />
-              <div className="w-6 h-6 rounded-full flex items-center justify-center text-[9px] font-bold text-white" style={{ background: '#2563EB' }}>
+              <RefreshCw size={13} style={{ color: 'rgba(255,255,255,0.5)' }} />
+              <div className="w-7 h-7 rounded-full flex items-center justify-center text-[10px] font-bold text-white" style={{ background: '#2563EB' }}>
                 AN
               </div>
             </div>
           </div>
 
           {/* Filter bar — white */}
-          <div className="flex items-center gap-2 px-4 py-2" style={{ background: '#fff', borderBottom: '1px solid #E2E8F0' }}>
-            <div className="flex items-center gap-1.5 rounded border px-2.5 py-1 flex-1 max-w-[220px]" style={{ borderColor: '#E2E8F0' }}>
-              <Search size={11} style={{ color: '#94A3B8' }} />
-              <span className="text-[11px]" style={{ color: '#94A3B8', fontFamily: 'IBM Plex Sans, sans-serif' }}>Search entities…</span>
+          <div className="flex items-center gap-2.5 px-4 py-2.5" style={{ background: '#fff', borderBottom: '1px solid #E2E8F0' }}>
+            <div className="flex items-center gap-2 rounded border px-3 py-1.5 flex-1 max-w-[240px]" style={{ borderColor: '#E2E8F0' }}>
+              <Search size={12} style={{ color: '#94A3B8' }} />
+              <span className="text-[11.5px]" style={{ color: '#94A3B8', fontFamily: 'IBM Plex Sans, sans-serif' }}>Search entities…</span>
             </div>
             {['All Types', 'All Classifications'].map((t) => (
-              <div key={t} className="hidden md:block text-[10px] rounded border px-2 py-1" style={{ borderColor: '#E2E8F0', color: '#64748B', fontFamily: 'IBM Plex Sans, sans-serif', background: '#fff' }}>
+              <div key={t} className="hidden md:block text-[11px] rounded border px-2.5 py-1.5" style={{ borderColor: '#E2E8F0', color: '#64748B', fontFamily: 'IBM Plex Sans, sans-serif', background: '#fff' }}>
                 {t}
               </div>
             ))}
-            <div className="ml-auto text-[10px]" style={{ color: '#64748B', fontFamily: 'IBM Plex Mono, monospace' }}>
+            <div className="ml-auto text-[11px]" style={{ color: '#64748B', fontFamily: 'IBM Plex Mono, monospace' }}>
               1,247 entities
             </div>
           </div>
@@ -180,13 +180,13 @@ export function PlatformMockup() {
             {/* Entity table — white surface */}
             <div className="flex flex-col shrink-0" style={{ width: '46%', background: '#fff', borderRight: '1px solid #E2E8F0' }}>
               <div
-                className="grid px-3 py-1.5"
+                className="grid px-3.5 py-2"
                 style={{
-                  gridTemplateColumns: '1.7fr 44px 56px 36px',
+                  gridTemplateColumns: '1.7fr 44px 60px 42px',
                   borderBottom: '1px solid #E2E8F0',
                   background: '#F1F5F9',
                   fontFamily: 'Inter, sans-serif',
-                  fontSize: 9,
+                  fontSize: 9.5,
                   fontWeight: 600,
                   color: '#64748B',
                   letterSpacing: '0.08em',
@@ -204,43 +204,43 @@ export function PlatformMockup() {
                   return (
                     <div
                       key={i}
-                      className="grid items-center px-3 py-[7px]"
+                      className="grid items-center px-3.5 py-2.5"
                       style={{
-                        gridTemplateColumns: '1.7fr 44px 56px 36px',
+                        gridTemplateColumns: '1.7fr 44px 60px 42px',
                         borderBottom: '1px solid #F1F5F9',
                         background: e.selected ? '#DBEAFE' : 'transparent',
                         boxShadow: e.selected ? 'inset 3px 0 0 #2563EB' : undefined,
                       }}
                     >
                       <div className="flex items-center gap-2 min-w-0">
-                        <meta.icon size={12} style={{ color: meta.color }} className="shrink-0" />
-                        <span className="text-[11px] font-medium truncate" style={{ color: '#0F172A', fontFamily: 'IBM Plex Sans, sans-serif' }}>
+                        <meta.icon size={13} style={{ color: meta.color }} className="shrink-0" />
+                        <span className="text-[12px] font-medium truncate" style={{ color: '#0F172A', fontFamily: 'IBM Plex Sans, sans-serif' }}>
                           {e.name}
                         </span>
                       </div>
-                      <span className="text-[10px]" style={{ color: '#475569', fontFamily: 'IBM Plex Mono, monospace' }}>
+                      <span className="text-[11px]" style={{ color: '#475569', fontFamily: 'IBM Plex Mono, monospace' }}>
                         {e.trl ?? '—'}
                       </span>
                       <span
-                        className="text-[8px] font-semibold rounded px-1.5 py-0.5 w-fit"
+                        className="text-[9px] font-semibold rounded px-1.5 py-0.5 w-fit"
                         style={{ background: cls.bg, color: cls.color, fontFamily: 'IBM Plex Mono, monospace' }}
                       >
                         {e.cls}
                       </span>
                       {e.foci ? (
-                        <span className="text-[8px] font-semibold rounded px-1.5 py-0.5 w-fit" style={{ background: 'rgba(239,68,68,0.1)', color: '#991B1B', fontFamily: 'IBM Plex Mono, monospace' }}>
+                        <span className="text-[9px] font-semibold rounded px-1.5 py-0.5 w-fit" style={{ background: 'rgba(239,68,68,0.1)', color: '#991B1B', fontFamily: 'IBM Plex Mono, monospace' }}>
                           FLAG
                         </span>
                       ) : (
-                        <span className="text-[10px]" style={{ color: '#CBD5E1' }}>—</span>
+                        <span className="text-[11px]" style={{ color: '#CBD5E1' }}>—</span>
                       )}
                     </div>
                   );
                 })}
               </div>
-              <div className="flex items-center justify-between px-3 py-2" style={{ borderTop: '1px solid #E2E8F0' }}>
-                <span className="text-[9px]" style={{ color: '#94A3B8', fontFamily: 'IBM Plex Mono, monospace' }}>1–7 of 1,247</span>
-                <span className="text-[9px] font-semibold" style={{ color: '#2563EB', fontFamily: 'IBM Plex Sans, sans-serif' }}>Next →</span>
+              <div className="flex items-center justify-between px-3.5 py-2.5" style={{ borderTop: '1px solid #E2E8F0' }}>
+                <span className="text-[10px]" style={{ color: '#94A3B8', fontFamily: 'IBM Plex Mono, monospace' }}>1–7 of 1,247</span>
+                <span className="text-[10px] font-semibold" style={{ color: '#2563EB', fontFamily: 'IBM Plex Sans, sans-serif' }}>Next →</span>
               </div>
             </div>
 
@@ -250,10 +250,10 @@ export function PlatformMockup() {
                 <NetworkGraph />
               </div>
               {/* Legend */}
-              <div className="absolute bottom-2 left-3 flex gap-2.5 flex-wrap">
+              <div className="absolute bottom-2.5 left-4 flex gap-3 flex-wrap">
                 {LEGEND.map(({ color, label }) => (
-                  <div key={label} className="flex items-center gap-1" style={{ fontSize: 8.5, color: 'rgba(255,255,255,0.55)', fontFamily: 'IBM Plex Sans, sans-serif' }}>
-                    <div className="rounded-full" style={{ width: 5, height: 5, background: color }} />
+                  <div key={label} className="flex items-center gap-1.5" style={{ fontSize: 10, color: 'rgba(255,255,255,0.55)', fontFamily: 'IBM Plex Sans, sans-serif' }}>
+                    <div className="rounded-full" style={{ width: 6, height: 6, background: color }} />
                     {label}
                   </div>
                 ))}
