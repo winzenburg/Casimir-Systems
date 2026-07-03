@@ -48,7 +48,7 @@ const SECTIONS = [
 export default function TermsPage() {
   return (
     <div style={{ background: '#F8FAFC', minHeight: '100vh' }}>
-      <section className="pt-32 pb-16 px-6 lg:px-10" style={{ background: '#0B132B' }}>
+      <section className="pt-36 pb-20 px-6 lg:px-10" style={{ background: '#0B132B' }}>
         <div className="max-w-3xl mx-auto">
           <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-4" style={{ fontFamily: 'Inter, sans-serif' }}>Legal</div>
           <h1 className="text-white font-bold mb-4" style={{ fontSize: 'clamp(28px,3vw,42px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.025em' }}>
@@ -60,7 +60,7 @@ export default function TermsPage() {
         </div>
       </section>
 
-      <section className="py-20 px-6 lg:px-10">
+      <section className="py-24 px-6 lg:px-10">
         <div className="max-w-3xl mx-auto space-y-10">
           {SECTIONS.map((s) => (
             <div key={s.title}>

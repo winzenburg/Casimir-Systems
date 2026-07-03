@@ -63,7 +63,7 @@ export default function SecurityPage() {
   return (
     <div style={{ background: '#F8FAFC', minHeight: '100vh' }}>
       {/* Header */}
-      <section className="pt-32 pb-16 px-6 lg:px-10" style={{ background: '#0B132B' }}>
+      <section className="pt-36 pb-20 px-6 lg:px-10" style={{ background: '#0B132B' }}>
         <div className="max-w-5xl mx-auto">
           <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-4" style={{ fontFamily: 'Inter, sans-serif' }}>Trust & Compliance</div>
           <h1 className="text-white font-bold mb-4" style={{ fontSize: 'clamp(28px,3vw,42px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.025em' }}>
@@ -76,7 +76,7 @@ export default function SecurityPage() {
       </section>
 
       {/* Compliance Frameworks */}
-      <section className="py-20 px-6 lg:px-10" style={{ background: '#fff' }}>
+      <section className="py-24 lg:py-28 px-6 lg:px-10" style={{ background: '#fff' }}>
         <div className="max-w-5xl mx-auto">
           <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>Applicable Frameworks</div>
           <h2 className="font-bold text-[#0B132B] mb-10" style={{ fontSize: 'clamp(22px,2.5vw,32px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>
@@ -97,7 +97,7 @@ export default function SecurityPage() {
       </section>
 
       {/* Security Controls */}
-      <section className="py-20 px-6 lg:px-10" style={{ background: '#F8FAFC' }}>
+      <section className="py-24 lg:py-28 px-6 lg:px-10" style={{ background: '#F8FAFC' }}>
         <div className="max-w-5xl mx-auto">
           <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>Platform Controls</div>
           <h2 className="font-bold text-[#0B132B] mb-10" style={{ fontSize: 'clamp(22px,2.5vw,32px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>
@@ -127,7 +127,7 @@ export default function SecurityPage() {
       </section>
 
       {/* Contact */}
-      <section className="py-16 px-6 lg:px-10 text-center" style={{ background: '#0B132B' }}>
+      <section className="py-24 px-6 lg:px-10 text-center" style={{ background: '#0B132B' }}>
         <div className="max-w-lg mx-auto">
           <h2 className="font-bold text-white mb-4" style={{ fontSize: 24, fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>
             Security questions or concerns?

@@ -37,7 +37,7 @@ export default async function ArticlePage({ params }: Props) {
   return (
     <div style={{ background: '#F8FAFC', minHeight: '100vh' }}>
       {/* Header */}
-      <section className="pt-32 pb-16 px-6 lg:px-10" style={{ background: '#0B132B' }}>
+      <section className="pt-36 pb-20 px-6 lg:px-10" style={{ background: '#0B132B' }}>
         <div className="max-w-3xl mx-auto">
           <Link
             href="/resources"
@@ -76,7 +76,7 @@ export default async function ArticlePage({ params }: Props) {
       </section>
 
       {/* Article body */}
-      <section className="py-16 px-6 lg:px-10">
+      <section className="py-20 px-6 lg:px-10">
         <div className="max-w-3xl mx-auto">
           <div
             className="rounded-2xl p-10 md:p-14"

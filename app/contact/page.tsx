@@ -68,7 +68,7 @@ export default function ContactPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative pt-32 pb-20 px-6 lg:px-10 text-center" style={{ background: '#0B132B' }}>
+      <section className="relative pt-36 pb-24 px-6 lg:px-10 text-center" style={{ background: '#0B132B' }}>
         <div className="grid-bg absolute inset-0 opacity-40 pointer-events-none" />
         <div className="relative max-w-3xl mx-auto">
           <ScrollReveal>
@@ -84,7 +84,7 @@ export default function ContactPage() {
       </section>
 
       {/* Form */}
-      <section className="py-20 px-6 lg:px-10" style={{ background: '#F8FAFC' }}>
+      <section className="py-24 lg:py-28 px-6 lg:px-10" style={{ background: '#F8FAFC' }}>
         <div className="max-w-4xl mx-auto grid lg:grid-cols-[1fr_2fr] gap-16 items-start">
           {/* Left sidebar */}
           <div>

@@ -42,7 +42,7 @@ export default function AboutPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative pt-32 pb-24 px-6 lg:px-10 text-center" style={{ background: '#0B132B' }}>
+      <section className="relative pt-36 pb-24 px-6 lg:px-10 text-center" style={{ background: '#0B132B' }}>
         <div className="grid-bg absolute inset-0 opacity-40 pointer-events-none" />
         <div className="relative max-w-4xl mx-auto">
           <ScrollReveal>
@@ -63,7 +63,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-24 px-6 lg:px-10" style={{ background: '#F8FAFC' }}>
+      <section className="py-28 lg:py-32 px-6 lg:px-10" style={{ background: '#F8FAFC' }}>
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-14">
@@ -89,7 +89,7 @@ export default function AboutPage() {
       </section>
 
       {/* DoD Domains */}
-      <section className="py-24 px-6 lg:px-10" style={{ background: '#fff', borderTop: '1px solid #E2E8F0' }}>
+      <section className="py-28 lg:py-32 px-6 lg:px-10" style={{ background: '#fff', borderTop: '1px solid #E2E8F0' }}>
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>Defense Domains</div>
@@ -124,7 +124,7 @@ export default function AboutPage() {
       </section>
 
       {/* Founder */}
-      <section className="py-24 px-6 lg:px-10" style={{ background: '#F8FAFC', borderTop: '1px solid #E2E8F0' }}>
+      <section className="py-28 lg:py-32 px-6 lg:px-10" style={{ background: '#F8FAFC', borderTop: '1px solid #E2E8F0' }}>
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-10 text-center" style={{ fontFamily: 'Inter, sans-serif' }}>Founder &amp; Principal Investigator</div>
