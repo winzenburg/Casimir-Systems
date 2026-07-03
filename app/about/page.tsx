@@ -47,7 +47,7 @@ export default function AboutPage() {
         <div className="relative max-w-4xl mx-auto">
           <ScrollReveal>
             <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-5" style={{ fontFamily: 'Inter, sans-serif' }}>The Company</div>
-            <h1 className="font-extrabold text-white mb-6" style={{ fontSize: 'clamp(32px,4vw,56px)', fontFamily: 'Inter, sans-serif', lineHeight: 1.15, letterSpacing: '-0.03em' }}>
+            <h1 className="font-extrabold text-white mb-6" style={{ fontSize: 'clamp(36px,4.5vw,60px)', fontFamily: 'Inter, sans-serif', lineHeight: 1.1, letterSpacing: '-0.03em' }}>
               Building the software<br />that secures the future.
             </h1>
             <p className="text-lg mb-10 max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.55)', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.75 }}>
@@ -68,7 +68,7 @@ export default function AboutPage() {
           <ScrollReveal>
             <div className="text-center mb-14">
               <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>Company Character · The Strategic Builder</div>
-              <h2 className="font-bold text-[#0B132B] mb-4" style={{ fontSize: 'clamp(28px,3vw,40px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>Authoritative. Agile. Built to ship.</h2>
+              <h2 className="font-bold text-[#0B132B] mb-4" style={{ fontSize: 'clamp(28px,2.8vw,40px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.025em', lineHeight: 1.2 }}>Authoritative. Agile. Built to ship.</h2>
               <p className="text-[17px] text-[#64748B] max-w-2xl mx-auto" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7 }}>
                 Casimir Systems doesn&apos;t sell enterprise transformation. We build precise, modular software that works on day one — and we stand behind it with evidence, not marketing.
               </p>
@@ -93,7 +93,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>Defense Domains</div>
-            <h2 className="font-bold text-[#0B132B] mb-4" style={{ fontSize: 'clamp(28px,3vw,40px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>Built for DoD. Built for any branch.</h2>
+            <h2 className="font-bold text-[#0B132B] mb-4" style={{ fontSize: 'clamp(28px,2.8vw,40px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.025em', lineHeight: 1.2 }}>Built for DoD. Built for any branch.</h2>
             <p className="text-[17px] text-[#64748B] max-w-2xl mb-12" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7 }}>
               Casimir Systems is not a single-contract company. Our methodology — auditable, human-in-the-loop AI that collapses analysis cycles from weeks to near-real-time — applies wherever DoD stakeholders need faster, more defensible decision support. We prioritize innovation pathways with the shortest chain between operator need and fielded capability.
             </p>

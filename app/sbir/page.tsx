@@ -154,7 +154,7 @@ export default function SbirPage() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
                 <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>What is D2P2?</div>
-                <h2 className="font-bold text-[#0B132B] mb-5" style={{ fontSize: 'clamp(24px,2.5vw,38px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em', lineHeight: 1.25 }}>
+                <h2 className="font-bold text-[#0B132B] mb-5" style={{ fontSize: 'clamp(28px,2.8vw,40px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em', lineHeight: 1.25 }}>
                   The DoD&apos;s fast-track innovation pathway.
                 </h2>
                 <p className="text-[16px] text-[#64748B] mb-5" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.75 }}>
@@ -183,7 +183,7 @@ export default function SbirPage() {
         <div className="max-w-4xl mx-auto">
           <ScrollReveal>
             <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>Compliance Matrix</div>
-            <h2 className="font-bold text-[#0B132B] mb-3" style={{ fontSize: 'clamp(24px,2.5vw,36px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>Every technical requirement addressed.</h2>
+            <h2 className="font-bold text-[#0B132B] mb-3" style={{ fontSize: 'clamp(28px,2.8vw,40px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>Every technical requirement addressed.</h2>
             <p className="text-[17px] text-[#64748B] mb-10" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7 }}>
               The Space Force requirement defines specific technical capabilities. Here is how Casimir Intelligence maps to each one.
             </p>
@@ -209,7 +209,7 @@ export default function SbirPage() {
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>Security Posture</div>
-            <h2 className="font-bold text-[#0B132B] mb-10" style={{ fontSize: 'clamp(24px,2.5vw,36px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>Compliance-first from day one.</h2>
+            <h2 className="font-bold text-[#0B132B] mb-10" style={{ fontSize: 'clamp(28px,2.8vw,40px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>Compliance-first from day one.</h2>
           </ScrollReveal>
           <StaggerReveal className="grid md:grid-cols-3 gap-4" staggerMs={80}>
             {COMPLIANCE_ITEMS.map((c) => (
@@ -227,7 +227,7 @@ export default function SbirPage() {
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>Innovation Pathways</div>
-            <h2 className="font-bold text-[#0B132B] mb-3" style={{ fontSize: 'clamp(24px,2.5vw,36px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>The shortest path from operator need to fielded capability.</h2>
+            <h2 className="font-bold text-[#0B132B] mb-3" style={{ fontSize: 'clamp(28px,2.8vw,40px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>The shortest path from operator need to fielded capability.</h2>
             <p className="text-[17px] text-[#64748B] max-w-2xl mb-10" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7 }}>
               Requirements too often lose their meaning between the operator who has the problem and the RFP that describes it. We engage the DoD innovation ecosystem where the chain of translation is shortest — and we show up repeatedly, so program offices know exactly who we are and what we build.
             </p>
@@ -251,7 +251,7 @@ export default function SbirPage() {
         <div className="max-w-2xl mx-auto">
           <ScrollReveal>
             <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>For Contracting Officers &amp; S&T Leaders</div>
-            <h2 className="font-bold text-white mb-5" style={{ fontSize: 'clamp(28px,3vw,42px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>
+            <h2 className="font-bold text-white mb-5" style={{ fontSize: 'clamp(28px,2.8vw,40px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>
               Ready to evaluate Casimir Intelligence?
             </h2>
             <p className="text-[17px] mb-10" style={{ color: 'rgba(255,255,255,0.55)', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7 }}>
