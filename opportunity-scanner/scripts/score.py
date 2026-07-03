@@ -75,26 +75,38 @@ def score_opportunity(opp: dict[str, Any], config: dict) -> dict[str, Any]:
 
 def score_all(opportunities: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
     """
-    Returns {"core": [...], "secondary": [...]} — both sorted by score
-    descending. "core" items matched at least one core-tier tag and clear the
-    threshold; "secondary" items only matched Dave's flagged market-area tags
-    (real intel, not a capability match) and also clear the threshold.
+    Returns {"hubzone": [...], "core": [...], "secondary": [...]}.
 
-    If require_core_match_for_main_list is false in config, this still
-    separates the two lists the same way — the config flag only affects how
-    report.py *presents* them (secondary folded in vs. kept in its own
-    section), not how score_all groups them.
+    - "hubzone": opportunities pulled from sam_gov.fetch_hubzone — a
+      *structural* SAM.gov set-aside field (typeOfSetAside=HZC/HZS), not a
+      keyword match. Casimir's principal office is HUBZone-eligible, so any
+      solicitation here has a legally restricted competitor pool. These
+      bypass minimum_score_threshold entirely: being a HUBZone set-aside in
+      a Casimir-relevant NAICS is itself the reason to look, even if the
+      capability-keyword score is 0 — Ryan should see the full list and
+      judge fit himself. Still scored/tagged for context and sorted by
+      score, just never dropped for scoring low.
+    - "core": matched at least one core-tier tag and clears the threshold.
+    - "secondary": matched only Dave's flagged market-area tags and clears
+      the threshold.
+
+    Items already in "hubzone" are excluded from core/secondary to avoid
+    listing the same opportunity twice across sections.
     """
     config = load_filter_config()
     threshold = config.get("minimum_score_threshold", 0)
 
     scored = [score_opportunity(o, config) for o in opportunities]
-    kept = [o for o in scored if o["score"] >= threshold]
 
+    hubzone = [o for o in scored if o.get("hubzone_set_aside")]
+    remaining = [o for o in scored if not o.get("hubzone_set_aside")]
+
+    kept = [o for o in remaining if o["score"] >= threshold]
     core = [o for o in kept if o["match_tier"] == "core"]
     secondary = [o for o in kept if o["match_tier"] == "secondary"]
 
+    hubzone.sort(key=lambda o: o["score"], reverse=True)
     core.sort(key=lambda o: o["score"], reverse=True)
     secondary.sort(key=lambda o: o["score"], reverse=True)
 
-    return {"core": core, "secondary": secondary}
+    return {"hubzone": hubzone, "core": core, "secondary": secondary}

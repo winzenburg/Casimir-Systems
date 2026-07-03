@@ -1,11 +1,13 @@
 """
 Generate a dated markdown briefing from scored opportunities.
 
-Takes the {"core": [...], "secondary": [...]} structure from score.py and
-presents core matches (Ryan's actual differentiated skill set) as the main
-ranked list, with secondary matches (Dave's flagged market areas, no direct
-capability match) in a clearly separated section below — so the market intel
-isn't lost, but it doesn't crowd out real capability fits.
+Takes the {"hubzone": [...], "core": [...], "secondary": [...]} structure
+from score.py. HUBZone set-asides lead the report — a structural, legally
+restricted-competition advantage independent of capability fit — followed
+by core matches (Ryan's actual differentiated skill set) as the ranked
+"worth acting on" list, with secondary matches (Dave's flagged market areas,
+no direct capability match) in a clearly separated section below so the
+market intel isn't lost but doesn't crowd out real fits.
 """
 from __future__ import annotations
 from collections import defaultdict
@@ -19,6 +21,21 @@ BANNER = """> **Language reminder:** everything below is a candidate opportunity
 > confirmed award. Use "pursuing" / "targeting" / "eligible for" in any
 > external-facing material drawn from this report — never "awarded" or
 > "contracted" unless a human has separately confirmed an actual award.
+"""
+
+HUBZONE_INTRO = """## HUBZone set-asides — restricted competitor pool
+
+Casimir's principal office sits in a HUBZone-designated area, making it
+eligible for SBA HUBZone certification. Everything below is pulled directly
+from SAM.gov's official set-aside field (typeOfSetAside=HZC/HZS under
+FAR 19.13) in Casimir-relevant NAICS codes — not a keyword guess. Any
+company bidding here must ALSO be HUBZone-eligible or certified, so the
+competitor pool is legally restricted, regardless of how well the topic
+matches Casimir's capability keywords. **If Casimir is not yet
+SBA-certified, certification is the prerequisite to bidding on the HZC
+(set-aside) items below** — see the README for the certification pathway.
+HZS (sole-source) items are already awarded directly to a HUBZone firm;
+shown here as market intel on who's winning and under what NAICS.
 """
 
 CORE_INTRO = """## Core capability matches
@@ -42,6 +59,8 @@ teaming partner who covers the engineering domain.
 def _fmt_item(opp: dict[str, Any]) -> str:
     new_marker = "[NEW] " if opp.get("is_new") else ""
     lines = [f"### {new_marker}{opp.get('title', 'Untitled opportunity')}"]
+    if opp.get("hubzone_set_aside"):
+        lines.append(f"- **Set-aside:** {opp.get('set_aside') or 'HUBZone (FAR 19.13)'} · NAICS {opp.get('naics') or 'n/a'}")
     lines.append(f"- **Score:** {opp.get('score', 0)}/100 — tags: {', '.join(opp.get('matched_tags', [])) or 'none'}")
     lines.append(f"- **Source:** {opp.get('source_name', 'unknown')}")
     if opp.get("agency"):
@@ -79,7 +98,8 @@ def generate_report(
     new_count: int | None = None,
 ) -> Path:
     """
-    scored: {"core": [...], "secondary": [...]} as returned by score.score_all()
+    scored: {"hubzone": [...], "core": [...], "secondary": [...]} as returned
+      by score.score_all()
     source_status: dict of source_id -> status message, surfaced instead of
       silently hiding a broken/empty source.
     new_count: how many kept items weren't in reports/seen.json — shown in the
@@ -89,10 +109,15 @@ def generate_report(
     date_str = datetime.now().strftime("%Y-%m-%d")
     out_path = REPORTS_DIR / f"{date_str}-opportunity-scan.md"
 
+    hubzone = scored.get("hubzone", [])
     core = scored.get("core", [])
     secondary = scored.get("secondary", [])
 
-    headline = f"**{len(core)} core capability match(es)**, **{len(secondary)} secondary/market-intel item(s)**."
+    headline = (
+        f"**{len(hubzone)} HUBZone set-aside(s)**, "
+        f"**{len(core)} core capability match(es)**, "
+        f"**{len(secondary)} secondary/market-intel item(s)**."
+    )
     if new_count is not None:
         headline += f" **{new_count} new since last scan** (marked [NEW])."
 
@@ -108,6 +133,14 @@ def generate_report(
     ]
     for source_id, status in source_status.items():
         parts.append(f"- `{source_id}`: {status}")
+    parts.append("")
+
+    parts.append(HUBZONE_INTRO)
+    parts.append("")
+    if hubzone:
+        parts.append(_grouped_by_agency(hubzone))
+    else:
+        parts.append("*No HUBZone set-asides found in Casimir's NAICS codes this scan.*")
     parts.append("")
 
     parts.append(CORE_INTRO)

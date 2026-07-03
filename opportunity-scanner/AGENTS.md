@@ -25,6 +25,17 @@ encodes this as a two-tier system: **core** tags (the actual skill match) vs.
 these — core matches are the "worth acting on" list, secondary-only matches
 go in a clearly-labeled "market intel, no direct capability match" section.
 
+**Casimir's principal office is HUBZone-eligible** (not yet SBA-certified —
+see README "Certification pathway"). This is a structural procurement
+advantage independent of capability fit: any SAM.gov solicitation with
+`typeOfSetAside=HZC` restricts the competitor pool to HUBZone firms.
+`scripts/sources/sam_gov.py`'s `fetch_hubzone()` pulls these directly from
+SAM.gov's official set-aside field (not a keyword guess) across Casimir's
+NAICS codes, and they get their own report section that bypasses the
+relevance-score threshold entirely — a HUBZone set-aside is worth surfacing
+even with a weak capability match, because the restricted competition is the
+point. Always lead a chat summary with this section if it's non-empty.
+
 Casimir builds AI-powered decision support software for the DoD (flagship:
 Casimir Intelligence, an S&T ecosystem mapping / co-investment platform built
 for Space Force Task Force Futures analysts, targeting NIST 800-171 / CMMC
@@ -36,9 +47,9 @@ Level 2 / CUI compliance).
    (https://sam.gov/data-services — takes a few minutes, no cost)
 3. `python scripts/scan_opportunities.py`
 4. Read the newest file in `reports/` and summarize the top matches in chat —
-   lead with the **core capability matches** section (skip the secondary/
-   market-intel section unless asked), grouped by source agency, with close
-   deadlines flagged.
+   lead with **HUBZone set-asides** (if any), then the **core capability
+   matches** section (skip the secondary/market-intel section unless asked),
+   grouped by source agency, with close deadlines flagged.
 
 You can also just ask me (the Cursor agent) to "run the opportunity scanner" —
 I will run the command above and read you the results.
@@ -68,6 +79,11 @@ I will run the command above and read you the results.
   not an SBIR topic feed.
 - **DIU** uses Commercial Solutions Openings (CSOs), not SBIR/STTR. Its source
   module scrapes diu.mil directly and cross-checks SAM.gov.
+- **HZC / HZS** — SAM.gov's official set-aside codes for HUBZone competitive
+  set-asides and sole-source awards (FAR 19.13). Distinct from the generic
+  `set_aside_signal` keyword tag, which only covers set-asides Casimir does
+  NOT qualify for (WOSB, SDVOSB, 8(a)) — HUBZone gets structural detection
+  instead since Casimir is actually eligible for it.
 
 ## Where things live
 - `config/sources.yaml` — every portal/agency this agent watches, with notes

@@ -6,7 +6,7 @@
 > "contracted" unless a human has separately confirmed an actual award.
 
 
-**1 core capability match(es)**, **6 secondary/market-intel item(s)**. **7 new since last scan** (marked [NEW]).
+**0 HUBZone set-aside(s)**, **1 core capability match(es)**, **6 secondary/market-intel item(s)**. **7 new since last scan** (marked [NEW]).
 
 ## Source status
 
@@ -16,6 +16,24 @@
 - `army_futures_xtech`: ok — 5 open/active competitions
 - `sam_gov`: SKIPPED — no SAM_GOV_API_KEY set in .env (get one free at sam.gov/data-services)
 - `nro`: SKIPPED — no SAM_GOV_API_KEY set in .env (get one free at sam.gov/data-services)
+- `sam_gov_hubzone`: SKIPPED — no SAM_GOV_API_KEY set in .env (get one free at sam.gov/data-services)
+
+## HUBZone set-asides — restricted competitor pool
+
+Casimir's principal office sits in a HUBZone-designated area, making it
+eligible for SBA HUBZone certification. Everything below is pulled directly
+from SAM.gov's official set-aside field (typeOfSetAside=HZC/HZS under
+FAR 19.13) in Casimir-relevant NAICS codes — not a keyword guess. Any
+company bidding here must ALSO be HUBZone-eligible or certified, so the
+competitor pool is legally restricted, regardless of how well the topic
+matches Casimir's capability keywords. **If Casimir is not yet
+SBA-certified, certification is the prerequisite to bidding on the HZC
+(set-aside) items below** — see the README for the certification pathway.
+HZS (sole-source) items are already awarded directly to a HUBZone firm;
+shown here as market intel on who's winning and under what NAICS.
+
+
+*No HUBZone set-asides found in Casimir's NAICS codes this scan.*
 
 ## Core capability matches
 

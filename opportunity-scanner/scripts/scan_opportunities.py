@@ -51,6 +51,16 @@ NRO_KEYWORDS = [
     "geospatial",
 ]
 
+# NAICS codes Casimir would actually bid under — used only for the HUBZone
+# set-aside sweep (see sam_gov.fetch_hubzone), which has no keyword filter.
+CASIMIR_NAICS_CODES = [
+    "541511",  # Custom Computer Programming Services
+    "541512",  # Computer Systems Design Services
+    "541519",  # Other Computer Related Services
+    "541715",  # R&D in Physical, Engineering, and Life Sciences
+    "541990",  # All Other Professional, Scientific, and Technical Services
+]
+
 
 def _opportunity_key(opp: dict[str, Any]) -> str:
     """Stable identity for the seen-state diff. URL is the anchor; title is the
@@ -135,9 +145,16 @@ def main():
     source_status["nro"] = status
     print(f"  {status}")
 
+    print("Scanning SAM.gov for HUBZone set-asides (Casimir-relevant NAICS)...")
+    results, status = sam_gov.fetch_hubzone(CASIMIR_NAICS_CODES)
+    all_opportunities.extend(results)
+    source_status["sam_gov_hubzone"] = status
+    print(f"  {status}")
+
     print(f"\nTotal raw results before scoring: {len(all_opportunities)}")
     scored = score_all(all_opportunities)
     new_count = annotate_new(scored, update_seen=not args.no_update_seen)
+    print(f"HUBZone set-asides: {len(scored['hubzone'])}")
     print(f"Core capability matches: {len(scored['core'])}")
     print(f"Secondary/market-intel matches: {len(scored['secondary'])}")
     print(f"New since last scan: {new_count}")
@@ -150,6 +167,7 @@ def main():
         json.dumps(
             {
                 "date": datetime.now().strftime("%Y-%m-%d"),
+                "hubzone": len(scored["hubzone"]),
                 "core": len(scored["core"]),
                 "secondary": len(scored["secondary"]),
                 "new": new_count,

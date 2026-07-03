@@ -48,7 +48,7 @@ def build_email() -> tuple[str, str]:
 
     subject = (
         f"Opportunity scan {summary['date']} — "
-        f"{summary['new']} new, {summary['core']} core match(es)"
+        f"{summary['new']} new, {summary.get('hubzone', 0)} HUBZone, {summary['core']} core match(es)"
     )
 
     body_html = markdown.markdown(
@@ -61,7 +61,7 @@ def build_email() -> tuple[str, str]:
 <div style="font-family: Inter, -apple-system, sans-serif; max-width: 720px; margin: 0 auto; color: #0B132B;">
   <div style="background: #0B132B; padding: 28px 36px; border-radius: 12px 12px 0 0;">
     <h1 style="color: #fff; font-size: 18px; margin: 0; font-weight: 700;">Casimir Opportunity Scanner</h1>
-    <p style="color: rgba(255,255,255,0.5); font-size: 13px; margin: 6px 0 0;">{summary['new']} new since last scan · {summary['core']} core capability match(es) · {summary['secondary']} market-intel item(s)</p>
+    <p style="color: rgba(255,255,255,0.5); font-size: 13px; margin: 6px 0 0;">{summary['new']} new since last scan · {summary.get('hubzone', 0)} HUBZone set-aside(s) · {summary['core']} core capability match(es) · {summary['secondary']} market-intel item(s)</p>
   </div>
   <div style="background: #F8FAFC; padding: 28px 36px; border: 1px solid #E2E8F0; border-top: none; border-radius: 0 0 12px 12px; font-size: 14px; line-height: 1.65;">
     {body_html}

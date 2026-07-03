@@ -14,6 +14,13 @@ defense-domain trivia. `config/capability_filters.yaml` splits tags into
 real intel, not a capability match by itself). Reports separate these; lead
 with core matches unless asked for secondary/market-intel too.
 
+Casimir's principal office is HUBZone-eligible (not yet SBA-certified).
+`sam_gov.fetch_hubzone()` pulls SAM.gov's structural `typeOfSetAside=HZC/HZS`
+field across Casimir's NAICS codes — a legally restricted competitor pool,
+independent of capability keywords. These get their own report section and
+bypass the relevance threshold entirely. Lead a summary with this section
+first, ahead of core matches, whenever it's non-empty.
+
 Non-negotiables:
 - Aspirational language only: "pursuing," "targeting," "eligible for." Never
   "awarded," "contracted," "secured" unless a human confirms an actual award.
@@ -29,4 +36,4 @@ Non-negotiables:
 
 When asked to "scan for opportunities," run
 `python scripts/scan_opportunities.py`, then summarize the newest report —
-core matches first, deadlines flagged.
+HUBZone set-asides first, then core matches, deadlines flagged.

@@ -60,6 +60,7 @@ jobs:
           {
             echo "date=$(jq -r .date reports/latest-summary.json)"
             echo "new=$(jq -r .new reports/latest-summary.json)"
+            echo "hubzone=$(jq -r .hubzone reports/latest-summary.json)"
             echo "core=$(jq -r .core reports/latest-summary.json)"
             echo "secondary=$(jq -r .secondary reports/latest-summary.json)"
             echo "report=$(jq -r .report reports/latest-summary.json)"
@@ -83,7 +84,7 @@ jobs:
         run: |
           gh issue create \
             --repo "$GITHUB_REPOSITORY" \
-            --title "Opportunity scan ${{ steps.summary.outputs.date }} — ${{ steps.summary.outputs.new }} new, ${{ steps.summary.outputs.core }} core match(es)" \
+            --title "Opportunity scan ${{ steps.summary.outputs.date }} — ${{ steps.summary.outputs.new }} new, ${{ steps.summary.outputs.hubzone }} HUBZone, ${{ steps.summary.outputs.core }} core match(es)" \
             --body-file "${{ steps.summary.outputs.report }}"
 
       - name: Email briefing via Resend

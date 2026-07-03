@@ -218,13 +218,20 @@ groups:
   - tag: set_aside_signal
     tier: secondary
     weight: 0.5
-    description: "Not a capability match, but flags set-aside eligibility worth noting per Dave's comments"
+    description: >
+      Keyword-only mention of a socioeconomic set-aside Casimir does NOT
+      (yet) qualify for — WOSB/EDWOSB, SDVOSB, 8(a). Flags market intel, not
+      a real angle for Casimir. NOTE: HUBZone is intentionally NOT a keyword
+      here — Casimir's principal office IS HUBZone-eligible, so HUBZone
+      opportunities get a much stronger, structural signal via
+      sam_gov.fetch_hubzone() (SAM.gov's official typeOfSetAside=HZC/HZS
+      field) and appear in their own report section, unconditionally, rather
+      than depending on a text match. See scripts/sources/sam_gov.py.
     keywords:
       - "woman-owned"
       - "women-owned"
       - "service-disabled veteran"
       - "SDVOSB"
-      - "HUBZone"
       - "8(a)"
 
 # Minimum normalized score (0-100, computed within whichever tier(s) an item
