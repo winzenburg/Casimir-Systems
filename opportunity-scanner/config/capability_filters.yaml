@@ -1,10 +1,31 @@
 # Keyword groups used to score each opportunity's relevance to Casimir.
-# Each group has a weight (relative importance) and a list of keywords/phrases
-# (case-insensitive substring match against title + description).
-# score.py sums weighted hits, normalizes to 0-100, and returns matched tags.
+#
+# tier: core      — matches Ryan's actual differentiated skill set: AI-native
+#                    rapid software delivery, UX/human factors for high-stakes
+#                    or sensitive domains, business/product strategy, and the
+#                    Casimir Intelligence platform itself. Proven across
+#                    Winzinvest (fintech execution software), Kinlet.care
+#                    (sensitive-context caregiver community UX), and Casimir.
+#                    An opportunity needs at least one CORE tag to appear in
+#                    the main report at all — see minimum_score_threshold and
+#                    scan_opportunities.py's core-gate logic.
+# tier: secondary  — Dave's flagged defense-market opportunity areas (battery,
+#                    unmanned platforms, counter-AI, etc.). Real market intel,
+#                    but not a capability match by themselves — a topic that
+#                    only hits a secondary tag is shown in a separate
+#                    "market intel, no direct capability match" section
+#                    rather than mixed into the main ranked list.
+#
+# Each group has a weight (relative importance within its tier) and a list of
+# keywords/phrases (case-insensitive, word-boundary match against title +
+# description). score.py sums weighted hits per tier, normalizes to 0-100,
+# and returns matched tags + which tier(s) were hit.
 
 groups:
+  # ---- CORE: matches Ryan's actual differentiated skill set ----
+
   - tag: core_platform
+    tier: core
     weight: 3.0
     description: "Direct match to Casimir Intelligence's core function"
     keywords:
@@ -17,40 +38,110 @@ groups:
       - "portfolio analysis"
       - "investment decision"
 
-  - tag: ai_intel_synthesis
+  - tag: ai_workflows
+    tier: core
     weight: 2.5
-    description: "AI for intelligence synthesis — Dave's flagged priority; human-in-the-loop required"
+    description: "AI workflows / agentic systems — the actual build capability behind Casimir, Winzinvest, and Kinlet"
+    keywords:
+      - "AI workflow"
+      - "agentic"
+      - "large language model"
+      - "LLM"
+      - "generative AI"
+      - "AI automation"
+      - "AI-native"
+      - "autonomous agent"
+      - "workflow automation"
+      - "retrieval augmented generation"
+      - "human-in-the-loop"
+      - "human in the loop"
+
+  - tag: ux_human_factors
+    tier: core
+    weight: 2.5
+    description: "UX/UI/human factors, especially for high-stakes or sensitive-context tools — the throughline from Kinlet's caregiver UX to analyst-facing dashboards"
+    keywords:
+      - "user experience"
+      - "human factors"
+      - "human-centered design"
+      - "user-centered design"
+      - "information architecture"
+      - "usability"
+      - "human systems"
+      - "human performance"
+      - "trust and safety"
+      - "data visualization"
+      - "common operating picture"
+      - "unified operating picture"
+      - "dashboard"
+      - "sensor fusion"
+      - "decision fatigue"
+      - "analysis paralysis"
+      - "C2" # command and control
+
+  - tag: rapid_ai_native_development
+    tier: core
+    weight: 2.0
+    description: "Rapid, AI-accelerated software delivery — building with tools like Cursor rather than traditional multi-year dev cycles"
+    keywords:
+      - "rapid prototyping"
+      - "rapid development"
+      - "low-code"
+      - "no-code"
+      - "AI-assisted development"
+      - "AI-accelerated"
+      - "software factory"
+      - "DevSecOps"
+      - "continuous delivery"
+      - "minimum viable product"
+      - "MVP"
+
+  - tag: business_strategy_product
+    tier: core
+    weight: 1.5
+    description: "Product/business strategy signal — distinguishes 'we want a vendor who thinks about product' topics from pure engineering asks"
+    keywords:
+      - "product strategy"
+      - "go-to-market"
+      - "software-as-a-service"
+      - "SaaS"
+      - "productized"
+      - "commercial off-the-shelf software"
+
+  - tag: data_center_siting
+    tier: core
+    weight: 1.5
+    description: "Rural-West data center siting / water rights / aquifer remediation — Ryan's hydrogeology background"
+    keywords:
+      - "data center siting"
+      - "water rights"
+      - "aquifer"
+      - "groundwater remediation"
+      - "hydrogeology"
+      - "environmental remediation"
+
+  # ---- SECONDARY: Dave's flagged market areas — real intel, not a capability match by itself ----
+
+  - tag: ai_intel_synthesis
+    tier: secondary
+    weight: 2.0
+    description: "AI for intelligence synthesis — Dave's flagged priority"
     keywords:
       - "intelligence synthesis"
       - "target analysis"
       - "targeting cycle"
-      - "human-in-the-loop"
-      - "human in the loop"
       - "analyst workflow"
       - "all-source intelligence"
       - "ISR"
       - "PED" # processing, exploitation, dissemination
+      # INT discipline names actually used on SOFWERX/DIU pages (verified July 2026):
       - "SIGINT"
       - "ELINT"
       - "GEOINT"
 
-  - tag: data_viz_human_factors
-    weight: 2.5
-    description: "Sensor/data overload distillation — Dave's flagged priority"
-    keywords:
-      - "data visualization"
-      - "human factors"
-      - "common operating picture"
-      - "unified operating picture"
-      - "command and control"
-      - "C2"
-      - "sensor fusion"
-      - "decision fatigue"
-      - "analysis paralysis"
-      - "dashboard"
-
   - tag: unmanned_platforms
-    weight: 2.0
+    tier: secondary
+    weight: 1.5
     description: "UAS/USV/UGV integration — Dave's flagged priority"
     keywords:
       - "unmanned aerial"
@@ -74,7 +165,8 @@ groups:
       - "UxV"
 
   - tag: power_battery
-    weight: 1.5
+    tier: secondary
+    weight: 1.0
     description: "Battery/power management for field tech — Dave's flagged priority"
     keywords:
       - "battery management"
@@ -85,7 +177,8 @@ groups:
       - "energy storage"
 
   - tag: counter_ai_influence
-    weight: 1.5
+    tier: secondary
+    weight: 1.0
     description: "Counter-AI and influence operations — Dave's flagged priority"
     keywords:
       - "counter-AI"
@@ -95,19 +188,9 @@ groups:
       - "disinformation"
       - "deception"
 
-  - tag: data_center_siting
-    weight: 1.0
-    description: "Rural-West data center siting / water rights / aquifer remediation — ties to Ryan's hydrogeology background"
-    keywords:
-      - "data center siting"
-      - "water rights"
-      - "aquifer"
-      - "groundwater remediation"
-      - "hydrogeology"
-      - "environmental remediation"
-
   - tag: compliance_relevant
-    weight: 1.0
+    tier: secondary
+    weight: 0.5
     description: "Signals the topic cares about the same compliance bar Casimir already targets"
     keywords:
       - "NIST 800-171"
@@ -117,12 +200,13 @@ groups:
       - "FOUO"
 
   - tag: sbir_sttr_cycle
-    weight: 2.0
+    tier: secondary
+    weight: 1.5
     description: >
       Mechanism signal: SBIR/STTR cycle releases and announcements. A SOFWERX
-      "SBIR 26.x Release N" card carries no capability keywords but is exactly
-      the early-warning SOCOM signal this scanner exists to catch — this group
-      guarantees such items clear the report threshold.
+      "SBIR 26.x Release N" card carries no capability keywords but is the
+      early-warning SOCOM signal worth knowing about — it surfaces in the
+      market-intel section, where a human decides whether the topics fit.
     keywords:
       - "SBIR"
       - "STTR"
@@ -132,6 +216,7 @@ groups:
       - "D2P2"
 
   - tag: set_aside_signal
+    tier: secondary
     weight: 0.5
     description: "Not a capability match, but flags set-aside eligibility worth noting per Dave's comments"
     keywords:
@@ -142,10 +227,17 @@ groups:
       - "HUBZone"
       - "8(a)"
 
-# Minimum normalized score (0-100) for an item to appear in the report at all.
-# Items below this are dropped rather than cluttering the briefing.
-# Calibration note (July 2026): one full hit on a weight-2.0 group normalizes
-# to ~9, and on a weight-2.5 group to ~11 — so a threshold of 8 keeps every
-# single-strong-group match (e.g. a SOCOM unmanned-systems assessment event)
-# while still dropping zero-match noise. Raise it if reports get cluttered.
-minimum_score_threshold: 8
+# Minimum normalized score (0-100, computed within whichever tier(s) an item
+# matched) for an item to appear in the report at all.
+# Calibration note (July 2026): scores normalize within the matched tier, so
+# one full hit on a weight-2.5 core group ≈ 13.5, on a weight-1.5 secondary
+# group ≈ 13 — a threshold of 10 keeps every single-strong-group match while
+# dropping zero-match noise. Raise it if reports get cluttered.
+minimum_score_threshold: 10
+
+# If true, an opportunity must match at least one CORE tag to appear in the
+# main report. Secondary-only matches (Dave's flagged areas with zero core
+# hits) are still surfaced, but in a separate "market intel" section rather
+# than the main ranked list — so you don't lose the signal, but it doesn't
+# crowd out actual capability matches.
+require_core_match_for_main_list: true

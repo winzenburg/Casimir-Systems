@@ -11,22 +11,32 @@ condensed always-apply version.
 ## Sources it watches
 | Source | Coverage | Status |
 |---|---|---|
-| SBIR.gov API | DoD-wide SBIR/STTR (Army, Navy, AFWERX/SpaceWERX, SOCOM, DARPA, MDA...) | stable (has maintenance windows — see below) |
-| SOFWERX | SOCOM's early-announcement channel (correct name — not "SofWorks") | verified July 2026 |
-| SAM.gov API | Broad sweep + DIU + Army Futures + primary NRO source | stable (needs free API key) |
-| DIU (diu.mil) | Commercial Solutions Openings | verified July 2026 |
-| Army xTech | Prize-competition entry point (moved to xtech.army.mil) | verified July 2026 |
-| NRO | Filtered SAM.gov query — NRO has no dedicated SBIR program | stable (needs free API key) |
+| SBIR.gov API | DoD-wide SBIR/STTR (Army, Navy, AFWERX/SpaceWERX, SOCOM, DARPA, MDA...) | stable |
+| SOFWERX | SOCOM's early-announcement channel (correct name — not "SofWorks") | verified against live site, text-pattern based |
+| SAM.gov API | Broad sweep + DIU + Army Futures + primary NRO source | stable |
+| DIU (diu.mil) | Commercial Solutions Openings | verified against live site, text-pattern based |
+| Army xTech | Prize-competition entry point (xtech.army.mil — corrected domain) | verified against live site, text-pattern based |
+| NRO | Filtered SAM.gov query — NRO has no dedicated SBIR program | stable |
 
 See [`config/sources.yaml`](./config/sources.yaml) for details and caveats on
-each one. The three HTML scrapers were verified against the live sites in
-July 2026 and pull real titles, deadlines, and descriptions. If a site's
-markup drifts later, the scanner says so explicitly in the report's source
-status section instead of silently reporting "no opportunities."
+each one. The three HTML scrapers (SOFWERX, DIU, Army xTech) were verified
+against the live sites in July 2026 and pull real titles, deadlines, and
+descriptions. They're still worth a periodic spot-check, especially if any
+site restructures its content (e.g. DIU adding real per-item deep links, or
+Army migrating off its current WordPress setup). The scanner will tell you
+clearly in its report if a source's extraction comes back empty
+unexpectedly, rather than silently reporting "no opportunities."
 
 Note on SBIR.gov: its public API periodically returns HTTP 429 ("not
 available at this time") during maintenance windows. The scanner retries,
 then reports the outage clearly — just rerun the scan later.
+
+**Worth noting on SOFWERX specifically:** most current opportunities aren't
+labeled "SBIR"/"STTR" at all — they're "Assessment Events" and "Collaboration
+Events" run under Other Transaction authority. The scraper pulls everything
+on the current-events page and lets the relevance scorer do the filtering,
+rather than pattern-matching on "SBIR" in the title (which would now miss
+most of what's live).
 
 ## Setup
 ```bash
@@ -56,13 +66,23 @@ Cursor's CLI can run this unattended, e.g. from cron or CI:
 cursor --headless "run the opportunity scanner and summarize new items since the last report"
 ```
 
-## Scoring
-`config/capability_filters.yaml` defines weighted keyword groups covering
-Casimir's core platform capabilities plus the opportunity areas Dave flagged
-(battery/power, unmanned platforms, AI intel synthesis, data viz/human
-factors, counter-AI/influence ops, rural-West data center siting). Adjust
-weights or add keywords there as your read on the market sharpens — no code
-changes needed.
+## Scoring: core vs. secondary
+`config/capability_filters.yaml` splits relevance tags into two tiers:
+
+- **Core** — matches Ryan's actual differentiated skill set: AI-native rapid
+  software delivery (building with tools like Cursor), UX/human factors for
+  high-stakes or sensitive-context tools, product/business strategy, the
+  Casimir Intelligence platform itself, and the hydrogeology/data-center-siting
+  angle. Proven across Winzinvest (fintech execution software) and Kinlet.care
+  (sensitive-context caregiver community UX), not just Casimir.
+- **Secondary** — Dave's flagged defense-market areas (batteries, unmanned
+  platforms, counter-AI). Real intel, but not a capability match by itself.
+
+Every scan report separates these into two sections: **core capability
+matches** (the ranked, "worth acting on" list) and **market intel — no direct
+capability match** (Dave's areas, kept visible but clearly deprioritized).
+Adjust weights or add keywords in the config as your read on the market
+sharpens — no code changes needed.
 
 ## Guardrails baked in
 - **Aspirational language only** — the report banner and agent rules enforce
@@ -78,8 +98,7 @@ changes needed.
    live data.
 2. Get a free SAM.gov API key and drop it in `.env` — this unlocks the broad
    sweep plus the NRO and DIU cross-checks.
-3. Keep tuning `capability_filters.yaml` weights as you review reports. The
-   threshold is calibrated so any single strong capability match (e.g. a
-   SOCOM unmanned-systems event) makes the report.
+3. Keep tuning `capability_filters.yaml` weights as you review reports —
+   especially the core-tier keywords, which encode your differentiators.
 4. Optional: wire up a cron job or Cursor Background Agent for a weekly
    scheduled scan.

@@ -28,9 +28,14 @@ sources:
       intermediary agreement with USSOCOM since 2015 (Tampa, FL). SOCOM SBIR
       cycles are frequently announced here (events.sofwerx.org/sbir-*) ahead
       of formally posting to DSIP/SBIR.gov — this is the early-warning
-      source. Selectors verified against the live site July 2026: current
-      events render as a.link cards; the module also pulls each event page's
-      meta description so the scorer has real text.
+      source. Verified against the live site July 2026: most current
+      opportunities are "Assessment Events" / "Collaboration Events" under
+      OTA authority (10 U.S.C. 4021/4022), NOT labeled SBIR/STTR — the
+      scraper pulls all current events (a.link cards, plus each event page's
+      meta description) and lets score.py filter for relevance. Also scrapes
+      /ussocom-sponsored-events-exercises, which links directly to SAM.gov
+      RFI/Technical Experimentation postings — higher signal, fewer false
+      positives.
     module: scripts.sources.sofwerx
 
   - id: sam_gov
@@ -52,11 +57,13 @@ sources:
     kind: html
     base_url: "https://www.diu.mil/work-with-us/open-solicitations"
     notes: >
-      DIU runs CSOs, not SBIR/STTR — different mechanism, faster timeline,
-      no set-aside status advantage. Selectors verified against the live
-      site July 2026: open CSO areas of interest render as div.aoi cards
-      with title, "Responses Due By" deadline, and problem statement.
-      SAM.gov remains a cross-check (scripts/sources/sam_gov.py).
+      DIU runs CSOs, not SBIR/STTR — different mechanism, faster timeline
+      (60-90 days to prototype OT award), no set-aside status advantage.
+      Selectors verified against the live site July 2026: open CSO areas of
+      interest render as div.aoi cards with title, "Responses Due By"
+      deadline, problem statement, and a per-item submit-solution deep link
+      (/work-with-us/submit-solution/PROJ#####). SAM.gov remains a
+      cross-check (scripts/sources/sam_gov.py).
     module: scripts.sources.diu
 
   - id: army_futures_xtech

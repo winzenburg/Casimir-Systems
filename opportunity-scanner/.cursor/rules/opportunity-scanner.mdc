@@ -5,23 +5,28 @@ alwaysApply: true
 ---
 
 This repo is Casimir Systems' defense-opportunity scanner. Full context is in
-AGENTS.md — read it before doing anything else in this repo.
+AGENTS.md — read it before doing anything else here.
+
+Ryan's real differentiator is capability (AI-native rapid dev, UX/human
+factors, product strategy — proven via Winzinvest and Kinlet.care), not
+defense-domain trivia. `config/capability_filters.yaml` splits tags into
+`core` (actual skill match) vs `secondary` (Dave's flagged market areas —
+real intel, not a capability match by itself). Reports separate these; lead
+with core matches unless asked for secondary/market-intel too.
 
 Non-negotiables:
-- Aspirational language only for any opportunity: "pursuing," "targeting,"
-  "eligible for." Never "awarded," "contracted," "secured" unless a human
-  confirms an actual award.
-- Never submit, apply, email, or message anyone on Casimir's behalf. This
-  agent produces briefings only; outreach is always a human decision.
+- Aspirational language only: "pursuing," "targeting," "eligible for." Never
+  "awarded," "contracted," "secured" unless a human confirms an actual award.
+- Never submit, apply, email, or message anyone on Casimir's behalf —
+  briefings only; outreach is a human decision.
 - Every opportunity in output must include its source URL.
 - SOCOM's partner org is **SOFWERX**, not "SofWorks."
-- NRO has no SBIR program — treat it as a SAM.gov filtered query, not an SBIR
-  topic feed. DIU uses CSOs, not SBIR/STTR.
-- If a source module (`scripts/sources/*.py`) returns zero results, say so
-  explicitly rather than treating it as "no opportunities found" — some
-  sources scrape HTML that can silently break when a site changes.
+- NRO has no SBIR program — it's a SAM.gov filtered query. DIU uses CSOs,
+  not SBIR/STTR.
+- If a source module returns zero results, say so explicitly rather than
+  reporting "no opportunities found" — some sources scrape HTML that can
+  silently break.
 
 When asked to "scan for opportunities," run
-`python scripts/scan_opportunities.py`, then read the newest file in
-`reports/` and summarize it — highest-scored items first, grouped by agency,
-deadlines flagged.
+`python scripts/scan_opportunities.py`, then summarize the newest report —
+core matches first, deadlines flagged.

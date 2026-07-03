@@ -90,7 +90,8 @@ def main():
 
     print(f"\nTotal raw results before scoring: {len(all_opportunities)}")
     scored = score_all(all_opportunities)
-    print(f"Opportunities above relevance threshold: {len(scored)}")
+    print(f"Core capability matches: {len(scored['core'])}")
+    print(f"Secondary/market-intel matches: {len(scored['secondary'])}")
 
     report_path = generate_report(scored, source_status)
     print(f"\nReport written to: {report_path}")
