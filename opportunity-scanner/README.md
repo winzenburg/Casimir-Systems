@@ -60,8 +60,29 @@ Output lands in `reports/YYYY-MM-DD-opportunity-scan.md`.
 Just ask the Agent: *"Run the opportunity scanner and summarize the top
 matches."* `AGENTS.md` tells it exactly what to run and how to report back.
 
-### Scheduled runs (headless)
-Cursor's CLI can run this unattended, e.g. from cron or CI:
+### Scheduled runs (GitHub Actions — already wired up)
+`.github/workflows/opportunity-scan.yml` (repo root) runs the scan **every
+Monday at 13:00 UTC** (7am Denver in summer). Each run:
+
+1. Scans all sources and diffs results against `reports/seen.json`, marking
+   anything not seen before as **[NEW]**.
+2. Commits the dated briefing + updated seen-state to the repo (so history
+   accumulates in git).
+3. Opens a GitHub issue titled like *"Opportunity scan 2026-07-06 — 3 new,
+   1 core match(es)"* with the full briefing as the body — **the issue
+   notification email is how you know the scan ran.**
+
+To include the SAM.gov + NRO queries in scheduled runs, add
+`SAM_GOV_API_KEY` as a repository secret (repo Settings → Secrets and
+variables → Actions). You can also trigger a run manually from the Actions
+tab (workflow_dispatch).
+
+For a local dry run that doesn't consume the "new" markers:
+```bash
+python scripts/scan_opportunities.py --no-update-seen
+```
+
+Cursor's CLI can also run it unattended from cron:
 ```bash
 cursor --headless "run the opportunity scanner and summarize new items since the last report"
 ```

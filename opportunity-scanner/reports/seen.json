@@ -1,0 +1,30 @@
+{
+  "army_futures_xtech::https://xtech.army.mil/competition/xtechphantum/": {
+    "first_seen": "2026-07-03",
+    "title": "xTech|Phantum"
+  },
+  "diu::https://www.diu.mil/work-with-us/submit-solution/PROJ00665": {
+    "first_seen": "2026-07-03",
+    "title": "Farseer: Quantum Sensing for ISR"
+  },
+  "sofwerx::https://events.sofwerx.org/autonomous-warfare-proving-ground": {
+    "first_seen": "2026-07-03",
+    "title": "JATF Autonomous Warfare Proving Ground"
+  },
+  "sofwerx::https://events.sofwerx.org/isp-autonomous-solutions": {
+    "first_seen": "2026-07-03",
+    "title": "J2 Integrated Survey Program (ISP) Autonomous Solutions"
+  },
+  "sofwerx::https://events.sofwerx.org/sbir-26-bz-release-4": {
+    "first_seen": "2026-07-03",
+    "title": "SBIR 26.BZ Release 4"
+  },
+  "sofwerx::https://events.sofwerx.org/ux-sai": {
+    "first_seen": "2026-07-03",
+    "title": "PEO-SDA: UxSAI Synthetic Data Modeler"
+  },
+  "sofwerx::https://events.sofwerx.org/ux-v-payloads-against-modern-signals": {
+    "first_seen": "2026-07-03",
+    "title": "PEO-TIS UxV Payloads against Modern Signals"
+  }
+}

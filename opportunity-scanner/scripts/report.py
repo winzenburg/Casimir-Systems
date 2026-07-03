@@ -40,7 +40,8 @@ teaming partner who covers the engineering domain.
 
 
 def _fmt_item(opp: dict[str, Any]) -> str:
-    lines = [f"### {opp.get('title', 'Untitled opportunity')}"]
+    new_marker = "[NEW] " if opp.get("is_new") else ""
+    lines = [f"### {new_marker}{opp.get('title', 'Untitled opportunity')}"]
     lines.append(f"- **Score:** {opp.get('score', 0)}/100 — tags: {', '.join(opp.get('matched_tags', [])) or 'none'}")
     lines.append(f"- **Source:** {opp.get('source_name', 'unknown')}")
     if opp.get("agency"):
@@ -75,11 +76,14 @@ def _grouped_by_agency(items: list[dict[str, Any]]) -> str:
 def generate_report(
     scored: dict[str, list[dict[str, Any]]],
     source_status: dict[str, str],
+    new_count: int | None = None,
 ) -> Path:
     """
     scored: {"core": [...], "secondary": [...]} as returned by score.score_all()
     source_status: dict of source_id -> status message, surfaced instead of
       silently hiding a broken/empty source.
+    new_count: how many kept items weren't in reports/seen.json — shown in the
+      header so a scheduled-run notification is skimmable at a glance.
     """
     REPORTS_DIR.mkdir(exist_ok=True)
     date_str = datetime.now().strftime("%Y-%m-%d")
@@ -88,12 +92,16 @@ def generate_report(
     core = scored.get("core", [])
     secondary = scored.get("secondary", [])
 
+    headline = f"**{len(core)} core capability match(es)**, **{len(secondary)} secondary/market-intel item(s)**."
+    if new_count is not None:
+        headline += f" **{new_count} new since last scan** (marked [NEW])."
+
     parts = [
         f"# Casimir Opportunity Scan — {date_str}",
         "",
         BANNER,
         "",
-        f"**{len(core)} core capability match(es)**, **{len(secondary)} secondary/market-intel item(s)**.",
+        headline,
         "",
         "## Source status",
         "",

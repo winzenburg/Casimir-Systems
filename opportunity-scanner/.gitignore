@@ -3,7 +3,7 @@ __pycache__/
 *.pyc
 .venv/
 venv/
-reports/*.md
-reports/*.json
-!reports/.gitkeep
+# raw --json dumps stay local; markdown reports, seen-state, and the
+# latest-summary are committed so scheduled runs archive their output
+reports/*-opportunity-scan.json
 .cursor/rules/personal.mdc

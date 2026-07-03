@@ -77,4 +77,10 @@ I will run the command above and read you the results.
 - `scripts/sources/` — one module per source
 - `scripts/score.py` — relevance scoring
 - `scripts/report.py` — markdown report generation
-- `reports/` — dated output, gitignored except `.gitkeep`
+- `reports/` — dated briefings plus `seen.json` (the new-since-last-scan
+  state) and `latest-summary.json` (machine-readable counts for CI). All
+  committed to git so scheduled runs archive their output; only raw `--json`
+  dumps stay local.
+- `.github/workflows/opportunity-scan.yml` (repo root) — weekly scheduled
+  run: scans every Monday, commits the report, and opens a GitHub issue
+  with the briefing. Items are marked [NEW] against `reports/seen.json`.

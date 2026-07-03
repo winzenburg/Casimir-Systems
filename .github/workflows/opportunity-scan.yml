@@ -1,0 +1,84 @@
+# Weekly opportunity scan.
+#
+# Runs the Casimir Opportunity Scanner every Monday at 13:00 UTC
+# (7am Denver in summer / 6am in winter), commits the dated briefing and
+# seen-state to the repo, and opens a GitHub issue with the report — the
+# issue notification email is how you know the scan ran.
+#
+# Setup: add SAM_GOV_API_KEY as a repository secret
+# (Settings > Secrets and variables > Actions) to include the SAM.gov
+# broad sweep and NRO-filtered queries. The scan still runs without it and
+# reports those sources as SKIPPED.
+
+name: Weekly opportunity scan
+
+on:
+  schedule:
+    - cron: "0 13 * * 1"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: opportunity-scan
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: opportunity-scanner
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: opportunity-scanner/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run scan
+        env:
+          SAM_GOV_API_KEY: ${{ secrets.SAM_GOV_API_KEY }}
+        run: python scripts/scan_opportunities.py
+
+      - name: Read scan summary
+        id: summary
+        run: |
+          {
+            echo "date=$(jq -r .date reports/latest-summary.json)"
+            echo "new=$(jq -r .new reports/latest-summary.json)"
+            echo "core=$(jq -r .core reports/latest-summary.json)"
+            echo "secondary=$(jq -r .secondary reports/latest-summary.json)"
+            echo "report=$(jq -r .report reports/latest-summary.json)"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Commit report and seen-state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/
+          if git diff --cached --quiet; then
+            echo "Nothing changed since the last scan — no commit."
+          else
+            git commit -m "Opportunity scan ${{ steps.summary.outputs.date }}: ${{ steps.summary.outputs.new }} new"
+            git push
+          fi
+
+      - name: Open briefing issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue create \
+            --repo "$GITHUB_REPOSITORY" \
+            --title "Opportunity scan ${{ steps.summary.outputs.date }} — ${{ steps.summary.outputs.new }} new, ${{ steps.summary.outputs.core }} core match(es)" \
+            --body-file "${{ steps.summary.outputs.report }}"
+
+      - name: Job summary
+        run: cat "${{ steps.summary.outputs.report }}" >> "$GITHUB_STEP_SUMMARY"
