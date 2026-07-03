@@ -6,4 +6,5 @@ venv/
 # raw --json dumps stay local; markdown reports, seen-state, and the
 # latest-summary are committed so scheduled runs archive their output
 reports/*-opportunity-scan.json
+reports/email-preview.html
 .cursor/rules/personal.mdc
