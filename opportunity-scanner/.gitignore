@@ -1,9 +1,0 @@
-.env
-__pycache__/
-*.pyc
-.venv/
-venv/
-reports/*.md
-reports/*.json
-!reports/.gitkeep
-.cursor/rules/personal.mdc
