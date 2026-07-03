@@ -226,7 +226,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Problem ──────────────────────────────────────────────── */}
-      <section className="py-28 px-6 lg:px-10" style={{ background: '#F8FAFC' }}>
+      <section className="py-28 lg:py-32 px-6 lg:px-10" style={{ background: '#F8FAFC' }}>
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <div className="max-w-2xl mb-16">
@@ -257,7 +257,7 @@ export default function HomePage() {
       </section>
 
       {/* ── How We Work ──────────────────────────────────────────── */}
-      <section className="relative py-28 px-6 lg:px-10 overflow-hidden" style={{ background: '#0B132B' }}>
+      <section className="relative py-28 lg:py-32 px-6 lg:px-10 overflow-hidden" style={{ background: '#0B132B' }}>
         <div className="grid-bg absolute inset-0 opacity-30 pointer-events-none" />
         <div className="relative max-w-7xl mx-auto">
           <ScrollReveal>
@@ -298,7 +298,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Mission Focus Areas ──────────────────────────────────── */}
-      <section className="py-28 px-6 lg:px-10" style={{ background: '#F8FAFC' }}>
+      <section className="py-28 lg:py-32 px-6 lg:px-10" style={{ background: '#F8FAFC' }}>
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <div className="max-w-2xl mb-16">
@@ -341,7 +341,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Product Portfolio ─────────────────────────────────────── */}
-      <section className="py-28 px-6 lg:px-10" style={{ background: '#ffffff', borderTop: '1px solid #E2E8F0' }}>
+      <section className="py-28 lg:py-32 px-6 lg:px-10" style={{ background: '#ffffff', borderTop: '1px solid #E2E8F0' }}>
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <div className="max-w-2xl mb-12">
@@ -385,7 +385,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Competitive Landscape ─────────────────────────────────── */}
-      <section className="py-28 px-6 lg:px-10" style={{ background: '#ffffff' }}>
+      <section className="py-28 lg:py-32 px-6 lg:px-10" style={{ background: '#ffffff' }}>
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <div className="max-w-2xl mb-12">
@@ -434,7 +434,7 @@ export default function HomePage() {
 
       {/* ── CTA ───────────────────────────────────────────────────── */}
       <section
-        className="py-28 px-6 lg:px-10 text-center"
+        className="py-28 lg:py-32 px-6 lg:px-10 text-center"
         style={{ background: '#0B132B', borderTop: '1px solid rgba(255,255,255,0.06)' }}
       >
         <div className="max-w-lg mx-auto">
