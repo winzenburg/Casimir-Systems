@@ -1,6 +1,6 @@
 {
   "date": "2026-07-03",
-  "hubzone": 0,
+  "hubzone": 1,
   "core": 1,
   "secondary": 6,
   "new": 7,
@@ -10,8 +10,8 @@
     "sofwerx": "ok \u2014 6 current events, 2 external/RFI items",
     "diu": "ok \u2014 1 open CSO areas of interest",
     "army_futures_xtech": "ok \u2014 5 open/active competitions",
-    "sam_gov": "SKIPPED \u2014 no SAM_GOV_API_KEY set in .env (get one free at sam.gov/data-services)",
-    "nro": "SKIPPED \u2014 no SAM_GOV_API_KEY set in .env (get one free at sam.gov/data-services)",
-    "sam_gov_hubzone": "SKIPPED \u2014 no SAM_GOV_API_KEY set in .env (get one free at sam.gov/data-services)"
+    "sam_gov": "ok \u2014 25 results",
+    "nro": "ok \u2014 25 results",
+    "sam_gov_hubzone": "ok \u2014 1 HUBZone set-aside/sole-source result(s)"
   }
 }

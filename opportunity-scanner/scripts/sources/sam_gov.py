@@ -22,12 +22,15 @@ STATUS: stable, but requires SAM_GOV_API_KEY in your .env file.
 """
 from __future__ import annotations
 import os
+import re
 from datetime import datetime, timedelta
 from typing import Any
 
 import requests
+from bs4 import BeautifulSoup
 
 BASE_URL = "https://api.sam.gov/opportunities/v2/search"
+NOTICE_DESC_URL = "https://api.sam.gov/prod/opportunities/v1/noticedesc"
 SOURCE_ID = "sam_gov"
 SOURCE_NAME = "SAM.gov Contract Opportunities"
 HUBZONE_SOURCE_ID = "sam_gov_hubzone"
@@ -37,6 +40,26 @@ HUBZONE_SOURCE_NAME = "SAM.gov — HUBZone Set-Asides"
 # HZS = HUBZone sole-source award (agency picked a HUBZone firm directly —
 # still worth seeing who's winning these and under what NAICS).
 HUBZONE_SET_ASIDE_CODES = ("HZC", "HZS")
+
+# For longer notices, the v2 search API returns "description" as a link to a
+# separate v1 endpoint rather than inline text — resolve it so the capability
+# scorer (and the report) sees real content instead of a bare URL. Capped
+# per-search to keep scan time reasonable on large result sets.
+MAX_DESCRIPTION_FETCHES = 20
+
+
+def _resolve_description(raw: str, api_key: str, timeout: int) -> str:
+    if not raw.startswith("https://api.sam.gov"):
+        return raw
+    try:
+        resp = requests.get(raw, params={"api_key": api_key}, timeout=timeout)
+        resp.raise_for_status()
+        html = resp.json().get("description", "") or ""
+    except (requests.RequestException, ValueError):
+        return raw
+    text = BeautifulSoup(html, "html.parser").get_text(" ", strip=True)
+    text = re.sub(r"\s+", " ", text).strip()
+    return text or raw
 
 
 def _date_range(days_back: int = 30) -> tuple[str, str]:
@@ -56,6 +79,7 @@ def _search(
     noticeId, and stamps each result with item_overrides (source_id, etc.)."""
     seen: dict[str, dict] = {}
     errors: list[str] = []
+    resolved_count = 0
 
     for params in params_list:
         full_params = {"api_key": api_key, "limit": 25, **params}
@@ -72,9 +96,13 @@ def _search(
             notice_id = item.get("noticeId")
             if not notice_id or notice_id in seen:
                 continue
+            description = item.get("description", "") or ""
+            if description.startswith("https://api.sam.gov") and resolved_count < MAX_DESCRIPTION_FETCHES:
+                description = _resolve_description(description, api_key, timeout)
+                resolved_count += 1
             seen[notice_id] = {
                 "title": item.get("title", "Untitled"),
-                "description": item.get("description", "") or "",
+                "description": description,
                 "agency": item.get("fullParentPathName") or "unspecified",
                 "close_date": item.get("responseDeadLine"),
                 "url": item.get("uiLink"),

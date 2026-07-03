@@ -6,7 +6,7 @@
 > "contracted" unless a human has separately confirmed an actual award.
 
 
-**0 HUBZone set-aside(s)**, **1 core capability match(es)**, **6 secondary/market-intel item(s)**. **7 new since last scan** (marked [NEW]).
+**1 HUBZone set-aside(s)**, **1 core capability match(es)**, **6 secondary/market-intel item(s)**. **7 new since last scan** (marked [NEW]).
 
 ## Source status
 
@@ -14,9 +14,9 @@
 - `sofwerx`: ok — 6 current events, 2 external/RFI items
 - `diu`: ok — 1 open CSO areas of interest
 - `army_futures_xtech`: ok — 5 open/active competitions
-- `sam_gov`: SKIPPED — no SAM_GOV_API_KEY set in .env (get one free at sam.gov/data-services)
-- `nro`: SKIPPED — no SAM_GOV_API_KEY set in .env (get one free at sam.gov/data-services)
-- `sam_gov_hubzone`: SKIPPED — no SAM_GOV_API_KEY set in .env (get one free at sam.gov/data-services)
+- `sam_gov`: ok — 25 results
+- `nro`: ok — 25 results
+- `sam_gov_hubzone`: ok — 1 HUBZone set-aside/sole-source result(s)
 
 ## HUBZone set-asides — restricted competitor pool
 
@@ -33,7 +33,19 @@ HZS (sole-source) items are already awarded directly to a HUBZone firm;
 shown here as market intel on who's winning and under what NAICS.
 
 
-*No HUBZone set-asides found in Casimir's NAICS codes this scan.*
+#### GENERAL SERVICES ADMINISTRATION.FEDERAL ACQUISITION SERVICE.GSA/FAS/PSHC/OASIS PLUS
+
+### One Acquisition Solution for Integrated Services Plus (OASIS+) Historically Underutilized Business Zone (HUBZone) Small Business Set-Aside Continuously Open Solicitation
+- **Set-aside:** HUBZone Set Aside · NAICS 541990
+- **Score:** 0.0/100 — tags: none
+- **Source:** SAM.gov — HUBZone Set-Asides
+- **Agency/branch:** GENERAL SERVICES ADMINISTRATION.FEDERAL ACQUISITION SERVICE.GSA/FAS/PSHC/OASIS PLUS
+- **Close date:** 2027-01-11T16:00:00-05:00
+- **Link:** https://sam.gov/workspace/contract/opp/8bfd6bb631074b01a14c54cfdeca852a/view
+
+May 12, 2026: The U.S. General Services Administration’s Office of Acquisition Solutions Development (ASD) is pleased to announce the first Phase II apparent awardee notifications for the OASIS+ Historically Underutilized Business Zone (HUBZone) Small Business Set-Aside. A consolidated list of Phase II apparent awardees for all OASIS+ contract families may be accessed on the OASIS+ Solicitations (Continuously Open) Website (see “Links” section within this SAM.gov posting). This list will be…
+
+
 
 ## Core capability matches
 
