@@ -6,7 +6,7 @@
 > "contracted" unless a human has separately confirmed an actual award.
 
 
-**2 HUBZone set-aside(s)**, **1 core capability match(es)**, **7 secondary/market-intel item(s)**. **1 new since last scan** (marked [NEW]).
+**2 HUBZone set-aside(s)**, **1 core capability match(es)**, **7 secondary/market-intel item(s)**. **0 new since last scan** (marked [NEW]).
 
 ## Source status
 
@@ -36,8 +36,8 @@ shown here as market intel on who's winning and under what NAICS.
 #### GENERAL SERVICES ADMINISTRATION.FEDERAL ACQUISITION SERVICE.GSA/FAS/PSHC/OASIS PLUS
 
 ### One Acquisition Solution for Integrated Services Plus (OASIS+) Historically Underutilized Business Zone (HUBZone) Small Business Set-Aside Continuously Open Solicitation
-- **Set-aside:** HUBZone Set Aside · NAICS 541990
-- **Score:** 4.4/100 — tags: set_aside_signal
+- **Set-aside:** HUBZone Set Aside · NAICS 541990 · open competition, restricted to HUBZone-eligible/certified firms
+- **Score:** 4.4/100 — tags: set_aside_signal (informational — inclusion here is due to HUBZone status, not this score)
 - **Source:** SAM.gov — HUBZone Set-Asides
 - **Agency/branch:** GENERAL SERVICES ADMINISTRATION.FEDERAL ACQUISITION SERVICE.GSA/FAS/PSHC/OASIS PLUS
 - **Close date:** 2027-01-11T16:00:00-05:00
@@ -49,8 +49,8 @@ July 7, 2026: This is Amendment 0009 to solicitation 47QRCA23R0003 . The General
 #### DEPT OF DEFENSE.DEPT OF THE AIR FORCE.AIR EDUCATION AND TRAINING COMMAND.FA3030  17 CONS CC
 
 ### 17 CS SIPR Thin Client & Network Infrastructure Project, Goodfellow AFB, TX
-- **Set-aside:** HUBZone Set Aside · NAICS 541519
-- **Score:** 0.0/100 — tags: none
+- **Set-aside:** HUBZone Set Aside · NAICS 541519 · open competition, restricted to HUBZone-eligible/certified firms
+- **Score:** 0.0/100 — tags: none (no capability-keyword match — included solely because it's a HUBZone set-aside)
 - **Source:** SAM.gov — HUBZone Set-Asides
 - **Agency/branch:** DEPT OF DEFENSE.DEPT OF THE AIR FORCE.AIR EDUCATION AND TRAINING COMMAND.FA3030  17 CONS CC
 - **Close date:** 2026-07-23T14:00:00-05:00
@@ -144,7 +144,7 @@ Develop synthetic data for unmanned systems, register now for the UxSAI Assessme
 
 #### DIU
 
-### [NEW] Massed Modular Aircraft
+### Massed Modular Aircraft
 - **Score:** 16.9/100 — tags: unmanned_platforms
 - **Source:** Defense Innovation Unit (diu.mil)
 - **Agency/branch:** DIU

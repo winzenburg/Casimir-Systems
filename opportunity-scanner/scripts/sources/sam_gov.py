@@ -107,7 +107,16 @@ def _search(
                 "close_date": item.get("responseDeadLine"),
                 "url": item.get("uiLink"),
                 "set_aside": item.get("typeOfSetAsideDescription") or item.get("typeOfSetAside"),
+                # raw code (HZC/HZS), kept separate from the human-readable
+                # description above so report.py can reliably branch on it
+                "set_aside_code": item.get("typeOfSetAside"),
                 "naics": item.get("naicsCode"),
+                # human-facing solicitation number, stable across amendments —
+                # unlike noticeId/uiLink, which SAM.gov reissues with each
+                # amendment on "continuously open" vehicles (e.g. OASIS+).
+                # Used as the seen-state identity key when present so those
+                # vehicles don't look "new" every week forever.
+                "solicitation_number": item.get("solicitationNumber"),
                 **item_overrides,
             }
 

@@ -59,9 +59,22 @@ teaming partner who covers the engineering domain.
 def _fmt_item(opp: dict[str, Any]) -> str:
     new_marker = "[NEW] " if opp.get("is_new") else ""
     lines = [f"### {new_marker}{opp.get('title', 'Untitled opportunity')}"]
-    if opp.get("hubzone_set_aside"):
-        lines.append(f"- **Set-aside:** {opp.get('set_aside') or 'HUBZone (FAR 19.13)'} · NAICS {opp.get('naics') or 'n/a'}")
-    lines.append(f"- **Score:** {opp.get('score', 0)}/100 — tags: {', '.join(opp.get('matched_tags', [])) or 'none'}")
+    is_hubzone = bool(opp.get("hubzone_set_aside"))
+    if is_hubzone:
+        code = opp.get("set_aside_code")
+        if code == "HZS":
+            biddability = "already sole-sourced to a HUBZone firm — market intel, not open for bidding"
+        else:
+            biddability = "open competition, restricted to HUBZone-eligible/certified firms"
+        lines.append(f"- **Set-aside:** {opp.get('set_aside') or 'HUBZone (FAR 19.13)'} · NAICS {opp.get('naics') or 'n/a'} · {biddability}")
+
+    tags = ", ".join(opp.get("matched_tags", [])) or "none"
+    score_line = f"- **Score:** {opp.get('score', 0)}/100 — tags: {tags}"
+    if is_hubzone and opp.get("score", 0) == 0:
+        score_line += " (no capability-keyword match — included solely because it's a HUBZone set-aside)"
+    elif is_hubzone:
+        score_line += " (informational — inclusion here is due to HUBZone status, not this score)"
+    lines.append(score_line)
     lines.append(f"- **Source:** {opp.get('source_name', 'unknown')}")
     if opp.get("agency"):
         lines.append(f"- **Agency/branch:** {opp['agency']}")
