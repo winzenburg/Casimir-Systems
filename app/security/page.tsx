@@ -2,14 +2,14 @@ import type { Metadata } from 'next';
 import { Shield, Lock, Eye, FileCheck } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Security Posture — Casimir Systems',
+  title: 'Security Posture: Casimir Systems',
   description: 'Security architecture, compliance posture, and data handling practices for Casimir Systems and the Casimir Intelligence platform.',
   alternates: { canonical: 'https://www.casimirsystems.com/security' },
 };
 
 const FRAMEWORKS = [
   { label: 'NIST SP 800-171', desc: 'Protecting Controlled Unclassified Information in Nonfederal Systems' },
-  { label: 'CMMC Level 2',    desc: 'Cybersecurity Maturity Model Certification — Advanced Practices' },
+  { label: 'CMMC Level 2',    desc: 'Cybersecurity Maturity Model Certification, Advanced Practices' },
   { label: 'DFARS 252.204-7012', desc: 'Safeguarding Covered Defense Information and Cyber Incident Reporting' },
   { label: 'CUI / FOUO',     desc: 'Controlled Unclassified Information and For Official Use Only handling' },
   { label: 'OMB M-26-04',    desc: 'Responsible AI use in federal agency decision-making' },
@@ -42,7 +42,7 @@ const CONTROLS = [
     title: 'AI / LLM Governance',
     items: [
       'All LLM inputs and outputs logged in a tamper-evident audit log',
-      'Model outputs are advisory only — human-in-the-loop for all decisions',
+      'Model outputs are advisory only, human-in-the-loop for all decisions',
       'No training on government-provided data without explicit authorization',
       'OMB M-26-04 compliant AI use documentation maintained per contract',
     ],
@@ -70,7 +70,7 @@ export default function SecurityPage() {
             Security Posture
           </h1>
           <p className="max-w-2xl" style={{ color: 'rgba(255,255,255,0.5)', fontFamily: 'IBM Plex Sans, sans-serif', fontSize: 16, lineHeight: 1.75 }}>
-            Casimir Systems is built compliance-first. Security and data handling requirements are not afterthoughts — they are baked into the architectural foundation of every system we ship.
+            Casimir Systems is built compliance-first. Security and data handling requirements are not afterthoughts. They are baked into the architectural foundation of every system we ship.
           </p>
         </div>
       </section>

@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   title: {
     template: '%s | Casimir Systems',
-    default: 'Casimir Systems — AI Defense Intelligence for U.S. Space Force',
+    default: 'Casimir Systems: AI Defense Intelligence for U.S. Space Force',
   },
   description:
     'Casimir Systems builds AI-powered S&T intelligence and co-investment decision support for U.S. Space Force and DoD. Zero-code, fully auditable, compliance-first architecture.',
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     'Peterson Space Force Base',
   ],
   openGraph: {
-    title: 'Casimir Systems — AI Defense Intelligence for U.S. Space Force',
+    title: 'Casimir Systems: AI Defense Intelligence for U.S. Space Force',
     description:
       'AI-powered S&T ecosystem mapping, co-investment decision support, and knowledge synthesis for U.S. Space Force and DoD. Purpose-built for Task Force Futures.',
     url: 'https://www.casimirsystems.com',
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Casimir Systems — AI Defense Intelligence',
+    title: 'Casimir Systems: AI Defense Intelligence',
     description:
       'AI-powered S&T intelligence and co-investment decision support for U.S. Space Force and DoD.',
   },

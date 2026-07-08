@@ -48,7 +48,7 @@ export async function POST(req: NextRequest) {
       from: FROM_EMAIL,
       to: [NOTIFY_EMAIL],
       replyTo: email,
-      subject: `New Access Request — ${name} (${org})`,
+      subject: `New Access Request: ${name} (${org})`,
       html: `
         <div style="font-family: Inter, sans-serif; max-width: 600px; margin: 0 auto; color: #0B132B;">
           <div style="background: #0B132B; padding: 32px 40px; border-radius: 12px 12px 0 0;">
@@ -76,7 +76,7 @@ export async function POST(req: NextRequest) {
     await resend.emails.send({
       from: FROM_EMAIL,
       to: [email],
-      subject: 'Access Request Received — Casimir Intelligence',
+      subject: 'Access Request Received: Casimir Intelligence',
       html: `
         <div style="font-family: Inter, sans-serif; max-width: 600px; margin: 0 auto; color: #0B132B;">
           <div style="background: #0B132B; padding: 32px 40px; border-radius: 12px 12px 0 0;">
@@ -89,7 +89,7 @@ export async function POST(req: NextRequest) {
             <div style="background: rgba(37,99,235,0.06); border: 1px solid rgba(37,99,235,0.15); border-radius: 8px; padding: 20px; margin: 28px 0;">
               <p style="font-size: 13px; color: #334155; line-height: 1.65; margin: 0;">All information provided is handled under CUI/FOUO protocols by Casimir Systems.</p>
             </div>
-            <p style="font-size: 14px; color: #64748B; margin: 0;">Casimir Systems — <a href="https://casimirsystems.com" style="color: #2563EB; text-decoration: none;">casimirsystems.com</a></p>
+            <p style="font-size: 14px; color: #64748B; margin: 0;">Casimir Systems: <a href="https://casimirsystems.com" style="color: #2563EB; text-decoration: none;">casimirsystems.com</a></p>
           </div>
         </div>
       `,
