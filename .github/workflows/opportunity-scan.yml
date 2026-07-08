@@ -73,12 +73,39 @@ jobs:
           git add reports/
           if git diff --cached --quiet; then
             echo "Nothing changed since the last scan — no commit."
-          else
-            git commit -m "Opportunity scan ${{ steps.summary.outputs.date }}: ${{ steps.summary.outputs.new }} new"
-            git push
+            exit 0
           fi
+          git commit -m "Opportunity scan ${{ steps.summary.outputs.date }}: ${{ steps.summary.outputs.new }} new"
 
+          # main can move between checkout and push (e.g. a PR merging
+          # while this job is running) — rebase and retry instead of
+          # failing the whole scan on a plain non-fast-forward rejection.
+          for attempt in 1 2 3 4 5; do
+            if git push; then
+              echo "Pushed on attempt $attempt."
+              exit 0
+            fi
+            echo "Push rejected (attempt $attempt/5) — main moved, rebasing onto origin/main and retrying..."
+            git fetch origin main
+            if ! git rebase origin/main; then
+              echo "::error::Rebase onto origin/main hit a real conflict — aborting so the report/seen-state aren't left in a broken state. Check reports/ for merge markers on the next manual run."
+              git rebase --abort
+              exit 1
+            fi
+            sleep $((attempt * 3))
+          done
+          echo "::error::Failed to push after 5 attempts."
+          exit 1
+
+      # Notification steps below use if: steps.summary.outcome == 'success'
+      # rather than the default "only if all previous steps succeeded" —
+      # a git push race (main moving mid-run) shouldn't also silently
+      # swallow the issue and email notifications when the scan itself and
+      # the report both completed fine. Report content still lands in the
+      # job summary/artifact-equivalent output even if the commit later
+      # gets retried or needs a manual push.
       - name: Open briefing issue
+        if: ${{ steps.summary.outcome == 'success' }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -88,9 +115,11 @@ jobs:
             --body-file "${{ steps.summary.outputs.report }}"
 
       - name: Email briefing via Resend
+        if: ${{ steps.summary.outcome == 'success' }}
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
         run: python scripts/send_report_email.py
 
       - name: Job summary
+        if: ${{ steps.summary.outcome == 'success' }}
         run: cat "${{ steps.summary.outputs.report }}" >> "$GITHUB_STEP_SUMMARY"
