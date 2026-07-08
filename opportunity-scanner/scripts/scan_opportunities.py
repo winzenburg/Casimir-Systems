@@ -33,6 +33,7 @@ from scripts.sources import sbir_gov, sam_gov, sofwerx, diu, army_futures
 
 SEEN_PATH = Path(__file__).parent.parent / "reports" / "seen.json"
 SUMMARY_PATH = Path(__file__).parent.parent / "reports" / "latest-summary.json"
+HEALTH_PATH = Path(__file__).parent.parent / "reports" / "source-health.json"
 
 # Broad keyword sweep for SAM.gov / DIU / xTech — kept short and high-signal;
 # SBIR.gov's own keyword-per-solicitation search is handled inside sbir_gov.py.
@@ -103,6 +104,56 @@ def annotate_new(scored: dict[str, list[dict[str, Any]]], update_seen: bool) -> 
     return new_count
 
 
+def annotate_source_health(source_status: dict[str, str]) -> dict[str, str]:
+    """
+    Tracks how long each source has been continuously FAILED in
+    reports/source-health.json (committed to git, like seen.json) and
+    appends the outage duration to that source's status line.
+
+    Why this matters: a source module's status message alone can't tell you
+    whether a failure is a one-off blip or a multi-week outage. SBIR.gov's
+    "not available at this time" 429 has looked identical on every run since
+    July 3, 2026, but without tracking *since when*, each individual report
+    reads the same as a transient hiccup. This turns "rerun the scan later"
+    into "down since 2026-07-03 (5 days) — rerun the scan later", so a
+    persistent outage is visible at a glance without cross-referencing old
+    reports by hand.
+
+    SKIPPED sources (e.g. missing SAM_GOV_API_KEY) are a config choice, not
+    a failure, so they aren't tracked here.
+    """
+    health: dict[str, dict] = {}
+    if HEALTH_PATH.exists():
+        try:
+            health = json.loads(HEALTH_PATH.read_text())
+        except json.JSONDecodeError:
+            print(f"WARNING: {HEALTH_PATH} is corrupt — resetting source health tracking")
+
+    today = datetime.now().date()
+    today_iso = today.strftime("%Y-%m-%d")
+    annotated: dict[str, str] = {}
+
+    for source_id, status in source_status.items():
+        is_failed = status.startswith("FAILED")
+        if is_failed:
+            since = health.get(source_id, {}).get("since", today_iso) if health.get(source_id, {}).get("status") == "failed" else today_iso
+            days_down = (today - datetime.strptime(since, "%Y-%m-%d").date()).days
+            health[source_id] = {"status": "failed", "since": since}
+            duration = "first failure today" if days_down == 0 else f"down since {since} ({days_down}d)"
+            annotated[source_id] = f"{status} [{duration}]"
+        else:
+            if health.get(source_id, {}).get("status") == "failed":
+                since = health[source_id]["since"]
+                days_down = (today - datetime.strptime(since, "%Y-%m-%d").date()).days
+                print(f"  NOTE: {source_id} recovered after {days_down}d down (since {since})")
+            health.pop(source_id, None)
+            annotated[source_id] = status
+
+    HEALTH_PATH.parent.mkdir(exist_ok=True)
+    HEALTH_PATH.write_text(json.dumps(health, indent=2, sort_keys=True) + "\n")
+    return annotated
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--json", action="store_true", help="also write raw scored results as JSON")
@@ -159,6 +210,8 @@ def main():
     all_opportunities.extend(results)
     source_status["sam_gov_hubzone"] = status
     print(f"  {status}")
+
+    source_status = annotate_source_health(source_status)
 
     print(f"\nTotal raw results before scoring: {len(all_opportunities)}")
     scored = score_all(all_opportunities)

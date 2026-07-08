@@ -19,21 +19,21 @@ REPORTS_DIR = Path(__file__).parent.parent / "reports"
 
 BANNER = """> **Language reminder:** everything below is a candidate opportunity, not a
 > confirmed award. Use "pursuing" / "targeting" / "eligible for" in any
-> external-facing material drawn from this report — never "awarded" or
+> external-facing material drawn from this report, never "awarded" or
 > "contracted" unless a human has separately confirmed an actual award.
 """
 
-HUBZONE_INTRO = """## HUBZone set-asides — restricted competitor pool
+HUBZONE_INTRO = """## HUBZone set-asides: restricted competitor pool
 
 Casimir's principal office sits in a HUBZone-designated area, making it
 eligible for SBA HUBZone certification. Everything below is pulled directly
 from SAM.gov's official set-aside field (typeOfSetAside=HZC/HZS under
-FAR 19.13) in Casimir-relevant NAICS codes — not a keyword guess. Any
+FAR 19.13) in Casimir-relevant NAICS codes, not a keyword guess. Any
 company bidding here must ALSO be HUBZone-eligible or certified, so the
 competitor pool is legally restricted, regardless of how well the topic
 matches Casimir's capability keywords. **If Casimir is not yet
 SBA-certified, certification is the prerequisite to bidding on the HZC
-(set-aside) items below** — see the README for the certification pathway.
+(set-aside) items below**; see the README for the certification pathway.
 HZS (sole-source) items are already awarded directly to a HUBZone firm;
 shown here as market intel on who's winning and under what NAICS.
 """
@@ -46,7 +46,7 @@ tools, product/business strategy, the Casimir Intelligence platform itself,
 or the hydrogeology/data-center-siting angle. This is the list worth acting on.
 """
 
-SECONDARY_INTRO = """## Market intel — Dave's flagged areas, no direct capability match
+SECONDARY_INTRO = """## Market intel: Dave's flagged areas, no direct capability match
 
 These matched one of the defense-market areas Dave flagged as active
 (batteries, unmanned platforms, counter-AI, etc.) but didn't hit any of your
@@ -63,17 +63,17 @@ def _fmt_item(opp: dict[str, Any]) -> str:
     if is_hubzone:
         code = opp.get("set_aside_code")
         if code == "HZS":
-            biddability = "already sole-sourced to a HUBZone firm — market intel, not open for bidding"
+            biddability = "already sole-sourced to a HUBZone firm, market intel, not open for bidding"
         else:
             biddability = "open competition, restricted to HUBZone-eligible/certified firms"
         lines.append(f"- **Set-aside:** {opp.get('set_aside') or 'HUBZone (FAR 19.13)'} · NAICS {opp.get('naics') or 'n/a'} · {biddability}")
 
     tags = ", ".join(opp.get("matched_tags", [])) or "none"
-    score_line = f"- **Score:** {opp.get('score', 0)}/100 — tags: {tags}"
+    score_line = f"- **Score:** {opp.get('score', 0)}/100, tags: {tags}"
     if is_hubzone and opp.get("score", 0) == 0:
-        score_line += " (no capability-keyword match — included solely because it's a HUBZone set-aside)"
+        score_line += " (no capability-keyword match; included solely because it's a HUBZone set-aside)"
     elif is_hubzone:
-        score_line += " (informational — inclusion here is due to HUBZone status, not this score)"
+        score_line += " (informational; inclusion here is due to HUBZone status, not this score)"
     lines.append(score_line)
     lines.append(f"- **Source:** {opp.get('source_name', 'unknown')}")
     if opp.get("agency"):
@@ -115,7 +115,7 @@ def generate_report(
       by score.score_all()
     source_status: dict of source_id -> status message, surfaced instead of
       silently hiding a broken/empty source.
-    new_count: how many kept items weren't in reports/seen.json — shown in the
+    new_count: how many kept items weren't in reports/seen.json, shown in the
       header so a scheduled-run notification is skimmable at a glance.
     """
     REPORTS_DIR.mkdir(exist_ok=True)
@@ -135,7 +135,7 @@ def generate_report(
         headline += f" **{new_count} new since last scan** (marked [NEW])."
 
     parts = [
-        f"# Casimir Opportunity Scan — {date_str}",
+        f"# Casimir Opportunity Scan: {date_str}",
         "",
         BANNER,
         "",
