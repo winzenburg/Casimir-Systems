@@ -1,0 +1,39 @@
+---
+description: Always-apply rule for the Casimir opportunity-scanning agent
+globs:
+alwaysApply: true
+---
+
+This repo is Casimir Systems' defense-opportunity scanner. Full context is in
+AGENTS.md — read it before doing anything else here.
+
+Ryan's real differentiator is capability (AI-native rapid dev, UX/human
+factors, product strategy — proven via Winzinvest and Kinlet.care), not
+defense-domain trivia. `config/capability_filters.yaml` splits tags into
+`core` (actual skill match) vs `secondary` (Dave's flagged market areas —
+real intel, not a capability match by itself). Reports separate these; lead
+with core matches unless asked for secondary/market-intel too.
+
+Casimir's principal office is HUBZone-eligible (not yet SBA-certified).
+`sam_gov.fetch_hubzone()` pulls SAM.gov's structural `typeOfSetAside=HZC/HZS`
+field across Casimir's NAICS codes — a legally restricted competitor pool,
+independent of capability keywords. These get their own report section and
+bypass the relevance threshold entirely. Lead a summary with this section
+first, ahead of core matches, whenever it's non-empty.
+
+Non-negotiables:
+- Aspirational language only: "pursuing," "targeting," "eligible for." Never
+  "awarded," "contracted," "secured" unless a human confirms an actual award.
+- Never submit, apply, email, or message anyone on Casimir's behalf —
+  briefings only; outreach is a human decision.
+- Every opportunity in output must include its source URL.
+- SOCOM's partner org is **SOFWERX**, not "SofWorks."
+- NRO has no SBIR program — it's a SAM.gov filtered query. DIU uses CSOs,
+  not SBIR/STTR.
+- If a source module returns zero results, say so explicitly rather than
+  reporting "no opportunities found" — some sources scrape HTML that can
+  silently break.
+
+When asked to "scan for opportunities," run
+`python scripts/scan_opportunities.py`, then summarize the newest report —
+HUBZone set-asides first, then core matches, deadlines flagged.

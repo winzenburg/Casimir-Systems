@@ -1,0 +1,96 @@
+# Registry of every source this scanner watches.
+# "status: stable" = documented public API, low maintenance risk.
+# "status: needs_verification" = HTML scrape against a live site; selectors
+#   may drift. Verify against the real page before relying on it.
+
+sources:
+  - id: sbir_gov_dod
+    name: "SBIR.gov — DoD-wide solicitations"
+    status: stable
+    kind: api
+    base_url: "https://api.www.sbir.gov/public/api/solicitations"
+    notes: >
+      Documented public API. agency=DOD covers Army, Navy, Air Force/Space
+      Force (AFWERX/SpaceWERX, SF-prefix topics), SOCOM, DARPA, MDA, DTRA —
+      i.e. most of what we care about in one call. SBIR.gov has posted
+      intermittent maintenance notices on this API; scan_opportunities.py
+      retries and clearly reports if the endpoint is down rather than
+      failing silently.
+    module: scripts.sources.sbir_gov
+
+  - id: sofwerx
+    name: "SOFWERX (SOCOM's SBIR partnership intermediary)"
+    status: stable
+    kind: html
+    base_url: "https://events.sofwerx.org"
+    notes: >
+      Correct name is SOFWERX, not "SofWorks." DEFENSEWERX partnership
+      intermediary agreement with USSOCOM since 2015 (Tampa, FL). SOCOM SBIR
+      cycles are frequently announced here (events.sofwerx.org/sbir-*) ahead
+      of formally posting to DSIP/SBIR.gov — this is the early-warning
+      source. Verified against the live site July 2026: most current
+      opportunities are "Assessment Events" / "Collaboration Events" under
+      OTA authority (10 U.S.C. 4021/4022), NOT labeled SBIR/STTR — the
+      scraper pulls all current events (a.link cards, plus each event page's
+      meta description) and lets score.py filter for relevance. Also scrapes
+      /ussocom-sponsored-events-exercises, which links directly to SAM.gov
+      RFI/Technical Experimentation postings — higher signal, fewer false
+      positives.
+    module: scripts.sources.sofwerx
+
+  - id: sam_gov
+    name: "SAM.gov — Contract Opportunities"
+    status: stable
+    kind: api
+    base_url: "https://api.sam.gov/opportunities/v2/search"
+    notes: >
+      Official public API, requires a free api_key (https://sam.gov/data-services).
+      Used as the broad sweep and as the primary source for NRO and Army
+      Futures Command, which don't run traditional SBIR programs. Query by
+      keyword + NAICS + agency name; see config/capability_filters.yaml for
+      the keyword list.
+    module: scripts.sources.sam_gov
+
+  - id: diu
+    name: "Defense Innovation Unit — Commercial Solutions Openings"
+    status: stable
+    kind: html
+    base_url: "https://www.diu.mil/work-with-us/open-solicitations"
+    notes: >
+      DIU runs CSOs, not SBIR/STTR — different mechanism, faster timeline
+      (60-90 days to prototype OT award), no set-aside status advantage.
+      Selectors verified against the live site July 2026: open CSO areas of
+      interest render as div.aoi cards with title, "Responses Due By"
+      deadline, problem statement, and a per-item submit-solution deep link
+      (/work-with-us/submit-solution/PROJ#####). SAM.gov remains a
+      cross-check (scripts/sources/sam_gov.py).
+    module: scripts.sources.diu
+
+  - id: army_futures_xtech
+    name: "Army xTech competitions"
+    status: stable
+    kind: html
+    base_url: "https://xtech.army.mil/competitions/"
+    notes: >
+      Prize-competition model, different from standard SBIR but a legitimate
+      entry point Army has been pushing for non-traditional small businesses.
+      NOTE: the program moved from xtechsearch.army.mil to xtech.army.mil.
+      Verified July 2026: the competitions page groups cards under OPEN /
+      ACTIVE / CLOSED headings; the module keeps only open/active ones and
+      pulls each competition page's first substantial paragraph as its
+      description.
+    module: scripts.sources.army_futures
+
+  - id: nro
+    name: "NRO (via SAM.gov filter — no dedicated SBIR program)"
+    status: stable
+    kind: api
+    base_url: "https://api.sam.gov/opportunities/v2/search"
+    notes: >
+      NRO is NOT one of the 11 SBIR/STTR participating agencies. Its public
+      solicitations run through SAM.gov and, per Dave, NRO has been actively
+      trying to bring in small businesses outside the Raytheon/Northrop
+      incumbent base over the past year. This is a filtered SAM.gov query
+      (department = "NATIONAL RECONNAISSANCE OFFICE"), reusing
+      scripts/sources/sam_gov.py with a different filter, not a new module.
+    module: scripts.sources.sam_gov
