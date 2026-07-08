@@ -1,0 +1,60 @@
+---
+description: Design system tokens (colors, type scale, spacing rhythm) for the Casimir Systems marketing site
+globs: app/**/*.tsx,components/**/*.tsx
+alwaysApply: false
+---
+
+# Design Tokens: Illuminated Intelligence
+
+Concrete values from the established design system. Match these on any new
+page or section instead of picking new numbers; the site went through two
+dedicated consistency passes (typography unification, spacing rhythm) to
+converge on these, and drifting from them means another cleanup pass later.
+
+## Color tokens
+Defined in `app/globals.css` (`--color-navy`, `--color-signal`, etc.) and
+used directly as hex throughout `app/` and `components/`:
+
+| Token | Hex | Use |
+|---|---|---|
+| Navy | `#0B132B` | Dark section backgrounds, hero sections |
+| Signal blue | `#2563EB` | Primary accent, links, CTAs, active states |
+| Verified green | `#10B981` | Success/active/verified states |
+| Amber | `#F59E0B` | Warning/pending/review states |
+| Light background | `#F8FAFC` | Alternating light section background |
+| Body text (light bg) | `#64748B` | Secondary text on white/light backgrounds |
+| Body text (dark bg) | `rgba(255,255,255,0.5)` to `rgba(255,255,255,0.55)` | Secondary text on navy |
+
+## Type stack
+- **Headings, labels, UI chrome**: `Inter, sans-serif`
+- **Body copy**: `IBM Plex Sans, sans-serif`
+- **Monospace (stats, codes, timestamps)**: `IBM Plex Mono, monospace`
+
+## Type scale (use `clamp()`, not fixed px, for anything that scales with viewport)
+- **Homepage/section hero h1**: `clamp(36px, 4.5vw, 60px)`, `letterSpacing: '-0.03em'`, `lineHeight: 1.1`
+- **Platform page hero h1** (largest on site): `clamp(40px, 5vw, 72px)`
+- **Section h2** (the standard, used across About/SBIR/Solutions/Resources/homepage): `clamp(28px, 2.8vw, 40px)`, `letterSpacing: '-0.025em'`, `lineHeight: 1.2`
+- **Security page h2** (slightly smaller, utility page): `clamp(24px, 2.5vw, 34px)`
+- Eyebrow labels: `text-[11px]` uppercase, `letterSpacing` widened (`.08em`–`.12em`), `Inter, sans-serif`, signal blue or `rgba(255,255,255,0.35–0.4)` on dark
+
+## Spacing rhythm
+- **Hero sections**: `pt-36 pb-24` (was `pt-32 pb-20`ish before the July 2026 consistency pass; use the larger numbers for new heroes)
+- **Standard content sections**: `py-28 lg:py-32 px-6 lg:px-10`
+- **Utility/legal pages** (Terms, Privacy, Contact, Security): can use the lighter `py-24 lg:py-28` since they're shorter, denser pages, not marketing sections
+- Section max-width containers: `max-w-7xl mx-auto` for wide grid sections, `max-w-4xl`/`max-w-5xl` for narrower text-focused sections
+
+## Compact label/status conventions
+- **Middle dot (`·`)** for compact status/label pairs, e.g. `"D2P2 Submitted · Space Force"`, `"Flagship Product · Operational"`. This is the house convention; don't reach for an em dash here (see `.cursor/rules/copy-style.mdc`).
+- **Colon (`:`)** for a label followed by its explanation, e.g. `"Casimir Systems: AI Decision Support..."`.
+- Use the shared badge components (`components/risk-badge.tsx`) for status pills rather than a new inline colored `<span>`:
+  - `StatusBadge` (`active` | `targeted` | `monitoring` | `future`): defense domains, innovation pathways, engagement status
+  - `TrlBadge`: DoD Technology Readiness Level (1–9) display
+  - `ComplianceBadge` (`aligned` | `pending` | `na`): compliance framework status
+  - `RiskBadge` (`high` | `medium` | `low`): risk/verification level
+
+## Motion
+- Wrap section content in `ScrollReveal` (single element) or `StaggerReveal`
+  (grid/list of items, staggers children in on scroll) from
+  `components/scroll-reveal.tsx`. Every content section on the site does
+  this; a new section without it will look inconsistent with the rest of
+  the scroll experience.

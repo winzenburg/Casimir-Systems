@@ -1,83 +1,48 @@
 ---
-description: Enforce using shadcn/ui components from @/components/ui/ before building custom UI primitives
+description: What UI approach this project actually uses (hand-rolled Tailwind, not a shadcn component system)
 globs: **/*.tsx
 alwaysApply: false
 ---
 
-# Component Library First
+# UI Approach: Hand-Rolled Tailwind, Not shadcn Components
 
-This project uses **shadcn/ui** (`components/ui/`). Always reach for these before writing custom JSX primitives.
+**This rule previously described a shadcn/ui-heavy component system (Table, Tabs,
+Alert, Dialog, Command, Progress, Skeleton, Tooltip, `components/dashboard/metric-card.tsx`).
+None of that exists in this repo.** It was copied from the Casimir Intelligence
+product app and never matched this marketing site. Fixed July 2026; if you're
+reading an older version of this file elsewhere, disregard it for this repo.
 
-## Installed components
+## What's actually true here
 
-`Alert` · `Badge` · `Button` · `Card` · `Command` · `Dialog` · `DropdownMenu` · `Input` · `InputGroup` · `Label` · `Progress` · `Select` · `Separator` · `Sheet` · `Skeleton` · `Table` · `Tabs` · `Textarea` · `Tooltip`
+- Every page (`app/**/page.tsx`) is built with **inline `style={{}}` objects
+  plus Tailwind utility classes**, not shadcn primitives. Zero pages import
+  from `@/components/ui`.
+- `components/ui/` does have a partial shadcn install: `badge`, `button`,
+  `card`, `input`, `label`, `navigation-menu`, `select`, `separator`, `sheet`,
+  `textarea`. These exist but are **not the house convention**; don't assume
+  more shadcn components are available just because `components.json` exists.
+- The real, established convention for anything visual (badges, cards,
+  section chrome) is a **small set of hand-built domain components** in
+  `components/`, not a generic component library:
+  - `components/risk-badge.tsx`: `RiskBadge`, `TrlBadge`, `StatusBadge`,
+    `ComplianceBadge`. Reach for these before inventing a new inline colored
+    `<span>` badge; see `.cursor/rules/design-tokens.mdc` for when to use
+    which.
+  - `components/scroll-reveal.tsx`: `ScrollReveal`, `StaggerReveal` for
+    entrance animation on scroll. Every content section on every page wraps
+    its content in one of these.
+  - `components/nav.tsx` and `components/footer.tsx`: shared page chrome.
 
-## Rules
+## When to build a new component vs. inline
 
-### ❌ Never build these from scratch — use shadcn
-
-```tsx
-// ❌ raw <select>
-<select className="..." onChange={...}>...</select>
-
-// ✅ shadcn Select
-import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
-<Select value={value} onValueChange={setValue}>
-  <SelectTrigger><SelectValue placeholder="All tables" /></SelectTrigger>
-  <SelectContent>{items.map(i => <SelectItem key={i} value={i}>{i}</SelectItem>)}</SelectContent>
-</Select>
-```
-
-```tsx
-// ❌ raw <table>/<thead>/<tbody>/<tr>/<td>
-<table><thead><tr><th>...</th></tr></thead><tbody>...</tbody></table>
-
-// ✅ shadcn Table
-import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table";
-```
-
-```tsx
-// ❌ local inline tab navigation
-function TabLink({ href, active }) { return <a className={active ? "border-b-2..." : "..."}>...</a> }
-
-// ✅ shadcn Tabs
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-```
-
-```tsx
-// ❌ inline colored <span> as a badge
-<span style={{ color, background }}>CREATE</span>
-
-// ✅ shadcn Badge
-import { Badge } from "@/components/ui/badge";
-<Badge variant="outline">CREATE</Badge>
-```
-
-```tsx
-// ❌ custom alert banner div
-<div role="alert" style={{ backgroundColor: "..." }}>...</div>
-
-// ✅ shadcn Alert
-import { Alert, AlertDescription } from "@/components/ui/alert";
-<Alert variant="destructive"><AlertDescription>...</AlertDescription></Alert>
-```
-
-### Stat / metric cards — use MetricCard
-
-The shared component is `components/dashboard/metric-card.tsx`. It supports `icon`, `iconColor`, `valueColor`, `sub`, `tooltip`, `delta`, and `loading`.
-
-```tsx
-// ❌ local StatCard defined inside a page file
-function StatCard({ label, value, ... }) { ... }
-
-// ✅ import MetricCard
-import MetricCard from "@/components/dashboard/metric-card";
-<MetricCard label="Total Flows" value={n} icon={FileText} iconColor="var(--ci-interactive)" />
-```
-
-### When a custom component IS appropriate
-
-Only build a new component when:
-- The needed pattern genuinely doesn't exist in shadcn (e.g., `RiskSummaryBar` with severity-coded accent bars)
-- The component composes multiple shadcn primitives into a domain-specific widget
-- Place it in `components/<domain>/` — never inline inside a page file
+- If a pattern repeats 3+ times across pages (a badge variant, a card shape),
+  extract it into `components/<name>.tsx` following the existing style
+  (inline `style` objects, not a new CSS-in-JS or styled-components
+  approach).
+- If it's page-specific and used once, inline styling directly in the page
+  file is the house convention, not an anti-pattern to avoid.
+- Don't introduce shadcn `Table`, `Tabs`, `Alert`, `Dialog`, etc. into this
+  repo without discussing it first; the whole site is deliberately
+  hand-styled to match the "Illuminated Intelligence" design system (see
+  `.cursor/rules/design-tokens.mdc`), and shadcn's default styling doesn't
+  match it out of the box.
