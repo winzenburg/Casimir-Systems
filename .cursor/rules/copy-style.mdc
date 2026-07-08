@@ -1,0 +1,56 @@
+---
+description: Always-apply copy/content rules for casimirsystems.com (no em dashes, aspirational language only, no AI-writing filler)
+globs: app/**/*.tsx,app/**/*.ts,components/**/*.tsx,lib/**/*.ts
+alwaysApply: true
+---
+
+# Copy Style Rules
+
+These apply to any user-visible text you write or edit on this site: page
+copy, meta descriptions, button labels, badge labels, email templates
+(`app/api/contact/route.ts`), and article content (`lib/articles.ts`). They
+do not apply to code comments (`{/* ... */}`, `// ...`) or internal
+docstrings, which are never rendered to a visitor.
+
+## No em dashes
+Never use "—" in user-visible copy. It reads as an AI-writing tell. Rewrite
+with punctuation a human editor would actually choose:
+- **Sentence-level aside** → period or restructure the sentence
+  ("...decision liability — in an acquisition..." → "...decision liability,
+  whether in an acquisition...")
+- **Internal clause** → comma, semicolon, or "and"/"but" depending on the
+  relationship
+- **Parenthetical list** → actual parentheses
+  ("companies — capital, technologies —" → "(companies, capital,
+  technologies)")
+- **Title/tagline separator** (page titles, meta descriptions) → colon
+  ("Casimir Systems — AI..." → "Casimir Systems: AI...")
+- **Compact UI label pairs** (badges, status chips) → the site's existing
+  middle-dot convention (`·`), e.g. `"D2P2 Submitted · Space Force"`
+
+A full site-wide cleanup pass happened in July 2026 (see git history:
+"Remove all em dashes from site copy" and the follow-up opportunity-scanner
+sweep). Don't reintroduce the pattern in new content.
+
+## Aspirational language only
+This is a small company competing for government contracts and pursuing
+certifications it doesn't hold yet. Never claim something as achieved,
+awarded, or certified unless a human has explicitly confirmed it happened.
+Use aspirational framing instead:
+- "pursuing," "targeting," "eligible for," "proposal submitted," "award
+  decision pending" — NOT "awarded," "active contract," "certified"
+- Example that was live and had to be corrected: "Active Phase II Award"
+  became "D2P2 Submitted" once it was clear no award had been made.
+- Example: "HUBZone-Eligible" is correct today (principal office qualifies);
+  "HUBZone Certified" would be false until SBA actually certifies the
+  company. Don't "round up" a pending/eligible status to a completed one for
+  better-sounding copy.
+- If you're unsure whether a claim is confirmed, ask, or default to the more
+  conservative aspirational phrasing.
+
+## No generic AI-writing filler
+Avoid: "leverage," "seamless," "cutting-edge," "unparalleled," "delve,"
+"furthermore," "moreover," "boasts," "game-changer," "revolutionize,"
+"elevate," "harness the power of," "unlock the potential," "in today's
+fast-paced landscape," "it's not just X, it's Y." Write plainly and
+specifically instead of reaching for these stock phrases.
