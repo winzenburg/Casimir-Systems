@@ -219,7 +219,7 @@ export function PlatformMockup() {
                         </span>
                       </div>
                       <span className="text-[11px]" style={{ color: '#475569', fontFamily: 'IBM Plex Mono, monospace' }}>
-                        {e.trl ?? '—'}
+                        {e.trl ?? 'N/A'}
                       </span>
                       <span
                         className="text-[9px] font-semibold rounded px-1.5 py-0.5 w-fit"
@@ -232,7 +232,7 @@ export function PlatformMockup() {
                           FLAG
                         </span>
                       ) : (
-                        <span className="text-[11px]" style={{ color: '#CBD5E1' }}>—</span>
+                        <span className="text-[11px]" style={{ color: '#CBD5E1' }}>N/A</span>
                       )}
                     </div>
                   );

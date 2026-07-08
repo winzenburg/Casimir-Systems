@@ -9,15 +9,15 @@ export const metadata: Metadata = {
 };
 
 const GLOSSARY: [string, string][] = [
-  ['ASOT', 'Authoritative Source of Truth — a recognized, verified, and trusted data source used as the primary reference for decision-making.'],
+  ['ASOT', 'Authoritative Source of Truth: a recognized, verified, and trusted data source used as the primary reference for decision-making.'],
   ['Co-Investment', 'The strategic alignment of government RDT&E funding with private venture capital to accelerate dual-use technology development.'],
-  ['COMSO', 'Commercial Operator for Military Space Operations — the organizational construct for integrating commercial capabilities into space operations.'],
-  ['D2P2', 'Direct-to-Phase II — the SBIR funding mechanism that bypasses Phase I for companies demonstrating Phase I-equivalent feasibility at proposal time.'],
-  ['FOCI', 'Foreign Ownership, Control, or Influence — a critical risk factor in defense acquisition that screens for adverse foreign government interests.'],
+  ['COMSO', 'Commercial Operator for Military Space Operations: the organizational construct for integrating commercial capabilities into space operations.'],
+  ['D2P2', 'Direct-to-Phase II: the SBIR funding mechanism that bypasses Phase I for companies demonstrating Phase I-equivalent feasibility at proposal time.'],
+  ['FOCI', 'Foreign Ownership, Control, or Influence: a critical risk factor in defense acquisition that screens for adverse foreign government interests.'],
   ['Objective Force Design', "The U.S. Space Force's framework for defining future capabilities and force structure requirements."],
-  ['RDT&E', 'Research, Development, Test, and Evaluation — the DoD budget category funding new technology development from basic research through operational testing.'],
-  ['TF-F', 'Task Force Futures — the primary USSF stakeholder responsible for identifying and accelerating future space capabilities and innovation.'],
-  ['TRL', 'Technology Readiness Level — the DoD scale (1–9) used to assess technology maturity from basic principles (TRL 1) to operational deployment (TRL 9).'],
+  ['RDT&E', 'Research, Development, Test, and Evaluation: the DoD budget category funding new technology development from basic research through operational testing.'],
+  ['TF-F', 'Task Force Futures: the primary USSF stakeholder responsible for identifying and accelerating future space capabilities and innovation.'],
+  ['TRL', 'Technology Readiness Level: the DoD scale (1–9) used to assess technology maturity from basic principles (TRL 1) to operational deployment (TRL 9).'],
   ['Dual-Use Technology', 'Technology developed for commercial markets that also has direct defense applications, enabling co-investment efficiency.'],
 ];
 
@@ -34,7 +34,7 @@ export default function ResourcesPage() {
               Thought leadership from the<br />frontier of defense tech.
             </h1>
             <p className="text-lg max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.5)', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7 }}>
-              Analysis, whitepapers, and research from the Casimir Systems intelligence team — covering S&T ecosystem trends, co-investment strategy, and DoD acquisition.
+              Analysis, whitepapers, and research from the Casimir Systems intelligence team, covering S&T ecosystem trends, co-investment strategy, and DoD acquisition.
             </p>
           </ScrollReveal>
         </div>

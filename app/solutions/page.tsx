@@ -9,11 +9,11 @@ const PERSONAS = [
   {
     title: 'S&T Analysts',
     subtitle: 'Task Force Futures · AFWERX · DARPA · Army Futures Command · NRO · Space Domain Awareness',
-    challenge: 'You are responsible for identifying and tracking commercial technologies across your mission domain — whether that is S&T investment, commercial satellite data, or multi-domain sensor synthesis. Your current workflow requires manual web searches, spreadsheets, and weeks of synthesis work before a single briefing can be prepared.',
+    challenge: 'You are responsible for identifying and tracking commercial technologies across your mission domain, whether that is S&T investment, commercial satellite data, or multi-domain sensor synthesis. Your current workflow requires manual web searches, spreadsheets, and weeks of synthesis work before a single briefing can be prepared.',
     jobs: [
       'Map the full commercial innovation landscape for a given S&T or geospatial domain in hours, not weeks',
       'Automatically track funding rounds, government contracts, and sensor data feeds as they publish',
-      'Generate ecosystem briefing packages with a single export — no engineering support needed',
+      'Generate ecosystem briefing packages with a single export, no engineering support needed',
       'Identify emerging dual-use technologies and multi-domain signals before competitors do',
     ],
     icon: '◈',
@@ -22,7 +22,7 @@ const PERSONAS = [
   {
     title: 'Contracting Officers',
     subtitle: 'DoD Acquisition Workforce · DCMA · AFMC · PEO Offices',
-    challenge: 'Every co-investment recommendation or award decision requires a defensible risk assessment. Determining FOCI exposure, CMMC readiness, and supply chain risk currently takes weeks of manual investigation — with no standardized audit trail and no platform that handles all three simultaneously.',
+    challenge: 'Every co-investment recommendation or award decision requires a defensible risk assessment. Determining FOCI exposure, CMMC readiness, and supply chain risk currently takes weeks of manual investigation, with no standardized audit trail and no platform that handles all three simultaneously.',
     jobs: [
       'Run FOCI screening and entity classification in minutes, not weeks',
       'Generate audit-ready risk assessments with full primary source documentation',
@@ -35,9 +35,9 @@ const PERSONAS = [
   {
     title: 'Mission Operators',
     subtitle: 'USAF Pilots · Mission Commanders · Human-Machine Teaming Programs · CHORD',
-    challenge: 'After a mission, AI systems have generated recommendations, flagged anomalies, and made autonomous decisions. You need to understand what the AI did, why it did it, and whether those decisions were sound — before you can brief leadership, file an after-action report, or trust the system on the next sortie.',
+    challenge: 'After a mission, AI systems have generated recommendations, flagged anomalies, and made autonomous decisions. You need to understand what the AI did, why it did it, and whether those decisions were sound before you can brief leadership, file an after-action report, or trust the system on the next sortie.',
     jobs: [
-      'Review AI decision logs in plain language — no engineering support required',
+      'Review AI decision logs in plain language, no engineering support required',
       'Flag AI outputs for human review before they propagate downstream',
       'Generate post-mission AI debrief packages ready to brief to leadership',
       'Maintain a full, auditable trail of AI actions and human approval decisions',
@@ -48,7 +48,7 @@ const PERSONAS = [
   {
     title: 'Innovation Leaders',
     subtitle: 'COMSO · SpaceWERX · DIU · AFWERX · Naval X · Army AI Task Force',
-    challenge: 'Your mission is to align the U.S. defense industrial base with private capital and mission priorities. You need to demonstrate to senior leadership that investment and co-investment decisions are strategic, evidenced, and defensible — but the data is scattered across hundreds of disconnected sources, and your team lacks the bandwidth to synthesize it at scale.',
+    challenge: 'Your mission is to align the U.S. defense industrial base with private capital and mission priorities. You need to demonstrate to senior leadership that investment and co-investment decisions are strategic, evidenced, and defensible, but the data is scattered across hundreds of disconnected sources, and your team lacks the bandwidth to synthesize it at scale.',
     jobs: [
       'Align RDT&E budget priorities with real-time venture capital flow data',
       'Identify co-investment opportunities that match current force design priorities',
@@ -76,7 +76,7 @@ export default function SolutionsPage() {
               Precision tools for the people<br />making the decisions.
             </h1>
             <p className="text-lg max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.5)', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7 }}>
-              Casimir Systems builds decision support applications for the DoD acquisition workforce — across services, program offices, and innovation organizations. Every application is designed around the specific Jobs To Be Done of its users.
+              Casimir Systems builds decision support applications for the DoD acquisition workforce, across services, program offices, and innovation organizations. Every application is designed around the specific Jobs To Be Done of its users.
             </p>
           </ScrollReveal>
         </div>

@@ -6,8 +6,8 @@ import { HeroDisplay } from '@/components/hero-display';
 import { RiskBadge } from '@/components/risk-badge';
 
 export const metadata: Metadata = {
-  title: 'Casimir Systems — AI Decision Support for U.S. Defense',
-  description: 'Casimir Systems is an agile defense technology firm that builds AI-powered decision support applications for DoD — at commercial software speed, with the compliance architecture government requires.',
+  title: 'Casimir Systems: AI Decision Support for U.S. Defense',
+  description: 'Casimir Systems is an agile defense technology firm that builds AI-powered decision support applications for DoD, delivered at commercial software speed with the compliance architecture government requires.',
   alternates: { canonical: 'https://www.casimirsystems.com' },
 };
 
@@ -41,7 +41,7 @@ const PROBLEMS = [
   {
     icon: '◈',
     label: 'Analysis Paralysis at Scale',
-    desc: 'The data exists — sensor feeds, contracts, open sources — but it is fragmented across disconnected systems. Target analyses that consume dozens of analysts for weeks should resolve in near-real-time. Collection is not the gap. Distillation is.',
+    desc: 'The data exists: sensor feeds, contracts, open sources. But it is fragmented across disconnected systems. Target analyses that consume dozens of analysts for weeks should resolve in near-real-time. Collection is not the gap. Distillation is.',
   },
   {
     icon: '⚑',
@@ -51,7 +51,7 @@ const PROBLEMS = [
   {
     icon: '⟳',
     label: 'AI Without a Human in the Loop',
-    desc: 'AI that cannot explain its reasoning creates operational liability — in an acquisition decision room or a post-mission debrief. Every AI-generated recommendation needs a human-readable, auditable evidence chain, validated by an operator before anyone acts on it.',
+    desc: 'AI that cannot explain its reasoning creates operational liability, whether in an acquisition decision room or a post-mission debrief. Every AI-generated recommendation needs a human-readable, auditable evidence chain, validated by an operator before anyone acts on it.',
   },
 ];
 
@@ -59,25 +59,25 @@ const APPROACH = [
   {
     Icon: Eye,
     title: 'Mission-Scoped Applications',
-    desc: 'We don\'t build generic platforms. Every application we ship is architected against a specific, well-defined DoD mission requirement — ensuring immediate operational relevance from day one.',
+    desc: 'We don\'t build generic platforms. Every application we ship is architected against a specific, well-defined DoD mission requirement, ensuring immediate operational relevance from day one.',
     accent: '#2563EB',
   },
   {
     Icon: Cpu,
     title: 'Human-in-the-Loop AI',
-    desc: 'AI accelerates the analysis; a human validates the call. Every synthesis our platforms produce carries a traceable evidence chain, so operators and analysts confirm the reasoning — not just the recommendation — before acting.',
+    desc: 'AI accelerates the analysis; a human validates the call. Every synthesis our platforms produce carries a traceable evidence chain, so operators and analysts confirm the reasoning, not just the recommendation, before acting.',
     accent: '#10B981',
   },
   {
     Icon: Shield,
     title: 'Compliance-First Architecture',
-    desc: 'NIST 800-171, CMMC Level 2, and CUI/FOUO handling are not afterthoughts. They are baked into the architectural foundation of every application we build — from the first sprint.',
+    desc: 'NIST 800-171, CMMC Level 2, and CUI/FOUO handling are not afterthoughts. They are baked into the architectural foundation of every application we build, from the first sprint.',
     accent: '#F59E0B',
   },
   {
     Icon: Zap,
     title: 'Zero-Code Interfaces',
-    desc: 'We build for operators, not engineers. Every application delivers its full capability through a zero-code interface — so analysts and decision-makers can work without depending on technical staff.',
+    desc: 'We build for operators, not engineers. Every application delivers its full capability through a zero-code interface, so analysts and decision-makers can work without depending on technical staff.',
     accent: '#8B5CF6',
   },
 ];
@@ -86,31 +86,31 @@ const FOCUS_AREAS = [
   {
     Icon: Brain,
     title: 'Intelligence Synthesis',
-    desc: 'Collapse target analysis cycles that consume dozens of analysts for weeks into near-real-time, AI-synthesized briefs — with human-in-the-loop validation on every output.',
+    desc: 'Collapse target analysis cycles that consume dozens of analysts for weeks into near-real-time, AI-synthesized briefs, with human-in-the-loop validation on every output.',
     accent: '#2563EB',
   },
   {
     Icon: BarChart3,
     title: 'Decision Visualization & Human Factors',
-    desc: 'Sensor and platform data overload creates analysis paralysis. We distill it into displays a commander can act on — the discipline our founder has practiced for 25 years.',
+    desc: 'Sensor and platform data overload creates analysis paralysis. We distill it into displays a commander can act on: the discipline our founder has practiced for 25 years.',
     accent: '#8B5CF6',
   },
   {
     Icon: Radar,
     title: 'Unified Operating Picture',
-    desc: 'Unmanned platforms — aerial, surface, and ground — generate more data than any staff can absorb. We build the data-fusion layer that turns disparate feeds into one coherent picture.',
+    desc: 'Unmanned platforms (aerial, surface, and ground) generate more data than any staff can absorb. We build the data-fusion layer that turns disparate feeds into one coherent picture.',
     accent: '#10B981',
   },
   {
     Icon: TrendingUp,
     title: 'Co-Investment & Ecosystem Intelligence',
-    desc: 'Mapping commercial innovation — companies, capital, technologies — against national security priorities. The active mission of Casimir Intelligence for U.S. Space Force.',
+    desc: 'Mapping commercial innovation (companies, capital, technologies) against national security priorities. The active mission of Casimir Intelligence for U.S. Space Force.',
     accent: '#F59E0B',
   },
 ];
 
 const COMPETITORS = [
-  { name: 'Palantir',          type: 'Enterprise Integrator', note: 'Deeply capable, deeply entrenched. Sells enterprise transformation — forward-deployed engineers, long integrations, enterprise cost.' },
+  { name: 'Palantir',          type: 'Enterprise Integrator', note: 'Deeply capable, deeply entrenched. Sells enterprise transformation: forward-deployed engineers, long integrations, enterprise cost.' },
   { name: 'Govini',            type: 'Defense Analytics', note: 'Broad data platform. Complex, costly, requires dedicated analyst teams.' },
   { name: 'Strider',           type: 'Entity Risk',        note: 'Deep foreign influence detection. Not built for co-investment workflows.' },
   { name: 'Primer AI',         type: 'NLP / Document AI',  note: 'Strong document synthesis. Narrow scope, no ecosystem mapping.' },
@@ -182,7 +182,7 @@ export default function HomePage() {
                 maxWidth: 440,
               }}
             >
-              Casimir Systems is an agile defense technology firm that builds AI-powered decision support applications for the U.S. Department of Defense — at commercial software speed, with the compliance architecture DoD requires.
+              Casimir Systems is an agile defense technology firm that builds AI-powered decision support applications for the U.S. Department of Defense, delivered at commercial software speed with the compliance architecture DoD requires.
             </p>
 
             <div className="flex flex-wrap gap-3 mb-10">
@@ -310,7 +310,7 @@ export default function HomePage() {
                 One competency. Four mission domains.
               </h2>
               <p style={{ fontSize: 17, color: '#64748B', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.75 }}>
-                Casimir Systems builds the decision layer — not the platform, not the sensor. Wherever DoD operators are drowning in data and starving for distilled, defensible answers, our methodology applies.
+                Casimir Systems builds the decision layer, not the platform and not the sensor. Wherever DoD operators are drowning in data and starving for distilled, defensible answers, our methodology applies.
               </p>
             </div>
           </ScrollReveal>
@@ -333,7 +333,7 @@ export default function HomePage() {
           <ScrollReveal delay={150}>
             <div className="mt-8 flex justify-center">
               <Link href="/sbir" className="inline-flex items-center gap-2 text-[14px] font-medium text-[#2563EB] hover:gap-3 transition-all duration-200" style={{ fontFamily: 'IBM Plex Sans, sans-serif' }}>
-                See where we&apos;re deploying this — our innovation pathways <ArrowRight className="w-4 h-4" />
+                See where we&apos;re deploying this: our innovation pathways <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </ScrollReveal>
@@ -353,7 +353,7 @@ export default function HomePage() {
                 Built against real mission requirements.
               </h2>
               <p style={{ fontSize: 17, color: '#64748B', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.75 }}>
-                Every Casimir Systems product begins with a specific, validated DoD requirement — not a market hypothesis.
+                Every Casimir Systems product begins with a specific, validated DoD requirement, not a market hypothesis.
               </p>
             </div>
           </ScrollReveal>
@@ -366,7 +366,7 @@ export default function HomePage() {
                 </div>
                 <div className="text-[26px] font-bold text-white mb-4" style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>Casimir Intelligence</div>
                 <p className="text-[14px] mb-6" style={{ color: 'rgba(255,255,255,0.55)', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.75, maxWidth: 560 }}>
-                  AI-powered S&T ecosystem mapping and co-investment decision support for U.S. Space Force. Maps the full commercial innovation landscape — companies, capital, technologies — and synthesizes actionable intelligence briefs for Task Force Futures analysts and contracting officers.
+                  AI-powered S&T ecosystem mapping and co-investment decision support for U.S. Space Force. Maps the full commercial innovation landscape (companies, capital, technologies) and synthesizes actionable intelligence briefs for Task Force Futures analysts and contracting officers.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {['S&T Ecosystem Mapping', 'AI Knowledge Synthesis', 'Co-Investment Analysis', 'FOCI Screening', 'Working Platform · Not a Prototype'].map((tag) => (
@@ -423,7 +423,7 @@ export default function HomePage() {
                   <tr style={{ background: 'rgba(37,99,235,0.04)', borderTop: '2px solid #2563EB' }}>
                     <td className="px-6 py-5 font-bold text-[#2563EB]" style={{ fontSize: 13, fontFamily: 'Inter, sans-serif' }}>Casimir Intelligence</td>
                     <td className="px-6 py-5"><RiskBadge level="low" label="Co-Investment AI" /></td>
-                    <td className="px-6 py-5 font-semibold text-[#10B981]" style={{ fontSize: 13, fontFamily: 'IBM Plex Sans, sans-serif' }}>Zero-code, auditable, AI-synthesized intelligence — purpose-built for S&T co-investment. The only platform that does all of this.</td>
+                    <td className="px-6 py-5 font-semibold text-[#10B981]" style={{ fontSize: 13, fontFamily: 'IBM Plex Sans, sans-serif' }}>Zero-code, auditable, AI-synthesized intelligence, purpose-built for S&T co-investment. The only platform that does all of this.</td>
                   </tr>
                 </tbody>
               </table>

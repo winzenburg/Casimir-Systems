@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service — Casimir Systems',
+  title: 'Terms of Service: Casimir Systems',
   description: 'Terms of service for Casimir Systems and the Casimir Intelligence platform.',
   alternates: { canonical: 'https://www.casimirsystems.com/terms' },
 };
@@ -17,7 +17,7 @@ const SECTIONS = [
   },
   {
     title: 'Intellectual Property',
-    body: `All content, software, and technology on this website and within Casimir Systems products — including but not limited to the Casimir Intelligence platform, its algorithms, user interfaces, and documentation — are the proprietary property of Casimir Systems, Inc. and are protected by applicable intellectual property laws. SBIR Data Rights apply as specified in applicable DFARS clauses.`,
+    body: `All content, software, and technology on this website and within Casimir Systems products, including but not limited to the Casimir Intelligence platform, its algorithms, user interfaces, and documentation, are the proprietary property of Casimir Systems, Inc. and are protected by applicable intellectual property laws. SBIR Data Rights apply as specified in applicable DFARS clauses.`,
   },
   {
     title: 'Government Rights',

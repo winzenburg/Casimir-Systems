@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — Casimir Systems',
+  title: 'Privacy Policy: Casimir Systems',
   description: 'Privacy policy for Casimir Systems and the Casimir Intelligence platform.',
   alternates: { canonical: 'https://www.casimirsystems.com/privacy' },
 };

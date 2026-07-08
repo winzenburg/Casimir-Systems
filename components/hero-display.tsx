@@ -123,7 +123,7 @@ export function HeroDisplay() {
         width="100%"
         height="100%"
         preserveAspectRatio="xMidYMid meet"
-        aria-label="Casimir multi-domain decision layer display — platform feeds, human-in-the-loop validation, and risk flags"
+        aria-label="Casimir multi-domain decision layer display: platform feeds, human-in-the-loop validation, and risk flags"
         style={{ position: 'absolute', inset: 0 }}
       >
         <defs>

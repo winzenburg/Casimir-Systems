@@ -5,15 +5,15 @@ import { ScrollReveal, StaggerReveal } from '@/components/scroll-reveal';
 import { TrlBadge, ComplianceBadge, StatusBadge } from '@/components/risk-badge';
 
 export const metadata: Metadata = {
-  title: 'SBIR — Direct-to-Phase II Pursuit · U.S. Space Force',
-  description: 'Casimir Intelligence is a functioning platform — not a concept — built for U.S. Space Force Task Force Futures in response to a Direct-to-Phase II SBIR solicitation. Proposal submitted; award decision pending.',
+  title: 'SBIR: Direct-to-Phase II Pursuit · U.S. Space Force',
+  description: 'Casimir Intelligence is a functioning platform, not a concept, built for U.S. Space Force Task Force Futures in response to a Direct-to-Phase II SBIR solicitation. Proposal submitted; award decision pending.',
   alternates: { canonical: 'https://www.casimirsystems.com/sbir' },
 };
 
 const SOLICITATION_REQS = [
   {
     req: 'ASOT Data Synthesis',
-    detail: 'Real-time fusion from 40+ authoritative sources: government contracts, VC filings, patent databases, and academic research — unified into a single queryable intelligence layer.',
+    detail: 'Real-time fusion from 40+ authoritative sources: government contracts, VC filings, patent databases, and academic research, unified into a single queryable intelligence layer.',
   },
   {
     req: 'VC Flow Tracking',
@@ -21,11 +21,11 @@ const SOLICITATION_REQS = [
   },
   {
     req: 'Multi-Layer Risk Gating',
-    detail: 'FOCI screening, CMMC Level 2 readiness, TRL scoring (DoD 1–9 scale), and supply chain exposure — each with full auditable evidence chains for contracting officers.',
+    detail: 'FOCI screening, CMMC Level 2 readiness, TRL scoring (DoD 1–9 scale), and supply chain exposure, each with full auditable evidence chains for contracting officers.',
   },
   {
     req: 'Zero-Code Interface',
-    detail: 'No engineering support required. S&T analysts and contracting officers query, filter, and export briefing packages in minutes — not weeks.',
+    detail: 'No engineering support required. S&T analysts and contracting officers query, filter, and export briefing packages in minutes, not weeks.',
   },
   {
     req: 'Modular, Open Architecture',
@@ -33,7 +33,7 @@ const SOLICITATION_REQS = [
   },
   {
     req: 'Phase I-Equivalent Feasibility',
-    detail: 'Casimir Intelligence is a functioning platform — not a prototype or concept — satisfying the D2P2 feasibility requirement at time of proposal submission.',
+    detail: 'Casimir Intelligence is a functioning platform, not a prototype or concept, satisfying the D2P2 feasibility requirement at time of proposal submission.',
   },
 ];
 
@@ -48,7 +48,7 @@ const COMPLIANCE_ITEMS: { standard: string; status: 'aligned' | 'pending' | 'na'
 
 const TIMELINE = [
   { phase: 'Phase I-Equiv.', desc: 'Feasibility demonstrated via working platform (complete at proposal)', trl: 4, color: '#10B981' },
-  { phase: 'D2P2 Decision', desc: 'Proposal submitted — award decision pending (target Q3 2026)', trl: 5, color: '#2563EB' },
+  { phase: 'D2P2 Decision', desc: 'Proposal submitted, award decision pending (target Q3 2026)', trl: 5, color: '#2563EB' },
   { phase: 'Phase II', desc: 'Full platform development with SpaceWERX / TF-F integration', trl: 7, color: '#8B5CF6' },
   { phase: 'Transition', desc: 'Phase III transition and operational deployment', trl: 9, color: '#F59E0B' },
 ];
@@ -58,13 +58,13 @@ const PATHWAYS: { org: string; status: 'active' | 'targeted' | 'monitoring'; sta
     org: 'SpaceWERX · U.S. Space Force',
     status: 'active',
     statusLabel: 'D2P2 Submitted',
-    desc: 'Casimir Intelligence, purpose-built for Task Force Futures in response to a Direct-to-Phase II SBIR solicitation. Proposal submitted with a working platform — our anchor pursuit and the proving ground for our compliance-first delivery model.',
+    desc: 'Casimir Intelligence, purpose-built for Task Force Futures in response to a Direct-to-Phase II SBIR solicitation. Proposal submitted with a working platform: our anchor pursuit and the proving ground for our compliance-first delivery model.',
   },
   {
     org: 'SOFWERX · U.S. Special Operations Command',
     status: 'targeted',
     statusLabel: 'Targeted · Next Pathway',
-    desc: 'SOCOM holds dedicated acquisition authority for unconventional, fast-moving problems — and the shortest chain between operator need and fielded capability. Our intelligence synthesis and unified operating picture work is built for this pathway.',
+    desc: 'SOCOM holds dedicated acquisition authority for unconventional, fast-moving problems, and the shortest chain between operator need and fielded capability. Our intelligence synthesis and unified operating picture work is built for this pathway.',
   },
   {
     org: 'AFWERX · U.S. Air Force',
@@ -104,7 +104,7 @@ export default function SbirPage() {
               Purpose-built for<br /><span style={{ color: '#2563EB' }}>Task Force Futures.</span>
             </h1>
             <p className="text-lg mb-8 max-w-lg" style={{ color: 'rgba(255,255,255,0.55)', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.75 }}>
-              Casimir Intelligence was purpose-built for U.S. Space Force Task Force Futures in response to a Direct-to-Phase II SBIR solicitation. Our proposal is submitted and the award decision is pending — but the platform is not a promise. We have already built it.
+              Casimir Intelligence was purpose-built for U.S. Space Force Task Force Futures in response to a Direct-to-Phase II SBIR solicitation. Our proposal is submitted and the award decision is pending, but the platform is not a promise. We have already built it.
             </p>
             <div className="flex gap-3 flex-wrap mb-10">
               <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-md font-medium text-white transition-all duration-200 hover:-translate-y-px" style={{ background: '#2563EB', fontFamily: 'IBM Plex Sans, sans-serif', fontSize: 14 }}>
@@ -160,7 +160,7 @@ export default function SbirPage() {
                   The DoD&apos;s fast-track innovation pathway.
                 </h2>
                 <p className="text-[16px] text-[#64748B] mb-5" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.75 }}>
-                  The Direct-to-Phase II mechanism bypasses the traditional SBIR Phase I entirely, allowing companies with demonstrated Phase I-equivalent feasibility to compete directly for Phase II contracts. This is the DoD&apos;s signal that it needs this capability <em>now</em> — not in three years.
+                  The Direct-to-Phase II mechanism bypasses the traditional SBIR Phase I entirely, allowing companies with demonstrated Phase I-equivalent feasibility to compete directly for Phase II contracts. This is the DoD&apos;s signal that it needs this capability <em>now</em>, not in three years.
                 </p>
                 <p className="text-[16px] text-[#64748B]" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.75 }}>
                   Casimir Intelligence satisfies this requirement. It is a functioning platform, not a proposal to build one.
@@ -231,7 +231,7 @@ export default function SbirPage() {
             <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>Innovation Pathways</div>
             <h2 className="font-bold text-[#0B132B] mb-3" style={{ fontSize: 'clamp(28px,2.8vw,40px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>The shortest path from operator need to fielded capability.</h2>
             <p className="text-[17px] text-[#64748B] max-w-2xl mb-10" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7 }}>
-              Requirements too often lose their meaning between the operator who has the problem and the RFP that describes it. We engage the DoD innovation ecosystem where the chain of translation is shortest — and we show up repeatedly, so program offices know exactly who we are and what we build.
+              Requirements too often lose their meaning between the operator who has the problem and the RFP that describes it. We engage the DoD innovation ecosystem where the chain of translation is shortest, and we show up repeatedly, so program offices know exactly who we are and what we build.
             </p>
           </ScrollReveal>
           <StaggerReveal className="grid md:grid-cols-2 gap-4" staggerMs={80}>

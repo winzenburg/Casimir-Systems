@@ -5,15 +5,15 @@ import { PlatformMockup } from '@/components/platform-mockup';
 import { EcosystemPanel, InvestmentPanel, SynthesisPanel, RiskPanel } from '@/components/platform-visuals';
 
 export const metadata: Metadata = {
-  title: 'Casimir Intelligence — Defense S&T Co-Investment Platform',
-  description: 'Casimir Intelligence maps S&T ecosystems, tracks VC flows, synthesizes AI-powered intelligence briefs, and surfaces co-investment opportunities — zero-code and fully auditable. Purpose-built for U.S. Space Force Task Force Futures.',
+  title: 'Casimir Intelligence: Defense S&T Co-Investment Platform',
+  description: 'Casimir Intelligence maps S&T ecosystems, tracks VC flows, synthesizes AI-powered intelligence briefs, and surfaces co-investment opportunities, zero-code and fully auditable. Purpose-built for U.S. Space Force Task Force Futures.',
   alternates: { canonical: 'https://www.casimirsystems.com/platform' },
 };
 
 const FEATURES = [
   {
     eyebrow: 'Module 01 · Ecosystem',
-    question: '“Who is building what — and who is funding them?”',
+    question: '“Who is building what, and who is funding them?”',
     title: 'S&T Ecosystem Mapping',
     desc: 'Query the full commercial innovation landscape. Casimir Intelligence synthesizes patent filings, funding rounds, government contracts, and academic research into a dynamic, queryable network graph.',
     points: [
@@ -39,7 +39,7 @@ const FEATURES = [
     eyebrow: 'Module 03 · Knowledge',
     question: '“What does leadership need to know before Monday’s brief?”',
     title: 'AI Knowledge Synthesis',
-    desc: 'Claude-powered synthesis engine converts raw entity and signal data into structured intelligence briefs — automatically theme-tagged, source-attributed, and ready to brief to leadership.',
+    desc: 'Claude-powered synthesis engine converts raw entity and signal data into structured intelligence briefs, automatically theme-tagged, source-attributed, and ready to brief to leadership.',
     points: [
       'Anthropic Claude Sonnet AI synthesis engine',
       'Automatic theme tagging across 15 capability domains',
@@ -51,7 +51,7 @@ const FEATURES = [
     eyebrow: 'Module 04 · Governance',
     question: '“Will every recommendation survive an audit?”',
     title: 'Institutional Risk & Governance',
-    desc: 'Every co-investment recommendation is backed by a multi-layer risk gate architecture designed for the DoD acquisition environment. No black boxes — every flag is traceable to a primary source.',
+    desc: 'Every co-investment recommendation is backed by a multi-layer risk gate architecture designed for the DoD acquisition environment. No black boxes: every flag is traceable to a primary source.',
     points: [
       'FOCI exposure screening and classification tracking',
       'CMMC Level 2 readiness scoring per entity',
@@ -71,11 +71,11 @@ const SECURITY_BADGES = [
 ];
 
 const SBIR_REQS = [
-  { req: 'ASOT Data Synthesis', cap: 'Fuses data from 40+ verified sources — government contracts, VC filings, patent databases, and academic research — into a single, queryable intelligence layer.' },
+  { req: 'ASOT Data Synthesis', cap: 'Fuses data from 40+ verified sources (government contracts, VC filings, patent databases, and academic research) into a single, queryable intelligence layer.' },
   { req: 'Real-Time VC Flow Tracking', cap: 'Investment monitoring across 200+ defense-relevant funds, mapped against RDT&E priorities and Objective Force Design themes.' },
-  { req: 'AI Knowledge Synthesis', cap: 'Anthropic Claude Sonnet generates structured intelligence briefs per entity — theme-tagged across 15 capability domains, with human-in-the-loop review workflow.' },
-  { req: 'Multi-Layer Risk & Governance', cap: 'FOCI screening, CMMC Level 2 readiness, TRL scoring (DoD 1–9 scale), and CUI/FOUO-compliant data handling — each with a full, auditable evidence chain.' },
-  { req: 'Zero-Code Operational Interface', cap: 'No engineering support required. S&T analysts and contracting officers query, filter, and export briefing packages in minutes — not weeks.' },
+  { req: 'AI Knowledge Synthesis', cap: 'Anthropic Claude Sonnet generates structured intelligence briefs per entity, theme-tagged across 15 capability domains, with human-in-the-loop review workflow.' },
+  { req: 'Multi-Layer Risk & Governance', cap: 'FOCI screening, CMMC Level 2 readiness, TRL scoring (DoD 1–9 scale), and CUI/FOUO-compliant data handling, each with a full, auditable evidence chain.' },
+  { req: 'Zero-Code Operational Interface', cap: 'No engineering support required. S&T analysts and contracting officers query, filter, and export briefing packages in minutes, not weeks.' },
   { req: 'Modular, Open Architecture', cap: 'REST API-first design enables integration with existing DoD data environments. Modules deploy independently or as a complete platform stack.' },
 ];
 
@@ -110,7 +110,7 @@ export default function PlatformPage() {
               Aligning Private Capital<br /><span style={{ color: '#2563EB' }}>with National Security.</span>
             </h1>
             <p className="text-lg mb-12 max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.55)', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.75 }}>
-              A zero-code, fully auditable platform that maps S&T ecosystems, tracks VC flows, and synthesizes AI-powered intelligence briefs — purpose-built for U.S. Space Force Task Force Futures.
+              A zero-code, fully auditable platform that maps S&T ecosystems, tracks VC flows, and synthesizes AI-powered intelligence briefs, purpose-built for U.S. Space Force Task Force Futures.
             </p>
             <div className="flex gap-3 justify-center flex-wrap">
               <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md font-medium text-white transition-all duration-200 hover:-translate-y-px" style={{ background: '#2563EB', fontFamily: 'IBM Plex Sans, sans-serif', fontSize: 15 }}>
@@ -143,7 +143,7 @@ export default function PlatformPage() {
                 Four modules. One decision layer.<br />Designed around the analyst.
               </h2>
               <p className="text-[17px] text-[#64748B] m-0" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.8, maxWidth: 640 }}>
-                Every screen starts with a question a real analyst asks under real time pressure — then removes
+                Every screen starts with a question a real analyst asks under real time pressure, then removes
                 everything that stands between that question and a defensible answer. No query languages,
                 no engineering tickets, no black boxes.
               </p>
@@ -189,11 +189,11 @@ export default function PlatformPage() {
           <ScrollReveal>
             <div className="text-[11px] font-semibold tracking-widest uppercase mb-8" style={{ color: '#60A5FA', fontFamily: 'Inter, sans-serif' }}>Design Principle</div>
             <p className="font-bold text-white m-0" style={{ fontSize: 'clamp(24px,3vw,36px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em', lineHeight: 1.35 }}>
-              Software for high-stakes decisions should <span style={{ color: '#60A5FA' }}>reduce cognitive load</span> — never add to it.
+              Software for high-stakes decisions should <span style={{ color: '#60A5FA' }}>reduce cognitive load</span>, never add to it.
             </p>
             <p className="text-[16px] mt-8 max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.5)', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.8 }}>
               Casimir Intelligence is built by a design-led team with two decades of enterprise UX practice.
-              Precision, clarity, and trust are engineered into every screen — because an analyst&rsquo;s attention
+              Precision, clarity, and trust are engineered into every screen, because an analyst&rsquo;s attention
               is the scarcest resource in the building.
             </p>
           </ScrollReveal>
@@ -213,10 +213,10 @@ export default function PlatformPage() {
                 </div>
                 <h2 className="font-bold text-[#0B132B] mb-5" style={{ fontSize: 32, fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em', lineHeight: 1.25 }}>Purpose-built for a specific mission requirement.</h2>
                 <p className="text-[15px] text-[#64748B] mb-5" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.75 }}>
-                  Casimir Intelligence was purpose-built for U.S. Space Force Task Force Futures in response to a Direct-to-Phase II SBIR solicitation — the DoD's fast-track mechanism for companies demonstrating working capability at the time of proposal. Our proposal is submitted; the award decision is pending.
+                  Casimir Intelligence was purpose-built for U.S. Space Force Task Force Futures in response to a Direct-to-Phase II SBIR solicitation, the DoD's fast-track mechanism for companies demonstrating working capability at the time of proposal. Our proposal is submitted; the award decision is pending.
                 </p>
                 <p className="text-[15px] text-[#64748B] mb-8" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.75 }}>
-                  We are not proposing to build this. The platform is functioning. TF-F needs this capability now — not in three years.
+                  We are not proposing to build this. The platform is functioning. TF-F needs this capability now, not in three years.
                 </p>
                 <div className="flex gap-2 flex-wrap">
                   {TAGS.map((tag, i) => {
@@ -246,7 +246,7 @@ export default function PlatformPage() {
                 <div className="mt-6 rounded-xl p-5" style={{ background: '#0B132B' }}>
                   <div className="text-[11px] font-semibold tracking-widest uppercase mb-2" style={{ color: 'rgba(255,255,255,0.4)', fontFamily: 'Inter, sans-serif' }}>Phase II Feasibility Standard</div>
                   <p className="text-[13px] m-0" style={{ color: 'rgba(255,255,255,0.65)', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7 }}>
-                    Direct-to-Phase II requires a functioning platform — not a prototype — at time of proposal. Casimir Intelligence satisfies this standard.
+                    Direct-to-Phase II requires a functioning platform, not a prototype, at time of proposal. Casimir Intelligence satisfies this standard.
                   </p>
                 </div>
               </div>

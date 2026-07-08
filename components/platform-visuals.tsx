@@ -39,7 +39,7 @@ function ModuleFrame({ title, subtitle, children }: { title: string; subtitle: s
 
 const DETAIL_FIELDS = [
   { label: 'TYPE',           value: 'Company' },
-  { label: 'TRL',            value: '6 — System demonstrated in relevant environment' },
+  { label: 'TRL',            value: '6: System demonstrated in relevant environment' },
   { label: 'CLASSIFICATION', value: 'U' },
   { label: 'CMMC',           value: 'Level 2' },
   { label: 'CAGE CODE',      value: '8QX41' },
@@ -72,7 +72,7 @@ export function EcosystemPanel() {
               <span className="text-[13px] font-bold" style={{ color: '#0F172A', fontFamily: 'Inter, sans-serif' }}>Shield AI</span>
             </div>
             <div className="text-[10.5px] mt-1.5" style={{ color: '#64748B', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.5 }}>
-              Autonomy stack for aircraft — Hivemind pilot AI
+              Autonomy stack for aircraft: Hivemind pilot AI
             </div>
           </div>
           <div className="flex-1 px-4 py-2">
@@ -133,7 +133,7 @@ export function InvestmentPanel() {
           FUNDING BY ENTITY
         </div>
         <div className="text-[10px] mb-4" style={{ color: '#94A3B8', fontFamily: 'IBM Plex Mono, monospace' }}>
-          Top 5 recipients — total obligated value
+          Top 5 recipients · total obligated value
         </div>
         {FUNDING_ROWS.map((r, i) => (
           <div key={i} style={{ background: i === 0 ? '#EFF6FF' : 'transparent', borderRadius: 6, padding: '7px 10px', margin: '0 -10px 12px' }}>
@@ -171,7 +171,7 @@ export function SynthesisPanel() {
           </div>
 
           <div className="text-[15px] font-bold mb-2" style={{ color: '#0F172A', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.01em' }}>
-            Shield AI — Hivemind Autonomy Platform Assessment
+            Shield AI: Hivemind Autonomy Platform Assessment
           </div>
           <p className="text-[12.5px] m-0" style={{ color: '#475569', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7 }}>
             Shield AI Hivemind at TRL 6 following F-16 flight test. Strong VC backing with clear
@@ -210,7 +210,7 @@ export function SynthesisPanel() {
               <div className="flex items-center gap-1.5 mt-1">
                 <CheckCircle2 size={10} style={{ color: '#047857' }} />
                 <span className="text-[9.5px] font-semibold" style={{ color: '#047857', letterSpacing: '0.05em', fontFamily: 'IBM Plex Mono, monospace' }}>
-                  HUMAN VALIDATED — 4 OF 4 CLAIMS VERIFIED
+                  HUMAN VALIDATED · 4 OF 4 CLAIMS VERIFIED
                 </span>
               </div>
             </div>
@@ -229,7 +229,7 @@ export function SynthesisPanel() {
 const AUDIT_ROWS: { action: 'CREATE' | 'UPDATE' | 'FLAG' | 'VIEW'; target: string; table: string; actor: string; time: string }[] = [
   { action: 'FLAG',   target: 'Entity 0417',       table: 'Entity',     actor: 'system/foci-screen', time: '2m ago' },
   { action: 'UPDATE', target: 'Shield AI',          table: 'Entity',     actor: 'maj.chen',           time: '18m ago' },
-  { action: 'CREATE', target: 'Series D — Epirus',  table: 'Investment', actor: 'ingest/sec-edgar',   time: '1h ago' },
+  { action: 'CREATE', target: 'Series D · Epirus',  table: 'Investment', actor: 'ingest/sec-edgar',   time: '1h ago' },
   { action: 'VIEW',   target: 'Q-PNT Program',      table: 'Entity',     actor: 'lt.col.ray',         time: '2h ago' },
   { action: 'UPDATE', target: 'Hivemind TRL 5→6',   table: 'Signal',     actor: 'maj.chen',           time: '4h ago' },
   { action: 'CREATE', target: 'DARPA ACE debrief',  table: 'Engagement', actor: 'capt.morris',        time: '6h ago' },
@@ -302,7 +302,7 @@ export function RiskPanel() {
       {/* Footer */}
       <div className="flex items-center justify-between px-5 py-3">
         <span className="text-[10px]" style={{ color: '#94A3B8', fontFamily: 'IBM Plex Mono, monospace' }}>
-          Every write is logged — immutable audit trail
+          Every write is logged: immutable audit trail
         </span>
         <span className="text-[10.5px] font-semibold" style={{ color: '#2563EB', fontFamily: 'IBM Plex Sans, sans-serif' }}>
           Export for Contracting Officer →

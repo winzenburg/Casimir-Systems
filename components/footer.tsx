@@ -75,7 +75,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-[13px] leading-relaxed mb-5 max-w-[260px]" style={{ color: 'rgba(255,255,255,0.4)', fontFamily: 'IBM Plex Sans, sans-serif' }}>
-              Agile defense technology firm building AI-powered decision support applications for DoD — across services, branches, and program offices.
+              Agile defense technology firm building AI-powered decision support applications for DoD, across services, branches, and program offices.
             </p>
 
             {/* Product chip */}
