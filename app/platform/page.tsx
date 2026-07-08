@@ -260,7 +260,7 @@ export default function PlatformPage() {
         <div className="max-w-5xl mx-auto">
           <ScrollReveal>
             <div className="text-[11px] font-semibold tracking-widest uppercase mb-4" style={{ color: '#60A5FA', fontFamily: 'Inter, sans-serif' }}>Security &amp; Compliance</div>
-            <h2 className="font-bold text-white mb-5" style={{ fontSize: 'clamp(28px,3vw,40px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>Built to operate in the DoD environment.</h2>
+            <h2 className="font-bold text-white mb-5" style={{ fontSize: 'clamp(28px,2.8vw,40px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>Built to operate in the DoD environment.</h2>
             <p className="text-[17px] max-w-xl mx-auto mb-14" style={{ color: 'rgba(255,255,255,0.5)', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.75 }}>
               Casimir Intelligence meets or exceeds all compliance requirements for handling Controlled Unclassified Information in defense acquisition contexts.
             </p>

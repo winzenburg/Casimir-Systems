@@ -79,7 +79,7 @@ export default function SecurityPage() {
       <section className="py-24 lg:py-28 px-6 lg:px-10" style={{ background: '#fff' }}>
         <div className="max-w-5xl mx-auto">
           <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>Applicable Frameworks</div>
-          <h2 className="font-bold text-[#0B132B] mb-10" style={{ fontSize: 'clamp(22px,2.5vw,32px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>
+          <h2 className="font-bold text-[#0B132B] mb-10" style={{ fontSize: 'clamp(24px,2.5vw,34px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>
             Standards we architect against
           </h2>
           <div className="grid md:grid-cols-2 gap-4">
@@ -100,7 +100,7 @@ export default function SecurityPage() {
       <section className="py-24 lg:py-28 px-6 lg:px-10" style={{ background: '#F8FAFC' }}>
         <div className="max-w-5xl mx-auto">
           <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>Platform Controls</div>
-          <h2 className="font-bold text-[#0B132B] mb-10" style={{ fontSize: 'clamp(22px,2.5vw,32px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>
+          <h2 className="font-bold text-[#0B132B] mb-10" style={{ fontSize: 'clamp(24px,2.5vw,34px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>
             How we protect your data
           </h2>
           <div className="grid md:grid-cols-2 gap-6">

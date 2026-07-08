@@ -45,7 +45,7 @@ export default function ResourcesPage() {
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>Latest Insights</div>
-            <h2 className="font-bold text-[#0B132B] mb-12" style={{ fontSize: 'clamp(24px,2.5vw,36px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>Intelligence Briefings</h2>
+            <h2 className="font-bold text-[#0B132B] mb-12" style={{ fontSize: 'clamp(28px,2.8vw,40px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>Intelligence Briefings</h2>
           </ScrollReveal>
           <StaggerReveal className="grid md:grid-cols-3 gap-6" staggerMs={100}>
             {ARTICLES.map((a, i) => (
@@ -84,7 +84,7 @@ export default function ResourcesPage() {
         <div className="max-w-4xl mx-auto">
           <ScrollReveal>
             <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>Reference</div>
-            <h2 className="font-bold text-[#0B132B] mb-3" style={{ fontSize: 'clamp(24px,2.5vw,36px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>S&T Intelligence Glossary</h2>
+            <h2 className="font-bold text-[#0B132B] mb-3" style={{ fontSize: 'clamp(28px,2.8vw,40px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>S&T Intelligence Glossary</h2>
             <p className="text-[17px] text-[#64748B] mb-10" style={{ fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7 }}>
               Standard terminology used across the DoD co-investment and SBIR ecosystem.
             </p>
@@ -107,7 +107,7 @@ export default function ResourcesPage() {
         <div className="max-w-xl mx-auto">
           <ScrollReveal>
             <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>Intelligence Updates</div>
-            <h2 className="font-bold text-white mb-5" style={{ fontSize: 'clamp(24px,2.5vw,36px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>Stay ahead of the S&T landscape.</h2>
+            <h2 className="font-bold text-white mb-5" style={{ fontSize: 'clamp(28px,2.8vw,40px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>Stay ahead of the S&T landscape.</h2>
             <p className="text-[17px] mb-8" style={{ color: 'rgba(255,255,255,0.5)', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7 }}>
               Request early access to Casimir Intelligence and receive briefings as they publish.
             </p>

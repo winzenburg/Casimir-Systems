@@ -140,7 +140,7 @@ export default function SolutionsPage() {
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>Who We Serve</div>
-            <h2 className="font-bold text-[#0B132B] mb-12" style={{ fontSize: 'clamp(24px,2.5vw,36px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>Across services, branches, and program offices.</h2>
+            <h2 className="font-bold text-[#0B132B] mb-12" style={{ fontSize: 'clamp(28px,2.8vw,40px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>Across services, branches, and program offices.</h2>
           </ScrollReveal>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {PERSONAS.map((p, i) => (
@@ -166,7 +166,7 @@ export default function SolutionsPage() {
       <section className="py-28 lg:py-32 px-6 lg:px-10 text-center" style={{ background: '#0B132B' }}>
         <div className="max-w-xl mx-auto">
           <ScrollReveal>
-            <h2 className="font-bold text-white mb-5" style={{ fontSize: 'clamp(24px,2.5vw,36px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>Ready to see it in action?</h2>
+            <h2 className="font-bold text-white mb-5" style={{ fontSize: 'clamp(28px,2.8vw,40px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>Ready to see it in action?</h2>
             <p className="text-[17px] mb-8" style={{ color: 'rgba(255,255,255,0.5)', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7 }}>
               Schedule a scoped demonstration tailored to your specific role and mission requirements.
             </p>

@@ -73,7 +73,7 @@ export default function ContactPage() {
         <div className="relative max-w-3xl mx-auto">
           <ScrollReveal>
             <div className="text-[11px] font-semibold tracking-widest uppercase text-[#2563EB] mb-4" style={{ fontFamily: 'Inter, sans-serif' }}>Request Access · Casimir Intelligence</div>
-            <h1 className="font-extrabold text-white mb-5" style={{ fontSize: 'clamp(36px,4vw,56px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.03em', lineHeight: 1.1 }}>
+            <h1 className="font-extrabold text-white mb-5" style={{ fontSize: 'clamp(36px,4.5vw,60px)', fontFamily: 'Inter, sans-serif', letterSpacing: '-0.03em', lineHeight: 1.1 }}>
               Access Casimir Intelligence.
             </h1>
             <p className="text-lg" style={{ color: 'rgba(255,255,255,0.5)', fontFamily: 'IBM Plex Sans, sans-serif', lineHeight: 1.7 }}>
