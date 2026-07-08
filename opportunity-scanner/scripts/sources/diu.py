@@ -32,7 +32,7 @@ def fetch(timeout: int = 30) -> tuple[list[dict[str, Any]], str]:
         resp = requests.get(LISTING_URL, timeout=timeout, headers={"User-Agent": "Mozilla/5.0"})
         resp.raise_for_status()
     except requests.RequestException as e:
-        return [], f"FAILED — {e}"
+        return [], f"FAILED: {e}"
 
     soup = BeautifulSoup(resp.text, "html.parser")
     results: list[dict[str, Any]] = []
@@ -68,7 +68,7 @@ def fetch(timeout: int = 30) -> tuple[list[dict[str, Any]], str]:
         results.append(
             {
                 "title": title,
-                "description": body or "DIU CSO area of interest — verify details at the link.",
+                "description": body or "DIU CSO area of interest: verify details at the link.",
                 "agency": "DIU",
                 "close_date": close_date,
                 "url": url,
@@ -78,5 +78,5 @@ def fetch(timeout: int = 30) -> tuple[list[dict[str, Any]], str]:
         )
 
     if not results:
-        return [], "ok but 0 open CSOs found — either none are open right now or div.aoi selector drifted"
-    return results, f"ok — {len(results)} open CSO areas of interest"
+        return [], "ok but 0 open CSOs found: either none are open right now or div.aoi selector drifted"
+    return results, f"ok: {len(results)} open CSO areas of interest"

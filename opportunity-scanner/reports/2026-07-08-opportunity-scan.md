@@ -1,8 +1,8 @@
-# Casimir Opportunity Scan — 2026-07-08
+# Casimir Opportunity Scan: 2026-07-08
 
 > **Language reminder:** everything below is a candidate opportunity, not a
 > confirmed award. Use "pursuing" / "targeting" / "eligible for" in any
-> external-facing material drawn from this report — never "awarded" or
+> external-facing material drawn from this report, never "awarded" or
 > "contracted" unless a human has separately confirmed an actual award.
 
 
@@ -10,25 +10,25 @@
 
 ## Source status
 
-- `sbir_gov_dod`: FAILED — ALL: SBIR.gov API unavailable (HTTP 429 maintenance/throttle) — rerun the scan later
-- `sofwerx`: ok — 6 current events, 2 external/RFI items
-- `diu`: ok — 2 open CSO areas of interest
-- `army_futures_xtech`: ok — 6 open/active competitions
-- `sam_gov`: ok — 25 results
-- `nro`: ok — 25 results
-- `sam_gov_hubzone`: ok — 2 HUBZone set-aside/sole-source result(s)
+- `sbir_gov_dod`: FAILED: ALL: SBIR.gov API unavailable (HTTP 429, "not available at this time"), a known extended outage per sbir.gov/api, not a transient blip [down since 2026-07-03 (5d)]
+- `sofwerx`: ok: 6 current events, 2 external/RFI items
+- `diu`: ok: 2 open CSO areas of interest
+- `army_futures_xtech`: ok: 6 open/active competitions
+- `sam_gov`: ok: 25 results
+- `nro`: ok: 25 results
+- `sam_gov_hubzone`: ok: 2 HUBZone set-aside/sole-source result(s)
 
-## HUBZone set-asides — restricted competitor pool
+## HUBZone set-asides: restricted competitor pool
 
 Casimir's principal office sits in a HUBZone-designated area, making it
 eligible for SBA HUBZone certification. Everything below is pulled directly
 from SAM.gov's official set-aside field (typeOfSetAside=HZC/HZS under
-FAR 19.13) in Casimir-relevant NAICS codes — not a keyword guess. Any
+FAR 19.13) in Casimir-relevant NAICS codes, not a keyword guess. Any
 company bidding here must ALSO be HUBZone-eligible or certified, so the
 competitor pool is legally restricted, regardless of how well the topic
 matches Casimir's capability keywords. **If Casimir is not yet
 SBA-certified, certification is the prerequisite to bidding on the HZC
-(set-aside) items below** — see the README for the certification pathway.
+(set-aside) items below**; see the README for the certification pathway.
 HZS (sole-source) items are already awarded directly to a HUBZone firm;
 shown here as market intel on who's winning and under what NAICS.
 
@@ -37,8 +37,8 @@ shown here as market intel on who's winning and under what NAICS.
 
 ### One Acquisition Solution for Integrated Services Plus (OASIS+) Historically Underutilized Business Zone (HUBZone) Small Business Set-Aside Continuously Open Solicitation
 - **Set-aside:** HUBZone Set Aside · NAICS 541990 · open competition, restricted to HUBZone-eligible/certified firms
-- **Score:** 4.4/100 — tags: set_aside_signal (informational — inclusion here is due to HUBZone status, not this score)
-- **Source:** SAM.gov — HUBZone Set-Asides
+- **Score:** 4.4/100, tags: set_aside_signal (informational; inclusion here is due to HUBZone status, not this score)
+- **Source:** SAM.gov: HUBZone Set-Asides
 - **Agency/branch:** GENERAL SERVICES ADMINISTRATION.FEDERAL ACQUISITION SERVICE.GSA/FAS/PSHC/OASIS PLUS
 - **Close date:** 2027-01-11T16:00:00-05:00
 - **Link:** https://sam.gov/workspace/contract/opp/c3fb573a7fbf4396a0f40fcbedeb425b/view
@@ -50,8 +50,8 @@ July 7, 2026: This is Amendment 0009 to solicitation 47QRCA23R0003 . The General
 
 ### 17 CS SIPR Thin Client & Network Infrastructure Project, Goodfellow AFB, TX
 - **Set-aside:** HUBZone Set Aside · NAICS 541519 · open competition, restricted to HUBZone-eligible/certified firms
-- **Score:** 0.0/100 — tags: none (no capability-keyword match — included solely because it's a HUBZone set-aside)
-- **Source:** SAM.gov — HUBZone Set-Asides
+- **Score:** 0.0/100, tags: none (no capability-keyword match; included solely because it's a HUBZone set-aside)
+- **Source:** SAM.gov: HUBZone Set-Asides
 - **Agency/branch:** DEPT OF DEFENSE.DEPT OF THE AIR FORCE.AIR EDUCATION AND TRAINING COMMAND.FA3030  17 CONS CC
 - **Close date:** 2026-07-23T14:00:00-05:00
 - **Link:** https://sam.gov/workspace/contract/opp/5379b3706dba4019a4b853b4f3504c7a/view
@@ -71,7 +71,7 @@ or the hydrogeology/data-center-siting angle. This is the list worth acting on.
 #### DIU
 
 ### Farseer: Quantum Sensing for ISR
-- **Score:** 13.5/100 — tags: ux_human_factors, ai_intel_synthesis
+- **Score:** 13.5/100, tags: ux_human_factors, ai_intel_synthesis
 - **Source:** Defense Innovation Unit (diu.mil)
 - **Agency/branch:** DIU
 - **Close date:** 2026-07-10 23:59:59 US/Eastern Time
@@ -81,7 +81,7 @@ Problem Statement The Department of War (DoW) relies on robust Intelligence, Sur
 
 
 
-## Market intel — Dave's flagged areas, no direct capability match
+## Market intel: Dave's flagged areas, no direct capability match
 
 These matched one of the defense-market areas Dave flagged as active
 (batteries, unmanned platforms, counter-AI, etc.) but didn't hit any of your
@@ -93,7 +93,7 @@ teaming partner who covers the engineering domain.
 #### SOCOM (via SOFWERX)
 
 ### PEO-TIS UxV Payloads against Modern Signals
-- **Score:** 32.5/100 — tags: ai_intel_synthesis, unmanned_platforms
+- **Score:** 32.5/100, tags: ai_intel_synthesis, unmanned_platforms
 - **Source:** SOFWERX (events.sofwerx.org)
 - **Agency/branch:** SOCOM (via SOFWERX)
 - **Close date:** 03-07 August 2026
@@ -103,7 +103,7 @@ Discover ELINT solutions for unmanned platforms, register now for the PEO-TIS Ux
 
 
 ### SBIR 26.BZ Release 4
-- **Score:** 15.0/100 — tags: sbir_sttr_cycle
+- **Score:** 15.0/100, tags: sbir_sttr_cycle
 - **Source:** SOFWERX (events.sofwerx.org)
 - **Agency/branch:** SOCOM (via SOFWERX)
 - **Close date:** Submissions Open 22 July 2026
@@ -113,7 +113,7 @@ Learn about the Small Business Innovation Research program and register now for 
 
 
 ### JATF Autonomous Warfare Proving Ground
-- **Score:** 13.1/100 — tags: unmanned_platforms
+- **Score:** 13.1/100, tags: unmanned_platforms
 - **Source:** SOFWERX (events.sofwerx.org)
 - **Agency/branch:** SOCOM (via SOFWERX)
 - **Close date:** 15 July 2026
@@ -123,7 +123,7 @@ Establish a state-of-the-art autonomous systems warfare center
 
 
 ### J2 Integrated Survey Program (ISP) Autonomous Solutions
-- **Score:** 13.1/100 — tags: unmanned_platforms
+- **Score:** 13.1/100, tags: unmanned_platforms
 - **Source:** SOFWERX (events.sofwerx.org)
 - **Agency/branch:** SOCOM (via SOFWERX)
 - **Close date:** 21-23 July 2026
@@ -133,7 +133,7 @@ Join USSOCOM J2 and SOFWERX on March 31, 2026 to explore autonomous solutions re
 
 
 ### PEO-SDA: UxSAI Synthetic Data Modeler
-- **Score:** 13.1/100 — tags: unmanned_platforms
+- **Score:** 13.1/100, tags: unmanned_platforms
 - **Source:** SOFWERX (events.sofwerx.org)
 - **Agency/branch:** SOCOM (via SOFWERX)
 - **Close date:** 27-29 July 2026
@@ -145,7 +145,7 @@ Develop synthetic data for unmanned systems, register now for the UxSAI Assessme
 #### DIU
 
 ### Massed Modular Aircraft
-- **Score:** 16.9/100 — tags: unmanned_platforms
+- **Score:** 16.9/100, tags: unmanned_platforms
 - **Source:** Defense Innovation Unit (diu.mil)
 - **Agency/branch:** DIU
 - **Close date:** 2026-07-23 23:59:59 US/Eastern Time
@@ -157,7 +157,7 @@ Area of Interest (AoI) Statement: Massed Modular Aircraft Problem Statement The 
 #### Army (xTech prize competitions)
 
 ### xTech|Phantum
-- **Score:** 15.0/100 — tags: sbir_sttr_cycle
+- **Score:** 15.0/100, tags: sbir_sttr_cycle
 - **Source:** Army xTech (xtech.army.mil)
 - **Agency/branch:** Army (xTech prize competitions)
 - **Link:** https://xtech.army.mil/competition/xtechphantum/

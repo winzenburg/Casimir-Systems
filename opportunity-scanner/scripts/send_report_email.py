@@ -47,7 +47,7 @@ def build_email() -> tuple[str, str]:
         raise SystemExit(f"ERROR: report {report_path} not found")
 
     subject = (
-        f"Opportunity scan {summary['date']} — "
+        f"Opportunity scan {summary['date']}: "
         f"{summary['new']} new, {summary.get('hubzone', 0)} HUBZone, {summary['core']} core match(es)"
     )
 

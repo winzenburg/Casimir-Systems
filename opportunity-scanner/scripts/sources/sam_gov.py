@@ -34,7 +34,7 @@ NOTICE_DESC_URL = "https://api.sam.gov/prod/opportunities/v1/noticedesc"
 SOURCE_ID = "sam_gov"
 SOURCE_NAME = "SAM.gov Contract Opportunities"
 HUBZONE_SOURCE_ID = "sam_gov_hubzone"
-HUBZONE_SOURCE_NAME = "SAM.gov — HUBZone Set-Asides"
+HUBZONE_SOURCE_NAME = "SAM.gov: HUBZone Set-Asides"
 
 # FAR 19.13 set-aside codes: HZC = HUBZone set-aside competition,
 # HZS = HUBZone sole-source award (agency picked a HUBZone firm directly —
@@ -131,7 +131,7 @@ def fetch(
 ) -> tuple[list[dict[str, Any]], str]:
     api_key = os.environ.get("SAM_GOV_API_KEY")
     if not api_key:
-        return [], "SKIPPED — no SAM_GOV_API_KEY set in .env (get one free at sam.gov/data-services)"
+        return [], "SKIPPED: no SAM_GOV_API_KEY set in .env (get one free at sam.gov/data-services)"
 
     posted_from, posted_to = _date_range(days_back)
     params_list = []
@@ -152,10 +152,10 @@ def fetch(
                 v["agency"] = department
 
     if errors and not seen:
-        return [], f"FAILED — {'; '.join(errors)}"
+        return [], f"FAILED: {'; '.join(errors)}"
     elif errors:
-        return list(seen.values()), f"partial — {len(seen)} results, some queries failed: {'; '.join(errors)}"
-    return list(seen.values()), f"ok — {len(seen)} results"
+        return list(seen.values()), f"partial: {len(seen)} results, some queries failed: {'; '.join(errors)}"
+    return list(seen.values()), f"ok: {len(seen)} results"
 
 
 def fetch_nro(keywords: list[str], days_back: int = 30) -> tuple[list[dict[str, Any]], str]:
@@ -178,7 +178,7 @@ def fetch_hubzone(
     """
     api_key = os.environ.get("SAM_GOV_API_KEY")
     if not api_key:
-        return [], "SKIPPED — no SAM_GOV_API_KEY set in .env (get one free at sam.gov/data-services)"
+        return [], "SKIPPED: no SAM_GOV_API_KEY set in .env (get one free at sam.gov/data-services)"
 
     posted_from, posted_to = _date_range(days_back)
     params_list = [
@@ -197,7 +197,7 @@ def fetch_hubzone(
     )
 
     if errors and not seen:
-        return [], f"FAILED — {'; '.join(errors)}"
+        return [], f"FAILED: {'; '.join(errors)}"
     elif errors:
-        return list(seen.values()), f"partial — {len(seen)} results, some queries failed: {'; '.join(errors)}"
-    return list(seen.values()), f"ok — {len(seen)} HUBZone set-aside/sole-source result(s)"
+        return list(seen.values()), f"partial: {len(seen)} results, some queries failed: {'; '.join(errors)}"
+    return list(seen.values()), f"ok: {len(seen)} HUBZone set-aside/sole-source result(s)"

@@ -59,7 +59,7 @@ def _fetch_current_events(timeout: int) -> tuple[list[dict[str, Any]], str | Non
         resp = requests.get(LISTING_URL, timeout=timeout, headers=HEADERS)
         resp.raise_for_status()
     except requests.RequestException as e:
-        return [], f"current-events FAILED — {e}"
+        return [], f"current-events FAILED: {e}"
 
     soup = BeautifulSoup(resp.text, "html.parser")
     results: list[dict[str, Any]] = []
@@ -90,7 +90,7 @@ def _fetch_current_events(timeout: int) -> tuple[list[dict[str, Any]], str | Non
         if len(seen_urls) <= MAX_DETAIL_FETCHES:
             description = _event_description(url, timeout)
         if not description:
-            description = f"SOFWERX current event — verify details at the link. Card text: '{text}'"
+            description = f"SOFWERX current event: verify details at the link. Card text: '{text}'"
 
         results.append(
             {
@@ -113,7 +113,7 @@ def _fetch_external_events(timeout: int) -> tuple[list[dict[str, Any]], str | No
         resp = requests.get(EXTERNAL_EVENTS_URL, timeout=timeout, headers=HEADERS)
         resp.raise_for_status()
     except requests.RequestException as e:
-        return [], f"external-events FAILED — {e}"
+        return [], f"external-events FAILED: {e}"
 
     soup = BeautifulSoup(resp.text, "html.parser")
     results: list[dict[str, Any]] = []
@@ -134,7 +134,7 @@ def _fetch_external_events(timeout: int) -> tuple[list[dict[str, Any]], str | No
             {
                 "title": title or text[:120],
                 "description": text,
-                "agency": "SOCOM (via SOFWERX — external/RFI, direct SAM.gov posting)",
+                "agency": "SOCOM (via SOFWERX: external/RFI, direct SAM.gov posting)",
                 "close_date": None,  # embedded in description; SAM.gov link has authoritative date
                 "url": href,
                 "source_id": SOURCE_ID,
@@ -153,10 +153,10 @@ def fetch(timeout: int = 20) -> tuple[list[dict[str, Any]], str]:
     errors = [e for e in (err1, err2) if e]
 
     if errors and not all_results:
-        return [], f"FAILED — {'; '.join(errors)}"
+        return [], f"FAILED: {'; '.join(errors)}"
     if not all_results:
-        return [], "ok but 0 events found — site structure may have changed, verify a.link selector"
-    status = f"ok — {len(current)} current events, {len(external)} external/RFI items"
+        return [], "ok but 0 events found: site structure may have changed, verify a.link selector"
+    status = f"ok: {len(current)} current events, {len(external)} external/RFI items"
     if errors:
         status += f" (partial failure: {'; '.join(errors)})"
     return all_results, status

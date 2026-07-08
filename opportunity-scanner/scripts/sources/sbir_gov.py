@@ -1,10 +1,27 @@
 """
-SBIR.gov Solicitations API — documented, public, no key required.
+SBIR.gov Solicitations API: documented, public, no key required.
 https://www.sbir.gov/api
 
-STATUS: stable (but SBIR.gov has posted intermittent maintenance windows on
-this API in the past — we retry once and report clearly if it's down rather
-than silently returning zero results).
+STATUS (confirmed July 8, 2026): DOWN, and has been for weeks, not
+intermittently throttled. Every request returns HTTP 429
+{"Code":"TooManyRequestsError","Message":"The SBIR Public API is not
+available at this time."} regardless of source IP (verified from three
+independent networks) or request headers, and SBIR.gov's own /api
+documentation page has said "APIs are undergoing maintenance" since at
+least June 18, 2026 (independently corroborated by third-party sources
+checking the same page). This reads as the API Gateway usage plan being
+throttled to zero while the backend is offline for an extended
+maintenance window, not per-client rate limiting.
+
+There is no client-side fix: no header, retry count, or backoff avoids
+it. scan_opportunities.py's annotate_source_health() tracks how many
+consecutive days this source has been down (reports/source-health.json)
+so the report/notification shows real outage duration instead of a
+generic "try again" message that implies a transient blip. If this
+becomes permanent, the fallback is SBIR.gov's bulk data-resources
+downloads (https://www.sbir.gov/data-resources, JSON/XML/XLS snapshots)
+rather than the live API, at the cost of a large periodic file fetch
+instead of a targeted query.
 """
 from __future__ import annotations
 import time
@@ -48,9 +65,12 @@ def fetch(keywords: list[str] | None = None, timeout: int = 20) -> tuple[list[di
                 status_code = getattr(getattr(e2, "response", None), "status_code", None)
                 if status_code == 429:
                     # SBIR.gov returns 429 "The SBIR Public API is not available at
-                    # this time" during maintenance windows, not just rate limiting.
+                    # this time" — confirmed as an extended maintenance outage
+                    # (weeks, not minutes), not per-client rate limiting. See the
+                    # module docstring. annotate_source_health() in
+                    # scan_opportunities.py appends how long this has persisted.
                     errors.append(
-                        f"{kw or 'ALL'}: SBIR.gov API unavailable (HTTP 429 maintenance/throttle) — rerun the scan later"
+                        f"{kw or 'ALL'}: SBIR.gov API unavailable (HTTP 429, \"not available at this time\"), a known extended outage per sbir.gov/api, not a transient blip"
                     )
                 else:
                     errors.append(f"{kw or 'ALL'}: {e2}")
@@ -75,7 +95,7 @@ def fetch(keywords: list[str] | None = None, timeout: int = 20) -> tuple[list[di
                 }
 
     if errors and not seen:
-        return [], f"FAILED — {'; '.join(errors)}"
+        return [], f"FAILED: {'; '.join(errors)}"
     elif errors:
-        return list(seen.values()), f"partial — {len(seen)} results, some queries failed: {'; '.join(errors)}"
-    return list(seen.values()), f"ok — {len(seen)} results"
+        return list(seen.values()), f"partial: {len(seen)} results, some queries failed: {'; '.join(errors)}"
+    return list(seen.values()), f"ok: {len(seen)} results"

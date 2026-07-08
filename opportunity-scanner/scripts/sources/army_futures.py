@@ -54,7 +54,7 @@ def fetch(timeout: int = 20) -> tuple[list[dict[str, Any]], str]:
         resp = requests.get(LISTING_URL, timeout=timeout, headers=HEADERS)
         resp.raise_for_status()
     except requests.RequestException as e:
-        return [], f"FAILED — {e}"
+        return [], f"FAILED: {e}"
 
     soup = BeautifulSoup(resp.text, "html.parser")
 
@@ -84,7 +84,7 @@ def fetch(timeout: int = 20) -> tuple[list[dict[str, Any]], str]:
     for i, (url, title) in enumerate(open_or_active.items()):
         description = _competition_description(url, timeout) if i < MAX_DETAIL_FETCHES else ""
         if not description:
-            description = "Army xTech open/active prize competition — verify details at the link."
+            description = "Army xTech open/active prize competition: verify details at the link."
         results.append(
             {
                 "title": title,
@@ -98,5 +98,5 @@ def fetch(timeout: int = 20) -> tuple[list[dict[str, Any]], str]:
         )
 
     if not results:
-        return [], "ok but 0 open/active competitions found — heading-walk selectors may have drifted"
-    return results, f"ok — {len(results)} open/active competitions"
+        return [], "ok but 0 open/active competitions found: heading-walk selectors may have drifted"
+    return results, f"ok: {len(results)} open/active competitions"
