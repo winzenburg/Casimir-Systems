@@ -1,17 +1,17 @@
 {
-  "date": "2026-07-03",
-  "hubzone": 1,
+  "date": "2026-07-08",
+  "hubzone": 2,
   "core": 1,
-  "secondary": 6,
-  "new": 7,
-  "report": "reports/2026-07-03-opportunity-scan.md",
+  "secondary": 7,
+  "new": 1,
+  "report": "reports/2026-07-08-opportunity-scan.md",
   "source_status": {
     "sbir_gov_dod": "FAILED \u2014 ALL: SBIR.gov API unavailable (HTTP 429 maintenance/throttle) \u2014 rerun the scan later",
     "sofwerx": "ok \u2014 6 current events, 2 external/RFI items",
-    "diu": "ok \u2014 1 open CSO areas of interest",
-    "army_futures_xtech": "ok \u2014 5 open/active competitions",
+    "diu": "ok \u2014 2 open CSO areas of interest",
+    "army_futures_xtech": "ok \u2014 6 open/active competitions",
     "sam_gov": "ok \u2014 25 results",
     "nro": "ok \u2014 25 results",
-    "sam_gov_hubzone": "ok \u2014 1 HUBZone set-aside/sole-source result(s)"
+    "sam_gov_hubzone": "ok \u2014 2 HUBZone set-aside/sole-source result(s)"
   }
 }
