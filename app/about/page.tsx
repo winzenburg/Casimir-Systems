@@ -149,6 +149,10 @@ export default function AboutPage() {
                 <div className="text-[11px] text-[#64748B] leading-relaxed px-2" style={{ fontFamily: 'IBM Plex Sans, sans-serif' }}>
                   Near Peterson Space Force Base<br />&amp; Schriever Space Force Base
                 </div>
+                <div className="mt-3 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1" style={{ background: 'rgba(16,185,129,0.08)', border: '1px solid rgba(16,185,129,0.25)' }}>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#10B981]" />
+                  <span className="text-[10px] font-semibold" style={{ color: '#059669', fontFamily: 'Inter, sans-serif' }}>HUBZone-Eligible Principal Office</span>
+                </div>
                 <div className="w-full h-px bg-[#E2E8F0] my-5" />
                 <div className="w-full text-left">
                   <div className="text-[12px] font-semibold text-[#0B132B] mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>Current Role</div>

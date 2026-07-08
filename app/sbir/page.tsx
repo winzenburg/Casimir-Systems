@@ -84,6 +84,7 @@ const TAGS = [
   'S&T Ecosystem Synthesis', 'Co-Investment Decision Support', 'Zero-Code Interface',
   'ASOT Data Fusion', 'Dual-Use Technology ID', 'FOCI Risk Screening',
   'CMMC Readiness Scoring', 'CUI/FOUO Compliant', 'Open Architecture', 'Modular Design',
+  'HUBZone-Eligible',
 ];
 
 export default function SbirPage() {
@@ -136,6 +137,7 @@ export default function SbirPage() {
               { label: 'Vehicle', value: 'SpaceWERX / SBIR' },
               { label: 'Requirement', value: 'S&T Ecosystem & Co-Investment Decision Support' },
               { label: 'Feasibility Standard', value: 'Working platform required at proposal time' },
+              { label: 'Set-Aside Profile', value: 'Small business · HUBZone-eligible principal office' },
               { label: 'Status', value: 'Proposal submitted · award decision pending' },
             ].map((row, i, arr) => (
               <div key={row.label} className="flex justify-between gap-4 py-3" style={{ borderBottom: i < arr.length - 1 ? '1px solid rgba(255,255,255,0.06)' : 'none' }}>

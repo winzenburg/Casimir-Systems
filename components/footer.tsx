@@ -99,6 +99,9 @@ export function Footer() {
             <div className="block mt-2 text-[11px] tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.2)', fontFamily: 'IBM Plex Sans, sans-serif', letterSpacing: '0.06em' }}>
               CUI // FOUO Compliant
             </div>
+            <div className="block mt-1.5 text-[11px] tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.2)', fontFamily: 'IBM Plex Sans, sans-serif', letterSpacing: '0.06em' }}>
+              Small Business · HUBZone-Eligible
+            </div>
 
             {/* LinkedIn */}
             <a
