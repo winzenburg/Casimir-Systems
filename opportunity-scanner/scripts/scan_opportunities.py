@@ -63,9 +63,18 @@ CASIMIR_NAICS_CODES = [
 
 
 def _opportunity_key(opp: dict[str, Any]) -> str:
-    """Stable identity for the seen-state diff. URL is the anchor; title is the
-    fallback for sources without stable per-item links."""
-    return f"{opp.get('source_id', 'unknown')}::{opp.get('url') or opp.get('title', '')}"
+    """
+    Stable identity for the seen-state diff.
+
+    Prefers solicitation_number when present — SAM.gov reissues a new
+    noticeId/uiLink with each amendment on "continuously open" vehicles
+    (e.g. OASIS+), so keying on URL would make the same underlying
+    solicitation look "new" forever, one alert per amendment. The
+    human-facing solicitation number stays constant across amendments.
+    Falls back to URL, then title, for sources without that field.
+    """
+    identity = opp.get("solicitation_number") or opp.get("url") or opp.get("title", "")
+    return f"{opp.get('source_id', 'unknown')}::{identity}"
 
 
 def annotate_new(scored: dict[str, list[dict[str, Any]]], update_seen: bool) -> int:
@@ -80,7 +89,7 @@ def annotate_new(scored: dict[str, list[dict[str, Any]]], update_seen: bool) -> 
 
     now_iso = datetime.now().strftime("%Y-%m-%d")
     new_count = 0
-    for tier in ("core", "secondary"):
+    for tier in ("hubzone", "core", "secondary"):
         for opp in scored.get(tier, []):
             key = _opportunity_key(opp)
             opp["is_new"] = key not in seen

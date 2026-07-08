@@ -3,7 +3,7 @@
   "hubzone": 2,
   "core": 1,
   "secondary": 7,
-  "new": 1,
+  "new": 0,
   "report": "reports/2026-07-08-opportunity-scan.md",
   "source_status": {
     "sbir_gov_dod": "FAILED \u2014 ALL: SBIR.gov API unavailable (HTTP 429 maintenance/throttle) \u2014 rerun the scan later",

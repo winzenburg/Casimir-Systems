@@ -120,6 +120,13 @@ rather than a keyword:
 - HZC items are ones you can actually bid where competition is legally
   restricted to HUBZone firms. HZS items are already sole-sourced to a
   HUBZone firm — shown as market intel on who's winning and under what NAICS.
+  Each item's report line spells out which case it is.
+- **Stable identity across amendments.** "Continuously open" vehicles like
+  OASIS+ get reissued with a new SAM.gov notice ID/URL on every amendment.
+  The new-item tracker keys HUBZone items on their human-facing solicitation
+  number (e.g. `47QRCA23R0003-P2`), not the URL, so a routine amendment
+  doesn't re-trigger a "[NEW]" alert every week for the same underlying
+  opportunity.
 
 ### Certification pathway (do this to actually bid on HZC items)
 Eligibility alone doesn't let you win a HUBZone set-aside — SBA certification
