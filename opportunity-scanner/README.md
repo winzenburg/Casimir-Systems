@@ -11,7 +11,7 @@ condensed always-apply version.
 ## Sources it watches
 | Source | Coverage | Status |
 |---|---|---|
-| SBIR.gov API | DoD-wide SBIR/STTR (Army, Navy, AFWERX/SpaceWERX, SOCOM, DARPA, MDA...) | stable |
+| SBIR.gov | DoD-wide SBIR/STTR (Army, Navy, AFWERX/SpaceWERX, SOCOM, DARPA, MDA...) | JSON API down since ~June 18, 2026; automatic HTML fallback covers it |
 | SOFWERX | SOCOM's early-announcement channel (correct name, not "SofWorks") | verified against live site, text-pattern based |
 | SAM.gov API | Broad sweep + DIU + Army Futures + primary NRO source | stable |
 | SAM.gov: HUBZone filter | Structural `typeOfSetAside=HZC/HZS` sweep across Casimir's NAICS codes; see "HUBZone leverage" below | stable |
@@ -28,24 +28,39 @@ Army migrating off its current WordPress setup). The scanner will tell you
 clearly in its report if a source's extraction comes back empty
 unexpectedly, rather than silently reporting "no opportunities."
 
-**Note on SBIR.gov (confirmed July 8, 2026): this source has been down for
-an extended period, not just intermittently throttled.** Every request
-returns HTTP 429 `{"Code":"TooManyRequestsError","Message":"The SBIR Public
-API is not available at this time."}`, reproduced from three independent
-networks (this differs by request, not by source IP, so it isn't per-client
-rate limiting). SBIR.gov's own `/api` documentation page has said "APIs are
+**Note on SBIR.gov (confirmed July 8, 2026): the documented JSON API has
+been down for an extended period, not just intermittently throttled, but
+the scanner covers it automatically with a live HTML fallback.** Every
+request to the JSON API (`api.www.sbir.gov`) returns HTTP 429
+`{"Code":"TooManyRequestsError","Message":"The SBIR Public API is not
+available at this time."}`, reproduced from three independent networks
+(this differs by request, not by source IP, so it isn't per-client rate
+limiting). SBIR.gov's own `/api` documentation page has said "APIs are
 undergoing maintenance" since at least June 18, 2026, independently
-corroborated by third-party sources checking the same page around that date.
-There is no client-side fix (no header, retry count, or backoff avoids it);
-this is the API Gateway itself throttled to zero during an extended backend
-outage. `scan_opportunities.py`'s `annotate_source_health()` tracks how many
-consecutive days each source has been failing in `reports/source-health.json`
-(committed to git, like `seen.json`) and appends the real duration to the
-status line, e.g. `[down since 2026-07-03 (5d)]`, so a persistent outage is
-visible at a glance in the report rather than reading identically to a
-one-off blip. If this becomes permanent, the fallback is SBIR.gov's bulk
-data-resources downloads (sbir.gov/data-resources, JSON/XML/XLS snapshots)
-instead of the live API.
+corroborated by third-party sources checking the same page around that
+date. There is no client-side fix for the JSON API itself (no header,
+retry count, or backoff avoids it); this is the API Gateway throttled to
+zero during an extended backend outage.
+
+`scripts/sources/sbir_gov.py`'s `fetch()` tries the JSON API first (so it
+resumes working automatically the moment SBIR.gov fixes the outage, no code
+change needed) and falls back to scraping `https://www.sbir.gov/topics`
+when the JSON API fails. That's a separate, server-rendered Drupal search
+page on a different backend, unaffected by the JSON API outage; verified
+live to return real, current open DoD solicitations (title, dates, agency,
+description, program tags) via its exposed filter form's GET parameters
+(`status=Open`, `agency[DOD]=DOD`, `page=N`). `agency[DOD]=DOD` alone was
+confirmed to already cover the full DoD-wide open-topic set (checked
+against every individual military-branch checkbox combined, same total
+either way), so there's no need to enumerate every branch separately.
+
+Since the fallback means `sbir_gov_dod` now returns real data again, it's
+reported as `ok` overall (the practical thing that matters), with the status
+line itself, `ok (via topics-page fallback, JSON API down): 36 results`,
+still noting that the JSON API specifically remains broken. If both paths
+ever fail at once, `annotate_source_health()`'s duration tracking in
+`reports/source-health.json` kicks back in and reports how long the source
+has been fully down, the same behavior used for every other source.
 
 **Worth noting on SOFWERX specifically:** most current opportunities aren't
 labeled "SBIR"/"STTR" at all; they're "Assessment Events" and "Collaboration

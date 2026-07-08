@@ -5,17 +5,23 @@
 
 sources:
   - id: sbir_gov_dod
-    name: "SBIR.gov — DoD-wide solicitations"
-    status: stable
-    kind: api
+    name: "SBIR.gov: DoD-wide solicitations"
+    status: stable (JSON API down since ~June 18, 2026; HTML fallback covers it)
+    kind: api + html fallback
     base_url: "https://api.www.sbir.gov/public/api/solicitations"
     notes: >
-      Documented public API. agency=DOD covers Army, Navy, Air Force/Space
-      Force (AFWERX/SpaceWERX, SF-prefix topics), SOCOM, DARPA, MDA, DTRA —
-      i.e. most of what we care about in one call. SBIR.gov has posted
-      intermittent maintenance notices on this API; scan_opportunities.py
-      retries and clearly reports if the endpoint is down rather than
-      failing silently.
+      Primary path: documented public JSON API. agency=DOD covers Army, Navy,
+      Air Force/Space Force (AFWERX/SpaceWERX, SF-prefix topics), SOCOM,
+      DARPA, MDA, DTRA, i.e. most of what we care about in one call.
+      Confirmed down (HTTP 429, extended maintenance outage) since at least
+      June 18, 2026, independent of this scanner. Fallback (added July 8,
+      2026): https://www.sbir.gov/topics is a separate, server-rendered
+      Drupal search page unaffected by the JSON API outage; its exposed
+      filter form works via GET params (status=Open, agency[DOD]=DOD,
+      page=N) and is scraped automatically when the JSON API fails.
+      scan_opportunities.py's annotate_source_health() tracks and reports
+      how long the JSON API has been down regardless of which path
+      ultimately returns data.
     module: scripts.sources.sbir_gov
 
   - id: sofwerx
