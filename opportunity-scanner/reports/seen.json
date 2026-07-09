@@ -11,6 +11,10 @@
     "first_seen": "2026-07-03",
     "title": "Farseer: Quantum Sensing for ISR"
   },
+  "diu::https://www.diu.mil/work-with-us/submit-solution/PROJ00684": {
+    "first_seen": "2026-07-09",
+    "title": "DIU Presents: Specular MIST Prize Challenge"
+  },
   "sam_gov_hubzone::47QRCA23R0003-P2": {
     "first_seen": "2026-07-08",
     "title": "One Acquisition Solution for Integrated Services Plus (OASIS+) Historically Underutilized Business Zone (HUBZone) Small Business Set-Aside Continuously Open Solicitation"
@@ -182,5 +186,9 @@
   "sofwerx::https://events.sofwerx.org/ux-v-payloads-against-modern-signals": {
     "first_seen": "2026-07-03",
     "title": "PEO-TIS UxV Payloads against Modern Signals"
+  },
+  "sofwerx::https://sam.gov/workspace/contract/opp/16251016750c4806ab0d63cb13b3b088/view": {
+    "first_seen": "2026-07-09",
+    "title": "RFI for USSOCOM Rapid Experimentation of Prototyping Technology in Learning Environments 26-1 This RFI is for REPTILE 26-1 which will be held from 08-18 SEP 2026 at Gulfport, MS and seeks man-portable, Counter-Unmanned-Systems (C-UxS) systems. Nomination Submission Deadline: 14 July 2026, at 12:00 Noon EDT. Submit via www.vulcan-sof.com. 8 September 2026"
   }
 }
