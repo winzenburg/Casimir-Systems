@@ -6,11 +6,11 @@
 > "contracted" unless a human has separately confirmed an actual award.
 
 
-**2 HUBZone set-aside(s)**, **1 core capability match(es)**, **44 secondary/market-intel item(s)**. **2 new since last scan** (marked [NEW]).
+**2 HUBZone set-aside(s)**, **1 core capability match(es)**, **43 secondary/market-intel item(s)**. **0 new since last scan** (marked [NEW]).
 
 ## Source status
 
-- `sbir_gov_dod`: ok (via topics-page fallback, JSON API down): 35 results
+- `sbir_gov_dod`: ok (via topics-page fallback, JSON API down): 34 results
 - `sofwerx`: ok: 6 current events, 4 external/RFI items
 - `diu`: ok: 3 open CSO areas of interest
 - `army_futures_xtech`: ok: 6 open/active competitions
@@ -354,16 +354,6 @@ The performance and survivability of Department of War (DoW) and space systems, 
 This topic seeks development of a flight antenna capable of multiple node, simultaneous, high-speed, secure communication in meshed High Assurance Internet Protocol Encryptors (HAIPE) "Zero Trust" platforms and networks. System shall provide wideband,... Tags: SBIR, BOTH.
 
 
-### Universal Automated Control Assessment, Validation & Risk Correlation Platform for Hybrid DoW Environments
-- **Score:** 13.1/100, tags: sbir_sttr_cycle
-- **Source:** SBIR.gov (DoD-wide)
-- **Agency/branch:** DoD / DOD
-- **Close date:** August 19, 2026
-- **Link:** https://www.sbir.gov/topics/12805
-
-The Missile Defense Agency (MDA) requires a standardized, environment-agnostic capability to validate cybersecurity controls across its complex architecture. Current assessment methodologies rely heavily on manual data correlation—assessors spend valuable... Tags: SBIR, BOTH.
-
-
 ### Event-Based Sensing Hardware and Algorithms for Navigation
 - **Score:** 13.1/100, tags: sbir_sttr_cycle
 - **Source:** SBIR.gov (DoD-wide)
@@ -384,6 +374,16 @@ The proposed initiative focuses on the development of event-based sensing techno
 The use of RF cables has difficulty meeting environmental conditions while maintaining signal integrity and power requirements. Hypersonic surface temperatures can exceed over 1,000-degree C. Waveguides provide high power transmission and might be easier to... Tags: SBIR, BOTH.
 
 
+### UH-60M Patient Handling System
+- **Score:** 13.1/100, tags: sbir_sttr_cycle
+- **Source:** SBIR.gov (DoD-wide)
+- **Agency/branch:** DoD / DOD
+- **Close date:** August 19, 2026
+- **Link:** https://www.sbir.gov/topics/12825
+
+All U.S. Army COMPOs face a technical problem concerning the ability to augment the MEDEVAC fleet to reach the end strength goal of 446 MEDEVAC aircraft. The capability gap is driven by the reduction of the HH-60M fleet numbers, cancellation of the UH-60V... Tags: SBIR, BOTH.
+
+
 ### Fusion of Abstract Learning and Context-Optimized Neural-methods (FALCON)
 - **Score:** 13.1/100, tags: sbir_sttr_cycle
 - **Source:** SBIR.gov (DoD-wide)
@@ -402,26 +402,6 @@ By integrating the contextualization power of LLMs with the statistical power of
 - **Link:** https://www.sbir.gov/topics/12804
 
 The Missile Defense Agency (MDA) seeks to leverage neuromorphic technology to maximize performance and efficiency for terrestrial and space applications. Neuromorphic processing supports multiple applications that advance the Missile Defense System, including... Tags: SBIR, BOTH.
-
-
-### UH-60M Patient Handling System
-- **Score:** 13.1/100, tags: sbir_sttr_cycle
-- **Source:** SBIR.gov (DoD-wide)
-- **Agency/branch:** DoD / DOD
-- **Close date:** August 19, 2026
-- **Link:** https://www.sbir.gov/topics/12825
-
-All U.S. Army COMPOs face a technical problem concerning the ability to augment the MEDEVAC fleet to reach the end strength goal of 446 MEDEVAC aircraft. The capability gap is driven by the reduction of the HH-60M fleet numbers, cancellation of the UH-60V... Tags: SBIR, BOTH.
-
-
-### Domestic Production of Plant-based Carbon Fiber Precursors in Support of Hypersonic Applications
-- **Score:** 13.1/100, tags: sbir_sttr_cycle
-- **Source:** SBIR.gov (DoD-wide)
-- **Agency/branch:** DoD / DOD
-- **Close date:** August 19, 2026
-- **Link:** https://www.sbir.gov/topics/12807
-
-Rayon-based carbon fibers remain the choice of material as reinforcement in carbon phenolic composites used as thermal protection systems for hypersonics. Currently, rayon fiber precursors used to make rayon-based carbon fibers are not produced in the United... Tags: SBIR, BOTH.
 
 
 ### Tunable Nonlocal Metasurfaces for Edge Computing and Processing
@@ -494,6 +474,16 @@ This Department of the Air Force (DAF) focused open topic seeks C-sUAS defeat op
 This topic seeks to design and develop an SDR featuring multi-band operation, advanced frequency management, and enhanced processing capabilities. The program desires to create drop-in, or near drop-in replacements of existing radio systems to enhance... Tags: STTR, BOTH.
 
 
+### Domestic Production of Plant-based Carbon Fiber Precursors in Support of Hypersonic Applications
+- **Score:** 13.1/100, tags: sbir_sttr_cycle
+- **Source:** SBIR.gov (DoD-wide)
+- **Agency/branch:** DoD / DOD
+- **Close date:** August 19, 2026
+- **Link:** https://www.sbir.gov/topics/12807
+
+Rayon-based carbon fibers remain the choice of material as reinforcement in carbon phenolic composites used as thermal protection systems for hypersonics. Currently, rayon fiber precursors used to make rayon-based carbon fibers are not produced in the United... Tags: SBIR, BOTH.
+
+
 #### DIU
 
 ### Massed Modular Aircraft
@@ -506,7 +496,7 @@ This topic seeks to design and develop an SDR featuring multi-band operation, ad
 Area of Interest (AoI) Statement: Massed Modular Aircraft Problem Statement The Joint Force's reliance on low-density, high-value "exquisite" (>$30 million) manned and unmanned aircraft is unsustainable against adversaries utilizing layered defenses enabled by increasingly low-cost antiaircraft capabilities. This drives the Joint Force into unacceptable compromises: either operate safely outside a threat zone – negatively impacting mission effectiveness, or maneuver inside a threat engagement…
 
 
-### [NEW] DIU Presents: Specular MIST Prize Challenge
+### DIU Presents: Specular MIST Prize Challenge
 - **Score:** 13.1/100, tags: unmanned_platforms
 - **Source:** Defense Innovation Unit (diu.mil)
 - **Agency/branch:** DIU
@@ -529,7 +519,7 @@ The U.S. Army is seeking innovative quantum sensor and photonics solutions from 
 
 #### SOCOM (via SOFWERX: external/RFI, direct SAM.gov posting)
 
-### [NEW] RFI for USSOCOM Rapid Experimentation of Prototyping Technology in Learning Environments 26-1 This RFI is for REPTILE 26-1 which will be held from 08-18 SEP 2026 at Gulfport, MS and seeks man-portable, Counter-Unmanned-Systems (C-UxS) systems. Nomination Submission Deadline: 14 July 2026, at 12:00 Noon EDT. Submit via www.vulcan-sof.com. 8 September 2026
+### RFI for USSOCOM Rapid Experimentation of Prototyping Technology in Learning Environments 26-1 This RFI is for REPTILE 26-1 which will be held from 08-18 SEP 2026 at Gulfport, MS and seeks man-portable, Counter-Unmanned-Systems (C-UxS) systems. Nomination Submission Deadline: 14 July 2026, at 12:00 Noon EDT. Submit via www.vulcan-sof.com. 8 September 2026
 - **Score:** 13.1/100, tags: unmanned_platforms
 - **Source:** SOFWERX (events.sofwerx.org)
 - **Agency/branch:** SOCOM (via SOFWERX: external/RFI, direct SAM.gov posting)
