@@ -48,7 +48,7 @@ This is not a hypothetical. A 2024 review of SBIR award recipients found that a 
 
 Automated FOCI screening does not replace the contracting officer's judgment. It standardizes and accelerates the data assembly that judgment depends on. When a system can automatically surface corporate ownership chains, cross-reference investors against known foreign state-affiliated funds, flag academic partnerships with dual-use research exposure, and score the overall FOCI risk posture of a company in minutes rather than weeks, the contracting officer can apply their expertise to the cases that actually need it, rather than spending most of their time assembling the briefing package.
 
-The practical effect is not just speed. It is consistency. When FOCI screening is automated against a standardized data model, the same criteria apply to every company in the pipeline, eliminating the audit risk that comes from inconsistent manual review.`,
+The bigger practical effect is consistency, not speed. When FOCI screening is automated against a standardized data model, the same criteria apply to every company in the pipeline, eliminating the audit risk that comes from inconsistent manual review.`,
       },
       {
         heading: 'What Contracting Officers Need',
@@ -97,7 +97,7 @@ Several specific investment signals are worth noting. Fiber beam combination, th
       },
       {
         heading: 'USSF Co-Investment Priorities: Mapping the Signals',
-        body: `U.S. Space Force's directed energy priorities, as articulated through SpaceWERX solicitations and publicly available program documentation, cluster around three capability themes: space domain awareness and object characterization, ground-based infrastructure protection from counter-space threats, and on-orbit capability development for future contested operations.
+        body: `U.S. Space Force's directed energy priorities, as articulated through SpaceWERX solicitations and publicly available program documentation, cluster around three capability themes. First, space domain awareness and object characterization. Second, ground-based infrastructure protection from counter-space threats. Third, on-orbit capability development for future contested operations.
 
 The commercial S&T landscape maps onto these priorities with varying degrees of alignment.
 
@@ -113,7 +113,7 @@ On-orbit directed energy is the most speculative from a commercial ecosystem sta
 
 The specific analytical challenge for S&T analysts is that the most relevant commercial activity is distributed across technology sectors, photonics, semiconductors, AI, counter-UAS, that do not neatly map to traditional defense technology categories. Building an accurate picture of the directed energy co-investment landscape requires synthesizing signals from commercial venture databases, technical publications, patent filings, and government contract awards across multiple industrial sectors simultaneously.
 
-That synthesis problem is exactly what structured co-investment intelligence tools are designed to address. The alternative, attempting to track these signals manually across disconnected data sources, is not just inefficient. It is analytically insufficient for the pace at which this technology landscape is moving.`,
+That synthesis problem is exactly what structured co-investment intelligence tools are designed to address. Tracking these signals manually across disconnected data sources can't keep pace with how fast this technology landscape is moving.`,
       },
     ],
   },
@@ -146,7 +146,7 @@ The downstream effect is that the DoD's co-investment decisions, which are made 
 
 This sounds obvious. It is surprisingly rare in practice, particularly in the defense technology context where tools are often procured for their technical capability rather than their operator usability.
 
-The distinction matters because zero-code is not just about convenience, it is about who can use the tool at scale. An S&T analyst at Task Force Futures should be able to query the full commercial innovation landscape for directed energy companies with active SBIR Phase II awards, cross-reference against known foreign investment exposure, and produce a briefing package for a leadership review, without submitting a data request to an analytics team and waiting three days. If the tool requires engineering support to operate, that workflow is structurally inaccessible to most of the acquisition workforce.`,
+The distinction matters because zero-code determines who can use the tool at scale. Convenience is beside the point. An S&T analyst at Task Force Futures should be able to query the full commercial innovation landscape for directed energy companies with active SBIR Phase II awards, cross-reference against known foreign investment exposure, and produce a briefing package for a leadership review, without submitting a data request to an analytics team and waiting three days. If the tool requires engineering support to operate, that workflow is structurally inaccessible to most of the acquisition workforce.`,
       },
       {
         heading: 'The Implications for How DoD Makes Decisions',
