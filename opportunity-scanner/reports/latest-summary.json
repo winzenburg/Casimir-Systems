@@ -1,10 +1,10 @@
 {
-  "date": "2026-07-27",
+  "date": "2026-08-03",
   "hubzone": 2,
   "core": 0,
-  "secondary": 38,
+  "secondary": 37,
   "new": 0,
-  "report": "reports/2026-07-27-opportunity-scan.md",
+  "report": "reports/2026-08-03-opportunity-scan.md",
   "source_status": {
     "sbir_gov_dod": "ok (via topics-page fallback, JSON API down): 34 results",
     "sofwerx": "ok: 6 current events, 4 external/RFI items",
