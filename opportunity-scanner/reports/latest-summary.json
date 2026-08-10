@@ -1,16 +1,16 @@
 {
-  "date": "2026-08-03",
+  "date": "2026-08-10",
   "hubzone": 2,
-  "core": 0,
-  "secondary": 37,
-  "new": 0,
-  "report": "reports/2026-08-03-opportunity-scan.md",
+  "core": 5,
+  "secondary": 54,
+  "new": 57,
+  "report": "reports/2026-08-10-opportunity-scan.md",
   "source_status": {
-    "sbir_gov_dod": "ok (via topics-page fallback, JSON API down): 34 results",
+    "sbir_gov_dod": "ok (via topics-page fallback, JSON API down): 56 results",
     "sofwerx": "ok: 6 current events, 4 external/RFI items",
     "diu": "ok but 0 open CSOs found: either none are open right now or div.aoi selector drifted",
-    "army_futures_xtech": "ok: 5 open/active competitions",
-    "sam_gov": "ok: 25 results",
+    "army_futures_xtech": "ok: 7 open/active competitions",
+    "sam_gov": "ok: 29 results",
     "nro": "ok: 25 results",
     "sam_gov_hubzone": "ok: 2 HUBZone set-aside/sole-source result(s)"
   }
