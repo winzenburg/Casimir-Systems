@@ -1,4 +1,8 @@
 {
+  "army_futures_xtech::https://xtech.army.mil/competition/xtechkinetic-reach/": {
+    "first_seen": "2026-08-31",
+    "title": "xTech|Kinetic Reach"
+  },
   "army_futures_xtech::https://xtech.army.mil/competition/xtechphantum/": {
     "first_seen": "2026-07-03",
     "title": "xTech|Phantum"
@@ -18,6 +22,10 @@
   "sam_gov::N0010426QND67": {
     "first_seen": "2026-08-24",
     "title": "STEM,FLUID VALVE"
+  },
+  "sam_gov_hubzone::130000000USNAIT": {
+    "first_seen": "2026-08-31",
+    "title": "Sources Sought Notice for Information Technology Client Services for the U.S. Naval Academy"
   },
   "sam_gov_hubzone::47QRCA23R0003-P2": {
     "first_seen": "2026-07-08",
