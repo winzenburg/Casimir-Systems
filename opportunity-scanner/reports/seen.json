@@ -35,6 +35,10 @@
     "first_seen": "2026-07-08",
     "title": "17 CS SIPR Thin Client & Network Infrastructure Project, Goodfellow AFB, TX"
   },
+  "sam_gov_hubzone::PCEC-26-00012": {
+    "first_seen": "2026-09-07",
+    "title": "Notice of Intent to Sole Source to HUBZone, DHS CISA SHARES"
+  },
   "sbir_gov_dod::https://www.sbir.gov/topics/12793": {
     "first_seen": "2026-07-08",
     "title": "High-speed Photon-Number-Resolution Quanta Imaging Sensor Array"
@@ -418,6 +422,10 @@
   "sofwerx::https://events.sofwerx.org/sbir-26-bz-release-4": {
     "first_seen": "2026-07-03",
     "title": "SBIR 26.BZ Release 4"
+  },
+  "sofwerx::https://events.sofwerx.org/sbir-26-bz-release-6": {
+    "first_seen": "2026-09-07",
+    "title": "SBIR 26.BZ Pre-Release 6"
   },
   "sofwerx::https://events.sofwerx.org/ux-sai": {
     "first_seen": "2026-07-03",
