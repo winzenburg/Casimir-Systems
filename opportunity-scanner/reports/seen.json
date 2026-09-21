@@ -1,4 +1,8 @@
 {
+  "army_futures_xtech::https://xtech.army.mil/competition/xtechdisrupt-fires/": {
+    "first_seen": "2026-09-21",
+    "title": "xTech|Disrupt Fires"
+  },
   "army_futures_xtech::https://xtech.army.mil/competition/xtechkinetic-reach/": {
     "first_seen": "2026-08-31",
     "title": "xTech|Kinetic Reach"
@@ -23,6 +27,10 @@
     "first_seen": "2026-07-09",
     "title": "DIU Presents: Specular MIST Prize Challenge"
   },
+  "sam_gov::FA860426DB012": {
+    "first_seen": "2026-09-21",
+    "title": "Synopsis of Contract Award: Air Force Materiel Command (AFMC) Logistics Information Technology (LogIT) System(s) Agentic AI Sustainment and DevSecOps"
+  },
   "sam_gov::N0010426QND67": {
     "first_seen": "2026-08-24",
     "title": "STEM,FLUID VALVE"
@@ -34,6 +42,10 @@
   "sam_gov_hubzone::47QRCA23R0003-P2": {
     "first_seen": "2026-07-08",
     "title": "One Acquisition Solution for Integrated Services Plus (OASIS+) Historically Underutilized Business Zone (HUBZone) Small Business Set-Aside Continuously Open Solicitation"
+  },
+  "sam_gov_hubzone::47QTCB22R0006": {
+    "first_seen": "2026-09-21",
+    "title": "Polaris GWAC HubZone Pool"
   },
   "sam_gov_hubzone::FA303026Q0029": {
     "first_seen": "2026-07-08",
