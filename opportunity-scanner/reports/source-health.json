@@ -1,4 +1,16 @@
 {
+  "nro": {
+    "since": "2026-10-05",
+    "status": "failed"
+  },
+  "sam_gov": {
+    "since": "2026-10-05",
+    "status": "failed"
+  },
+  "sam_gov_hubzone": {
+    "since": "2026-10-05",
+    "status": "failed"
+  },
   "sbir_gov_dod": {
     "since": "2026-09-28",
     "status": "failed"
