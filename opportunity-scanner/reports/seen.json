@@ -1,4 +1,8 @@
 {
+  "army_futures_xtech::https://xtech.army.mil/competition/g-tead-setaf-af-ace-27-01-c-uas-fly-away-kit-powered-by-xtech/": {
+    "first_seen": "2026-11-09",
+    "title": "G-TEAD SETAF-AF ACE 27-01: C-UAS Fly Away Kit powered by xTech"
+  },
   "army_futures_xtech::https://xtech.army.mil/competition/xtechdisrupt-fires/": {
     "first_seen": "2026-09-21",
     "title": "xTech|Disrupt Fires"
@@ -694,6 +698,342 @@
   "sbir_gov_dod::https://www.sbir.gov/topics/13054": {
     "first_seen": "2026-10-12",
     "title": "Fusion of Cooperative Information Sharing for Uncrewed Air Systems (FOCISAUS)"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13065": {
+    "first_seen": "2026-11-09",
+    "title": "Quantum Sensing Analyzer"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13066": {
+    "first_seen": "2026-11-09",
+    "title": "Solid Propellent Environmental Effects Digital Twin"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13067": {
+    "first_seen": "2026-11-09",
+    "title": "Low - Cost Neuromorphic Edge Intelligence for Persistent Autonomous Change Detection and Machine Situational Memory"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13068": {
+    "first_seen": "2026-11-09",
+    "title": "High-Efficiency Expeditionary Group 2 and Group 3 VTOL UAS for Long-Range Distributed ISR/SOF Operations"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13069": {
+    "first_seen": "2026-11-09",
+    "title": "Collaborative Autonomous UAS for Distributed Non-Kinetic Effects"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13070": {
+    "first_seen": "2026-11-09",
+    "title": "Long-Range, Expendable Autonomous Air Vehicle for Distributed Effects in Contested Environments"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13071": {
+    "first_seen": "2026-11-09",
+    "title": "Rapidly Reconfigurable Pod-Based System Survivability Suite for Air Operations in Contested Environments"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13072": {
+    "first_seen": "2026-11-09",
+    "title": "Multi-Function Processor, Rapid Architecture, Miniaturized (MFP-RAM)"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13073": {
+    "first_seen": "2026-11-09",
+    "title": "A unified model for specification and simulation to design, acquire, and sustain a hybrid- or multi-cloud large scale data analytics system that balances cost, performance, modularity, and security."
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13074": {
+    "first_seen": "2026-11-09",
+    "title": "Mobile Expeditionary 3D Concrete Printer (MX3DCP)"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13075": {
+    "first_seen": "2026-11-09",
+    "title": "Wide Pass Bandwidth, High Selectivity, Continuously Tunable Notch Filters"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13076": {
+    "first_seen": "2026-11-09",
+    "title": "Domestic Liquid Phase Epitaxy of Yttrium Iron Garnet Films for Resilient Microwave Filter Supply Chains"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13077": {
+    "first_seen": "2026-11-09",
+    "title": "Hyperdimensional Neurosymbolic Cyber Course-of-Action Planning and Replanning under Deception"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13078": {
+    "first_seen": "2026-11-09",
+    "title": "Autonomous Metacognitive Collection Orchestration for Multi-Domain Intelligence"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13079": {
+    "first_seen": "2026-11-09",
+    "title": "Human Universal Remote"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13080": {
+    "first_seen": "2026-11-09",
+    "title": "UAS-based Precision Aim for Device Render Safe in CBRN Environments"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13081": {
+    "first_seen": "2026-11-09",
+    "title": "Remote UAS-based X-Ray for Device Assessment in CBRNE Environments"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13082": {
+    "first_seen": "2026-11-09",
+    "title": "Dynamic Sensor-Tasking and Routing System for Subsurface Hazard Detection"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13083": {
+    "first_seen": "2026-11-09",
+    "title": "Validation and Verification of Computational Modeling of Human Blast Injury on Battlefield"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13084": {
+    "first_seen": "2026-11-09",
+    "title": "Domestic Fabrication Of High-Purity Precursor Materials For Advanced Radiation Detection Scintillator Crystals"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13085": {
+    "first_seen": "2026-11-09",
+    "title": "Domestic Scalable Growth Of Large-Format Pixelated CZT Crystals For Advanced Radiation Detection"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13086": {
+    "first_seen": "2026-11-09",
+    "title": "Real-World Applications for Prototype ISAC Demonstrations (RAPID) Small Business"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13087": {
+    "first_seen": "2026-11-09",
+    "title": "Resilient Tactical Edge Networks"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13088": {
+    "first_seen": "2026-11-09",
+    "title": "Low Cost Infrared Seeker"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13089": {
+    "first_seen": "2026-11-09",
+    "title": "Rapidly Deployable Aerial Interdiction Cluster"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13090": {
+    "first_seen": "2026-11-09",
+    "title": "High Speed Low Size, Weight, and Power (SWaP) Radio Frequency (RF) Communications Systems for Space-to-Space and Space-to-Terrestrial Applications"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13091": {
+    "first_seen": "2026-11-09",
+    "title": "Modeling UV/VIS/near-IR Observables of Dim Hypersonic Configurations"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13092": {
+    "first_seen": "2026-11-09",
+    "title": "Mobile Sea-Based Launch Platform"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13093": {
+    "first_seen": "2026-11-09",
+    "title": "Performance Enhancement of Solid Rocket Motors Applied to Existing Systems"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13094": {
+    "first_seen": "2026-11-09",
+    "title": "Low Cost / Rapidly Producible Booster Insulation Methods"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13095": {
+    "first_seen": "2026-11-09",
+    "title": "Configurable Operator Decision Models for Constructive Test and Evaluation Simulations"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13096": {
+    "first_seen": "2026-11-09",
+    "title": "Multi-Fidelity Transfer Learning for Defense Applications"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13097": {
+    "first_seen": "2026-11-09",
+    "title": "DIRECT TO PHASE II: Frequency-Based Persistent Artificial Intelligence Tracking and Surveillance Capability"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13098": {
+    "first_seen": "2026-11-09",
+    "title": "DIRECT TO PHASE II: Ultra-Low Latency Technology for Radio Applications 5G"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13099": {
+    "first_seen": "2026-11-09",
+    "title": "DIRECT TO PHASE II: Advanced Multi-User Signal Separation for Tactical Waveforms"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13100": {
+    "first_seen": "2026-11-09",
+    "title": "DIRECT TO PHASE II: Modular Software Reference Implementation for Waveforms"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13101": {
+    "first_seen": "2026-11-09",
+    "title": "Mobile Vehicle Forensics"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13102": {
+    "first_seen": "2026-11-09",
+    "title": "Lightweight, Energy-Efficient Portable Nitrogen Generator for Expeditionary Operations"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13103": {
+    "first_seen": "2026-11-09",
+    "title": "Integrated Multi-Spectral Periscope for the Amphibious Combat Vehicle (ACV)"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13104": {
+    "first_seen": "2026-11-09",
+    "title": "Distributed Multispectral Event-Driven Integrated Sensing and Communications"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13105": {
+    "first_seen": "2026-11-09",
+    "title": "Automated Hardening for Cyber Secure Operating Systems"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13106": {
+    "first_seen": "2026-11-09",
+    "title": "Low-cost Mid-wave Infrared Focal-Plane Array (FPA) Fabrication through Direct-bond Interconnection"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13107": {
+    "first_seen": "2026-11-09",
+    "title": "\u201cSelf-Replicating Evolutionary Agentic AI Swarming Force\u201d with Autonomous Embedded AI Guardrail Enforcers"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13108": {
+    "first_seen": "2026-11-09",
+    "title": "Electro-Optical/Infrared Tactical Decision Aid"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13109": {
+    "first_seen": "2026-11-09",
+    "title": "Autonomous Multi-Intelligence Acoustic Reasoning Agent for Anti-Submarine Warfare"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13110": {
+    "first_seen": "2026-11-09",
+    "title": "High Sensitivity Tunneling Magnetoresistive Magnetometers"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13111": {
+    "first_seen": "2026-11-09",
+    "title": "Improved Ionosphere D-region Specification for High Frequency Propagation"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13112": {
+    "first_seen": "2026-11-09",
+    "title": "Expeditionary Water Quality Sensors"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13113": {
+    "first_seen": "2026-11-09",
+    "title": "Rapid Thermoplastic Patching Capability for Legacy Thermoset Airframe Sustainment"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13114": {
+    "first_seen": "2026-11-09",
+    "title": "Navy Shipboard Gas Turbine Rotating Detonation Combustor Operation with Diesel Fuel"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13115": {
+    "first_seen": "2026-11-09",
+    "title": "Rapid Imagery Creation for Navy Training"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13116": {
+    "first_seen": "2026-11-09",
+    "title": "AI-Enabled \u201cJust-in-time\u201d Knowledge Delivery for Naval Maintainers"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13117": {
+    "first_seen": "2026-11-09",
+    "title": "Collapsible Fixed-Wing Low-Cost Unmanned Aerial System for Intelligence, Surveillance, and Reconnaissance Missions"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13118": {
+    "first_seen": "2026-11-09",
+    "title": "Attritable Turbine for Low-Cost Attack Systems (ATLAS)"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13119": {
+    "first_seen": "2026-11-09",
+    "title": "Zero-Retrofit Robotic Ammunition Handling for the MK 45 Mod 4, 5-Inch Gun Magazine"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13120": {
+    "first_seen": "2026-11-09",
+    "title": "Innovative Shortwave Infrared High Energy Laser Source and Coupled Imager"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13121": {
+    "first_seen": "2026-11-09",
+    "title": "Robust and resilient optical modulators for extreme environment applications"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13128": {
+    "first_seen": "2026-11-09",
+    "title": "Co-Packaged Optics (CPO) for Advanced Cryocooled Electro-Optical/Infrared (EO/IR) Sensors"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13129": {
+    "first_seen": "2026-11-09",
+    "title": "Field-Friendly Artificial Intelligence and Machine Learning Systems"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13130": {
+    "first_seen": "2026-11-09",
+    "title": "Growth and Production of As2S3 Waveguides"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13131": {
+    "first_seen": "2026-11-09",
+    "title": "Validated Modular Autonomy for Undersea Multi-Vehicle Coordination"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13132": {
+    "first_seen": "2026-11-09",
+    "title": "Self-Sustaining Wave Energy Capture for Persistent Autonomous Ocean-Going Systems"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13133": {
+    "first_seen": "2026-11-09",
+    "title": "Compact Unmanned Aerial System for Marine Species Monitoring"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13134": {
+    "first_seen": "2026-11-09",
+    "title": "Multi-Modal Luminescent Paint Systems for Underwater Surface Diagnostics"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13135": {
+    "first_seen": "2026-11-09",
+    "title": "Membranes for Separation, Purification, Compression, and Storage of Carbon Resources from Alkaline Water"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13136": {
+    "first_seen": "2026-11-09",
+    "title": "Domestic Manufacturing of Large Area Raman Laser Materials"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13137": {
+    "first_seen": "2026-11-09",
+    "title": "Persistent, Geochemically-Driven Low-Temperature Power Systems for Subsea Intelligence, Surveillance, and Reconnaissance"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13138": {
+    "first_seen": "2026-11-09",
+    "title": "Heterogenous Swarm Control through Artificial Intelligence-embodied Architecture"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13139": {
+    "first_seen": "2026-11-09",
+    "title": "Mission-Specialized Large Language Models for Operational Training and Knowledge Integration"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13140": {
+    "first_seen": "2026-11-09",
+    "title": "Computational Frameworks for the Development and Qualification of Additive Manufacturing-Tailored Wire Feedstock for Naval Directed Energy Deposition"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13141": {
+    "first_seen": "2026-11-09",
+    "title": "Conformal Printed Antennas for Missile and Weapon Composite Airframes"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13142": {
+    "first_seen": "2026-11-09",
+    "title": "Photonic-Crystal Surface Emitting Lasers (PCSELS) in the Near-Infrared (NIR)"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13143": {
+    "first_seen": "2026-11-09",
+    "title": "Wafer-scale low-loss hyperbolic optical material"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13144": {
+    "first_seen": "2026-11-09",
+    "title": "B-52 Multi-Factor AI Performance Charts"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13145": {
+    "first_seen": "2026-11-09",
+    "title": "RF Spectrum Operations Enhanced with Distributed AI-Assisted Sharing of Knowledge Sharing (RF-DASK)"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13146": {
+    "first_seen": "2026-11-09",
+    "title": "Wideband Antenna for RF Photonics Modules"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13147": {
+    "first_seen": "2026-11-09",
+    "title": "Biolab Mirror: Artificial Intelligence / Machine Learning (AI/ML) Digital Twin for Intent Characterization and Bio-Containment Integrity"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13148": {
+    "first_seen": "2026-11-09",
+    "title": "AI/ML Verification of Microelectronic Integrity for High-Assurance Systems"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13149": {
+    "first_seen": "2026-11-09",
+    "title": "Compact High Energy Density Capacitors For Pulsed Field X-Ray Generators"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13159": {
+    "first_seen": "2026-11-09",
+    "title": "Command Electromagnetic Management & Command-node Awareness, Management, and Obscuration (CEMA CAMO)"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13160": {
+    "first_seen": "2026-11-09",
+    "title": "Battle Damage Indications / Battle Damage Assessment Collection, Aggregation, and Analytics Improvement"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13161": {
+    "first_seen": "2026-11-09",
+    "title": "OPEN- SBIR Direct-to-Phase-II Call for Innovative Defense-Related Dual-Purpose\nTechnologies/Solutions with a Clear Space Force Stakeholder Need"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13162": {
+    "first_seen": "2026-11-09",
+    "title": "Next-generation Green Monopropellant Gas Generation"
+  },
+  "sbir_gov_dod::https://www.sbir.gov/topics/13163": {
+    "first_seen": "2026-11-09",
+    "title": "OPEN- STTR Direct-to-Phase-II Call for Innovative Defense-Related Dual-Purpose\nTechnologies/Solutions with a Clear Space Force Stakeholder Need"
   },
   "sofwerx::https://events.sofwerx.org/autonomous-warfare-proving-ground": {
     "first_seen": "2026-07-03",
